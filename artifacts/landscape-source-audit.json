@@ -1,0 +1,12 @@
+{
+  "buildingFeatures": 78449,
+  "sourceVerticesAudited": 621205,
+  "courtyardHoles": 413,
+  "maxRoundingMetres": 0.0706278329250463,
+  "invalidRoundedFootprints": [],
+  "surfacePixelsAudited": 298380,
+  "maxQuantisationMetres": 0.050048828125,
+  "surfaceModel": "DSM, not bare-earth DTM",
+  "surfaceRevision": "6d0904555baab9d7e84cbdc3529fba8ab021becc100bde9ef7cf87a2f68e9111",
+  "buildingRevision": "076fcb533b3330ba1a6909c0646c7a6486c617ab853d4818879ac4265e1abfdb"
+}

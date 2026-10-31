@@ -1,0 +1,13 @@
+{
+  "revision": "6d0904555baab9d7e84cbdc3529fba8ab021becc100bde9ef7cf87a2f68e9111",
+  "width": 705,
+  "height": 929,
+  "validPixels": 298380,
+  "nodataPixels": 356565,
+  "minMetres": -1.0753768682479858,
+  "maxMetres": 1110.4739990234375,
+  "maxQuantisationMetres": 0.050048828125,
+  "contourSegments": 46265,
+  "gzipBytes": 914492,
+  "sourceSubsetSha256": "e6a5d0181e80ad15972ac5ddcee582773ec0f94161aa80a85847602992d1c776"
+}

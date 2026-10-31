@@ -1,0 +1,130 @@
+{
+  "before": "樁\n將千秋\n鐵票樁腳 · 中正區\n14\nAP",
+  "preview": "預計移動成本：4 AP\n\n實際道路距離 327 公尺 · 未命名道路 → 自由廣場\n\n部分路段未標示步行權限，依遊戲政策推定通行。確認移動取消",
+  "profile": "衛星地表路線剖面（非路面測高）\n地表約 6.9–13.8 公尺\n剖面含屋頂與樹冠；僅供地景判讀，不另加上下坡 AP。",
+  "after": "樁\n將千秋\n鐵票樁腳 · 中正區\n10\nAP",
+  "districts": [
+    {
+      "buildings": "213",
+      "canvas": true,
+      "elevation": "約 17.0 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "松山・燈火商街"
+    },
+    {
+      "buildings": "213",
+      "canvas": true,
+      "elevation": "約 12.6 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "信義・垂直都會"
+    },
+    {
+      "buildings": "706",
+      "canvas": true,
+      "elevation": "約 10.8 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "大安・林蔭生活"
+    },
+    {
+      "buildings": "164",
+      "canvas": true,
+      "elevation": "約 8.0 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "中山・藝文街廓"
+    },
+    {
+      "buildings": "312",
+      "canvas": true,
+      "elevation": "約 8.0 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "中正・紀念廣場"
+    },
+    {
+      "buildings": "244",
+      "canvas": true,
+      "elevation": "約 4.4 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "大同・河港騎樓"
+    },
+    {
+      "buildings": "316",
+      "canvas": true,
+      "elevation": "約 8.9 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "萬華・廟埕老城"
+    },
+    {
+      "buildings": "52",
+      "canvas": true,
+      "elevation": "約 24.3 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "文山・綠丘茶徑"
+    },
+    {
+      "buildings": "268",
+      "canvas": true,
+      "elevation": "約 10.3 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "南港・音樂稜線"
+    },
+    {
+      "buildings": "48",
+      "canvas": true,
+      "elevation": "約 250.9 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "內湖・山城科技"
+    },
+    {
+      "buildings": "109",
+      "canvas": true,
+      "elevation": "約 51.2 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "士林・青瓦庭園"
+    },
+    {
+      "buildings": "213",
+      "canvas": true,
+      "elevation": "約 28.7 公尺",
+      "image": "/data/taipei-surface-hillshade.png",
+      "title": "北投・溫泉屋舍"
+    }
+  ],
+  "unknownHeight": "OSM 來源識別\nw256190307\n來源標示高度（非本遊戲實測）\n來源未提供／無法解析\n來源標示樓層\n2 層\n中庭／內孔數\n0",
+  "knownHeight": "OSM 來源識別\nw1159328965\n來源標示高度（非本遊戲實測）\n508 公尺\n來源標示樓層\n101 層\n中庭／內孔數\n0",
+  "mobile": {
+    "buildings": "312",
+    "canvas": 330.58929443359375,
+    "credit": "© OpenStreetMap contributors · ODbL · Copernicus DSM",
+    "map": 330.58929443359375,
+    "scrollWidth": 360,
+    "svg": 330.58929443359375,
+    "width": 360
+  },
+  "night": "H\nJiang Qianqiu\nIron Broker · Zhongzheng District\n10\nAP",
+  "layersBefore": {
+    "ap": "10",
+    "cost": "預計移動成本：4 AP\n\n實際道路距離 369 公尺 · 未命名道路\n\n部分路段未標示步行權限，依遊戲政策推定通行。確認移動取消"
+  },
+  "layersHidden": {
+    "ap": "10",
+    "buildings": 0,
+    "surface": 0
+  },
+  "layersRestored": {
+    "ap": "10",
+    "buildings": 312,
+    "contours": 0,
+    "illustrations": 0
+  },
+  "desktop": {
+    "canvas": {
+      "height": 605.375,
+      "width": 840.8035888671875
+    },
+    "svg": {
+      "height": 605.375,
+      "width": 840.8035888671875
+    }
+  },
+  "errors": []
+}

@@ -1,9 +1,14 @@
-import { campaignMap, cells, nodes, nodeById, districts, wonders, hexDistance, connected } from './campaign-map.ts';
-import type { CampaignNode, Cell } from './campaign-map.ts';
+import { mapFor, walkGeometry, walkSummary, approachCells, campaignMap, allCells as cells, nodes, nodeById, districts, wonders, hexDistance, connected } from './campaign-map.ts';
+import type { CampaignNode, Cell, MovementProfile } from './campaign-map.ts';
+import { roadMovement,roadRoute } from './road-movement.ts';
+import type { RoadMovement } from './road-movement.ts';
 import policy from '../data/campaign-intelligence-policy.json' with { type: 'json' };
 import type { Role } from './level.ts';
 import { teams,teamRecord,teamHomes,defaultCommanders,campaignOutcome } from './campaign-teams.ts';
 import type { Team } from './campaign-teams.ts';
+import { initialTrail,ensureTrail,recordArrival,recordWalk,recordNodeActivity } from './campaign-progress.ts';
+import type { CampaignTrail } from './campaign-progress.ts';
+import { planNodeVisit,visitPlans } from './campaign-plans.ts';
 import { drawSurprise, adapted } from './campaign-events.ts';
 import type { Surprise } from './campaign-events.ts';
 import { commanders, chooseCommander, skillCost, isCommander, unitAvailable, unitGuarded, canCompete, inTalks, competitionPreview, splashTargets, behind, facingBetween } from './campaign-tactics.ts';
@@ -19,9 +24,10 @@ export type CampaignLog={key:string;values:Record<string,string|number>};
 type Activity={nodes:string[];kinds:string[];rested:boolean;afterRest:boolean};
 type NodeState={influence:Record<Team,number>;visits:Record<Team,number>;active:Record<Team,boolean>};
 export type Snapshot={releasedDay:number;asOfDay:number;support:Support};
-export type Campaign={playerTeam:Team;day:number;phase:'day'|'night';seed:number;news:'rain'|'market'|'volunteers'|'clear';surprise:Surprise|null;commanders:Record<Team,CommanderId>;talkZones:{cellId:string;untilDay:number}[];surges:{team:Team;cellId:string;day:number}[];flash:CampaignLog|null;units:CampaignUnit[];resources:Record<Team,{materials:number;volunteers:number}>;support:Support;nodeState:Record<string,NodeState>;stages:Stage[];activity:Record<string,Record<Team,Activity>>;wonderPriority:Record<Team,string[]>;prepared:Record<Team,{topic:string;day:number}|null>;eventDone:Record<Team,number>;poll:Snapshot|null;pollHistory:Snapshot[];rumor:Snapshot|null;history:{day:number;support:Support}[];logs:CampaignLog[];actions:number;result:Team|'draw'|null};
+export type Campaign={movementProfile?:MovementProfile;trail?:CampaignTrail;playerTeam:Team;day:number;phase:'day'|'night';seed:number;news:'rain'|'market'|'volunteers'|'clear';surprise:Surprise|null;commanders:Record<Team,CommanderId>;talkZones:{cellId:string;untilDay:number}[];surges:{team:Team;cellId:string;day:number}[];flash:CampaignLog|null;units:CampaignUnit[];resources:Record<Team,{materials:number;volunteers:number}>;support:Support;nodeState:Record<string,NodeState>;stages:Stage[];activity:Record<string,Record<Team,Activity>>;wonderPriority:Record<Team,string[]>;prepared:Record<Team,{topic:string;day:number}|null>;eventDone:Record<Team,number>;poll:Snapshot|null;pollHistory:Snapshot[];rumor:Snapshot|null;history:{day:number;support:Support}[];logs:CampaignLog[];actions:number;result:Team|'draw'|null};
 export type Command=
  |{type:'move';unitId:string;cellId:string}
+ |{type:'canvassRoute';unitId:string;nodeId:string}
  |{type:'transport';unitId:string;districtId:string}
  |{type:'canvass'|'visit'|'forum'|'livestream'|'culture'|'environment';unitId:string;nodeId:string}
  |{type:'build';unitId:string;nodeId:string;brand:'island'|'soapbox'}
@@ -35,34 +41,44 @@ const emptyActivity=():Activity=>({nodes:[],kinds:[],rested:false,afterRest:fals
 function dailyActivity(){return Object.fromEntries(districts.map(d=>[d.id,teamRecord(()=>emptyActivity())]));}
 function news(seed:number){const next=(Math.imul(seed,1664525)+1013904223)>>>0;return {seed:next,news:(['rain','market','volunteers','clear'] as const)[next%4]};}
 function log(g:Campaign,key:string,values:CampaignLog['values']={}){g.logs.unshift({key,values});g.logs=g.logs.slice(0,100);}
-export function initialCampaign(seed=0x5eed,playerTeam:Team='blue'):Campaign{
+export function initialCampaign(seed=0x5eed,playerTeam:Team='blue',movementProfile:MovementProfile='legacy-hex'):Campaign{
+ const {districts}=mapFor({movementProfile});
  const support=Object.fromEntries(districts.map(d=>[d.id,teamRecord(()=>100)]));
  const starts={blue:['6300500','6300300','6300700'],green:['6301000','6301200','6300900'],white:['6300400','6300600','6300100']};
  const units=teams.flatMap(team=>(['heavy','ranged','scout'] as Role[]).map((role,i)=>({id:`${team}${i+1}`,team,role,cellId:districts.find(d=>d.id===starts[team][i])!.anchor,ap:role==='scout'?18:14,maxAp:role==='scout'?18:14,mobilization:10,fatigue:0,withdrawUntil:0,guardedUntil:0,skillReadyDay:1,transportDay:0,facing:team==='blue'?0:3,bracedUntil:0,confusedUntil:0})));
  const n=news(seed);if(n.news==='volunteers')for(const u of units)u.ap++;
  const surprise=drawSurprise(n.seed,1,districts.map(d=>d.id));
- const g:Campaign={playerTeam,day:1,phase:'day',...n,...surprise,commanders:teamRecord(()=>'jiang' as CommanderId),talkZones:[],surges:[],flash:null,units,resources:teamRecord(()=>({materials:36,volunteers:6})),support,nodeState:Object.fromEntries(nodes.map(n=>[n.id,{influence:teamRecord(()=>0),visits:teamRecord(()=>0),active:teamRecord(()=>false)}])),stages:[],activity:dailyActivity(),wonderPriority:teamRecord(()=>wonders.map(w=>w.id)),prepared:teamRecord(()=>null),eventDone:teamRecord(()=>0),poll:null,pollHistory:[],rumor:null,history:[],logs:[{key:'c_logStart',values:{}}],actions:0,result:null};
+ const g:Campaign={...(movementProfile==='streets-v2'?{movementProfile}:{}),trail:initialTrail(units),playerTeam,day:1,phase:'day',...n,...surprise,commanders:teamRecord(()=>'jiang' as CommanderId),talkZones:[],surges:[],flash:null,units,resources:teamRecord(()=>({materials:36,volunteers:6})),support,nodeState:Object.fromEntries(nodes.map(n=>[n.id,{influence:teamRecord(()=>0),visits:teamRecord(()=>0),active:teamRecord(()=>false)}])),stages:[],activity:dailyActivity(),wonderPriority:teamRecord(()=>wonders.map(w=>w.id)),prepared:teamRecord(()=>null),eventDone:teamRecord(()=>0),poll:null,pollHistory:[],rumor:null,history:[],logs:[{key:'c_logStart',values:{}}],actions:0,result:null};
  return teams.reduce((state,team)=>chooseCommander(state,defaultCommanders[team],team),g);
 }
-export function cellCost(g:Campaign,c:Cell,team:Team=g.playerTeam){return (c.terrain==='slope'?2:1)+(g.news==='rain'?1:0)+(g.surprise?.id==='streetworks'&&g.surprise.districtId===c.districtId&&!adapted(g.surprise,team)?1:0);}
+export function cellCost(g:Campaign,c:Pick<Cell,'terrain'|'districtId'>&Partial<Pick<Cell,'id'>>,team:Team=g.playerTeam,from?:string){
+ return (c.terrain==='slope'?2:1)+(g.news==='rain'?1:0)+(g.surprise?.id==='streetworks'&&g.surprise.districtId===c.districtId&&!adapted(g.surprise,team)?1:0);
+}
+export function interactionCells(g:Campaign,node:CampaignNode){return g.movementProfile==='streets-v2'?[node.cellId,...approachCells(node.cellId)]:[node.cellId,...cells.get(node.cellId)!.neighbors];}
+
 export function movement(g:Campaign,u:CampaignUnit,budget=u.ap){
  const costs=new Map<string,number>([[u.cellId,0]]),previous=new Map<string,string>();
  if(!unitAvailable(g,u)||unitGuarded(g,u)||u.bracedUntil>=g.day)return {costs:new Map<string,number>(),previous};
+ if(g.movementProfile==='streets-v2')return roadMovement(g,u,budget);
  const occupied=new Set(g.units.filter(v=>v.id!==u.id&&unitAvailable(g,v)).map(v=>v.cellId));
  const queue=[{id:u.cellId,cost:0}];
  while(queue.length){queue.sort((a,b)=>b.cost-a.cost);const current=queue.pop()!;if(current.cost!==costs.get(current.id))continue;
-  for(const id of cells.get(current.id)!.neighbors){if(occupied.has(id))continue;const c=cells.get(id)!;const cost=current.cost+cellCost(g,c,u.team);if(cost>budget||cost>=(costs.get(id)??Infinity))continue;costs.set(id,cost);previous.set(id,current.id);queue.push({id,cost});}
+  for(const id of cells.get(current.id)!.neighbors){if(occupied.has(id))continue;const c=cells.get(id)!;const cost=current.cost+cellCost(g,c,u.team,current.id);if(cost>budget||cost>=(costs.get(id)??Infinity))continue;costs.set(id,cost);previous.set(id,current.id);queue.push({id,cost});}
  }
  return {costs,previous};
 }
-export function route(g:Campaign,u:CampaignUnit,to:string){const {costs,previous}=movement(g,u);if(!costs.has(to))return null;const path=[to];while(path[0]!==u.cellId){const prev=previous.get(path[0]);if(!prev)return null;path.unshift(prev);}return {cost:costs.get(to)!,path};}
+export function routeFromMovement(u:CampaignUnit,to:string,walk:ReturnType<typeof movement>){
+ if('road' in walk)return roadRoute(walk as RoadMovement,to);
+ const {costs,previous}=walk;if(!costs.has(to))return null;const path=[to];while(path[0]!==u.cellId){const prev=previous.get(path[0]);if(!prev)return null;path.unshift(prev);}return {cost:costs.get(to)!,path,edgeIds:undefined,geometry:walkGeometry(path),...walkSummary()};
+}
+export function route(g:Campaign,u:CampaignUnit,to:string){return routeFromMovement(u,to,movement(g,u));}
 export function scheduledEvent(day:number){return day===7||day===21?'presentation':day===14||day===27?'debate':null;}
 export function eventTopic(day:number){return day===7?'transport':day===14?'housing':day===21?'environment':'housing';}
 export function nextEvent(day:number){return [7,14,21,27].find(d=>d>=day)??null;}
 export function stageStatus(g:Campaign,s:Stage){return g.day<s.openDay?'building':s.staffed?'staffed':'open';}
 export function nodeOwner(g:Campaign,id:string):Team|'contested'|null{const n=g.nodeState[id];if(teams.filter(t=>n.active[t]).length>1)return 'contested';const owner=campaignOutcome(n.influence);return owner==='draw'?null:owner;}
-function activity(g:Campaign,u:CampaignUnit,n:CampaignNode,kind:string,points:number){const a=g.activity[n.districtId][u.team];const state=g.nodeState[n.id];if(kind!=='stage')state.visits[u.team]++;state.active[u.team]=true;state.influence[u.team]+=2;a.nodes=[...new Set([...a.nodes,n.id])];a.kinds=[...new Set([...a.kinds,kind,n.kind,`${kind}:${g.phase}`])];if(a.rested&&kind==='canvass')a.afterRest=true;g.support[n.districtId][u.team]+=points;}
-function near(u:CampaignUnit,node:CampaignNode){return u.cellId===node.cellId||cells.get(u.cellId)!.neighbors.includes(node.cellId);}
+function activity(g:Campaign,u:CampaignUnit,n:CampaignNode,kind:string,points:number){recordNodeActivity(g,u.team,n.id);const a=g.activity[n.districtId][u.team];const state=g.nodeState[n.id];if(kind!=='stage')state.visits[u.team]++;state.active[u.team]=true;state.influence[u.team]+=2;a.nodes=[...new Set([...a.nodes,n.id])];a.kinds=[...new Set([...a.kinds,kind,n.kind,`${kind}:${g.phase}`])];if(a.rested&&kind==='canvass')a.afterRest=true;g.support[n.districtId][u.team]+=points;}
+function near(g:Campaign,u:CampaignUnit,node:CampaignNode){return interactionCells(g,node).includes(u.cellId);}
 function impact(g:Campaign,a:CampaignUnit,b:CampaignUnit,kind:'rally'|'broadcast'|'backstab'){
  const power=competitionPreview(g,a,b,kind).power;b.mobilization=Math.max(0,b.mobilization-power);
  if(b.mobilization===0){b.withdrawUntil=g.day+1;b.ap=0;}
@@ -71,27 +87,40 @@ function impact(g:Campaign,a:CampaignUnit,b:CampaignUnit,kind:'rally'|'broadcast
 }
 export function responseCost(choice:string){return {ap:2,materials:choice==='adapt'?2:0};}
 export function transportDestination(g:Campaign,u:CampaignUnit,districtId:string){
+ const {districts}=mapFor(g);
  const district=districts.find(d=>d.id===districtId);if(!district)return null;
  const anchor=cells.get(district.anchor)!;const occupied=new Set(g.units.filter(v=>v.id!==u.id&&unitAvailable(g,v)).map(v=>v.cellId));
  const candidates=[anchor,...anchor.neighbors.map(id=>cells.get(id)!)];
  return candidates.find(c=>c.districtId===districtId&&!occupied.has(c.id)&&connected(u.cellId,c.id))??null;
 }
-export function actionCost(g:Campaign,cmd:{type:Command['type'];brand?:string;choice?:string;nodeId?:string},team:Team=g.playerTeam){
+export function actionCost(g:Campaign,cmd:{type:Command['type'];brand?:string;choice?:string;nodeId?:string;unitId?:string},team:Team=g.playerTeam){
+ const {nodeById}=mapFor(g);
+ if(cmd.type==='canvassRoute'){const u=g.units.find(u=>u.id===cmd.unitId&&u.team===team);if(u&&cmd.nodeId){const plan=planNodeVisit(g,u,cmd.nodeId);return {ap:plan.totalAp??interactionCost('canvass').ap,materials:plan.materials};}return interactionCost('canvass');}
  const cost=cmd.type==='skill'?skillCost(g,team):cmd.type==='respond'?responseCost(cmd.choice??'adapt'):interactionCost(cmd.type,cmd.brand);
  if(cmd.type==='stageEvent'&&g.surprise?.id==='powercut'&&g.surprise.districtId===nodeById.get(cmd.nodeId??'')?.districtId&&!adapted(g.surprise,team))cost.materials++;
  return cost;
 }
 export function campaignCommand(original:Campaign,cmd:Command,team:Team=original.playerTeam):{game:Campaign;error?:string}{
+ const {nodeById,districts}=mapFor(original);
  if(original.result)return {game:original,error:'c_errorEnded'};
- const g=structuredClone(original),u=g.units.find(u=>u.id===cmd.unitId&&u.team===team);
+ if(cmd.type==='canvassRoute'){
+  const actor=original.units.find(u=>u.id===cmd.unitId&&u.team===team);if(!actor)return {game:original,error:'c_errorUnit'};
+  const plan=planNodeVisit(original,actor,cmd.nodeId);if(!plan.canAct)return {game:original,error:plan.error??'c_errorRoute'};
+  const moved=plan.moveAp?campaignCommand(original,{type:'move',unitId:actor.id,cellId:plan.destination!},team):{game:original};
+  if(moved.error)return {game:original,error:moved.error};
+  const result=campaignCommand(moved.game,{type:'canvass',unitId:actor.id,nodeId:cmd.nodeId},team);
+  return result.error?{game:original,error:result.error}:result;
+ }
+
+ const g=structuredClone(original);ensureTrail(g);const u=g.units.find(u=>u.id===cmd.unitId&&u.team===team);
  const fail=(error:string)=>({game:original,error});
  if(!u||!unitAvailable(g,u))return fail('c_errorUnit');
- const resource=g.resources[team];const fees=actionCost(g,cmd,team);let cost=fees.ap;const materials=fees.materials;let target:CampaignNode|undefined;let movePath:string[]=[];
- if('nodeId' in cmd){target=nodeById.get(cmd.nodeId);if(!target||!near(u,target))return fail('c_errorNear');}
+ const resource=g.resources[team];const fees=actionCost(g,cmd,team);let cost=fees.ap;const materials=fees.materials;let target:CampaignNode|undefined;let movePath:string[]=[];let moveEdges:number[]|undefined;
+ if('nodeId' in cmd){target=nodeById.get(cmd.nodeId);if(!target||!near(g,u,target))return fail('c_errorNear');}
  if(cmd.type==='move'){
   if(unitGuarded(g,u)||u.bracedUntil>=g.day)return fail('c_errorGuardMove');
   if(!cells.has(cmd.cellId)||cmd.cellId===u.cellId)return fail('c_errorRoute');
-  const p=route(g,u,cmd.cellId);if(!p)return fail('c_errorRoute');cost=p.cost;movePath=p.path;
+  const p=route(g,u,cmd.cellId);if(!p)return fail('c_errorRoute');cost=p.cost;movePath=p.path;moveEdges=p.edgeIds;
  }else if(cmd.type==='transport'){
   const d=districts.find(d=>d.id===cmd.districtId);if(!d||u.transportDay===g.day||unitGuarded(g,u)||u.bracedUntil>=g.day)return fail('c_errorTransport');
   if(cells.get(u.cellId)!.districtId===d.id||!connected(u.cellId,d.anchor))return fail('c_errorRoute');
@@ -125,8 +154,8 @@ export function campaignCommand(original:Campaign,cmd:Command,team:Team=original
  u.ap-=cost;resource.materials-=materials;g.actions++;g.flash=null;
  const values:CampaignLog['values']={team,unit:u.id,action:cmd.type,...(target?{node:target.id}:{})};
  switch(cmd.type){
-  case 'move':u.facing=facingBetween(cells.get(movePath[movePath.length-2])!,cells.get(cmd.cellId)!);u.cellId=cmd.cellId;break;
-  case 'transport':u.cellId=transportDestination(g,u,cmd.districtId)!.id;u.transportDay=g.day;u.fatigue=Math.min(10,u.fatigue+2);break;
+  case 'move':u.facing=facingBetween(cells.get(movePath[movePath.length-2])!,cells.get(cmd.cellId)!);u.cellId=cmd.cellId;recordWalk(g,u,movePath,moveEdges);break;
+  case 'transport':u.cellId=transportDestination(g,u,cmd.districtId)!.id;recordArrival(g,team,[u.cellId]);u.transportDay=g.day;u.fatigue=Math.min(10,u.fatigue+2);break;
   case 'rest':u.fatigue=Math.max(0,u.fatigue-4);u.mobilization=Math.min(10,u.mobilization+4);g.activity[cells.get(u.cellId)!.districtId][team].rested=true;break;
   case 'brace':u.bracedUntil=g.day;break;
   case 'respond':{const event=g.surprise!;event.responses[team]=cmd.choice;if(cmd.choice==='mobilize'){resource.volunteers--;g.support[event.districtId][team]+=4;}else if(event.id==='donation')resource.materials+=6;else if(event.id==='nightfair')g.support[event.districtId][team]+=6;break;}
@@ -173,15 +202,17 @@ export function wonderCondition(g:Campaign,id:string,team:Team){
  }
 }
 function settle(g:Campaign){
+ const {nodeById}=mapFor(g);
  for(const surge of g.surges.filter(s=>s.day===g.day)){g.support[cells.get(surge.cellId)!.districtId][surge.team]+=4;log(g,'c_logSurge',{team:surge.team});}
  for(const team of teams){let count=0;for(const id of g.wonderPriority[team]){if(count>=3)break;const n=nodeById.get(id)!;
-  const staffed=g.units.some(u=>u.team===team&&unitAvailable(g,u)&&near(u,n));
+  const staffed=g.units.some(u=>u.team===team&&unitAvailable(g,u)&&near(g,u,n));
   if(staffed&&nodeOwner(g,id)===team&&g.activity[n.districtId][team].nodes.length){g.support[n.districtId][team]+=2+(wonderCondition(g,id,team)?2:0);count++;log(g,'c_logWonder',{team,node:id});}
  }}
  g.history.push({day:g.day,support:structuredClone(g.support)});
  log(g,'c_logSettlement',{day:g.day});
 }
 function ai(original:Campaign,team:Team){
+ const {nodes,districts}=mapFor(original);
  let g=original;
  for(const id of g.units.filter(u=>u.team===team).map(u=>u.id)){
   let u=g.units.find(u=>u.id===id)!;if(!unitAvailable(g,u))continue;
@@ -194,12 +225,13 @@ function ai(original:Campaign,team:Team){
   for(let turn=0;turn<6&&u.ap>=2;turn++){
    const enemy=g.units.find(v=>v.team!==team&&unitAvailable(g,v)&&hexDistance(cells.get(v.cellId)!,cells.get(u.cellId)!)<=(u.role==='ranged'?3:1));
    if(enemy&&turn===0){if(u.role==='ranged'&&splashTargets(g,u,enemy.id).length>1&&exec({type:'broadcast',unitId:id,targetId:enemy.id}))continue;if(u.role==='scout'&&behind(u,enemy)&&exec({type:'backstab',unitId:id,targetId:enemy.id}))continue;if(exec({type:'rally',unitId:id,targetId:enemy.id}))continue;}
-   const local=nodes.filter(n=>near(u,n));const stage=local.find(n=>g.stages.some(s=>s.nodeId===n.id&&s.team===team));
+   const local=nodes.filter(n=>near(g,u,n));const stage=local.find(n=>g.stages.some(s=>s.nodeId===n.id&&s.team===team));
    if(stage){const s=g.stages.find(s=>s.nodeId===stage.id)!;if(g.day>=s.openDay&&!s.staffed&&exec({type:'staff',unitId:id,nodeId:stage.id}))continue;if(s.staffed&&s.lastEventDay!==g.day&&exec({type:'stageEvent',unitId:id,nodeId:stage.id}))continue;}
    const venue=local.find(n=>n.kind==='venue'&&!g.stages.some(s=>s.nodeId===n.id));
    if(venue&&g.day%3===0&&exec({type:'build',unitId:id,nodeId:venue.id,brand:Number(id.slice(-1))%2?'island':'soapbox'}))continue;
    const candidate=local.find(n=>g.nodeState[n.id].visits[team]<2);
    if(candidate&&exec({type:'canvass',unitId:id,nodeId:candidate.id}))continue;
+   if(g.movementProfile==='streets-v2'){const target=visitPlans(g,u).filter(p=>p.canAct&&p.moveAp).sort((a,b)=>a.totalAp!-b.totalAp!||a.nodeId.localeCompare(b.nodeId))[0];if(target&&exec({type:'canvassRoute',unitId:id,nodeId:target.nodeId}))continue;break;}
    const reachable=movement(g,u);const destinations=nodes.filter(n=>g.nodeState[n.id].visits[team]<2&&reachable.costs.has(n.cellId)&&n.cellId!==u.cellId).sort((a,b)=>(reachable.costs.get(a.cellId)!-reachable.costs.get(b.cellId)!)||(a.id.localeCompare(b.id)));
    if(destinations[0]&&exec({type:'move',unitId:id,cellId:destinations[0].cellId}))continue;
    break;
@@ -210,6 +242,7 @@ function ai(original:Campaign,team:Team){
  return g;
 }
 export function endCampaignPhase(original:Campaign){
+ const {districts}=mapFor(original);
  if(original.result)return original;
  if(original.phase==='day'){const g=structuredClone(original);g.phase='night';log(g,'c_logNight');return g;}
  let g=structuredClone(original);const opponents=teams.filter(t=>t!==g.playerTeam);if(g.day%2===0)opponents.reverse();for(const team of opponents)g=ai(g,team);settle(g);
@@ -218,7 +251,7 @@ export function endCampaignPhase(original:Campaign){
  g.day++;g.phase='day';Object.assign(g,news(g.seed));Object.assign(g,drawSurprise(g.seed,g.day,districts.map(d=>d.id)));g.activity=dailyActivity();g.flash=null;g.surges=[];g.talkZones=g.talkZones.filter(z=>z.untilDay>=g.day);
  for(const n of Object.values(g.nodeState)){n.visits=teamRecord(()=>0);n.active=teamRecord(()=>false);}
  for(const team of teams)g.resources[team].materials+=8;
- for(const u of g.units){u.fatigue=Math.max(0,u.fatigue-1);if(u.withdrawUntil<=g.day&&u.mobilization===0){u.mobilization=10;const home=districts.find(d=>d.id===teamHomes[u.team])!;const location=[home.anchor,...cells.get(home.anchor)!.neighbors].find(id=>!g.units.some(v=>v.id!==u.id&&unitAvailable(g,v)&&v.cellId===id));if(location)u.cellId=location;}u.ap=unitAvailable(g,u)?Math.max(6,u.maxAp-Math.floor(u.fatigue/3))+(g.news==='volunteers'?1:0):0;}
+ for(const u of g.units){u.fatigue=Math.max(0,u.fatigue-1);if(u.withdrawUntil<=g.day&&u.mobilization===0){u.mobilization=10;const home=districts.find(d=>d.id===teamHomes[u.team])!;const location=[home.anchor,...cells.get(home.anchor)!.neighbors].find(id=>!g.units.some(v=>v.id!==u.id&&unitAvailable(g,v)&&v.cellId===id));if(location){u.cellId=location;recordArrival(g,u.team,[location]);}}u.ap=unitAvailable(g,u)?Math.max(6,u.maxAp-Math.floor(u.fatigue/3))+(g.news==='volunteers'?1:0):0;}
  if(policy.polling.releaseDays.includes(g.day)){const snapshot={releasedDay:g.day,asOfDay:g.day-1,support:structuredClone(g.support)};g.poll=snapshot;g.pollHistory.push(snapshot);log(g,'c_logPoll',{day:g.day});}
  if(g.day>=15)g.rumor={releasedDay:g.day,asOfDay:g.day-1,support:structuredClone(g.support)};
  return g;
@@ -231,5 +264,5 @@ export function intelligence(g:Campaign,scope='city'){
  if(!g.poll)return {kind:'pending' as const};
  return {kind:'poll' as const,asOfDay:g.poll.asOfDay,releasedDay:g.poll.releasedDay,support:scope==='city'?totals(g.poll.support):g.poll.support[scope]};
 }
-export function nearbyNodes(g:Campaign,u:CampaignUnit){return nodes.filter(n=>near(u,n)&&unitAvailable(g,u));}
+export function nearbyNodes(g:Campaign,u:CampaignUnit){return mapFor(g).nodes.filter(n=>near(g,u,n)&&unitAvailable(g,u));}
 export function interactionCost(type:Command['type'],brand?:string){return {ap:type==='transport'?6:type==='event'||type==='broadcast'?4:type==='build'||type==='backstab'?3:type==='staff'||type==='withdraw'?1:2,materials:type==='transport'?4:type==='event'?3:type==='build'?(brand==='island'?8:6):type==='stageEvent'?2:['canvass','visit','forum','livestream','culture','environment','prepare','broadcast'].includes(type)?1:0};}

@@ -1,0 +1,11 @@
+{
+  "revision": "324e9a8435d22e7d1876af469e16e7c23ae0d2e9eb06116f1810e34b7106477f",
+  "sourceSha256": "b7ff3500b40dfbb508f59a93026a950f16f9a9efa1dec63bb278b474823d3ffe",
+  "sourceExtractSha256": "b11b12e7f2c023b3a89cbda913ea70fb1a9e8ac8a589a0eb19fdbd53d1143406",
+  "linksAudited": 276502,
+  "routingNodes": 234577,
+  "maxEndpointRoundingMetres": 0.07057637142084705,
+  "onewayFootLinks": 0,
+  "policyFixtures": 12,
+  "note": "Coordinate rounding audit, not survey accuracy. Reference IDs retain grade separation."
+}

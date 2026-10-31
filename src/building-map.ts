@@ -1,0 +1,22 @@
+import type { MapBounds } from './road-map.ts';
+export type Building={id:string;name:{'zh-TW':string;en:string};kind:string;height:number|null;levels:number|null;minHeight:number|null;bounds:number[];polygons:number[][][][];districtIds:string[]};
+type PackedBuilding=[string,Building['name'],string,number|null,number|null,number|null,number[],number[][][][],string[]];
+export type BuildingData={version:string;projection:string;origin:number[];revision:string;source:{url:string;dataTimestamp:string;licence:string;extractSha256:string};buildings:Building[];gridMetres:number;index:Record<string,number[]>;districtCounts:Record<string,number>};
+export function decodeBuildings(value:unknown):BuildingData{
+ const d=value as Omit<BuildingData,'buildings'>&{buildings:PackedBuilding[]};
+ if(!d||d.version!=='taipei-buildings-v1'||d.projection!=='EPSG:3826'||d.origin?.join()!=='300000,2800000'||!d.source||d.source.licence!=='ODbL-1.0'||!Array.isArray(d.buildings)||!d.index||d.gridMetres!==500||!d.districtCounts)throw Error('buildings');
+ const ids=new Set<string>();const buildings=d.buildings.map(b=>{
+  if(!Array.isArray(b)||b.length!==9||!/^[wr]\d+$/.test(b[0])||ids.has(b[0])||!b[1]||typeof b[1]['zh-TW']!=='string'||typeof b[1].en!=='string'||typeof b[2]!=='string'||![b[3],b[4],b[5]].every(n=>n===null||typeof n==='number'&&Number.isFinite(n)&&n>=0&&n<=1000)||!Array.isArray(b[6])||b[6].length!==4||!b[6].every(Number.isFinite)||b[6][0]>b[6][2]||b[6][1]>b[6][3]||!Array.isArray(b[7])||!b[7].length||!b[7].every(poly=>Array.isArray(poly)&&poly.length&&poly.every(ring=>Array.isArray(ring)&&ring.length>=4&&ring.every(p=>Array.isArray(p)&&p.length===2&&p.every(Number.isFinite)&&p[0]>=b[6][0]-.01&&p[0]<=b[6][2]+.01&&p[1]>=b[6][1]-.01&&p[1]<=b[6][3]+.01)&&ring[0].join()===ring.at(-1)!.join()))||!Array.isArray(b[8])||!b[8].length)throw Error('buildings');
+  ids.add(b[0]);return {id:b[0],name:b[1],kind:b[2],height:b[3],levels:b[4],minHeight:b[5],bounds:b[6],polygons:b[7],districtIds:b[8]};
+ });
+ if(!Object.entries(d.index).every(([id,items])=>/^-?\d+,-?\d+$/.test(id)&&Array.isArray(items)&&items.every(i=>Number.isInteger(i)&&i>=0&&i<buildings.length)))throw Error('buildings');
+ return {...d,buildings};
+}
+export function buildingsInView(data:BuildingData,bounds:MapBounds){const indices=new Set<number>();for(let x=Math.floor(bounds.x/data.gridMetres);x<=Math.floor((bounds.x+bounds.width)/data.gridMetres);x++)for(let y=Math.floor(bounds.y/data.gridMetres);y<=Math.floor((bounds.y+bounds.height)/data.gridMetres);y++)for(const id of data.index[`${x},${y}`]??[])indices.add(id);return [...indices].map(i=>data.buildings[i]).filter(b=>b.bounds[0]<=bounds.x+bounds.width&&b.bounds[2]>=bounds.x&&b.bounds[1]<=bounds.y+bounds.height&&b.bounds[3]>=bounds.y);}
+export function buildingPath(building:Building){return building.polygons.flatMap(poly=>poly.map(ring=>ring.map((p,i)=>`${i?'L':'M'}${p[0]},${p[1]}`).join('')+'Z')).join('');}
+function cross(a:number[],b:number[],p:number[]){return (b[0]-a[0])*(p[1]-a[1])-(b[1]-a[1])*(p[0]-a[0]);}
+function onSegment(a:number[],b:number[],p:number[]){return Math.abs(cross(a,b,p))<1e-6&&p[0]>=Math.min(a[0],b[0])&&p[0]<=Math.max(a[0],b[0])&&p[1]>=Math.min(a[1],b[1])&&p[1]<=Math.max(a[1],b[1]);}
+function inside(point:number[],ring:number[][]){let result=false;for(let i=0,j=ring.length-1;i<ring.length;j=i++){const a=ring[i],b=ring[j];if(onSegment(a,b,point))return true;if((a[1]>point[1])!==(b[1]>point[1])&&point[0]<(b[0]-a[0])*(point[1]-a[1])/(b[1]-a[1])+a[0])result=!result;}return result;}
+function intersects(a:number[],b:number[],c:number[],d:number[]){return onSegment(a,b,c)||onSegment(a,b,d)||onSegment(c,d,a)||onSegment(c,d,b)||(cross(a,b,c)*cross(a,b,d)<0&&cross(c,d,a)*cross(c,d,b)<0);}
+export function buildingsInHex(data:BuildingData,cell:{x:number;y:number},radius:number){const hex=Array.from({length:7},(_,i)=>{const a=(i%6*60-30)*Math.PI/180;return [cell.x+radius*Math.cos(a),cell.y+radius*Math.sin(a)];});return buildingsInView(data,{x:cell.x-radius,y:cell.y-radius,width:radius*2,height:radius*2}).filter(b=>b.polygons.some(poly=>poly[0].some(p=>inside(p,hex))||hex.some(p=>inside(p,poly[0])&&!poly.slice(1).some(hole=>inside(p,hole)))||poly.some(ring=>ring.some((p,i)=>i>0&&hex.some((h,j)=>j>0&&intersects(ring[i-1],p,hex[j-1],h))))));}
+export function buildingName(b:Building,lang:string){return b.name[lang==='en'?'en':'zh-TW']||b.name['zh-TW']||b.name.en;}

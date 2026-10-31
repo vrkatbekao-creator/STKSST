@@ -1,0 +1,25 @@
+{
+  "revision": "076fcb533b3330ba1a6909c0646c7a6486c617ab853d4818879ac4265e1abfdb",
+  "bytes": 4557121,
+  "fullPrecisionFallbacks": [
+    "w1102369608",
+    "w1462074284",
+    "w194237488",
+    "w233130298",
+    "w294015487",
+    "w314949910",
+    "w366766273",
+    "w383933935",
+    "w450732440",
+    "w450732442",
+    "w575073586",
+    "w611737623",
+    "w669260908"
+  ],
+  "sourceCount": 78449,
+  "renderCount": 78449,
+  "maxRoundingErrorMetres": 0.0706278329250463,
+  "heightKnown": 6107,
+  "levelsKnown": 25330,
+  "courtyards": 283
+}

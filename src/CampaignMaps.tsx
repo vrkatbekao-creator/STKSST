@@ -1,15 +1,18 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCampaign } from './game/campaign-store.ts';
-import { campaignMap, cells, districts, nodes, wonders, polygonPoints, ringsPath } from './game/campaign-map.ts';
+import { mapFor, campaignMap, allCells as cells, districts, nodes, wonders, polygonPoints, ringsPath } from './game/campaign-map.ts';
 import { movement, unitAvailable, route } from './game/campaign.ts';
 import { campaignPalette } from './campaign-palette.ts';
+import { DistrictLandmark } from './DistrictStreets.tsx';
 const palette=campaignPalette.districts;
-export function Landmark({theme='civic'}:{theme?:string}){
+export function Landmark({theme='civic',districtId}:{theme?:string;districtId?:string}){
+ if(districtId)return <DistrictLandmark districtId={districtId}/>;
  return <g className={`landmark-icon icon-${theme}`} stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinejoin="round"><path d="M-12 10H12"/>{theme==='skyline'?<><path d="M-6 9V-8H6V9M-8 4H8M-8-1H8M-8-6H8M-4-9V-14H4V-9M0-14V-19"/><path d="M-9 5L-6 8M9 5L6 8"/></>:theme==='temple'||theme==='hill'?<><path d="M-12-1Q-3-3 0-10Q3-3 12-1ZM-9 0V9M9 0V9M-4 9V2H4V9M-14-2L-16-5M14-2L16-5"/></>:theme==='ecology'?<><circle cx="0" cy="-1" r="9"/><circle cx="-7" cy="-9" r="4"/><circle cx="7" cy="-9" r="4"/><circle cx="-3" cy="-2" r="1"/><circle cx="3" cy="-2" r="1"/><path d="M-2 3Q0 6 2 3"/></>:theme==='park'?<><path d="M-6 10V-3M5 10V0"/><circle cx="-6" cy="-7" r="6"/><circle cx="6" cy="-4" r="6"/></>:theme==='market'||theme==='river'?<><path d="M-11 9V-3H11V9M-13-3L-9-9H9L13-3ZM-6-9L-7-3M0-9V-3M6-9L7-3M-5 9V2H5V9"/></>:theme==='music'?<><path d="M-12 9V-4L-4-10L3-2L12-7V9ZM-6 3V-1L6-3V1"/></>:theme==='spring'?<><path d="M-11 9V-3L0-10L11-3V9M-6 9V2H6V9M-5-13Q-8-16-5-19M1-12Q-2-15 1-18M7-12Q4-15 7-18"/></>:<><path d="M-12-5L0-12L12-5ZM-10 9V-3M-4 9V-3M4 9V-3M10 9V-3M-12 6H12"/></>}</g>;
 }
 export function CityMap({compact=false}:{compact?:boolean}){
  const {t,i18n}=useTranslation();const lang=i18n.language==='en'?'en':'zh-TW';const {game,districtId,focus}=useCampaign();
+ const {campaignMap,districts,nodes}=mapFor(game);
  const bounds=campaignMap.districts.reduce((a,d)=>[Math.min(a[0],d.bounds[0]),Math.min(a[1],d.bounds[1]),Math.max(a[2],d.bounds[2]),Math.max(a[3],d.bounds[3])],[Infinity,Infinity,-Infinity,-Infinity]);
  const vb=[bounds[0]-1600,bounds[1]-900,bounds[2]-bounds[0]+3200,bounds[3]-bounds[1]+1800].join(' ');
  return <div className={`city-map ${compact?'compact':''}`}><svg viewBox={vb} role="group" aria-label={t('c_cityMap')}>

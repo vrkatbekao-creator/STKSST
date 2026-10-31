@@ -39,3 +39,5 @@ entries={
 for i,lang in enumerate(['zh-TW','en']):
  p=ROOT/'src/locales'/f'{lang}.json';d=json.loads(p.read_text(encoding='utf8'));d.update({k:v[i] for k,v in entries.items()});p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
 print(f'Updated {len(entries)} v0.5 bilingual entries.')
+
+exec((ROOT/"design/add_map_readability_locales.py").read_text(encoding="utf8"))

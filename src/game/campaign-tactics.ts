@@ -1,7 +1,7 @@
 import type { Campaign,CampaignUnit } from './campaign.ts';
 import type { Role } from './level.ts';
 import type { Team } from './campaign-teams.ts';
-import { cells,hexDistance } from './campaign-map.ts';
+import { mapFor, allCells as cells,hexDistance } from './campaign-map.ts';
 export const commanders={
  jiang:{role:'heavy' as Role,ap:2,cooldown:6},
  shen:{role:'ranged' as Role,ap:4,cooldown:6},

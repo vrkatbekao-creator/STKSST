@@ -1,6 +1,6 @@
 # 第三階段交付：全市掃街競選
 
-目前版本 **v0.5.0**。三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
+目前版本 **v0.7.0**。離線真實道路、原始路名與搜尋定位依 REAL-ROADS.md；12 區專屬街景第一版依 DISTRICT-STREETSCAPES.md；單鍵掃街規劃與今日步行路線依 STREET-WORKFLOW.md；格線對齊、足跡與活動清單依 MAP-READABILITY.md；三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
 
 依已確認的 PHASE-3-DESIGN.md、MAP-HEX-SPEC.md 及 INTELLIGENCE-SYSTEM.md 製作。本機單機，React + PixiJS + 單一 Zustand 競選狀態；沒有帳號、雲端、即時新聞或線上系統。第一、二階段方格原型保留為歷史程式及回歸測試，預設入口改為第三階段。
 
@@ -76,3 +76,9 @@ Wonder 採 WONDER-CATALOG.md 的基礎 +2／特殊條件 +2、每隊每日最多
 必要檢查為 `npm run check`、`npm test`、`npm run build`，並以瀏覽器驗證新互動。驗證結果見 QA.md。
 
 後續精修範圍：實測街道路網、高程與各區更細街景、數值平衡、音效；本機單槽存檔已於 v0.5 完成。這些沒有標記為已完成；目前版本已具備第三階段完整可玩的競選回圈。
+
+
+v0.6 道路戰術：新局 100 公尺共用格、來源節點路由、加權距離 AP、真實道路預覽與歷史、三方 AI 及 schema 2 存檔，詳見 [ROAD-MOVEMENT-SPEC.md](ROAD-MOVEMENT-SPEC.md)。舊局維持 380 公尺規則；前述舊版地圖數量與成本保留作為歷史。未核實的普通道路步行權限採明示遊戲假設。
+
+
+v0.7 逐棟建物與衛星地表依 LANDSCAPE-SPEC.md：建物採 OSM 來源輪廓，不補造未知高度；高程依使用者明確改選的 GLO-30 DSM（主量測 2011–2015、2021 公開快照），不是裸地或路面實測，不修改 AP。舊規則與存檔保留相容。

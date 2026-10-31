@@ -1,0 +1,40 @@
+BUILDING FOOTPRINTS AND SATELLITE SURFACE DATA
+
+Buildings: Copyright OpenStreetMap contributors, ODbL 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+Source: Geofabrik taiwan-261029.osm.pbf, data timestamp 2026-10-29T21:21:26Z.
+Derived database: data/taipei-buildings-v1.json.gz (ODbL 1.0).
+Changes: building areas with relation holes, clipped to original Taipei City
+boundaries, projected to EPSG:3826 / E300000 N2800000 with screen-inverted Y,
+rounded to 0.1 m and indexed for display. Unknown heights are not generated.
+Source extract and conversion scripts accompany the project in design/.
+
+SATELLITE SURFACE (DSM), NOT BARE-EARTH DTM OR ROAD SURVEY
+produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus
+Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European
+Union and ESA; all rights reserved
+
+Copernicus Digital Elevation Model (DEM) was accessed on 2026-10-31 from
+https://registry.opendata.aws/copernicus-dem/
+AWS 2021 public release, TanDEM-X main acquisition 2011–2015; older gap-fill
+models may be present. GLO-30 nominal resolution 1 arc-second (~30 m).
+Vertical datum: EGM2008 (EPSG:3855). Heights include surface objects.
+The following public tiles were used:
+Copernicus_DSM_COG_10_N24_00_E121_00_DEM
+Copernicus_DSM_COG_10_N25_00_E121_00_DEM
+
+Licence and citation requirements:
+https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM
+https://copernicus-dem-30m.s3.amazonaws.com/readme.html
+Derived data: data/taipei-surface-v1.json.gz
+Derived image: data/taipei-surface-hillshade.png
+Original projected subset: design/assets/taipei-copdem-30m.tif
+Metadata with original tile hashes: design/assets/taipei-surface-source-metadata.json
+Changes: bilinear resampling to local 30 m EPSG:3826 grid, city mask,
+decimetre display quantisation, hillshade and 50 m surface isolines.
+Quantisation is not an accuracy claim. No bare-earth correction is applied.
+Source data licence and notices continue to apply to these derivatives.
+No warranty of completeness, current conditions or navigation accuracy.
+
+These data notices do not relicense the game software or artwork.

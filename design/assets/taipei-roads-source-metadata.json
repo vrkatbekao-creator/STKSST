@@ -1,0 +1,26 @@
+{
+  "endpoint": "https://download.geofabrik.de/asia/taiwan-261029-free.shp.zip",
+  "provider": "Geofabrik / OpenStreetMap contributors",
+  "bboxWgs84": [
+    121.45520364183511,
+    24.95781005428954,
+    121.66984178397817,
+    25.21274481802734
+  ],
+  "retrievedAt": "2026-10-31T20:15:50.334410+00:00",
+  "dataTimestamp": "2026-10-29T21:21:26Z",
+  "sourceFile": "taipei-roads-osm-source.json.gz",
+  "sourceSha256": "7fa6e26714e9fa5391f0d6da1f51fb7eddac27e874d2eb45e60cb321a01234dd",
+  "archiveSha256": "d909d6cb598c247afe95ccd0f4264ca1093086fe9eb225b26674e93048398283",
+  "elements": 96722,
+  "licence": "ODbL-1.0",
+  "licenceUrl": "https://opendatacommons.org/licenses/odbl/1-0/",
+  "copyrightUrl": "https://www.openstreetmap.org/copyright",
+  "fieldsNotProvided": [
+    "name:en",
+    "access",
+    "foot",
+    "motorroad"
+  ],
+  "sourceKind": "OpenStreetMap community road mapping, not an official cadastral survey"
+}

@@ -1,0 +1,410 @@
+{
+  "version": "0.5.4",
+  "sourceDate": "2026-10-29T21:21:26Z",
+  "districts": [
+    {
+      "id": "6300100",
+      "slug": "songshan",
+      "visibleRoads": "4287",
+      "labels": [
+        "市民大道七段",
+        "南港路三段",
+        "松信路",
+        "麥帥一橋",
+        "市民大道五段",
+        "松隆路",
+        "忠孝東路五段",
+        "新明路",
+        "忠孝東路六段",
+        "基隆路車行地下道"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300200",
+      "slug": "xinyi",
+      "visibleRoads": "4136",
+      "labels": [
+        "安和路二段",
+        "松信路",
+        "莊敬路",
+        "忠孝東路四段",
+        "忠孝東路五段",
+        "松德路",
+        "通化街",
+        "基隆路車行地下道",
+        "基隆路二段",
+        "松仁路"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300300",
+      "slug": "daan",
+      "visibleRoads": "4712",
+      "labels": [
+        "安和路二段",
+        "敦化南路二段",
+        "復興南路二段",
+        "忠孝東路四段",
+        "羅斯福路公車專用道",
+        "金華街",
+        "愛國東路",
+        "和平東路一段",
+        "信義路一段",
+        "仁愛路三段"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300400",
+      "slug": "zhongshan",
+      "visibleRoads": "3669",
+      "labels": [
+        "吉林路",
+        "新生北路二段",
+        "濱江跨越橋",
+        "北安路",
+        "民族東路",
+        "錦州街",
+        "新生北路三段",
+        "承德路二段",
+        "慶昌橋",
+        "林森北路"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300500",
+      "slug": "zhongzheng",
+      "visibleRoads": "5422",
+      "labels": [
+        "艋舺大道",
+        "羅斯福路公車專用道",
+        "金華街",
+        "青年路",
+        "三元街",
+        "汀州路一段",
+        "愛國東路",
+        "和平東路一段",
+        "和平西路一段",
+        "和平西路二段"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300600",
+      "slug": "datong",
+      "visibleRoads": "3073",
+      "labels": [
+        "環河北路一段",
+        "承德路二段",
+        "環河北路二段",
+        "台北大橋",
+        "農安街",
+        "長春路",
+        "重慶北路一段",
+        "延平北路一段",
+        "錦州街",
+        "環河南路一段"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300700",
+      "slug": "wanhua",
+      "visibleRoads": "3713",
+      "labels": [
+        "艋舺大道",
+        "東園街",
+        "萬板大橋",
+        "三元街",
+        "華翠大橋",
+        "汀州路一段",
+        "萬大路",
+        "環河南路二段",
+        "西園路二段",
+        "和平西路三段"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300800",
+      "slug": "wenshan",
+      "visibleRoads": "1861",
+      "labels": [
+        "萬壽路",
+        "萬芳路",
+        "新光路二段",
+        "和平東路四段",
+        "木柵路五段",
+        "萬美街一段",
+        "秀明路一段",
+        "木柵路四段",
+        "和平東路三段",
+        "萬和街"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6300900",
+      "slug": "nangang",
+      "visibleRoads": "2849",
+      "labels": [
+        "忠孝東路七段",
+        "市民大道七段",
+        "重陽路",
+        "南港路三段",
+        "新明路",
+        "忠孝東路六段",
+        "南京東路六段",
+        "市民大道八段",
+        "南港路二段",
+        "南湖大橋"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6301000",
+      "slug": "neihu",
+      "visibleRoads": "726",
+      "labels": [
+        "碧山路",
+        "金龍路",
+        "內湖路三段",
+        "大湖街",
+        "碧湖步道",
+        "金面山步道",
+        "大湖山莊街243巷",
+        "鯉魚山步道",
+        "內湖路三段256巷",
+        "大崙尾山步道"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6301100",
+      "slug": "shilin",
+      "visibleRoads": "1606",
+      "labels": [
+        "仰德大道二段",
+        "至善路二段",
+        "仰德大道一段",
+        "自強隧道",
+        "福林路",
+        "德行東路",
+        "至善路一段",
+        "故宮路",
+        "至善路三段",
+        "望星橋"
+      ],
+      "nodes": 5
+    },
+    {
+      "id": "6301200",
+      "slug": "beitou",
+      "visibleRoads": "2248",
+      "labels": [
+        "大業路",
+        "中和街",
+        "泉源路",
+        "東昇路",
+        "北投路一段",
+        "中央北路二段",
+        "公舘路",
+        "中央北路一段",
+        "秀山路",
+        "北投路二段"
+      ],
+      "nodes": 5
+    }
+  ],
+  "checks": [
+    {
+      "name": "source street search and display toggles preserve resources and progress",
+      "before": {
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區15AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "progress": "本區掃街進度\n本局完成 0／5 點"
+      },
+      "located": {
+        "highlight": "光明路",
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區15AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "progress": "本區掃街進度\n本局完成 0／5 點"
+      },
+      "namesHidden": 0,
+      "layerHidden": 0,
+      "after": [
+        "樁黃若水鐵票樁腳 · 中山區15AP",
+        "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+        "草狂熱小草狂熱小草 · 松山區19AP"
+      ]
+    },
+    {
+      "name": "road class filters",
+      "filters": [
+        {
+          "filter": "arterial",
+          "visible": "46",
+          "kinds": [
+            "arterial"
+          ]
+        },
+        {
+          "filter": "local",
+          "visible": "504",
+          "kinds": [
+            "street",
+            "alley"
+          ]
+        },
+        {
+          "filter": "path",
+          "visible": "635",
+          "kinds": [
+            "path"
+          ]
+        },
+        {
+          "filter": "all",
+          "visible": "1185",
+          "kinds": [
+            "arterial",
+            "street",
+            "alley",
+            "path"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "combined outreach remains playable over real road layer",
+      "before": {
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區15AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "clock": "競選日\n03/ 28\n☀\n白天\n日夜共用 AP\n物資\n49\n可用志工\n6\n進入夜間 →",
+        "walks": 0
+      },
+      "after": {
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區12AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "clock": "競選日\n03/ 28\n☀\n白天\n日夜共用 AP\n物資\n48\n可用志工\n6\n進入夜間 →",
+        "walks": 1,
+        "progress": "本區掃街進度\n本局完成 3／5 點"
+      }
+    },
+    {
+      "name": "desktop alignment and render batching",
+      "reading": {
+        "batchedPaths": 28,
+        "client": 1265,
+        "layers": [
+          {
+            "height": 605.375,
+            "selector": ".hex-surface",
+            "width": 840.8035888671875
+          },
+          {
+            "height": 605.375,
+            "selector": ".hex-canvas canvas",
+            "width": 840.8035888671875
+          },
+          {
+            "height": 605.375,
+            "selector": ".hex-surface>svg",
+            "width": 840.8035888671875
+          }
+        ],
+        "rawKeys": null,
+        "realSegments": "3563",
+        "scenicEdges": 0,
+        "scroll": 1265
+      }
+    },
+    {
+      "name": "English night resume preserves outreach route",
+      "clock": "DAY\n03/ 28\n☾\nNighttime\nAP carries into the night\nMaterials\n48\nAvailable volunteers\n6\nSettle the night →",
+      "units": [
+        "HHuang RuoshuiIron Broker · Zhongshan District12AP",
+        "RKeyboard WingKeyboard Wing · Datong District15AP",
+        "SGrassbladeGrassblade · Songshan District19AP"
+      ],
+      "walks": 1,
+      "console": "REAL STREETS / OSM\nData as of 2026-10-29 · 5,777 local segments\nShow real roads\nShow street names\nRoad class\nAll roads\nArterials & expressways\nStreets & alleys\nPaths & cycleways\n\nGeometry and names come from real road data; line widths are illustrative. Movement and AP still use 380 m hexes, not street-by-street walking navigation. Crossings may be grade-separated.\n\nFind a local street (931 named entries)\nNamed roads in the selected / centered hex (5)\nArterial road\nAlley / service road\nPath / cycleway\nExpressway / motorway\nLocated road (not a move preview)"
+    },
+    {
+      "name": "English mobile road map, attribution and layout",
+      "client": 360,
+      "credit": "© OpenStreetMap contributors · ODbL",
+      "labels": 4,
+      "layers": [
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-surface",
+          "width": 330.58929443359375
+        },
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-canvas canvas",
+          "width": 330.58929443359375
+        },
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-surface>svg",
+          "width": 330.58929443359375
+        }
+      ],
+      "night": true,
+      "scroll": 360
+    },
+    {
+      "name": "final normal browser logs",
+      "logs": []
+    },
+    {
+      "name": "missing local asset and retry recovery on separate QA tab",
+      "failure": {
+        "message": "真實道路 ／ OSM\n\n無法讀取本機道路資料。六角格行動仍可使用，可重試載入道路。重試道路載入",
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區12AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "nodes": 5,
+        "walks": 1
+      },
+      "recovered": {
+        "units": [
+          "樁黃若水鐵票樁腳 · 中山區12AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+          "草狂熱小草狂熱小草 · 松山區19AP"
+        ],
+        "walks": 1,
+        "segments": "3563"
+      }
+    },
+    {
+      "name": "reselecting a located street clears only the street highlight",
+      "first": 1,
+      "cleared": 0,
+      "units": [
+        "樁黃若水鐵票樁腳 · 中山區12AP",
+        "鍵鍵盤側翼鍵盤側翼 · 大同區15AP",
+        "草狂熱小草狂熱小草 · 松山區19AP"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,326 @@
+{
+  "version": "0.5.3",
+  "districts": [
+    {
+      "id": "6300100",
+      "slug": "songshan",
+      "client": 1265,
+      "motifs": [
+        "lantern",
+        "office",
+        "music",
+        "tower"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 124,
+      "title": "街頭圖鑑 01／12松山・燈火商街夜市牌樓、條紋棚攤與沿街燈籠，描繪饒河街周邊的商街氣氛。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300200",
+      "slug": "xinyi",
+      "client": 1265,
+      "motifs": [
+        "lantern",
+        "tower",
+        "music",
+        "garden"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 127,
+      "title": "街頭圖鑑 02／12信義・垂直都會以台北 101 的層疊輪廓搭配玻璃高樓、開放廣場與行道樹。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300300",
+      "slug": "daan",
+      "client": 1265,
+      "motifs": [
+        "civic",
+        "gallery",
+        "lantern",
+        "garden",
+        "tower"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 126,
+      "title": "街頭圖鑑 03／12大安・林蔭生活大安森林公園的樹冠與步道，銜接低層屋舍、綠帶與休憩長椅。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300400",
+      "slug": "zhongshan",
+      "client": 1265,
+      "motifs": [
+        "palace",
+        "gallery",
+        "arcade",
+        "lantern"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 118,
+      "title": "街頭圖鑑 04／12中山・藝文街廓美術館的錯落量體、幾何雕塑與街角綠意，組成藝文街區。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300500",
+      "slug": "zhongzheng",
+      "client": 1265,
+      "motifs": [
+        "temple",
+        "civic",
+        "gallery",
+        "garden"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 125,
+      "title": "街頭圖鑑 05／12中正・紀念廣場紀念堂屋頂、對稱柱廊與階梯廣場，保留開闊的公共空間感。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300600",
+      "slug": "datong",
+      "client": 1265,
+      "motifs": [
+        "arcade",
+        "gallery",
+        "temple",
+        "civic"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 74,
+      "title": "街頭圖鑑 06／12大同・河港騎樓大稻埕碼頭的船帆、水紋與磚色山牆，連起老街拱廊意象。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300700",
+      "slug": "wanhua",
+      "client": 1265,
+      "motifs": [
+        "arcade",
+        "temple",
+        "civic"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 86,
+      "title": "街頭圖鑑 07／12萬華・廟埕老城龍山寺的燕尾屋脊、燈籠與廟埕階梯，搭配老城低層街廓。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300800",
+      "slug": "wenshan",
+      "client": 1265,
+      "motifs": [
+        "garden",
+        "tower",
+        "tea"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 122,
+      "title": "街頭圖鑑 08／12文山・綠丘茶徑動物園入口意象、丘陵等高紋、茶園植列與坡地小屋。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6300900",
+      "slug": "nangang",
+      "client": 1265,
+      "motifs": [
+        "office",
+        "music",
+        "tower"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 126,
+      "title": "街頭圖鑑 09／12南港・音樂稜線流行音樂中心的折面輪廓，延伸為金屬街廓與層次廣場。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6301000",
+      "slug": "neihu",
+      "client": 1265,
+      "motifs": [
+        "palace",
+        "office"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 124,
+      "title": "街頭圖鑑 10／12內湖・山城科技碧山巖的山寺輪廓，搭配玻璃辦公樓、綠坡與山城階線。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6301100",
+      "slug": "shilin",
+      "client": 1265,
+      "motifs": [
+        "palace",
+        "office",
+        "gallery"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 126,
+      "title": "街頭圖鑑 11／12士林・青瓦庭園故宮青瓦屋簷、對稱庭院與山麓植栽，形成庭園街景。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    },
+    {
+      "id": "6301200",
+      "slug": "beitou",
+      "client": 1265,
+      "motifs": [
+        "spring"
+      ],
+      "nodes": 5,
+      "scroll": 1265,
+      "sprites": 127,
+      "title": "街頭圖鑑 12／12北投・溫泉屋舍溫泉博物館的磚牆、斜瓦屋頂與蒸氣線條，融入綠坡步道。街景與連線為風格化示意；所有通行與成本以六角格為準。"
+    }
+  ],
+  "checks": [
+    {
+      "name": "night scenery switch preserves costs, selected node, preview and units",
+      "before": {
+        "unit": [
+          "樁黃若水鐵票樁腳 · 中山區11AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區14AP",
+          "草狂熱小草狂熱小草 · 松山區18AP"
+        ],
+        "preview": "taipei-hex-v1:-37,92",
+        "sprites": 118,
+        "nodes": 5
+      },
+      "off": {
+        "unit": [
+          "樁黃若水鐵票樁腳 · 中山區11AP",
+          "鍵鍵盤側翼鍵盤側翼 · 大同區14AP",
+          "草狂熱小草狂熱小草 · 松山區18AP"
+        ],
+        "preview": "taipei-hex-v1:-37,92",
+        "sprites": 0,
+        "nodes": 5
+      },
+      "restoredSprites": 118
+    },
+    {
+      "name": "English mobile night layers and no overflow",
+      "card": "STREET ATLAS 12 / 12Beitou · Steam & brickHot Spring Museum brickwork, pitched roofs and steam curls amid green slopes.Illustrated scenery and street links; hexes determine access and costs.",
+      "client": 360,
+      "layers": [
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-surface",
+          "width": 330.58929443359375
+        },
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-canvas canvas",
+          "width": 330.58929443359375
+        },
+        {
+          "height": 238.0178680419922,
+          "selector": ".hex-surface>svg",
+          "width": 330.58929443359375
+        }
+      ],
+      "night": 1,
+      "scroll": 360
+    },
+    {
+      "name": "mobile daytime after normal night settlement",
+      "night": 0,
+      "units": [
+        "HHuang RuoshuiIron Broker · Zhongshan District15AP",
+        "RKeyboard WingKeyboard Wing · Datong District15AP",
+        "SGrassbladeGrassblade · Songshan District19AP"
+      ],
+      "layout": {
+        "client": 360,
+        "scroll": 360
+      }
+    },
+    {
+      "name": "twelve English street atlas entries",
+      "cards": [
+        {
+          "id": "6300100",
+          "text": "STREET ATLAS 01 / 12\nSongshan · Lantern streets\n\nA market gateway, striped awnings and lanterns evoke the streets around Raohe Night Market.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300200",
+          "text": "STREET ATLAS 02 / 12\nXinyi · Vertical city\n\nTaipei 101’s stepped silhouette, glass towers, open plazas and street trees.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300300",
+          "text": "STREET ATLAS 03 / 12\nDaan · Under the canopy\n\nForest Park canopies and paths meet low-rise homes, planted verges and benches.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300400",
+          "text": "STREET ATLAS 04 / 12\nZhongshan · Art in the blocks\n\nThe Fine Arts Museum’s offset volumes, geometric sculpture and planted corners.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300500",
+          "text": "STREET ATLAS 05 / 12\nZhongzheng · Civic squares\n\nThe Memorial Hall roof, symmetrical colonnades and stepped public squares.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300600",
+          "text": "STREET ATLAS 06 / 12\nDatong · Port & arcades\n\nWharf sails and ripples join brick gables and old-street arcades.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300700",
+          "text": "STREET ATLAS 07 / 12\nWanhua · Temple courtyards\n\nLungshan Temple’s sweeping roofs, lanterns and courtyard steps among low-rise blocks.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300800",
+          "text": "STREET ATLAS 08 / 12\nWenshan · Green hills\n\nA zoo-inspired gateway, hill contours, tea planting and hillside cottages.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6300900",
+          "text": "STREET ATLAS 09 / 12\nNangang · Music skyline\n\nThe Music Center’s faceted profile inspires metal-clad blocks and layered plazas.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6301000",
+          "text": "STREET ATLAS 10 / 12\nNeihu · Hills & glass\n\nBishanyan’s hilltop temple meets glass offices, green slopes and terraced contours.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6301100",
+          "text": "STREET ATLAS 11 / 12\nShilin · Palace gardens\n\nPalace Museum rooflines, symmetrical courtyards and foothill planting.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        },
+        {
+          "id": "6301200",
+          "text": "STREET ATLAS 12 / 12\nBeitou · Steam & brick\n\nHot Spring Museum brickwork, pitched roofs and steam curls amid green slopes.\n\nIllustrated scenery and street links; hexes determine access and costs."
+        }
+      ]
+    },
+    {
+      "name": "mobile 2x zoom retains one aligned lattice",
+      "layout": {
+        "client": 360,
+        "layers": [
+          {
+            "height": 238.0178680419922,
+            "selector": ".hex-surface",
+            "width": 330.58929443359375
+          },
+          {
+            "height": 238.0178680419922,
+            "selector": ".hex-canvas canvas",
+            "width": 330.58929443359375
+          },
+          {
+            "height": 238.0178680419922,
+            "selector": ".hex-surface>svg",
+            "width": 330.58929443359375
+          }
+        ],
+        "scroll": 360
+      },
+      "unit": [
+        "HHuang RuoshuiIron Broker · Zhongshan District15AP",
+        "RKeyboard WingKeyboard Wing · Datong District15AP",
+        "SGrassbladeGrassblade · Songshan District19AP"
+      ]
+    },
+    {
+      "name": "final browser warnings and errors",
+      "logs": []
+    }
+  ]
+}

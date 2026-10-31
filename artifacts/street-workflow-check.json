@@ -1,0 +1,71 @@
+{
+  "version": "0.5.2",
+  "checks": [
+    {
+      "name": "preview has no cost, combined outreach spends displayed cost",
+      "before": {
+        "clock": "競選日\n01/ 28\n☀\n白天\n日夜共用 AP\n物資\n36\n可用志工\n6\n進入夜間 →",
+        "legs": 0,
+        "unit": "樁\n黃若水\n鐵票樁腳 · 中山區\n15\nAP"
+      },
+      "after": {
+        "caption": "社群舞台場地\n今日一般活動 1/2",
+        "clock": "競選日\n01/ 28\n☀\n白天\n日夜共用 AP\n物資\n35\n可用志工\n6\n進入夜間 →",
+        "legs": 1,
+        "preview": 0,
+        "progress": "本區掃街進度\n本局完成 1／5 點",
+        "summary": "目前隊員今日記錄 1 段步行；編號表示執行順序。",
+        "unit": "樁\n黃若水\n鐵票樁腳 · 中山區\n11\nAP"
+      }
+    },
+    {
+      "name": "daily cap and exhausted AP update available filter",
+      "text": "本區掃街進度\n本局完成 1／5 點\n\n只顯示你方紀錄。足跡含部署、移動與接駁抵達；勾選代表本局在此辦過活動。次數為今日一般活動，隔天歸零，舞台場次另計。\n\n目前 1 AP，可選 0 個掃街點\n\n依目前隊員與你方資源估算，一次執行一點；執行後會重新計算其他選項。\n\n全部\n本局未完成\n現在可掃街\n\n沒有符合條件的活動點；可切換篩選或隊員。"
+    },
+    {
+      "name": "language switch and reload preserve AP and ordered route",
+      "equal": true
+    },
+    {
+      "name": "narrow layout and aligned map",
+      "canvas": [
+        330.58929443359375,
+        238.0178680419922
+      ],
+      "columns": "304.589px",
+      "scroll": 360,
+      "surface": [
+        330.58929443359375,
+        238.0178680419922
+      ],
+      "svg": [
+        330.58929443359375,
+        238.0178680419922
+      ],
+      "width": 360
+    },
+    {
+      "name": "mobile night compound action and reload",
+      "apText": [
+        "HHuang RuoshuiIron Broker · Zhongshan District11AP",
+        "RKeyboard WingKeyboard Wing · Datong District14AP",
+        "SGrassbladeGrassblade · Songshan District18AP"
+      ],
+      "walks": 1,
+      "progress": "District canvassing progress\n2 / 5 locations completed\n\nOnly your faction’s records appear. Footprints include deployment, movement and charter arrivals. Checks mark locations where you held an activity. Counts are today’s ordinary activities, reset each morning; stage sessions are counted separately.\n\n11 AP remaining · Canvassing options: 5\n\nEstimates use the selected member and your resources. Choose one location at a time; other options update after each action.\n\nAll\nUnfinished\nAvailable now\n★ Taipei Fine Arts Museum\n✓ Ordinary activities today 1/2\n\nCanvass here: 2 AP / 1 material\n\nPreview route\nCanvass here\nMarket outreach\nNo activity yet · Today 0/2\n\nMove 1 AP + canvass 2 AP: 3 AP / 1 material total\n\nPreview route\nMove & canvass\nCommuter corner\nNo activity yet · Today 0/2\n\nCanvass here: 2 AP / 1 material\n\nPreview route\nCanvass here\nCommunity stage site\n✓ Activity recorded · Ordinary activities today 0/2\n\nMove 1 AP + canvass 2 AP: 3 AP / 1 material total\n\nPreview route\nMove & canvass\nNeighborhood stop\nNo activity yet · Today 0/2\n\nMove 1 AP + canvass 2 AP: 3 AP / 1 material total\n\nPreview route\nMove & canvass",
+      "materialsAfter": 41
+    },
+    {
+      "name": "final desktop Traditional Chinese filters and totals",
+      "progress": "本區掃街進度\n本局完成 2／5 點\n\n只顯示你方紀錄。足跡含部署、移動與接駁抵達；勾選代表本局在此辦過活動。次數為今日一般活動，隔天歸零，舞台場次另計。\n\n目前 11 AP，可選 5 個掃街點\n\n依目前隊員與你方資源估算，一次執行一點；執行後會重新計算其他選項。\n\n全部\n本局未完成\n現在可掃街\n★ 臺北市立美術館\n✓ 今日一般活動 1/2\n\n可在此掃街：2 AP／1 物資\n\n預覽路線\n在此掃街\n市場掃街點\n尚未活動 · 今日 0/2\n\n移動 1 AP＋掃街 2 AP，合計 3 AP／1 物資\n\n預覽路線\n前往並掃街\n通勤街口\n尚未活動 · 今日 0/2\n\n可在此掃街：2 AP／1 物資\n\n預覽路線\n在此掃街\n社群舞台場地\n✓ 本局已活動 · 今日一般活動 0/2\n\n移動 1 AP＋掃街 2 AP，合計 3 AP／1 物資\n\n預覽路線\n前往並掃街\n街坊拜訪點\n尚未活動 · 今日 0/2\n\n移動 1 AP＋掃街 2 AP，合計 3 AP／1 物資\n\n預覽路線\n前往並掃街",
+      "widths": {
+        "client": 1265,
+        "scroll": 1265
+      }
+    },
+    {
+      "name": "final browser warnings/errors",
+      "logs": []
+    }
+  ]
+}

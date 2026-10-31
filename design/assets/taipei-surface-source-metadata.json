@@ -1,0 +1,51 @@
+{
+  "provider": "Copernicus GLO-30 Public / AWS",
+  "model": "DSM",
+  "release": "2021",
+  "acquisition": "2011–2015 (older gap-fill possible)",
+  "nativeResolution": "1 arc-second (~30 m)",
+  "gridMetres": 30,
+  "verticalDatum": "EGM2008 (EPSG:3855)",
+  "retrievedAt": "2026-10-31T23:01:11.591212+00:00",
+  "sources": [
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N24_00_E121_00_DEM/Copernicus_DSM_COG_10_N24_00_E121_00_DEM.tif",
+      "sha256": "cdd4e1dc60a0da87a556e07e20f7c20b5dad21eca69e80aadff498743ea3f82f",
+      "bounds": [
+        120.99986111111112,
+        24.000138888888888,
+        121.99986111111112,
+        25.000138888888888
+      ],
+      "pixelDegrees": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Point"
+      }
+    },
+    {
+      "url": "https://copernicus-dem-30m.s3.amazonaws.com/Copernicus_DSM_COG_10_N25_00_E121_00_DEM/Copernicus_DSM_COG_10_N25_00_E121_00_DEM.tif",
+      "sha256": "e966d68a43d99fe09cf2df90a4cb888ac79e5ae400872eab91a01076fc9e8f2a",
+      "bounds": [
+        120.99986111111112,
+        25.000138888888888,
+        121.99986111111112,
+        26.000138888888888
+      ],
+      "pixelDegrees": [
+        0.0002777777777777778,
+        0.0002777777777777778
+      ],
+      "tags": {
+        "AREA_OR_POINT": "Point"
+      }
+    }
+  ],
+  "sourceSubsetSha256": "e6a5d0181e80ad15972ac5ddcee582773ec0f94161aa80a85847602992d1c776",
+  "datasetUrl": "https://registry.opendata.aws/copernicus-dem/",
+  "productUrl": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+  "licence": "Copernicus DEM licence, free GLO-30/GLO-90 use with attribution",
+  "processing": "Bilinear reprojection from EPSG:4326 to EPSG:3826 at 30 m, city mask, decimetre quantisation (max 0.05 m, not accuracy), hillshade and 50 m surface isolines. No bare-earth correction."
+}

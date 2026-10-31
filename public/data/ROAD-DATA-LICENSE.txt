@@ -1,0 +1,36 @@
+Taipei real road data / taipei-roads-v1.json.gz
+Copyright OpenStreetMap contributors. Database licensed under ODbL 1.0:
+https://opendatacommons.org/licenses/odbl/1-0/
+https://www.openstreetmap.org/copyright
+
+Source: Geofabrik Taiwan free shapefile extract, data as of 2026-10-29T21:21:26Z
+https://download.geofabrik.de/asia/taiwan-261029-free.shp.zip
+Retrieved: 2026-10-31. Source data is retained in this project's design/assets.
+
+Changes: selected road lines in the Taipei area, clipped to Taipei City official
+district boundaries, projected into EPSG:3826 with local origin E300000/N2800000
+and inverted northing for screen display, simplified by up to 1.5 m and rounded
+to 0.1 m, classified and indexed against the game hex grid.
+These precision settings are not survey accuracy claims.
+The derived road database is offered under ODbL 1.0.
+
+This notice applies to the road database, not to the game software or artwork.
+The source has no name:en, access, foot or motorroad fields. Geometry intersections
+are not proof of connectivity or pedestrian access. No navigation guarantee.
+
+
+v0.6 walking database / taipei-walk-network-v2.json.gz (ODbL 1.0)
+Download from data/taipei-walk-network-v2.json.gz beside this notice.
+Source: https://download.geofabrik.de/asia/taiwan-261029.osm.pbf
+Data as of 2026-10-29T21:21:26Z, retrieved 2026-10-31.
+Source node references, foot/access, name:en, bridge, tunnel, layer and
+oneway:foot tags supplement the earlier shapefile basemap. Missing tags stay
+unknown. Changes: city clipping, projected coordinates, explicit game walking
+eligibility, largest central strongly connected component, degree-two graph
+compression with retained geometry, 100 m tactical hex anchors and fictional
+activity sites. Software and artwork are not relicensed by this notice.
+Build source: design/assets/taipei-walk-source.json.gz; reproducible scripts:
+design/extract_walk_network.py, design/walk_policy.py,
+design/build_street_tactics.py. The source URL, hashes, source timestamp,
+policy and map revision are included in the downloadable derived database.
+The game assumption of walkability is not verified legal access or navigation.

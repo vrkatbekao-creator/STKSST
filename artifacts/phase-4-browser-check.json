@@ -1,0 +1,103 @@
+{
+  "version": "0.4.0",
+  "checkedOn": "2026-10-31",
+  "screenshots": {
+    "status": "captured-and-visually-reviewed",
+    "method": "Viewport capture; explicit clip at page origin for landing/mobile/night; full-page capture unreliable",
+    "files": [
+      "phase-4-landing.png",
+      "phase-4-tactics-viewport.png",
+      "phase-4-night.png",
+      "phase-4-mobile.png"
+    ]
+  },
+  "checks": [
+    {
+      "name": "landing",
+      "data": {
+        "choices": 3,
+        "header": "rgb(16, 29, 50)",
+        "primary": "rgb(36, 92, 225)",
+        "scroll": 1265,
+        "width": 1265
+      }
+    },
+    {
+      "name": "Jiang skill",
+      "before": "樁\n將千秋\n鐵票樁腳 · 中正區\n14\nAP",
+      "after": "樁\n將千秋\n鐵票樁腳 · 中正區\n12\nAP",
+      "detail": "◆\n將千秋\n重裝領主\n萬安警報\n\n花 2 AP，當日起三天免受動員力損耗，但必須留守；六天冷卻。\n\n萬安警報\n2 AP · 0 物資\n最早第 7 天可再次施放",
+      "reachable": 0
+    },
+    {
+      "name": "surprise mobilization",
+      "clock": "競選日\n01/ 28\n☀\n白天\n日夜共用 AP\n物資\n36\n可用志工\n5\n進入夜間 →",
+      "response": "志工已投入動員"
+    },
+    {
+      "name": "night",
+      "data": {
+        "night": true,
+        "rivalHeading": "rgb(237, 244, 255)",
+        "scroll": 1265,
+        "topicLabel": "rgb(191, 211, 239)",
+        "width": 1265
+      }
+    },
+    {
+      "name": "volunteer returns next morning",
+      "clock": "競選日\n02/ 28\n☀\n白天\n日夜共用 AP\n物資\n44\n可用志工\n6\n進入夜間 →",
+      "surpriseCount": 0
+    },
+    {
+      "name": "day14 poll",
+      "text": "陣營民調\n中正區\n藍方\n33.8%\n橙方\n66.2%\n截至第 13 天晚間結算\n\n民調為兩日一次的遊戲快照，不隨當日行動即時更新。"
+    },
+    {
+      "name": "day15 blackout and locale",
+      "beforeUnit": "樁\n將千秋\n鐵票樁腳 · 中正區\n14\nAP",
+      "afterUnit": "H\nJiang Qianqiu\nIron Broker · Zhongzheng District\n14\nAP",
+      "intel": "Street reports\nZhongzheng District\n\nReports from Zhongzheng District suggest Orange team has the stronger momentum.\n\nAs of the close of day 14\n\nDuring blackout, reports describe the previous night qualitatively. Scores are revealed after the final settlement.",
+      "data": {
+        "numericAria": false,
+        "percentInPage": false,
+        "supportTracks": 0
+      }
+    },
+    {
+      "name": "narrow viewport",
+      "data": {
+        "grid": "345.411px",
+        "scroll": 375,
+        "width": 375
+      }
+    },
+    {
+      "name": "day28 before final settlement",
+      "data": {
+        "percent": false,
+        "results": 0
+      }
+    },
+    {
+      "name": "final results",
+      "title": "Your opponent wins the city",
+      "data": {
+        "historyRows": 28,
+        "percent": true,
+        "resultText": "rgb(237, 244, 255)"
+      }
+    },
+    {
+      "name": "final CSS header and night roster contrast",
+      "data": {
+        "headerBackground": "rgb(16, 29, 50)",
+        "headerInk": "rgb(233, 240, 252)",
+        "selectedUnitBackground": "rgb(37, 76, 128)",
+        "selectedUnitInk": "rgb(243, 247, 255)"
+      },
+      "visualReview": "Final production landing and night screenshots opened and checked; night roster readable"
+    }
+  ],
+  "logs": []
+}

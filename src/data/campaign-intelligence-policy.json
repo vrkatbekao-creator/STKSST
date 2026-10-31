@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "status": "implemented_v0.5.0",
+  "maxDays": 28,
+  "polling": {
+    "intervalDays": 2,
+    "releaseDays": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      12,
+      14
+    ],
+    "releasePhase": "day_start",
+    "snapshot": "previous_day_end",
+    "scope": [
+      "city",
+      "district"
+    ],
+    "refreshOnAction": false,
+    "showSnapshotDate": true
+  },
+  "blackout": {
+    "lengthDays": 14,
+    "startDayInclusive": 15,
+    "endDayInclusive": 28,
+    "hideLiveSupportValues": true,
+    "hideLiveSupportPercentages": true,
+    "hideSupportDeltaValues": true,
+    "hideNumericPollHistoryUntilResult": true,
+    "applyTo": [
+      "hud",
+      "district_map",
+      "charts",
+      "action_previews",
+      "wonder_rewards",
+      "stage_rewards",
+      "logs",
+      "tooltips",
+      "accessibility_labels"
+    ],
+    "keepExact": [
+      "ap",
+      "fatigue",
+      "volunteers",
+      "materials",
+      "activity_costs",
+      "dates"
+    ]
+  },
+  "rumors": {
+    "releaseDays": [
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "releasePhase": "day_start",
+    "snapshot": "previous_day_end",
+    "scope": [
+      "city",
+      "district"
+    ],
+    "displayNumericMargins": false,
+    "refreshOnAction": false,
+    "randomizeOnLanguageSwitch": false,
+    "directionPolicy": "truthful_coarse_snapshot",
+    "bands": [
+      "neck_and_neck",
+      "slight_lead",
+      "clear_lead",
+      "insufficient_reports"
+    ],
+    "thresholdStatus": "balance_proposal",
+    "thresholds": {
+      "metric": "first_minus_second_support_divided_by_top_two_combined_support",
+      "slightLeadAtLeast": 0.03,
+      "clearLeadAtLeast": 0.08,
+      "zeroCombinedSupport": "insufficient_reports"
+    },
+    "templates": {
+      "neck_and_neck": {
+        "zh-TW": "{{area}}傳出領先陣營差距很小，勝負難料。",
+        "en": "Reports from {{area}} suggest the front-runners are close; the outcome remains uncertain."
+      },
+      "slight_lead": {
+        "zh-TW": "{{area}}的街頭消息稍微偏向{{leader}}，局勢仍可能改變。",
+        "en": "Street reports from {{area}} slightly favor {{leader}}, but things could still change."
+      },
+      "clear_lead": {
+        "zh-TW": "{{area}}傳來消息：{{leader}}近期聲勢較旺。",
+        "en": "Reports from {{area}} suggest {{leader}} has the stronger momentum."
+      },
+      "insufficient_reports": {
+        "zh-TW": "{{area}}還沒有足夠消息，暫時看不出誰占優勢。",
+        "en": "There are not enough reports from {{area}} to tell who has the edge."
+      }
+    }
+  },
+  "result": {
+    "revealActualSupport": true,
+    "revealOnlyAfterFinalSettlement": true,
+    "unlockPollHistory": true
+  }
+}

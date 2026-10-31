@@ -1,0 +1,221 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "id": "wonder_beitou_hot_spring_museum",
+      "properties": {
+        "id": "wonder_beitou_hot_spring_museum",
+        "districtId": "6301200",
+        "name_zh": "北投溫泉博物館",
+        "name_en": "Beitou Hot Spring Museum",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.50715,
+          25.13658
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_national_palace_museum",
+      "properties": {
+        "id": "wonder_national_palace_museum",
+        "districtId": "6301100",
+        "name_zh": "國立故宮博物院",
+        "name_en": "National Palace Museum",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.54849,
+          25.10236
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_bishanyan_temple",
+      "properties": {
+        "id": "wonder_bishanyan_temple",
+        "districtId": "6301000",
+        "name_zh": "碧山巖開漳聖王廟",
+        "name_en": "Bishanyan Kaizhang Shengwang Temple",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.58762,
+          25.09715
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_taipei_music_center",
+      "properties": {
+        "id": "wonder_taipei_music_center",
+        "districtId": "6300900",
+        "name_zh": "臺北流行音樂中心",
+        "name_en": "Taipei Music Center",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.598592,
+          25.052115
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_raohe_night_market",
+      "properties": {
+        "id": "wonder_raohe_night_market",
+        "districtId": "6300100",
+        "name_zh": "饒河街觀光夜市",
+        "name_en": "Raohe Street Night Market",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.57754,
+          25.05091
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_taipei_101",
+      "properties": {
+        "id": "wonder_taipei_101",
+        "districtId": "6300200",
+        "name_zh": "台北101",
+        "name_en": "Taipei 101",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.56476,
+          25.03361
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_daan_forest_park",
+      "properties": {
+        "id": "wonder_daan_forest_park",
+        "districtId": "6300300",
+        "name_zh": "大安森林公園",
+        "name_en": "Daan Forest Park",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5349,
+          25.03244
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_taipei_fine_arts_museum",
+      "properties": {
+        "id": "wonder_taipei_fine_arts_museum",
+        "districtId": "6300400",
+        "name_zh": "臺北市立美術館",
+        "name_en": "Taipei Fine Arts Museum",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.52437,
+          25.07196
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_dadaocheng_wharf",
+      "properties": {
+        "id": "wonder_dadaocheng_wharf",
+        "districtId": "6300600",
+        "name_zh": "大稻埕碼頭_大稻埕碼頭貨櫃市集",
+        "name_en": "Dadaocheng Wharf",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.50761,
+          25.0564
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_lungshan_temple",
+      "properties": {
+        "id": "wonder_lungshan_temple",
+        "districtId": "6300700",
+        "name_zh": "艋舺龍山寺",
+        "name_en": "Lungshan Temple",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.499863,
+          25.037316
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_chiang_kai_shek_memorial_hall",
+      "properties": {
+        "id": "wonder_chiang_kai_shek_memorial_hall",
+        "districtId": "6300500",
+        "name_zh": "國立中正紀念堂",
+        "name_en": "Chiang Kai-shek Memorial Hall",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.51868,
+          25.03619
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "wonder_taipei_zoo",
+      "properties": {
+        "id": "wonder_taipei_zoo",
+        "districtId": "6300800",
+        "name_zh": "臺北市立動物園",
+        "name_en": "Taipei Zoo",
+        "status": "researched_design_not_enabled"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          121.5811111,
+          24.9988889
+        ]
+      }
+    }
+  ]
+}

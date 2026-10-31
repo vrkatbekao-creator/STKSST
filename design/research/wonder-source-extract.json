@@ -1,0 +1,176 @@
+{
+  "dataset": {
+    "url": "https://data.gov.tw/dataset/7777",
+    "downloadUrl": "https://media.taiwan.net.tw/XMLReleaseAll_public/v2.0/Zh_tw/Attraction-json.zip",
+    "snapshotUpdateTime": "2026-10-31T02:30:03+08:00",
+    "archiveSha256": "ac4c19e2326e5ae62bd180da4c38330ce897e9967a988a04b61ac47073e585b4",
+    "license": "https://data.gov.tw/license"
+  },
+  "records": [
+    {
+      "AttractionID": "Attraction_379000000A_000033",
+      "AttractionName": "北投溫泉博物館",
+      "PositionLat": 25.13658,
+      "PositionLon": 121.50715,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "北投區",
+        "TownCode": "63000120",
+        "ZipCode": "112",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-20T16:29:19+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000019",
+      "AttractionName": "國立故宮博物院",
+      "PositionLat": 25.10236,
+      "PositionLon": 121.54849,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "士林區",
+        "TownCode": "63000110",
+        "ZipCode": "111",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-20T11:55:06+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000067",
+      "AttractionName": "碧山巖開漳聖王廟",
+      "PositionLat": 25.09715,
+      "PositionLon": 121.58762,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "內湖區",
+        "TownCode": "63000100",
+        "ZipCode": "114",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-20T14:26:44+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_002201",
+      "AttractionName": "臺北流行音樂中心",
+      "PositionLat": 25.052115,
+      "PositionLon": 121.598592,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "南港區",
+        "TownCode": "63000090",
+        "ZipCode": "115",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-06-25T10:51:00+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_001538",
+      "AttractionName": "饒河街觀光夜市",
+      "PositionLat": 25.05091,
+      "PositionLon": 121.57754,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "松山區",
+        "TownCode": "63000010",
+        "ZipCode": "105",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-10-20T18:08:34+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000217",
+      "AttractionName": "台北101",
+      "PositionLat": 25.03361,
+      "PositionLon": 121.56476,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "信義區",
+        "TownCode": "63000020",
+        "ZipCode": "110",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-10-21T11:50:32+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000190",
+      "AttractionName": "大安森林公園",
+      "PositionLat": 25.03244,
+      "PositionLon": 121.5349,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "大安區",
+        "TownCode": "63000030",
+        "ZipCode": "106",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-22T16:50:35+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000030",
+      "AttractionName": "臺北市立美術館",
+      "PositionLat": 25.07196,
+      "PositionLon": 121.52437,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "中山區",
+        "TownCode": "63000040",
+        "ZipCode": "104",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-20T16:34:30+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000001",
+      "AttractionName": "大稻埕碼頭_大稻埕碼頭貨櫃市集",
+      "PositionLat": 25.0564,
+      "PositionLon": 121.50761,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "大同區",
+        "TownCode": "63000060",
+        "ZipCode": "103",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-20T14:13:21+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000068",
+      "AttractionName": "艋舺龍山寺",
+      "PositionLat": 25.037316,
+      "PositionLon": 121.499863,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "萬華區",
+        "TownCode": "63000070",
+        "ZipCode": "108",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-10-20T18:08:14+08:00"
+    },
+    {
+      "AttractionID": "Attraction_379000000A_000023",
+      "AttractionName": "國立中正紀念堂",
+      "PositionLat": 25.03619,
+      "PositionLon": 121.51868,
+      "PostalAddress": {
+        "City": "臺北市",
+        "CityCode": "63000",
+        "Town": "中正區",
+        "TownCode": "63000050",
+        "ZipCode": "100",
+        "StreetAddress": null
+      },
+      "UpdateTime": "2026-05-22T12:00:23+08:00"
+    }
+  ]
+}

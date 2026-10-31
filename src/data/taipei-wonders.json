@@ -1,0 +1,798 @@
+{
+  "schemaVersion": 1,
+  "status": "implemented_v0.3.0_balance_draft",
+  "researchedOn": "2026-10-30",
+  "researchTimezone": "Europe/Brussels",
+  "coordinateSystem": "EPSG:4326",
+  "pointSemantics": "Representative landmark location, not an entrance, venue permit or stage placement.",
+  "balanceStatus": "draft_game_values_not_real_political_effects",
+  "supportVisibilityPolicy": "campaign-intelligence-policy.json",
+  "sourceDataset": {
+    "url": "https://data.gov.tw/dataset/7777",
+    "downloadUrl": "https://media.taiwan.net.tw/XMLReleaseAll_public/v2.0/Zh_tw/Attraction-json.zip",
+    "snapshotUpdateTime": "2026-10-31T02:30:03+08:00",
+    "archiveSha256": "ac4c19e2326e5ae62bd180da4c38330ce897e9967a988a04b61ac47073e585b4",
+    "license": "https://data.gov.tw/license"
+  },
+  "bonusRules": {
+    "supportUnit": "synthetic_support_points",
+    "baseBonus": 2,
+    "conditionalBonus": 2,
+    "maxPerWonderPerDay": 4,
+    "maxRewardedWondersPerTeamPerDay": 3,
+    "maxPerTeamPerDay": 12,
+    "settlement": "day_end",
+    "baseActionAP": 2,
+    "requires": [
+      "uncontested_control_at_settlement",
+      "staffed",
+      "eligible_action_completed_in_district"
+    ],
+    "contestedBonus": 0,
+    "canChangeOwner": true,
+    "stacking": "additive_no_recursive_multipliers",
+    "factionSymmetric": true,
+    "stageBrands": [
+      "治疏嶼",
+      "恰恰肥皂箱"
+    ]
+  },
+  "wonders": [
+    {
+      "id": "wonder_beitou_hot_spring_museum",
+      "districtId": "6301200",
+      "districtName": {
+        "zh-TW": "北投區",
+        "en": "Beitou District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "北投溫泉博物館",
+        "en": "Beitou Hot Spring Museum"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市北投區中山路2號"
+      },
+      "addressSourceUrl": "https://culture.gov.taipei/cp.aspx?n=680DE22A4F00B25F",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.50715,
+          25.13658
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000033",
+          "updatedAt": "2026-05-20T16:29:19+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "紅磚浴場、溫泉街與綠蔭。",
+        "en": "Red-brick bathhouse, hot spring streets and greenery."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "rest_then_outreach",
+        "effectName": {
+          "zh-TW": "溫泉街巡訪",
+          "en": "Hot Spring Walk"
+        },
+        "conditionDescription": {
+          "zh-TW": "休整後完成周邊掃街，額外 +2 支持點。",
+          "en": "Complete nearby canvassing after a rest action for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://culture.gov.taipei/cp.aspx?n=680DE22A4F00B25F",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_national_palace_museum",
+      "districtId": "6301100",
+      "districtName": {
+        "zh-TW": "士林區",
+        "en": "Shilin District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "國立故宮博物院",
+        "en": "National Palace Museum"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市士林區至善路二段221號"
+      },
+      "addressSourceUrl": "https://www.npm.gov.tw/",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.54849,
+          25.10236
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000019",
+          "updatedAt": "2026-05-20T11:55:06+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "文博園區與山麓地景。",
+        "en": "Museum grounds and foothill scenery."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "policy_forum",
+        "effectName": {
+          "zh-TW": "文博交流",
+          "en": "Cultural Exchange"
+        },
+        "conditionDescription": {
+          "zh-TW": "完成政策問答活動，額外 +2 支持點。",
+          "en": "Complete a policy Q&A activity for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.npm.gov.tw/",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_bishanyan_temple",
+      "districtId": "6301000",
+      "districtName": {
+        "zh-TW": "內湖區",
+        "en": "Neihu District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "碧山巖開漳聖王廟",
+        "en": "Bishanyan Kaizhang Shengwang Temple"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市內湖區碧山路24號"
+      },
+      "addressSourceUrl": "https://www.taiwan.net.tw/m1.aspx?id=36833&sno=0001090",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.58762,
+          25.09715
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000067",
+          "updatedAt": "2026-05-20T14:26:44+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "山城廟宇與眺望台北的視野。",
+        "en": "Hillside temple and views across Taipei."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "connected_route",
+        "effectName": {
+          "zh-TW": "山城連線",
+          "en": "Hillside Route"
+        },
+        "conditionDescription": {
+          "zh-TW": "當日走訪兩個不同的相連街區節點，額外 +2 支持點。",
+          "en": "Visit two different linked neighborhood nodes that day for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.taiwan.net.tw/m1.aspx?id=36833&sno=0001090",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_taipei_music_center",
+      "districtId": "6300900",
+      "districtName": {
+        "zh-TW": "南港區",
+        "en": "Nangang District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "臺北流行音樂中心",
+        "en": "Taipei Music Center"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市南港區市民大道八段99號"
+      },
+      "addressSourceUrl": "https://www.tmc.taipei/tw/venue-transportation",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.598592,
+          25.052115
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_002201",
+          "updatedAt": "2026-06-25T10:51:00+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "展演建築與流行音樂文化。",
+        "en": "Performance architecture and pop music culture."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "community_stage_event",
+        "effectName": {
+          "zh-TW": "音樂聚場",
+          "en": "Music Gathering"
+        },
+        "conditionDescription": {
+          "zh-TW": "在本區任一已駐點社群舞台完成活動，額外 +2 支持點。",
+          "en": "Complete an event at either staffed community stage in this district for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.tmc.taipei/tw/venue-transportation",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_raohe_night_market",
+      "districtId": "6300100",
+      "districtName": {
+        "zh-TW": "松山區",
+        "en": "Songshan District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "饒河街觀光夜市",
+        "en": "Raohe Street Night Market"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市松山區饒河街（八德路四段至撫遠街一帶）"
+      },
+      "addressSourceUrl": "https://www.tcma.gov.taipei/News_Content.aspx?n=FAC14AD2DE4E01A4&s=0CFD6ED2C96E9CC4&sms=32F7BA052C5CA548",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.57754,
+          25.05091
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_001538",
+          "updatedAt": "2026-10-20T18:08:34+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "夜市招牌、攤位與巷口人流。",
+        "en": "Night-market signs, stalls and street entrances."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "night_canvassing",
+        "effectName": {
+          "zh-TW": "夜市人潮",
+          "en": "Night Market Route"
+        },
+        "conditionDescription": {
+          "zh-TW": "晚上完成周邊掃街，額外 +2 支持點。",
+          "en": "Complete nearby canvassing at night for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.tcma.gov.taipei/News_Content.aspx?n=FAC14AD2DE4E01A4&s=0CFD6ED2C96E9CC4&sms=32F7BA052C5CA548",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_taipei_101",
+      "districtId": "6300200",
+      "districtName": {
+        "zh-TW": "信義區",
+        "en": "Xinyi District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "台北101",
+        "en": "Taipei 101"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市信義區信義路五段7號"
+      },
+      "addressSourceUrl": "https://www.travel.taipei/zh-tw/attraction/details/217",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.56476,
+          25.03361
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000217",
+          "updatedAt": "2026-10-21T11:50:32+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "摩天樓天際線與信義商圈。",
+        "en": "Skyscraper skyline and Xinyi shopping streets."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "livestream",
+        "effectName": {
+          "zh-TW": "城市焦點",
+          "en": "City Spotlight"
+        },
+        "conditionDescription": {
+          "zh-TW": "在周邊節點完成直播宣傳行動，額外 +2 支持點。",
+          "en": "Complete a livestream outreach action at a nearby node for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.travel.taipei/zh-tw/attraction/details/217",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_daan_forest_park",
+      "districtId": "6300300",
+      "districtName": {
+        "zh-TW": "大安區",
+        "en": "Daan District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "大安森林公園",
+        "en": "Daan Forest Park"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市大安區新生南路二段1號"
+      },
+      "addressSourceUrl": "https://www.travel.taipei/zh-tw/attraction/details/190",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.5349,
+          25.03244
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000190",
+          "updatedAt": "2026-05-22T16:50:35+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "都市綠地、步道與公園生活。",
+        "en": "Urban greenery, footpaths and park life."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "day_canvassing",
+        "effectName": {
+          "zh-TW": "綠蔭走訪",
+          "en": "Park Walk"
+        },
+        "conditionDescription": {
+          "zh-TW": "白天完成周邊掃街，額外 +2 支持點。",
+          "en": "Complete nearby canvassing by day for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.travel.taipei/zh-tw/attraction/details/190",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_taipei_fine_arts_museum",
+      "districtId": "6300400",
+      "districtName": {
+        "zh-TW": "中山區",
+        "en": "Zhongshan District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "臺北市立美術館",
+        "en": "Taipei Fine Arts Museum"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市中山區中山北路三段181號"
+      },
+      "addressSourceUrl": "https://www.tfam.museum/Common/editor.aspx?ddlLang=zh-tw&id=230",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.52437,
+          25.07196
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000030",
+          "updatedAt": "2026-05-20T16:34:30+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "現代美術館及周邊藝文空間。",
+        "en": "Modern art museum and nearby cultural spaces."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "culture_exchange",
+        "effectName": {
+          "zh-TW": "藝文串聯",
+          "en": "Arts Connection"
+        },
+        "conditionDescription": {
+          "zh-TW": "完成文化交流主題活動，額外 +2 支持點。",
+          "en": "Complete an arts-and-culture activity for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.tfam.museum/Common/editor.aspx?ddlLang=zh-tw&id=230",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_dadaocheng_wharf",
+      "districtId": "6300600",
+      "districtName": {
+        "zh-TW": "大同區",
+        "en": "Datong District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "大稻埕碼頭_大稻埕碼頭貨櫃市集",
+        "en": "Dadaocheng Wharf"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市大同區大稻埕碼頭"
+      },
+      "addressSourceUrl": "https://www.travel.taipei/zh-tw/attraction/details/1",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.50761,
+          25.0564
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000001",
+          "updatedAt": "2026-05-20T14:13:21+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "淡水河岸碼頭與大稻埕街區。",
+        "en": "Tamsui River waterfront and Dadaocheng streets."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "market_to_wharf_route",
+        "effectName": {
+          "zh-TW": "河岸商街",
+          "en": "Riverside Connection"
+        },
+        "conditionDescription": {
+          "zh-TW": "當日完成市場與河岸兩類節點的連線走訪，額外 +2 支持點。",
+          "en": "Visit linked market and riverside nodes that day for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.travel.taipei/zh-tw/attraction/details/1",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_lungshan_temple",
+      "districtId": "6300700",
+      "districtName": {
+        "zh-TW": "萬華區",
+        "en": "Wanhua District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "艋舺龍山寺",
+        "en": "Lungshan Temple"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市萬華區廣州街211號"
+      },
+      "addressSourceUrl": "https://www.travel.taipei/zh-tw/attraction/details/68",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.499863,
+          25.037316
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000068",
+          "updatedAt": "2026-10-20T18:08:14+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "古蹟廟宇與艋舺老街生活。",
+        "en": "Historic temple and Monga neighborhood streets."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "neighborhood_visit",
+        "effectName": {
+          "zh-TW": "艋舺街坊",
+          "en": "Monga Neighborhood"
+        },
+        "conditionDescription": {
+          "zh-TW": "完成地方服務或街坊拜訪行動，額外 +2 支持點。",
+          "en": "Complete a neighborhood visit or local-service action for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.travel.taipei/zh-tw/attraction/details/68",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_chiang_kai_shek_memorial_hall",
+      "districtId": "6300500",
+      "districtName": {
+        "zh-TW": "中正區",
+        "en": "Zhongzheng District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "國立中正紀念堂",
+        "en": "Chiang Kai-shek Memorial Hall"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市中正區中山南路21號"
+      },
+      "addressSourceUrl": "https://www.travel.taipei/zh-tw/attraction/details/23",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.51868,
+          25.03619
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_dataset",
+          "sourceUrl": "https://data.gov.tw/dataset/7777",
+          "sourceRecordId": "Attraction_379000000A_000023",
+          "updatedAt": "2026-05-22T12:00:23+08:00"
+        }
+      },
+      "setting": {
+        "zh-TW": "紀念園區、廣場與兩廳院地景。",
+        "en": "Memorial grounds, plazas and performing-arts landmarks."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "scheduled_policy_presentation",
+        "effectName": {
+          "zh-TW": "城市議壇",
+          "en": "City Forum"
+        },
+        "conditionDescription": {
+          "zh-TW": "參與已排程的政見發表會，額外 +2 支持點（計入本區）。",
+          "en": "Participate in a scheduled policy presentation for +2 extra support points in this district."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://data.gov.tw/dataset/7777",
+          "supports": "official coordinates, record identity and district"
+        },
+        {
+          "url": "https://www.travel.taipei/zh-tw/attraction/details/23",
+          "supports": "address and landmark identity"
+        }
+      ]
+    },
+    {
+      "id": "wonder_taipei_zoo",
+      "districtId": "6300800",
+      "districtName": {
+        "zh-TW": "文山區",
+        "en": "Wenshan District"
+      },
+      "nodeType": "wonder",
+      "name": {
+        "zh-TW": "臺北市立動物園",
+        "en": "Taipei Zoo"
+      },
+      "englishNameStatus": "working_ui_label_pending_localization_review",
+      "address": {
+        "zh-TW": "臺北市文山區新光路二段30號"
+      },
+      "addressSourceUrl": "https://www.zoo.gov.taipei/News_Content.aspx?n=9F0E68F3EC5B5751&s=01BD7568D718DAED&sms=F3B2EF982C0582B3",
+      "geography": {
+        "type": "Point",
+        "coordinates": [
+          121.5811111,
+          24.9988889
+        ],
+        "precision": "representative_point",
+        "source": {
+          "type": "official_venue_page",
+          "sourceUrl": "https://www.zoo.gov.taipei/News_Content.aspx?n=9F0E68F3EC5B5751&s=01BD7568D718DAED&sms=F3B2EF982C0582B3",
+          "sourceCoordinateText": "+24° 59′ 56″, +121° 34′ 52″",
+          "conversion": "DMS to decimal degrees; no geocoding estimate"
+        }
+      },
+      "setting": {
+        "zh-TW": "動物保育園區與文山山麓。",
+        "en": "Wildlife conservation grounds and Wenshan foothills."
+      },
+      "gameplay": {
+        "baseBonus": 2,
+        "conditionalBonus": 2,
+        "conditionId": "environment_activity",
+        "effectName": {
+          "zh-TW": "生態共學",
+          "en": "Ecology Exchange"
+        },
+        "conditionDescription": {
+          "zh-TW": "完成環境或保育主題活動，額外 +2 支持點。",
+          "en": "Complete an environment or conservation activity for +2 extra support points."
+        },
+        "bonusScope": "own_district",
+        "factionRestriction": null,
+        "siteEndorsementAssumed": false,
+        "physicalStagePlacement": "separate_fictional_nearby_node"
+      },
+      "sources": [
+        {
+          "url": "https://www.zoo.gov.taipei/News_Content.aspx?n=9F0E68F3EC5B5751&s=01BD7568D718DAED&sms=F3B2EF982C0582B3",
+          "supports": "official coordinates and address"
+        },
+        {
+          "url": "https://www.zoo.gov.taipei/News_Content.aspx?n=9F0E68F3EC5B5751&s=01BD7568D718DAED&sms=F3B2EF982C0582B3",
+          "supports": "address and landmark identity"
+        }
+      ]
+    }
+  ]
+}

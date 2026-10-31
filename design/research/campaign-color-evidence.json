@@ -1,0 +1,87 @@
+{
+  "checkedOn": "2026-10-31",
+  "timezone": "Europe/Brussels",
+  "electionYear": 2026,
+  "registrationSource": {
+    "url": "https://web.cec.gov.tw/mect/article/64441",
+    "pdf": "https://web.cec.gov.tw/api/file/7d199a34-2eb9-47df-9059-4992778b0b8f.pdf",
+    "publishedOn": "2026-09-04"
+  },
+  "registeredNames": [
+    "郭璽",
+    "沈伯洋",
+    "蕭文乾",
+    "唐新民",
+    "蔣萬安",
+    "林志成"
+  ],
+  "colorFindings": [
+    {
+      "candidate": "蔣萬安",
+      "colors": [
+        "blue",
+        "yellow"
+      ],
+      "source": "https://news.tvbs.com.tw/politics/4029117",
+      "publishedOn": "2026-09-29",
+      "authority": "report_quoting_campaign_spokesperson",
+      "gameApproximation": [
+        "#245CE1",
+        "#FFD34E"
+      ],
+      "officialHexVerified": false,
+      "sampledFromImage": false
+    },
+    {
+      "candidate": "沈伯洋",
+      "colors": [
+        "warm_orange",
+        "pink",
+        "white"
+      ],
+      "source": "https://puma.taipei/build/assets/puma-CSdxNY53.css",
+      "referencedBy": "https://puma.taipei/",
+      "publishedOn": null,
+      "authority": "first_party_site_css_not_print_ci",
+      "observedCss": {
+        "--brand-primary": "#db6a41",
+        "--brand-orange": "#df7e2c",
+        "--brand-pink": "#e18a81",
+        "--brand-white": "#fff"
+      },
+      "launchReport": "https://www.cna.com.tw/news/aloc/202608040069.aspx",
+      "launchReportPublishedOn": "2026-08-04"
+    },
+    {
+      "candidate": "郭璽",
+      "status": "insufficient_first_party_campaign_palette_evidence",
+      "officialHexVerified": false
+    },
+    {
+      "candidate": "蕭文乾",
+      "status": "insufficient_first_party_campaign_palette_evidence",
+      "officialHexVerified": false
+    },
+    {
+      "candidate": "唐新民",
+      "status": "insufficient_first_party_campaign_palette_evidence",
+      "officialHexVerified": false
+    },
+    {
+      "candidate": "林志成",
+      "status": "insufficient_first_party_campaign_palette_evidence",
+      "officialHexVerified": false
+    }
+  ],
+  "snapshots": [
+    {
+      "path": "design/research/puma-official-2026-10-31.html",
+      "sha256": "d3d87abae4e2b380506f81e687451953175b27c9a43de2cfd835ad9fb3b346c0"
+    },
+    {
+      "path": "design/research/puma-official-palette.css",
+      "sha256": "e468083fe3f575c9dcafb15eb4fc195b5d71b4911e4461afb17238b94f397f7e"
+    }
+  ],
+  "runtimeNewsRequests": false
+}

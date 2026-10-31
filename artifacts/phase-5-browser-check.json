@@ -1,0 +1,202 @@
+{
+  "version": "0.5.0",
+  "checks": [
+    {
+      "name": "white actions autosave",
+      "badge": "你操作：白方",
+      "clock": "競選日\n01/ 28\n☀\n白天\n日夜共用 AP\n物資\n34\n可用志工\n6\n進入夜間 →",
+      "event": "!\n十月驚奇\n中山區\n街頭謠言風暴\n\n本區一般活動反應減弱。應變準備可釐清誤會、消除影響；也可選志工動員。\n\n虛構街頭事件 · 只影響今日 · 雙方各可回應一次\n已安排應變準備",
+      "journal": "競選紀錄\n語言切換不影響局勢\n03\n\n白方完成休整。\n\n02\n\n白方完成街頭事件應變。\n\n01\n\n競選開始。候選人、信使與街頭志工已就位。",
+      "status": "進度已存於此瀏覽器；每次成功行動與日夜切換後自動保存。",
+      "unit": "樁\n黃若水\n鐵票樁腳 · 中山區\n10\nAP"
+    },
+    {
+      "name": "reload and canceled overwrite preserve exact visible state",
+      "equal": true
+    },
+    {
+      "name": "white movement and bilingual polling",
+      "clock": "DAY\n02/ 28\n☀\nDaytime\nAP carries into the night\nMaterials\n42\nAvailable volunteers\n6\nEnter the night →",
+      "marker": "translate(2398.6,25550)",
+      "status": "Progress is saved in this browser, automatically after each successful action and phase change.",
+      "unit": "H\nHuang Ruoshui\nIron Broker · Datong District\n12\nAP"
+    },
+    {
+      "name": "save and menu resumes movement",
+      "equal": true
+    },
+    {
+      "name": "narrow English continuation",
+      "viewportRequested": 375,
+      "cssWidth": 360,
+      "documentWidth": 360,
+      "oneColumn": true
+    },
+    {
+      "name": "night2 to day15 via UI with autosave",
+      "trace": [
+        {
+          "day": 3,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 3,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 4,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 4,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 5,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 5,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 6,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 6,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 7,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 7,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 8,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 8,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 9,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 9,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 10,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 10,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 11,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 11,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 12,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 12,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 13,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 13,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 14,
+          "night": false,
+          "saveError": false
+        },
+        {
+          "day": 14,
+          "night": true,
+          "saveError": false
+        },
+        {
+          "day": 15,
+          "night": false,
+          "saveError": false
+        }
+      ],
+      "blackout": {
+        "clock": "DAY\n15/ 28\n☀\nDaytime\nAP carries into the night\nMaterials\n146\nAvailable volunteers\n6\nEnter the night →",
+        "intel": "Street reports\nZhongshan District\n\nWord from Zhongshan District is that the two sides are neck and neck.\n\nAs of the close of day 14\n\nDuring blackout, reports describe the previous night qualitatively. Scores are revealed after the final settlement.",
+        "percent": false,
+        "status": "Progress is saved in this browser, automatically after each successful action and phase change.",
+        "tracks": 0
+      }
+    },
+    {
+      "name": "day15 blackout reload",
+      "equal": true
+    },
+    {
+      "name": "three-sided final settlement",
+      "columns": 4,
+      "heading": "Your opponent wins the city",
+      "historyRows": 28,
+      "points": "Blue 3137 points / Orange 2872 points / White 1200 points",
+      "status": "Progress is saved in this browser, automatically after each successful action and phase change."
+    },
+    {
+      "name": "Orange faction skill and save",
+      "badge": "Your faction: Orange team",
+      "skills": "◉\nShen Boyan\nSignal Mage\nCountercurrent\n\nSpend 4 AP to disrupt rival rallies citywide through tomorrow. Rivals may still move and canvass. Create a local flank hotspot that settles once tonight. Six-day cooldown.\n\nCountercurrent\n4 AP · 0 materials\nReady from day 7",
+      "status": "Progress is saved in this browser, automatically after each successful action and phase change.",
+      "unit": "R\nShen Boyan\nKeyboard Wing · Neihu District\n11\nAP"
+    },
+    {
+      "name": "Orange reload preserves AP and cooldown",
+      "equal": true
+    },
+    {
+      "name": "Blue commander",
+      "apAfterSkill": 12,
+      "skillReadyDay": 7
+    }
+  ],
+  "logs": []
+}

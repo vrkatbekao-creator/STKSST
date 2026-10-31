@@ -1,0 +1,5 @@
+name = "ui_dev"
+description = "Implement React interface and connect it to game state."
+developer_instructions = """
+Follow AGENTS.md and PHASE-3-SPEC.md and the agreed state contract. Build accessible responsive React UI in the campaign-news visual style. Use translation keys for all player-facing text and avoid duplicating authoritative game state. Coordinate shared files and verify assigned behavior.
+"""

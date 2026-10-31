@@ -1,0 +1,9 @@
+node_modules/
+.tools/
+design/research/attractions-source.zip
+design/research/puma-official*
+dist/
+.env
+.env.*
+!.env.example
+*.local

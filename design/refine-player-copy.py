@@ -18,6 +18,8 @@ m_previewNote m_voiceNote m_credits m_sources m_sourceOcean m_sourceBlue m_sourc
 d_fictional c_progressHelp c_planBudgetHelp g_explain c_edition c_trailHelp'''.split()
 removed += [f'c_sceneBody_{n}' for n in range(6300100,6301201,100)]
 copy = {
+ 'c_brand_island': ('治疏嶼','Governance Isle'),
+ 'c_buildHelp': ('治疏嶼需兩天準備，恰恰肥皂箱需一天；開放後須派員，再主動舉辦場次。','Governance Isle takes two days to prepare; Cha-Cha Soapbox takes one. Staff the stage once open, then actively run events.'),
  'p_credits': ('圖資署名','Map credits'),
  'p_mapDisplay': ('地圖顯示','Map display'),
  'c_footer': ('選戰騎士團 · 首都篇 · v0.15.0','Campaign Knights · Capital Edition · v0.15.0'),
@@ -67,7 +69,7 @@ guide = [
  ('掃街與拜訪通常花 2 AP、1 物資。同一活動點每天最多兩次，第二次效果較少。','Outreach and visits normally cost 2 AP and 1 material. Each location allows two visits per day, with a smaller second reward.'),
  ('疲勞會降低隔日 AP。休整可恢復動員力、士氣與健康；留意隊員狀態。','Fatigue reduces next-day AP. Rest restores mobilization, morale and health; watch your team’s condition.'),
  ('跨區接駁每人每日一次，花 6 AP、4 物資並增加疲勞。在地區選單選好目的區再出發。','Each member can transfer districts once daily for 6 AP and 4 materials, gaining fatigue. Choose the destination district before departing.'),
- ('設立治疏嶼或恰恰肥皂箱，完工後派駐志工並主動辦場。每座舞台每日一場。','Build 治疏嶼 or Cha-Cha Soapbox, assign a volunteer after completion, then host an event. Each stage allows one event per day.'),
+ ('設立治疏嶼或恰恰肥皂箱，完工後派駐志工並主動辦場。每座舞台每日一場。','Build Governance Isle or Cha-Cha Soapbox, assign a volunteer after completion, then host an event. Each stage allows one event per day.'),
  ('Wonder 加成需要穩定控制、隊員駐守及當日在該區活動。可調整優先順序，每天最多結算三個。','Wonder bonuses require uncontested control, a guarding member and activity in the district that day. Set priorities; at most three pay out daily.'),
  ('鐵票樁腳剋鍵盤側翼、側翼剋狂熱小草、小草剋樁腳。動員力耗盡的隊員翌日返回基地。','Heavy beats ranged, ranged beats scout, and scout beats heavy. Exhausted members return to base the next day.'),
  ('重裝可駐守、遠程可範圍宣講、刺客可繞背。技能先查看成本、範圍與冷卻，再選擇目標。','Heavy units can guard, ranged units affect an area, and scouts can flank. Check costs, range and cooldowns before choosing a target.'),

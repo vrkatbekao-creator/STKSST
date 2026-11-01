@@ -44,9 +44,9 @@ test('save round-trip retains class abilities, stage staffing, event response, s
  const restored=decodeSave(JSON.stringify(encodeSave(session(g))));assert.equal(restored.error,null);assert.deepEqual(restored.save.session.game,g);
 });
 test('corrupt, incompatible and structurally invalid saves are rejected without overwriting bytes',()=>{
- const storage=memory(),good=JSON.stringify(encodeSave(session(initialCampaign())));for(const raw of ['{broken',good.replace('"ap":14','"ap":13'),good.replace('"version":1','"version":99')]){storage.setItem(SAVE_KEY,raw);assert.equal(readSave(storage).save,null);assert.equal(storage.getItem(SAVE_KEY),raw);}
+ const storage=memory(),good=JSON.stringify(encodeSave(session(initialCampaign())));for(const raw of ['{broken',good.replace('"ap":14','"ap":13'),good.replace('"version":3','"version":99')]){storage.setItem(SAVE_KEY,raw);assert.equal(readSave(storage).save,null);assert.equal(storage.getItem(SAVE_KEY),raw);}
  for(const change of [s=>s.game.day=99,s=>s.game.units[0].cellId='missing',s=>delete s.game.support[districts[0].id].white,s=>s.selected='green1',s=>s.game.history.push({day:1,support:s.game.support})]){const s=session(initialCampaign());change(s);assert.equal(validSession(s),false);assert.throws(()=>encodeSave(s));}
- assert.equal(decodeSave(good.replace('"version":1','"version":2')).error,'c_saveIncompatible');
+ assert.equal(decodeSave(good.replace('"version":3','"version":2')).error,'c_saveIncompatible');
 });
 test('store startup offers continuation without silently starting or modifying the saved game',()=>{
  const storage=memory(),store=createCampaignStore(storage);const originalSeed=store.getState().game.seed;store.getState().faction('white');assert.equal(store.getState().game.seed,originalSeed);assert.equal(store.getState().selected,'white1');store.getState().commander('shen');store.getState().start();store.getState().dispatch({type:'rest',unitId:'white1'});store.getState().end();const before=structuredClone(session(store.getState().game));before.selected=store.getState().selected;before.districtId=store.getState().districtId;before.view=store.getState().view;

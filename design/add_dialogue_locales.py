@@ -63,3 +63,4 @@ for topic,(zh,en) in subjects.items():
 for i,lang in enumerate(['zh-TW','en']):
  p=ROOT/'src/locales'/f'{lang}.json';d=json.loads(p.read_text('utf8'));d.update({k:v[i] for k,v in entries.items()});p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n','utf8')
 print(f'Updated {len(entries)} dialogue entries.')
+exec((ROOT/'design/add_growth_locales.py').read_text(encoding='utf8'))

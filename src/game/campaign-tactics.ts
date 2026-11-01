@@ -2,13 +2,14 @@ import type { Campaign,CampaignUnit } from './campaign.ts';
 import type { Role } from './level.ts';
 import type { Team } from './campaign-teams.ts';
 import { mapFor, allCells as cells,hexDistance } from './campaign-map.ts';
+import { career,capacity } from './campaign-growth.ts';
 export const commanders={
  jiang:{role:'heavy' as Role,ap:2,cooldown:6},
  shen:{role:'ranged' as Role,ap:4,cooldown:6},
  huang:{role:'heavy' as Role,ap:3,cooldown:6},
 };
 export type CommanderId=keyof typeof commanders;
-export const unitAvailable=(g:Campaign,u:CampaignUnit)=>u.withdrawUntil<=g.day&&u.mobilization>0;
+export const unitAvailable=(g:Campaign,u:CampaignUnit)=>u.withdrawUntil<=g.day&&u.mobilization>0&&career(u).health>0;
 export const unitGuarded=(g:Campaign,u:CampaignUnit)=>u.guardedUntil>=g.day;
 export const isCommander=(u:CampaignUnit)=>u.id===`${u.team}1`;
 export const confused=(g:Campaign,u:CampaignUnit)=>u.confusedUntil>=g.day;
@@ -24,6 +25,7 @@ export function competitionPreview(g:Campaign,a:CampaignUnit,b:CampaignUnit,kind
  let power=Math.floor((kind==='broadcast'?2:a.role==='heavy'?4:3)*(advantage?1.5:1));
  const rear=kind==='backstab'&&a.role==='scout'&&behind(a,b);
  if(rear)power=Math.floor(power*1.5);
+ const advancement=Math.floor((career(a).level-1)/2),morale=career(a).morale>=80?1:career(a).morale<=25?-1:0;power=Math.max(1,power+advancement+morale);
  const armor=b.role==='heavy'?1:0;
  const braced=b.bracedUntil>=g.day?2:0;
  power=Math.max(1,power-armor-braced);
@@ -36,6 +38,6 @@ export function chooseCommander(original:Campaign,id:CommanderId,team:Team=origi
  if(!(id in commanders)||original.day!==1||original.phase!=='day'||original.actions||original.result)return original;
  const g=structuredClone(original);g.commanders[team]=id;const leader=g.units.find(u=>isCommander(u)&&u.team===team)!;const role=commanders[id].role;
  const swap=g.units.find(u=>u.team===team&&u.id!==leader.id&&u.role===role);if(swap)swap.role=leader.role;leader.role=role;
- for(const u of g.units.filter(u=>u.team===team)){u.maxAp=u.role==='scout'?18:14;u.ap=u.maxAp+(g.news==='volunteers'?1:0);}
+ for(const u of g.units.filter(u=>u.team===team)){u.maxAp=capacity(u);u.ap=u.maxAp+(g.news==='volunteers'?1:0);}
  return g;
 }

@@ -17,6 +17,8 @@ export { chooseCommander, skillCost, isCommander, unitAvailable, unitGuarded, ca
 export type { Role } from './level.ts';
 export type { Team } from './campaign-teams.ts';
 export { teams,campaignOutcome } from './campaign-teams.ts';
+import { makeTalk,answerTalk,talkStep,reportTalk,talkReward,aiReply,replies } from './campaign-dialogue.ts';
+import type { Talk,TalkReport,Reply } from './campaign-dialogue.ts';
 export type Support=Record<string,Record<Team,number>>;
 export type CampaignUnit={id:string;team:Team;role:Role;cellId:string;ap:number;maxAp:number;mobilization:number;fatigue:number;withdrawUntil:number;guardedUntil:number;skillReadyDay:number;transportDay:number;facing:number;bracedUntil:number;confusedUntil:number};
 export type Stage={nodeId:string;team:Team;brand:'island'|'soapbox';openDay:number;staffed:boolean;lastEventDay:number};
@@ -24,8 +26,11 @@ export type CampaignLog={key:string;values:Record<string,string|number>};
 type Activity={nodes:string[];kinds:string[];rested:boolean;afterRest:boolean};
 type NodeState={influence:Record<Team,number>;visits:Record<Team,number>;active:Record<Team,boolean>};
 export type Snapshot={releasedDay:number;asOfDay:number;support:Support};
-export type Campaign={movementProfile?:MovementProfile;trail?:CampaignTrail;playerTeam:Team;day:number;phase:'day'|'night';seed:number;news:'rain'|'market'|'volunteers'|'clear';surprise:Surprise|null;commanders:Record<Team,CommanderId>;talkZones:{cellId:string;untilDay:number}[];surges:{team:Team;cellId:string;day:number}[];flash:CampaignLog|null;units:CampaignUnit[];resources:Record<Team,{materials:number;volunteers:number}>;support:Support;nodeState:Record<string,NodeState>;stages:Stage[];activity:Record<string,Record<Team,Activity>>;wonderPriority:Record<Team,string[]>;prepared:Record<Team,{topic:string;day:number}|null>;eventDone:Record<Team,number>;poll:Snapshot|null;pollHistory:Snapshot[];rumor:Snapshot|null;history:{day:number;support:Support}[];logs:CampaignLog[];actions:number;result:Team|'draw'|null};
+export type Campaign={talk?:Talk|null;talkReports?:TalkReport[];movementProfile?:MovementProfile;trail?:CampaignTrail;playerTeam:Team;day:number;phase:'day'|'night';seed:number;news:'rain'|'market'|'volunteers'|'clear';surprise:Surprise|null;commanders:Record<Team,CommanderId>;talkZones:{cellId:string;untilDay:number}[];surges:{team:Team;cellId:string;day:number}[];flash:CampaignLog|null;units:CampaignUnit[];resources:Record<Team,{materials:number;volunteers:number}>;support:Support;nodeState:Record<string,NodeState>;stages:Stage[];activity:Record<string,Record<Team,Activity>>;wonderPriority:Record<Team,string[]>;prepared:Record<Team,{topic:string;day:number}|null>;eventDone:Record<Team,number>;poll:Snapshot|null;pollHistory:Snapshot[];rumor:Snapshot|null;history:{day:number;support:Support}[];logs:CampaignLog[];actions:number;result:Team|'draw'|null};
 export type Command=
+ |{type:'talkStart';unitId:string;mode:'debate'|'stage';nodeId?:string}
+ |{type:'talkAnswer';unitId:string;talkId:string;step:number;reply:Reply}
+ |{type:'talkLeave';unitId:string;talkId:string}
  |{type:'move';unitId:string;cellId:string}
  |{type:'canvassRoute';unitId:string;nodeId:string}
  |{type:'transport';unitId:string;districtId:string}
@@ -48,7 +53,7 @@ export function initialCampaign(seed=0x5eed,playerTeam:Team='blue',movementProfi
  const units=teams.flatMap(team=>(['heavy','ranged','scout'] as Role[]).map((role,i)=>({id:`${team}${i+1}`,team,role,cellId:districts.find(d=>d.id===starts[team][i])!.anchor,ap:role==='scout'?18:14,maxAp:role==='scout'?18:14,mobilization:10,fatigue:0,withdrawUntil:0,guardedUntil:0,skillReadyDay:1,transportDay:0,facing:team==='blue'?0:3,bracedUntil:0,confusedUntil:0})));
  const n=news(seed);if(n.news==='volunteers')for(const u of units)u.ap++;
  const surprise=drawSurprise(n.seed,1,districts.map(d=>d.id));
- const g:Campaign={...(movementProfile==='streets-v2'?{movementProfile}:{}),trail:initialTrail(units),playerTeam,day:1,phase:'day',...n,...surprise,commanders:teamRecord(()=>'jiang' as CommanderId),talkZones:[],surges:[],flash:null,units,resources:teamRecord(()=>({materials:36,volunteers:6})),support,nodeState:Object.fromEntries(nodes.map(n=>[n.id,{influence:teamRecord(()=>0),visits:teamRecord(()=>0),active:teamRecord(()=>false)}])),stages:[],activity:dailyActivity(),wonderPriority:teamRecord(()=>wonders.map(w=>w.id)),prepared:teamRecord(()=>null),eventDone:teamRecord(()=>0),poll:null,pollHistory:[],rumor:null,history:[],logs:[{key:'c_logStart',values:{}}],actions:0,result:null};
+ const g:Campaign={talk:null,talkReports:[],...(movementProfile==='streets-v2'?{movementProfile}:{}),trail:initialTrail(units),playerTeam,day:1,phase:'day',...n,...surprise,commanders:teamRecord(()=>'jiang' as CommanderId),talkZones:[],surges:[],flash:null,units,resources:teamRecord(()=>({materials:36,volunteers:6})),support,nodeState:Object.fromEntries(nodes.map(n=>[n.id,{influence:teamRecord(()=>0),visits:teamRecord(()=>0),active:teamRecord(()=>false)}])),stages:[],activity:dailyActivity(),wonderPriority:teamRecord(()=>wonders.map(w=>w.id)),prepared:teamRecord(()=>null),eventDone:teamRecord(()=>0),poll:null,pollHistory:[],rumor:null,history:[],logs:[{key:'c_logStart',values:{}}],actions:0,result:null};
  return teams.reduce((state,team)=>chooseCommander(state,defaultCommanders[team],team),g);
 }
 export function cellCost(g:Campaign,c:Pick<Cell,'terrain'|'districtId'>&Partial<Pick<Cell,'id'>>,team:Team=g.playerTeam,from?:string){
@@ -95,6 +100,8 @@ export function transportDestination(g:Campaign,u:CampaignUnit,districtId:string
 }
 export function actionCost(g:Campaign,cmd:{type:Command['type'];brand?:string;choice?:string;nodeId?:string;unitId?:string},team:Team=g.playerTeam){
  const {nodeById}=mapFor(g);
+ if(cmd.type==='talkAnswer'||cmd.type==='talkLeave')return {ap:0,materials:0};
+ if(cmd.type==='talkStart')return actionCost(g,{...cmd,type:cmd.nodeId?'stageEvent':'event'},team);
  if(cmd.type==='canvassRoute'){const u=g.units.find(u=>u.id===cmd.unitId&&u.team===team);if(u&&cmd.nodeId){const plan=planNodeVisit(g,u,cmd.nodeId);return {ap:plan.totalAp??interactionCost('canvass').ap,materials:plan.materials};}return interactionCost('canvass');}
  const cost=cmd.type==='skill'?skillCost(g,team):cmd.type==='respond'?responseCost(cmd.choice??'adapt'):interactionCost(cmd.type,cmd.brand);
  if(cmd.type==='stageEvent'&&g.surprise?.id==='powercut'&&g.surprise.districtId===nodeById.get(cmd.nodeId??'')?.districtId&&!adapted(g.surprise,team))cost.materials++;
@@ -103,6 +110,7 @@ export function actionCost(g:Campaign,cmd:{type:Command['type'];brand?:string;ch
 export function campaignCommand(original:Campaign,cmd:Command,team:Team=original.playerTeam):{game:Campaign;error?:string}{
  const {nodeById,districts}=mapFor(original);
  if(original.result)return {game:original,error:'c_errorEnded'};
+ if(original.talk&&!['talkAnswer','talkLeave'].includes(cmd.type))return {game:original,error:'d_finishFirst'};
  if(cmd.type==='canvassRoute'){
   const actor=original.units.find(u=>u.id===cmd.unitId&&u.team===team);if(!actor)return {game:original,error:'c_errorUnit'};
   const plan=planNodeVisit(original,actor,cmd.nodeId);if(!plan.canAct)return {game:original,error:plan.error??'c_errorRoute'};
@@ -116,8 +124,15 @@ export function campaignCommand(original:Campaign,cmd:Command,team:Team=original
  const fail=(error:string)=>({game:original,error});
  if(!u||!unitAvailable(g,u))return fail('c_errorUnit');
  const resource=g.resources[team];const fees=actionCost(g,cmd,team);let cost=fees.ap;const materials=fees.materials;let target:CampaignNode|undefined;let movePath:string[]=[];let moveEdges:number[]|undefined;
- if('nodeId' in cmd){target=nodeById.get(cmd.nodeId);if(!target||!near(g,u,target))return fail('c_errorNear');}
- if(cmd.type==='move'){
+ if('nodeId' in cmd&&cmd.nodeId){target=nodeById.get(cmd.nodeId);if(!target||!near(g,u,target))return fail('c_errorNear');}
+ if(cmd.type==='talkAnswer'||cmd.type==='talkLeave'){
+  const talk=g.talk;if(!talk||talk.id!==cmd.talkId||talk.unitId!==u.id||talk.team!==team)return fail('d_stale');
+  if(cmd.type==='talkAnswer'&&(cmd.step!==talkStep(talk)||!replies.includes(cmd.reply)))return fail('d_stale');
+ }else if(cmd.type==='talkStart'){
+  if(!['debate','stage'].includes(cmd.mode))return fail('c_errorEvent');
+  if(cmd.mode==='debate'&&(cmd.nodeId||!scheduledEvent(g.day)||g.eventDone[team]===g.day))return fail('c_errorEvent');
+  if(cmd.mode==='stage'){const s=g.stages.find(s=>s.nodeId===cmd.nodeId&&s.team===team);if(!target||!s||!s.staffed||g.day<s.openDay||s.lastEventDay===g.day)return fail('c_errorStage');}
+ }else if(cmd.type==='move'){
   if(unitGuarded(g,u)||u.bracedUntil>=g.day)return fail('c_errorGuardMove');
   if(!cells.has(cmd.cellId)||cmd.cellId===u.cellId)return fail('c_errorRoute');
   const p=route(g,u,cmd.cellId);if(!p)return fail('c_errorRoute');cost=p.cost;movePath=p.path;moveEdges=p.edgeIds;
@@ -154,6 +169,8 @@ export function campaignCommand(original:Campaign,cmd:Command,team:Team=original
  u.ap-=cost;resource.materials-=materials;g.actions++;g.flash=null;
  const values:CampaignLog['values']={team,unit:u.id,action:cmd.type,...(target?{node:target.id}:{})};
  switch(cmd.type){
+  case 'talkStart':g.talk=makeTalk(g,u.id,cmd.mode,cmd.nodeId);if(cmd.mode==='debate')g.eventDone[team]=g.day;else g.stages.find(s=>s.nodeId===cmd.nodeId)!.lastEventDay=g.day;break;
+  case 'talkAnswer':case 'talkLeave':{const out=cmd.type==='talkAnswer'?answerTalk(g.talk!,cmd.reply):{talk:g.talk!,done:true};g.talk=out.talk;if(out.done){const report=reportTalk(out.talk,cmd.type==='talkLeave');const reward=talkReward(report);if(report.mode==='debate'){for(const d of districts)g.support[d.id][team]+=reward;g.prepared[team]=null;g.activity[cells.get(u.cellId)!.districtId][team].kinds.push(scheduledEvent(g.day)!);}else{const s=g.stages.find(s=>s.nodeId===report.nodeId)!;const penalty=g.surprise?.id==='powercut'&&g.surprise.districtId===nodeById.get(report.nodeId!)!.districtId&&!adapted(g.surprise,team)?3:0;activity(g,u,nodeById.get(s.nodeId)!,'stage',Math.max(1,reward-penalty));}g.talkReports=[report,...(g.talkReports??[])].slice(0,12);g.talk=null;values.action='talkComplete';values.quality=report.quality;}break;}
   case 'move':u.facing=facingBetween(cells.get(movePath[movePath.length-2])!,cells.get(cmd.cellId)!);u.cellId=cmd.cellId;recordWalk(g,u,movePath,moveEdges);break;
   case 'transport':u.cellId=transportDestination(g,u,cmd.districtId)!.id;recordArrival(g,team,[u.cellId]);u.transportDay=g.day;u.fatigue=Math.min(10,u.fatigue+2);break;
   case 'rest':u.fatigue=Math.max(0,u.fatigue-4);u.mobilization=Math.min(10,u.mobilization+4);g.activity[cells.get(u.cellId)!.districtId][team].rested=true;break;
@@ -219,14 +236,14 @@ function ai(original:Campaign,team:Team){
   const exec=(cmd:Command)=>{const out=campaignCommand(g,cmd,team);g=out.game;u=g.units.find(u=>u.id===id)!;return !out.error;};
   if(g.surprise&&!g.surprise.responses[team]&&id===`${team}1`)exec({type:'respond',unitId:id,choice:g.surprise.id==='donation'?'adapt':'mobilize'});
   if(isCommander(u)&&u.skillReadyDay<=g.day&&g.day%2===1)exec({type:'skill',unitId:id,...(g.commanders[team]==='huang'?{targetId:g.units.find(v=>v.team!==team&&unitAvailable(g,v)&&hexDistance(cells.get(v.cellId)!,cells.get(u.cellId)!)<=3)?.id}:{})});
-  if(scheduledEvent(g.day)&&g.eventDone[team]!==g.day)exec({type:'event',unitId:id,topic:eventTopic(g.day)});
+  if(scheduledEvent(g.day)&&g.eventDone[team]!==g.day&&exec({type:'talkStart',unitId:id,mode:'debate'})){while(g.talk)if(!exec({type:'talkAnswer',unitId:id,talkId:g.talk.id,step:talkStep(g.talk),reply:aiReply(g.talk)}))break;}
   if([6,13,20,26].includes(g.day)&&id===`${team}1`)exec({type:'prepare',unitId:id,topic:eventTopic(g.day+1)});
   if(g.day%4===0&&u.ap>=8){const target=districts[(g.day/4+Number(id.slice(-1))*3)%12];exec({type:'transport',unitId:id,districtId:target.id});}
   for(let turn=0;turn<6&&u.ap>=2;turn++){
    const enemy=g.units.find(v=>v.team!==team&&unitAvailable(g,v)&&hexDistance(cells.get(v.cellId)!,cells.get(u.cellId)!)<=(u.role==='ranged'?3:1));
    if(enemy&&turn===0){if(u.role==='ranged'&&splashTargets(g,u,enemy.id).length>1&&exec({type:'broadcast',unitId:id,targetId:enemy.id}))continue;if(u.role==='scout'&&behind(u,enemy)&&exec({type:'backstab',unitId:id,targetId:enemy.id}))continue;if(exec({type:'rally',unitId:id,targetId:enemy.id}))continue;}
    const local=nodes.filter(n=>near(g,u,n));const stage=local.find(n=>g.stages.some(s=>s.nodeId===n.id&&s.team===team));
-   if(stage){const s=g.stages.find(s=>s.nodeId===stage.id)!;if(g.day>=s.openDay&&!s.staffed&&exec({type:'staff',unitId:id,nodeId:stage.id}))continue;if(s.staffed&&s.lastEventDay!==g.day&&exec({type:'stageEvent',unitId:id,nodeId:stage.id}))continue;}
+   if(stage){const s=g.stages.find(s=>s.nodeId===stage.id)!;if(g.day>=s.openDay&&!s.staffed&&exec({type:'staff',unitId:id,nodeId:stage.id}))continue;if(s.staffed&&s.lastEventDay!==g.day&&exec({type:'talkStart',unitId:id,mode:'stage',nodeId:stage.id})){while(g.talk)if(!exec({type:'talkAnswer',unitId:id,talkId:g.talk.id,step:talkStep(g.talk),reply:aiReply(g.talk)}))break;continue;}}
    const venue=local.find(n=>n.kind==='venue'&&!g.stages.some(s=>s.nodeId===n.id));
    if(venue&&g.day%3===0&&exec({type:'build',unitId:id,nodeId:venue.id,brand:Number(id.slice(-1))%2?'island':'soapbox'}))continue;
    const candidate=local.find(n=>g.nodeState[n.id].visits[team]<2);
@@ -243,7 +260,7 @@ function ai(original:Campaign,team:Team){
 }
 export function endCampaignPhase(original:Campaign){
  const {districts}=mapFor(original);
- if(original.result)return original;
+ if(original.result||original.talk)return original;
  if(original.phase==='day'){const g=structuredClone(original);g.phase='night';log(g,'c_logNight');return g;}
  let g=structuredClone(original);const opponents=teams.filter(t=>t!==g.playerTeam);if(g.day%2===0)opponents.reverse();for(const team of opponents)g=ai(g,team);settle(g);
  if(g.day===28){const total=totals(g.support);g.result=campaignOutcome(total);log(g,'c_logFinal');return g;}

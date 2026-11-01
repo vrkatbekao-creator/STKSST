@@ -15,7 +15,7 @@ export function mediaEvent(previous:MediaSession,next:MediaSession):MediaEvent|n
  const base={commander,team:unit.team,action,...(unit.id!==`${unit.team}1`?{actorRole:unit.role}:{})};
  if(['move','transport'].includes(action)&&unit.id===`${unit.team}1`)return {...base,kind:'departure',cue:'departure'};
  if(['canvass','visit','forum','livestream','culture','environment'].includes(action))return {...base,kind:'street',cue:'street'};
- if(['stageEvent','event'].includes(action))return {...base,kind:'stage',cue:`theme-${unit.team}`};
+ if(['stageEvent','event','talkComplete'].includes(action))return {...base,kind:'stage',cue:`theme-${unit.team}`};
  if(['skill','rally','broadcast','backstab','brace','respond'].includes(action))return {...base,kind:'skill',cue:action==='skill'?`skill-${commander}`:action==='backstab'?'slash':action==='broadcast'?'signal':'shield'};
  return null;
 }

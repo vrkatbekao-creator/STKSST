@@ -1,6 +1,6 @@
 # 第三階段交付：全市掃街競選
 
-目前版本 **v0.8.0**。角色、載具、原創音樂及演出依 MEDIA-SPEC.md，來源依 MEDIA-SOURCES.md；逐棟建物與衛星地表依 LANDSCAPE-SPEC.md。離線真實道路、原始路名與搜尋定位依 REAL-ROADS.md；12 區專屬街景第一版依 DISTRICT-STREETSCAPES.md；單鍵掃街規劃與今日步行路線依 STREET-WORKFLOW.md；格線對齊、足跡與活動清單依 MAP-READABILITY.md；三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
+目前版本 **v0.9.0**。逐題辯論／舞台互動依 DIALOGUE-SPEC.md。角色、載具、原創音樂及演出依 MEDIA-SPEC.md，來源依 MEDIA-SOURCES.md；逐棟建物與衛星地表依 LANDSCAPE-SPEC.md。離線真實道路、原始路名與搜尋定位依 REAL-ROADS.md；12 區專屬街景第一版依 DISTRICT-STREETSCAPES.md；單鍵掃街規劃與今日步行路線依 STREET-WORKFLOW.md；格線對齊、足跡與活動清單依 MAP-READABILITY.md；三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
 
 依已確認的 PHASE-3-DESIGN.md、MAP-HEX-SPEC.md 及 INTELLIGENCE-SYSTEM.md 製作。本機單機，React + PixiJS + 單一 Zustand 競選狀態；沒有帳號、雲端、即時新聞或線上系統。第一、二階段方格原型保留為歷史程式及回歸測試，預設入口改為第三階段。
 

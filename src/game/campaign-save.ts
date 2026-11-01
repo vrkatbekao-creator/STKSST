@@ -4,6 +4,7 @@ import { teams } from './campaign-teams.ts';
 import { routingEdges,roadWalkCells,mapFor,streetSource,cells,districts,nodes,wonders } from './campaign-map.ts';
 import { legacyTrail } from './campaign-progress.ts';
 import { surpriseIds } from './campaign-events.ts';
+import { validTalk } from './campaign-dialogue.ts';
 export const SAVE_KEY='capital-tactics-campaign-save';
 export const SAVE_VERSION=2;
 export type Session={game:Campaign;selected:string;districtId:string;view:'city'|'street'};
@@ -55,6 +56,8 @@ export function validSession(value:unknown):value is Session{
   const edges=w.edgeIds.map((id:number)=>routingEdges[id]);
   return edges.every((e:any,i:number)=>i===0||edges[i-1].to===e.from)&&cells.get(w.cells[0])!.roadNode===edges[0].from&&cells.get(w.cells.at(-1))!.roadNode===edges.at(-1).to&&JSON.stringify(roadWalkCells(w.edgeIds))===JSON.stringify(w.cells);
  },1680))return false;}
+ if(g.talk!==undefined&&g.talk!==null&&!validTalk(g.talk,g as Campaign))return false;
+ if(g.talkReports!==undefined&&!list(g.talkReports,r=>validTalk(r,g as Campaign,true),12))return false;
  if(!list(g.logs,log,100)||(g.flash!==null&&!log(g.flash)))return false;
  if(!g.units.some((u:any)=>u.id===value.selected&&u.team===g.playerTeam)||!areaIds.includes(value.districtId)||!oneOf(value.view,['city','street']))return false;
  return true;

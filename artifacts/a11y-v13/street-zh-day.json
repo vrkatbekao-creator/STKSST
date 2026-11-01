@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-01T19:52:26.390Z",
+  "axeVersion": "4.14.0",
+  "layout": {
+    "mode": "normal",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "features": {
+      "gzip": true,
+      "integrity": true,
+      "dialog": true,
+      "audio": true
+    },
+    "width": 998,
+    "clientWidth": 985,
+    "scrollWidth": 985,
+    "height": 457,
+    "focused": "<button id=\"qa-audit\" style=\"padding:12px\">Run accessibility audit</button>",
+    "tabStops": 109,
+    "unlabelled": [],
+    "overflow": []
+  },
+  "passes": 40,
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "aria-prohibited-attr",
+      "help": "Elements must only use permitted ARIA attributes",
+      "count": 1,
+      "examples": [
+        {
+          "target": [
+            ".map-node-list"
+          ],
+          "html": "<div class=\"map-node-list\" aria-label=\"本區活動節點\">",
+          "failureSummary": "Fix all of the following:\n  aria-label attribute is not well supported on \"div\" elements with no valid role attribute."
+        }
+      ]
+    },
+    {
+      "id": "color-contrast",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "count": 37,
+      "examples": [
+        {
+          "target": [
+            ".campaign-emblem"
+          ],
+          "html": "<span class=\"campaign-emblem\">✦</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            "button[aria-label=\"縮小地圖\"]"
+          ],
+          "html": "<button aria-label=\"縮小地圖\">−</button>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".map-selection-caption > strong"
+          ],
+          "html": "<strong>國立中正紀念堂</strong>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            ".map-selection-caption > span"
+          ],
+          "html": "<span>此格曾到達 · 尚未活動</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-255680089-109617-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">愛國東路</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-1416292805-759983-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">信義路一段</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-1416292797-759975-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">中山南路</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-31127861-3094-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">林森南路車行地下道</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-247027471-105327-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">愛國西路</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-1062919952-564666-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">仁愛路一段</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-269788952-122673-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">公園路</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "g[data-road-label=\"osm-way-269788955-122676-0-0\"] > text[dominant-baseline=\"central\"][font-size=\"17.45728668137972\"]"
+          ],
+          "html": "<text text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"17.45728668137972\">南門圓環</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        }
+      ]
+    }
+  ]
+}

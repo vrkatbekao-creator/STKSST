@@ -1,5 +1,7 @@
 # 專案工作規則
 
+- v0.13 無障礙與相容性依 ACCESSIBILITY-COMPAT-SPEC.md、COMPATIBILITY-TEST-MATRIX.md。UI 偏好與遊戲存檔分開；真人平衡由使用者規劃公開測試，本輪不調強弱。完整 UI 驗收因 Windows Chrome 網址政策辨識中止而未完成，必須保留 pending／incomplete；不能用舊截圖或 CLI 測試冒充實機通過。新 UI 工作階段先檢查並 reset 測試 viewport，使用已連線瀏覽器 tab，勿用其他自動化繞過工具限制。
+
 - v0.12 分區與資料表示依 MAP-LOADING-SPEC.md。全市通行核心維持完整且同步，僅圖層依行政區／視窗載入；不得用未載入資料改 AP 或斷路。改固定圖資後執行 npm run data:package，保持路網 edge ID／revision 與 SHA 清單一致。
 
 - v0.11 平衡與驗證依 BALANCE-SPEC.md／BALANCE-RESULTS.md；額外編制補給為每兩人減 1。copyCampaign 共用不可變歷史／已完成 walk 元素，後續規則只能 append，不可原地修改舊元素。Firefox／其他硬體未通過實測的範圍須依 compatibility-matrix.json 如實說明。
@@ -8,7 +10,7 @@
 
 - v0.8 影音依 MEDIA-SPEC.md：演出只觀察成功玩家行動，不讀 support、不重播讀檔或 AI 結算、不改規則。聲音每次載入需手動開啟，素材本機播放；原創曲不是官方 remix。黃若水視覺參考黃珊珊 2022，不能冒充本屆參選。研究及授權邊界見 MEDIA-SOURCES.md。
 
-- 目前階段為第三階段 v0.12.0，先讀 PHASE-3-SPEC.md、PHASE-3-PUNK.md、PHASE-3-SESSION.md、MAP-READABILITY.md、STREET-WORKFLOW.md、DISTRICT-STREETSCAPES.md 、REAL-ROADS.md 、ROAD-MOVEMENT-SPEC.md、LANDSCAPE-SPEC.md 與 MEDIA-SPEC.md；衝突時以最新使用者指示及該實作契約為準。第一、二階段規格保留作為歷史與回歸紀錄。
+- 目前階段為第三階段 v0.13.0，先讀 PHASE-3-SPEC.md、PHASE-3-PUNK.md、PHASE-3-SESSION.md、MAP-READABILITY.md、STREET-WORKFLOW.md、DISTRICT-STREETSCAPES.md 、REAL-ROADS.md 、ROAD-MOVEMENT-SPEC.md、LANDSCAPE-SPEC.md 與 MEDIA-SPEC.md；衝突時以最新使用者指示及該實作契約為準。第一、二階段規格保留作為歷史與回歸紀錄。
 - 第三階段設計背景見 PHASE-3-DESIGN.md：使用者已選定台北市 12 行政區、全市掃街競選，以及治疏嶼（綠橙色）／恰恰肥皂箱（藍白色）的設立與經營。該文件保留設計提案；實作範圍及限制以 PHASE-3-SPEC.md 為準，真實道路底圖與來源拓樸逐街通行第一版已接入，使用者改選的 30m 衛星地表（DSM）已接入，裸地／路面實測尚未完成；本機單槽存檔／續玩、卡通角色與影音第一版已完成。
 - 回合上限固定 28，保留日夜共用 AP、單一 Zustand 遊戲狀態及本機單機架構。
 - 第三階段地圖依 MAP-HEX-SPEC.md：保留 12 區官方輪廓及各區特色，街區使用共用六角格；六方向移動、距離、尋路、AI 與命中判定需一起轉換。已接入官方區界、河道、橋梁及共用六角格；新局採共用 100 公尺道路格，舊局保留 380 公尺規則；成本及相容性見 ROAD-MOVEMENT-SPEC.md。

@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-01T19:50:57.774Z",
+  "axeVersion": "4.14.0",
+  "layout": {
+    "mode": "normal",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "features": {
+      "gzip": true,
+      "integrity": true,
+      "dialog": true,
+      "audio": true
+    },
+    "width": 998,
+    "clientWidth": 985,
+    "scrollWidth": 985,
+    "height": 457,
+    "focused": "<button id=\"qa-audit\" style=\"padding:12px\">Run accessibility audit</button>",
+    "tabStops": 25,
+    "unlabelled": [],
+    "overflow": []
+  },
+  "passes": 33,
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "count": 18,
+      "examples": [
+        {
+          "target": [
+            ".campaign-emblem"
+          ],
+          "html": "<span class=\"campaign-emblem\">✦</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".faction-blue > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">◆</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".faction-green > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">●</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".faction-white > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">◇</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            "text[x=\"6247.4\"]"
+          ],
+          "html": "<text x=\"6247.4\" y=\"27433.9\" text-anchor=\"middle\" class=\"district-label\">松山區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"7821.2\"]"
+          ],
+          "html": "<text x=\"7821.2\" y=\"30911\" text-anchor=\"middle\" class=\"district-label\">信義區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"4379.3\"]"
+          ],
+          "html": "<text x=\"4379.3\" y=\"31179\" text-anchor=\"middle\" class=\"district-label\">大安區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"3566.5\"]"
+          ],
+          "html": "<text x=\"3566.5\" y=\"26554.1\" text-anchor=\"middle\" class=\"district-label\">中山區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"1806.3\"]"
+          ],
+          "html": "<text x=\"1806.3\" y=\"30901.6\" text-anchor=\"middle\" class=\"district-label\">中正區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"1769.8\"]"
+          ],
+          "html": "<text x=\"1769.8\" y=\"26983.3\" text-anchor=\"middle\" class=\"district-label\">大同區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"-31.2\"]"
+          ],
+          "html": "<text x=\"-31.2\" y=\"30880.4\" text-anchor=\"middle\" class=\"district-label\">萬華區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"7493.1\"]"
+          ],
+          "html": "<text x=\"7493.1\" y=\"35419.8\" text-anchor=\"middle\" class=\"district-label\">文山區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        }
+      ]
+    }
+  ]
+}

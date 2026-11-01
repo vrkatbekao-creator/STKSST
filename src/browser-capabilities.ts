@@ -1,0 +1,3 @@
+export type RequiredFeatures={fetch:boolean;gzip:boolean;integrity:boolean;dialog:boolean;resize:boolean};
+export function missingFeatures(features:RequiredFeatures){return (['fetch','gzip','integrity','dialog','resize'] as const).filter(key=>!features[key]);}
+export function browserFeatures():RequiredFeatures{return {fetch:typeof fetch==='function',gzip:typeof DecompressionStream==='function',integrity:typeof crypto!=='undefined'&&typeof crypto.subtle?.digest==='function',dialog:typeof HTMLDialogElement!=='undefined'&&typeof HTMLDialogElement.prototype.showModal==='function',resize:typeof ResizeObserver==='function'};}

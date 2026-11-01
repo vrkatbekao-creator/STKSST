@@ -1,0 +1,94 @@
+{
+  "mode": "normal",
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+  "features": {
+    "gzip": true,
+    "integrity": true,
+    "dialog": true,
+    "audio": true
+  },
+  "width": 334,
+  "clientWidth": 320,
+  "scrollWidth": 335,
+  "height": 818,
+  "focused": "<button id=\"qa-layout\" style=\"padding:12px\">Measure layout</button>",
+  "tabStops": 106,
+  "unlabelled": [],
+  "overflow": [
+    {
+      "tag": "SECTION",
+      "class": "campaign-map-panel",
+      "text": "HEX-GRID FIELD OPERATIONSZhongzheng DistrictCity atlasStreet tacticsDistrictSongshan DistrictXinyi D"
+    },
+    {
+      "tag": "DIV",
+      "class": "campaign-map-heading",
+      "text": "HEX-GRID FIELD OPERATIONSZhongzheng DistrictCity atlasStreet tactics"
+    },
+    {
+      "tag": "DIV",
+      "class": "district-picker",
+      "text": "DistrictSongshan DistrictXinyi DistrictDaan DistrictZhongshan DistrictZhongzheng DistrictDatong Dist"
+    },
+    {
+      "tag": "DIV",
+      "class": "hex-map street-routing theme-civic no-canvas has-real-roads",
+      "text": "STREET ATLAS 05 / 12Zhongzheng · Civic squaresThe Memorial Hall roof, symmetrical colonnades and ste"
+    },
+    {
+      "tag": "SECTION",
+      "class": "district-scene-card",
+      "text": "STREET ATLAS 05 / 12Zhongzheng · Civic squaresThe Memorial Hall roof, symmetrical colonnades and ste"
+    },
+    {
+      "tag": "DIV",
+      "class": "",
+      "text": "STREET ATLAS 05 / 12Zhongzheng · Civic squaresThe Memorial Hall roof, symmetrical colonnades and ste"
+    },
+    {
+      "tag": "H3",
+      "class": "",
+      "text": "Zhongzheng · Civic squares"
+    },
+    {
+      "tag": "P",
+      "class": "",
+      "text": "The Memorial Hall roof, symmetrical colonnades and stepped public squares."
+    },
+    {
+      "tag": "SMALL",
+      "class": "",
+      "text": "Atlas artwork illustrates district character; sourced building footprints and elevation have separat"
+    },
+    {
+      "tag": "DIV",
+      "class": "map-reading-note",
+      "text": "One 100 m hex grid; units use fixed road anchors. Buildings use OSM footprints; the satellite DSM sh"
+    },
+    {
+      "tag": "SECTION",
+      "class": "map-keyboard-controls",
+      "text": "Keyboard movement previewUse the menu and arrow keys to choose a reachable hex, then preview. Previe"
+    },
+    {
+      "tag": "DIV",
+      "class": "hex-controls",
+      "text": "＋−Center on team / landmark100 m per hex"
+    },
+    {
+      "tag": "SPAN",
+      "class": "",
+      "text": "100 m per hex"
+    },
+    {
+      "tag": "DIV",
+      "class": "map-layer-toggles",
+      "text": "Show reachable cellsShow campaign footprintsShow today’s routeIllustrative sceneryFootprints: campai"
+    },
+    {
+      "tag": "SPAN",
+      "class": "",
+      "text": "Footprints: campaign arrivals. Solid cyan: this member’s walks today. Dashed gold: pending preview. "
+    }
+  ]
+}

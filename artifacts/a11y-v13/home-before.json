@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-01T19:49:20.247Z",
+  "axeVersion": "4.14.0",
+  "layout": {
+    "mode": "normal",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "features": {
+      "gzip": true,
+      "integrity": true,
+      "dialog": true,
+      "audio": true
+    },
+    "width": 998,
+    "clientWidth": 985,
+    "scrollWidth": 985,
+    "height": 457,
+    "focused": "<button id=\"qa-audit\" style=\"padding:12px\">Run accessibility audit</button>",
+    "tabStops": 25,
+    "unlabelled": [],
+    "overflow": []
+  },
+  "passes": 33,
+  "violations": [
+    {
+      "id": "color-contrast",
+      "impact": "serious",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/color-contrast?application=axeAPI",
+      "nodes": [
+        {
+          "target": [
+            ".campaign-kicker"
+          ],
+          "html": "<div class=\"campaign-kicker\"><i></i>台北十二區，一場共同的選戰</div>",
+          "failureSummary": "Fix any of the following:\n  Element has insufficient color contrast of 4.46 (foreground color: #527199, background color: #edf2fa, font size: 7.5pt (10px), font weight: bold). Expected contrast ratio of 4.5:1",
+          "checks": [
+            {
+              "fgColor": "#527199",
+              "bgColor": "#edf2fa",
+              "contrastRatio": 4.46,
+              "fontSize": "7.5pt (10px)",
+              "fontWeight": "bold",
+              "messageKey": null,
+              "expectedContrastRatio": "4.5:1"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "count": 24,
+      "examples": [
+        {
+          "target": [
+            ".campaign-emblem"
+          ],
+          "html": "<span class=\"campaign-emblem\">✦</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".campaign-brand > span:nth-child(2)"
+          ],
+          "html": "<span>選戰騎士團<small>首都篇 · 全市掃街</small></span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": [
+            "span:nth-child(2) > small"
+          ],
+          "html": "<small>首都篇 · 全市掃街</small>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": [
+            "select"
+          ],
+          "html": "<select aria-label=\"介面語言\"><option value=\"zh-TW\">繁體中文</option><option value=\"en\">English</option></select>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": [
+            ".outline-button:nth-child(3)"
+          ],
+          "html": "<button class=\"outline-button\">無障礙與顯示</button>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": [
+            ".media-open"
+          ],
+          "html": "<button class=\"outline-button media-open\">美術／影音</button>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined due to a pseudo element"
+        },
+        {
+          "target": [
+            "h1"
+          ],
+          "html": "<h1 tabindex=\"-1\">每條街，\n都算數。</h1>",
+          "failureSummary": "Fix any of the following:\n  Element's contrast could not be determined because it uses complex text shadows"
+        },
+        {
+          "target": [
+            ".faction-blue > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">◆</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".faction-green > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">●</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".faction-white > span[aria-hidden=\"true\"]"
+          ],
+          "html": "<span aria-hidden=\"true\">◇</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            "text[x=\"6247.4\"]"
+          ],
+          "html": "<text x=\"6247.4\" y=\"27433.9\" text-anchor=\"middle\" class=\"district-label\">松山區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        },
+        {
+          "target": [
+            "text[x=\"7821.2\"]"
+          ],
+          "html": "<text x=\"7821.2\" y=\"30911\" text-anchor=\"middle\" class=\"district-label\">信義區</text>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it is overlapped by another element"
+        }
+      ]
+    }
+  ]
+}

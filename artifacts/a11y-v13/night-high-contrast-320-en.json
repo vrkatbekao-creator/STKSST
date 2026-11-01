@@ -1,0 +1,117 @@
+{
+  "date": "2026-11-01T19:59:14.811Z",
+  "axeVersion": "4.14.0",
+  "layout": {
+    "mode": "normal",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "features": {
+      "gzip": true,
+      "integrity": true,
+      "dialog": true,
+      "audio": true
+    },
+    "width": 334,
+    "clientWidth": 320,
+    "scrollWidth": 320,
+    "height": 818,
+    "focused": "<button id=\"qa-audit\" style=\"padding:12px\">Run accessibility audit</button>",
+    "tabStops": 106,
+    "unlabelled": [],
+    "overflow": []
+  },
+  "passes": 39,
+  "violations": [],
+  "incomplete": [
+    {
+      "id": "color-contrast",
+      "help": "Elements must meet minimum color contrast ratio thresholds",
+      "count": 50,
+      "examples": [
+        {
+          "target": [
+            ".campaign-emblem"
+          ],
+          "html": "<span class=\"campaign-emblem\">✦</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".clock-phase > span"
+          ],
+          "html": "<span>☾</span>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".campaign-resource:nth-child(3) > span"
+          ],
+          "html": "<span>Materials</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".campaign-resource:nth-child(3) > b"
+          ],
+          "html": "<b>36</b>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".campaign-resource:nth-child(4) > b"
+          ],
+          "html": "<b>6</b>",
+          "failureSummary": "Fix any of the following:\n  Element content is too short to determine if it is actual text content"
+        },
+        {
+          "target": [
+            ".surprise-kicker > small"
+          ],
+          "html": "<small>Wanhua District</small>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".campaign-map-heading > div:nth-child(1) > h2"
+          ],
+          "html": "<h2>Zhongzheng District</h2>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            "button[aria-label=\"Zoom out\"]"
+          ],
+          "html": "<button aria-label=\"Zoom out\">−</button>",
+          "failureSummary": "Fix any of the following:\n  Element content contains only non-text characters"
+        },
+        {
+          "target": [
+            ".road-legend-line:nth-child(1)"
+          ],
+          "html": "<span class=\"road-legend-line\">Arterial road</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".road-legend-path"
+          ],
+          "html": "<span class=\"road-legend-line road-legend-path\">Path / cycleway</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".road-legend-express"
+          ],
+          "html": "<span class=\"road-legend-line road-legend-express\">Expressway / motorway</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        },
+        {
+          "target": [
+            ".road-legend-selection"
+          ],
+          "html": "<span class=\"road-legend-line road-legend-selection\">Located road (not a move preview)</span>",
+          "failureSummary": "Fix any of the following:\n  Element's background color could not be determined because it's partially obscured by another element"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-01T19:54:55.844Z",
+  "axeVersion": "4.14.0",
+  "layout": {
+    "mode": "normal",
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+    "features": {
+      "gzip": true,
+      "integrity": true,
+      "dialog": true,
+      "audio": true
+    },
+    "width": 998,
+    "clientWidth": 985,
+    "scrollWidth": 985,
+    "height": 407,
+    "focused": "<h2 id=\"accessibility-title\" tabindex=\"-1\" data-dialog-title=\"true\">無障礙與顯示</h2>",
+    "tabStops": 112,
+    "unlabelled": [],
+    "overflow": []
+  },
+  "passes": 20,
+  "violations": [],
+  "incomplete": []
+}

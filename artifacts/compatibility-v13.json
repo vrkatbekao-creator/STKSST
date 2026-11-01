@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-01",
+  "version": "0.13.0",
+  "fullCompatibilityAcceptance": "incomplete",
+  "humanBalance": "User plans public testing; no balance values changed.",
+  "automatedChecks": {
+    "check": true,
+    "tests": 141,
+    "build": true,
+    "scope": "CLI rule and preference tests, not all browser or assistive-technology combinations."
+  },
+  "browserAudits": [
+    {
+      "file": "home-zh.json",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "axe": "4.14.0",
+      "passes": 33,
+      "violations": 0,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 18
+        }
+      ],
+      "width": 985,
+      "scrollWidth": 985
+    },
+    {
+      "file": "street-zh-day.json",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "axe": "4.14.0",
+      "passes": 40,
+      "violations": 0,
+      "incomplete": [
+        {
+          "id": "aria-prohibited-attr",
+          "nodes": 1
+        },
+        {
+          "id": "color-contrast",
+          "nodes": 37
+        }
+      ],
+      "width": 985,
+      "scrollWidth": 985
+    },
+    {
+      "file": "settings-default.json",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "axe": "4.14.0",
+      "passes": 20,
+      "violations": 0,
+      "incomplete": [],
+      "width": 985,
+      "scrollWidth": 985
+    },
+    {
+      "file": "settings-high-contrast.json",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "axe": "4.14.0",
+      "passes": 20,
+      "violations": 0,
+      "incomplete": [],
+      "width": 985,
+      "scrollWidth": 985
+    },
+    {
+      "file": "night-high-contrast-320-en.json",
+      "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
+      "axe": "4.14.0",
+      "passes": 39,
+      "violations": 0,
+      "incomplete": [
+        {
+          "id": "color-contrast",
+          "nodes": 50
+        }
+      ],
+      "width": 320,
+      "scrollWidth": 320
+    }
+  ],
+  "manualObserved": [
+    "Skip to main moves focus to main",
+    "Guide opens at heading, Shift+Tab stays inside modal, Escape returns to trigger",
+    "Starting game moves focus to h1",
+    "ArrowDown chooses reachable cell; Enter previews and reaches confirmation",
+    "Confirming move changes AP 14 to 12",
+    "All four preferences leave AP at 12; compatible map has zero Pixi canvases",
+    "Entering night retains 12 AP",
+    "320 CSS px high contrast and large English text has no horizontal overflow"
+  ],
+  "interruption": {
+    "cause": "Windows Computer Use could not determine the current Chrome URL confidently enough for policy enforcement.",
+    "uiStopped": true,
+    "noAlternativeAutomationUsed": true,
+    "screenshotsCaptured": false,
+    "temporaryViewport": {
+      "width": 1280,
+      "height": 900,
+      "resetVerified": false
+    },
+    "browserZoomShortcut": {
+      "effect": "No observed width or DPR change; not counted as 200%/400% test."
+    }
+  },
+  "pending": [
+    "Complete manual review of axe incomplete nodes and final pointer-layer semantics",
+    "Actual 200%/400% browser zoom and viewport reset",
+    "Complete media, stage, debate, seven-member and final-result keyboard workflow",
+    "Browser fault injection for GPU/storage/gzip/audio",
+    "IAB v0.13 regression",
+    "Edge/Firefox/Safari and other OS/physical hardware",
+    "OS forced colors and real screen readers"
+  ],
+  "largestBuiltJavaScript": {
+    "file": "index-CwN3FbTY.js",
+    "bytes": 317411
+  },
+  "qaDependency": "axe-core 4.14.0, development only",
+  "scope": "Audits were captured during development before the footer version bump. Their observed pages are listed individually; no claim of WCAG certification or all-platform support."
+}

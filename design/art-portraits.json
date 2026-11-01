@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "portraits": [
+    {
+      "id": "jiang",
+      "prompt": "Use case: stylized-concept. Asset type: transparent game character portrait for an original Taiwanese city-campaign tactics comedy game. Create ONE ORIGINAL chibi caricature bust loosely inspired by Taiwanese public figure Chiang Wan-an (Jiang Wanan), his 2026 public appearance. This is a fictional character named Jiang Qianqiu, not an official campaign endorsement. Friendly clean-shaven oval face, recognizable neatly swept side-part black hair with a dramatic pompadour swoosh, arched eyebrows, smiling narrow eyes, charming slightly oversized ears; adult man, not a child. Big head, compact heroic shoulders, humorous oversized soft foam civic shield held proudly at chest level, a tiny bundle of folded leaflets tucked behind the shield. Cobalt blue varsity-style campaign jacket, cream sleeves, warm yellow piping and small geometric four-point sparkle badge. Pose: three-quarter view, facing slightly right, inviting grin, playful rather than aggressive. Art direction: sophisticated hand-drawn sticker illustration, bold deep-navy contour ink, chunky expressive shapes, crisp cel shading, subtle grain, warm flattering skin, 2.5-head cartoon proportions. Half-body/bust fully contained with generous transparent margins, centered square composition, silhouette readable as a 64px avatar. No background, no border frame, no lettering, no real party logos, no slogans, no watermarks, no photorealism. Keep hands simple and anatomically plausible. The character should look like a polished premium tactics-game unit, funny but respectful.",
+      "path": "public/art/portraits/jiang-v1.png",
+      "generationTool": "image_gen.imagegen",
+      "created": "2026-11-01",
+      "editing": "Original PNG copied intact; layout/cropping via CSS only",
+      "use": "Fictional commander cartoon, no official endorsement",
+      "sha256": "90117c2605a23798d6edb182a5b7ba95ed816ad4916a6d48eb7e4b3cddfe5b21",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "shen",
+      "prompt": "Use case: stylized-concept. Asset type: ONE transparent chibi bust portrait in a consistent premium Taiwanese political-campaign tactics comedy game. Fictional commander Shen Boyan, visually inspired by public figure Puma Shen (Shen Boyang) as seen in the 2026 Taipei campaign, not official campaign art or endorsement. Adult Taiwanese man, distinctive voluminous fluffy BLACK CURLY HAIR like a playful cloud, round black-rim glasses, broad cheeky grin, round friendly face and a little subtle moustache/chin stubble. Exaggerated big head, compact shoulders, expressive adult cartoon, not a child. He wears an open warm burnt-orange tropical/floral campaign jacket over a cream shirt and a small teal ocean-pattern neckerchief. Holds a comically oversized cream-and-orange MEGAPHONE with a little spiral cable; a compact wooden ship's wheel charm is attached at the lapel, playful ocean-current captain visual. Three-quarter view facing slightly left, one eyebrow raised, humorous confident professor expression. Style: bold deep-navy contour ink, crisp cel shading, soft warm skin shading, restrained printed-paper grain, glossy black hair highlights, detailed but clean premium game sticker illustration. Half body fully contained in square with generous transparent margins, readable hair/glasses/megaphone silhouette at avatar size. No text, no slogans, no real party logos, no background or frame, no watermark, no photorealism. One character only, anatomically plausible hands. Match the art direction of a friendly blue-jacket chibi shield commander, with this orange/teal character's distinct curly-haired identity.",
+      "path": "public/art/portraits/shen-v1.png",
+      "generationTool": "image_gen.imagegen",
+      "created": "2026-11-01",
+      "editing": "Original PNG copied intact; layout/cropping via CSS only",
+      "use": "Fictional commander cartoon, no official endorsement",
+      "sha256": "b24add93c3b42138f29fa958cdf7b0264b9eef2a77fc861a3c33b791a19ea25d",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "huang",
+      "prompt": "Create ONE polished transparent-background bust portrait sprite for a fictional Taiwanese political campaign strategy videogame. Fictional adult commander Huang Ruoshui, a playful affectionate cartoon loosely visually inspired by Huang Shan-shan's 2022 public appearance, not a photo or endorsement. A mature Taiwanese woman with short dark chestnut side-swept pixie-bob hair, no glasses, expressive smiling eyes and round friendly confident face. Oversized head and compact adult shoulders, whimsical chibi proportions but clearly an adult. She wears a crisp white campaign vest/jacket with lavender-purple trims and a little pale teal, holds a comically thick municipal clipboard covered in colorful blank sticky notes, a pen in her other hand. Smart pragmatic warm grin, eyebrows full of character. Rich anime game cel shading, bold dark navy ink contours, tactile printed-paper grain accents, beautiful glossy hair highlights. Match a coherent premium campaign-punk cartoon portrait family: three-quarter pose, charismatic and humorous, saturated color focal accents, clear readable silhouette. Portrait cropped at upper waist with generous transparent margins, centered and isolated. No background, no lettering or slogans or signatures or watermarks, no official party logos, no realistic photography, no child.",
+      "path": "public/art/portraits/huang-v1.png",
+      "generationTool": "image_gen.imagegen",
+      "created": "2026-11-01",
+      "editing": "Original PNG copied intact; layout/cropping via CSS only",
+      "use": "Fictional commander cartoon, no official endorsement",
+      "sha256": "ccdedab0103e090329de32f152b4f5265bbbd5c40a4f26bb0f867f6f32168bd2",
+      "dimensions": [
+        1145,
+        1374
+      ],
+      "mode": "RGBA",
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  ]
+}

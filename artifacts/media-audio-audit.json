@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-01",
+  "timezone": "Europe/Brussels",
+  "checks": "Technical decode/levels only; not a subjective listening review",
+  "tracks": [
+    {
+      "id": "theme-blue",
+      "decodedSeconds": 20.0,
+      "peakDbFS": -2.2,
+      "rmsDbFS": -16.1,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "theme-green",
+      "decodedSeconds": 20.0,
+      "peakDbFS": -2.96,
+      "rmsDbFS": -16.23,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "theme-white",
+      "decodedSeconds": 20.0,
+      "peakDbFS": -3.19,
+      "rmsDbFS": -16.11,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "bgm",
+      "decodedSeconds": 40.0,
+      "peakDbFS": -6.81,
+      "rmsDbFS": -21.45,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "horn",
+      "decodedSeconds": 1.8,
+      "peakDbFS": -11.79,
+      "rmsDbFS": -19.2,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "shield",
+      "decodedSeconds": 0.9,
+      "peakDbFS": -5.95,
+      "rmsDbFS": -18.94,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "signal",
+      "decodedSeconds": 1.1,
+      "peakDbFS": -6.88,
+      "rmsDbFS": -19.52,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "slash",
+      "decodedSeconds": 0.55,
+      "peakDbFS": -8.86,
+      "rmsDbFS": -23.24,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "skill-jiang",
+      "decodedSeconds": 1.6,
+      "peakDbFS": -5.63,
+      "rmsDbFS": -19.91,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "skill-shen",
+      "decodedSeconds": 1.6,
+      "peakDbFS": -6.84,
+      "rmsDbFS": -20.27,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "skill-huang",
+      "decodedSeconds": 1.6,
+      "peakDbFS": -5.82,
+      "rmsDbFS": -19.98,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "departure",
+      "decodedSeconds": 1.3,
+      "peakDbFS": -8.62,
+      "rmsDbFS": -23.02,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "crowd",
+      "decodedSeconds": 5.0,
+      "peakDbFS": -16.06,
+      "rmsDbFS": -32.7,
+      "sha256Matches": true,
+      "finiteSamples": true
+    },
+    {
+      "id": "chant",
+      "decodedSeconds": 5.0,
+      "peakDbFS": -8.32,
+      "rmsDbFS": -26.66,
+      "sha256Matches": true,
+      "finiteSamples": true
+    }
+  ]
+}

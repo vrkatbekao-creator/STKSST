@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "created": "2026-11-01",
+  "license": "Project-original audio. External campaign recordings are not included.",
+  "tracks": [
+    {
+      "id": "theme-blue",
+      "file": "/audio/theme-blue.mp3",
+      "durationSeconds": 20.0,
+      "description": "Original 20-second anime-inspired heroic pop cue, 144 BPM, 12 bars",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "737990ab9682e638b6b51df883618f3b8eb7d37bc8b8ed48f4f06396167916ef",
+      "peak": 0.76
+    },
+    {
+      "id": "theme-green",
+      "file": "/audio/theme-green.mp3",
+      "durationSeconds": 20.0,
+      "description": "Original 20-second anime-inspired ocean electro-pop cue, 144 BPM, 12 bars",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "af56c7917d642a18ee4c77da243c4ccb29d72532dc45fd891b56dca2fc5137fd",
+      "peak": 0.7411
+    },
+    {
+      "id": "theme-white",
+      "file": "/audio/theme-white.mp3",
+      "durationSeconds": 20.0,
+      "description": "Original 20-second anime-inspired piano cue, 144 BPM, 12 bars",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "54a40e527372dfcfe96df0acb1519c9e156eafe63c2afc6254ce1e8fe8c753e0",
+      "peak": 0.7509
+    },
+    {
+      "id": "bgm",
+      "file": "/audio/bgm.mp3",
+      "durationSeconds": 40.0,
+      "description": "Original cheerful neutral campaign instrumental, 120 BPM, 40 seconds",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "69b5eed1e6bc0a49f9ee4f5430dcf10893d2c1a19d0f47e523c0db715f3d5576",
+      "peak": 0.4867
+    },
+    {
+      "id": "horn",
+      "file": "/audio/horn.mp3",
+      "durationSeconds": 1.8,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "5ed85179b1fa339625c8e86beb0cda11311f0d73cd97bef8b721eb26e5bb0553",
+      "peak": 0.2709
+    },
+    {
+      "id": "shield",
+      "file": "/audio/shield.mp3",
+      "durationSeconds": 0.9,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "6b90af4223d681fa06f9cfcbe25ae10415f45d05dd1ef946fad36249a0b6bb5d",
+      "peak": 0.5326
+    },
+    {
+      "id": "signal",
+      "file": "/audio/signal.mp3",
+      "durationSeconds": 1.1,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "467cbf2ca99c1bd047b9bcba5aff2dde03b65c0ea605aa4c4387b1da51089cea",
+      "peak": 0.4785
+    },
+    {
+      "id": "slash",
+      "file": "/audio/slash.mp3",
+      "durationSeconds": 0.55,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "2938e3850420b5967f0da7881e01c195db6b51f873a5a021b52586a2f716361c",
+      "peak": 0.4216
+    },
+    {
+      "id": "skill-jiang",
+      "file": "/audio/skill-jiang.mp3",
+      "durationSeconds": 1.6,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "67eefcb14146bbeb961b4b8e3765665a95ec98e670ac109753385a69d9c3aab9",
+      "peak": 0.5498
+    },
+    {
+      "id": "skill-shen",
+      "file": "/audio/skill-shen.mp3",
+      "durationSeconds": 1.6,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "cf43cb84131072a49de47d137a10462e29b9c6c5dcb9326f1985c3a468a25d7b",
+      "peak": 0.4782
+    },
+    {
+      "id": "skill-huang",
+      "file": "/audio/skill-huang.mp3",
+      "durationSeconds": 1.6,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "f7d795118973e6063e3f5d7112cf6cc5f1e72b1f3cc5d9416503a4c065beaf9a",
+      "peak": 0.539
+    },
+    {
+      "id": "departure",
+      "file": "/audio/departure.mp3",
+      "durationSeconds": 1.3,
+      "description": "Original synthesised game sound effect",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "2a5a280bb2d6e4f2a3997e6ea61f63e16e6178be231b6d6d9f1b01f7d3195fe9",
+      "peak": 0.4184
+    },
+    {
+      "id": "crowd",
+      "file": "/audio/crowd.mp3",
+      "durationSeconds": 5.0,
+      "description": "Original synthesised crowd babble and claps, not a field recording",
+      "provenance": "Original procedural composition; no campaign song samples",
+      "sha256": "efada7fd91c52fe29637655c266460ef3e5d9a2ec1425c741c447fa9cc79ae79",
+      "peak": 0.1599
+    },
+    {
+      "id": "chant",
+      "file": "/audio/chant.mp3",
+      "durationSeconds": 5,
+      "description": "Generic synthetic Mandarin cheer: 凍蒜、凍蒜、加油、凍蒜. Not native Hokkien or a field recording.",
+      "provenance": "Edge Read Aloud via edge-tts 7.3.1, zh-TW-YunJheNeural and zh-TW-HsiaoChenNeural; no cloned voice",
+      "sha256": "4606e041a63d52a6cd3f4db61427950fbae0249db5dfdb7188cd2e66da402df4"
+    }
+  ]
+}

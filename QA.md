@@ -1,3 +1,21 @@
+# v0.8.0 角色、載具與影音驗證
+
+日期：2026-11-01 Europe/Brussels。實作契約 MEDIA-SPEC.md，研究 MEDIA-SOURCES.md。
+
+- `npm run check`、`npm test`、`npm run build` 通過；117 項測試（既有 109＋影音 8）。新增涵蓋手動啟用音訊、20 秒上限、打斷與靜音、隱藏分頁、延遲解碼取消、本機替換不寫存檔、失敗／讀檔／AI 結算不觸發演出、普通隊員使用自己的角色，以及禁止呈現層讀取 support。原有完整 28 天封關與最終解封測試仍通過。
+- 三張透明立繪皆 RGBA，alpha 範圍 0–255；尺寸／提示詞／指紋在 design/art-portraits.json。PNG 原件未修改。三個主將與三種 SVG 兵種已放入選將、隊伍、技能面板及街區棋子，朝向與陣營／選取外圈保留。
+- 14 個本機音檔（3 首陣營曲、BGM、8 個音效、crowd、chant）可由清單回查。三首 PCM 為恰好 20 秒；MP3 容器約 20.036 秒含編碼填充，播放限制 20 秒。技術解碼與音量稽核在 artifacts/media-audio-audit.json；這不是主觀聽感評分。
+- IAB 本機預覽 localhost:5182，獨立 QA origin，未覆寫 StartGame.cmd 預設遊玩網址的存檔。第一次載入因既有大型道路 bundle 觸發工具導覽逾時，後續確認成功載入；沒有放寬瀏覽器安全設定。瀏覽器 warn/error 最終為 0。
+- 桌面三張立繪、三車與三兵種圖鑑正常；修正製作室 dialog 置中及低對比說明文字。三首曲、通用合成喊聲及汽笛＋陣營曲在使用者點擊後完成解碼／排程，UI 顯示播放中；停止／靜音與分軌控制可用。工具沒有進行人工耳機聽感審查，不宣稱母語臺語／現場錄音品質。
+- 以本作 theme-white.mp3 測試藍方本機替換，顯示檔名及匯入成功，恢復原曲正常。檔案只在此分頁記憶體；測試沒有把音檔傳往外站。原曲來源研究及歷史白方年份在雙語製作室可查。
+- 橙方申博衍從內湖合法接駁文山：14→8 AP，顯示洋流號；施放洋流逆襲 8→4 AP，出現技能切入；進夜仍 4 AP，文山掃街後 2 AP／31 物資並觸發街頭演出。切繁中仍 2 AP，存檔回首頁／續玩為同日夜間 2 AP，沒有重播；日終進第 2 天沒有播放 AI 行動。
+- 375×812 英文與繁中、日夜均可操作；角色改為直向卡避免三欄過小。內容 clientWidth=scrollWidth=360px，dialog clientWidth=scrollWidth=343px，無水平溢出。地圖來源圖層及新棋子可辨識，製作室不改 AP。完整、減少與關閉行動演出選項可選，減少模式的 class 與實際靜態構圖已驗證；系統 reduced-motion 規則由 CSS 強制覆寫。
+- 普通重裝「鐵壁駐守」顯示其 SVG 角色、兵種與行動名，沒有冒充主將立繪。技能、接駁、掃街的演出可手動略過或約 4.8 秒自動結束，不攔截一般操作。
+
+畫面位於 design/qa/v08/：characters-desktop-zh.jpg、characters-mobile-en.jpg、characters-mobile-zh-night.jpg、cinema-composition-zh.jpg、cinema-mobile-en.jpg、audio-desktop-zh.jpg、departure-game-en.jpg、skill-game-en.jpg、canvass-night-en.jpg、map-night-en.jpg、map-mobile-zh-day.jpg、generic-heavy-mobile-zh.jpg、stage-cinema-desktop-zh.jpg。截圖是當時可見範圍；一般重裝最終複核顯示兵種護盾，輔助朗讀亦使用「鐵票樁腳」。
+
+限制：原創合成器編曲第一版，沒有官方歌曲 remix、真人演唱、母語臺語人群實錄、逐幀行走／戰鬥 sprite 或成品影片。未驗證所有硬體、實體手機、音訊輸出裝置或所有瀏覽器。建置仍有既有 38.5MB 道路主 bundle 的大 chunk 警告，未處理分區串流。這版不修改道路 AP、存檔 schema、封關政策，也不增加帳號或即時新聞。以下保留歷史 QA。
+
 # 第一階段原型驗證
 
 驗證日期：2026-10-30。回合上限：28。

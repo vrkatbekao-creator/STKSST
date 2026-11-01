@@ -32,7 +32,9 @@ v0.5.2 加入活動點總成本、未完成／可執行篩選與「前往並掃�
 
 ## 啟動
 
-Windows 可雙擊 `StartGame.cmd`，開啟終端機顯示的 Local 網址。遊玩時保留該視窗，結束按 Ctrl+C。
+Windows 可雙擊 `StartGame.cmd`，啟動器會檢查環境、準備缺少的套件，伺服器就緒後自動開啟瀏覽器。遊玩時保留該視窗，結束按 Ctrl+C。一般遊玩使用 http://127.0.0.1:5173/。
+
+無障礙檢查可雙擊 `StartAccessibilityTest.cmd`，自動開啟 http://127.0.0.1:5187/design/compat-qa.html ，測試進度與一般遊玩分開。第一次操作請看 [LOCAL-TEST-GUIDE.md](LOCAL-TEST-GUIDE.md)，不用先設定 Codex 的瀏覽器工具。
 
 ```sh
 npm ci

@@ -23,7 +23,7 @@
 
 ## 可重現的本機檢查
 
-1. 以獨立 port 5187 啟動 Vite，瀏覽 `http://127.0.0.1:5187/design/compat-qa.html`；不要使用原遊玩存檔 origin。按「Run accessibility audit」或 F8；F8 可在 modal 內觸發。DOM 報告可人工複製保存，工具不傳送外站。
+1. 雙擊 `StartAccessibilityTest.cmd`，會以獨立 port 5187 啟動並開啟 `http://127.0.0.1:5187/design/compat-qa.html`；不要使用原遊玩存檔 origin。按「Run accessibility audit」或 F8；F8 可在 modal 內觸發。DOM 報告可人工複製保存，工具不傳送外站。初次操作可看 LOCAL-TEST-GUIDE.md。
 2. 在標準模式與四項偏好組合、zh-TW／en、白天／夜間重跑；記錄版本、實際 CSS 寬度、溢出、違規及 incomplete。圖像或符號的未定對比要人工檢查，不能刪除來湊零。
 3. 使用 query `?mode=no-webgl`、`no-storage`、`storage-full`、`corrupt-save`、`no-gzip`、`no-audio` 分別重載測試；這些模式會改隔離 origin 的執行環境，corrupt-save 會寫入固定損壞測試字串。不得用於有正式進度的 origin。
 4. 無 WebGL 要確認可看到有地形的 SVG、可選格／移動且 AP 相同。無儲存／額滿要確認留在遊戲且不丟現有進度；損壞檔要保留原字串。缺必要功能要有可讀的雙語說明且不初始化存檔；缺音訊不得阻擋遊玩。

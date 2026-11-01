@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
+    "play": "vite --host 127.0.0.1 --port 5173 --strictPort --open http://127.0.0.1:5173/",
+    "qa": "vite --host 127.0.0.1 --port 5187 --strictPort --open http://127.0.0.1:5187/design/compat-qa.html",
     "build": "vite build",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node --test --test-concurrency=2 tests/*.test.mjs",

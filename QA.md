@@ -1,3 +1,9 @@
+# 本機雙擊啟動入口
+
+2026-11-01。StartGame.cmd 改為自動開啟 127.0.0.1:5173；新增 StartAccessibilityTest.cmd 開啟獨立 5187 檢查頁，共用 Node.js／套件檢查。兩個啟動器的 --check-only 均 exit 0；以 STKSST_NO_OPEN=1 實際啟動並確認遊戲首頁與檢查頁 HTTP 200、入口 script 正確。驗證後已停止兩個測試服務，供使用者雙擊自行啟動。Vite 8.3.5 本機 help 核實 --open 參數；本輪沒有代開瀏覽器，也沒有重測或宣稱完成尚欠的 UI 驗收。
+
+Windows 批次檔統一 UTF-8／CRLF 並加 .gitattributes，修正 LF 換行下的命令解析問題。首次準備缺少套件會使用 npm ci；目前套件完整，沒有觸發重裝。初次在受限沙箱啟動的服務無法從一般本機連線，改在正常權限環境驗證通過；這是工具隔離而非遊戲流量限制。未改遊戲規則，沒有重跑無關的完整規則測試。操作見 LOCAL-TEST-GUIDE.md。
+
 # v0.13.0 無障礙修正與部分相容驗證
 
 2026-11-01。check、141 項 test、build 通過（137＋4）；開發 harness 亦納入 TypeScript 檢查。axe-core 4.14.0 為固定的開發依賴，npm 安裝稽核未回報漏洞；正式 build 不包含 axe／harness，最大 JS 檔 317,411 bytes，沒有大 chunk 警告。未修改 src/game 內規則、AI 或平衡值；真人平衡由使用者規劃公開測試。

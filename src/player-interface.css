@@ -1,0 +1,16 @@
+/* Player controls are discoverable on demand; build notes live outside src. */
+.map-display-options{border-block:1px solid #8ba7c9;background:#172943;color:#f7faff}
+.map-display-options>summary,.map-keyboard-controls>summary{cursor:pointer;padding:10px 0;font-weight:700;font-size:.875rem;line-height:1.5}
+.map-display-options>summary{padding-inline:18px}
+.map-display-options>summary:hover,.map-keyboard-controls>summary:hover{text-decoration:underline}
+.map-display-options .hex-legend{margin:0}
+.campaign .district-scene-card{grid-template-columns:72px minmax(0,1fr);padding:10px 18px;gap:14px}
+.campaign .district-scene-card h3{font-size:1.125rem;margin:0}
+.campaign .district-scene-card .scene-illustration svg{height:72px}
+.surface-route-profile>summary{cursor:pointer;font-weight:700;line-height:1.6}
+.surface-route-profile>svg{display:block;width:100%;max-width:450px}
+.surface-route-profile>span,.surface-route-profile>small{display:block}
+.campaign-footer a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+html[data-contrast=more] .map-display-options{background:#000;color:#fff;border-color:#fff}
+@media(max-width:700px){.campaign .district-scene-card{grid-template-columns:56px minmax(0,1fr);padding:10px 12px}.campaign .district-scene-card .scene-illustration svg{height:56px}.map-display-options>summary,.map-keyboard-controls>summary{min-height:44px}}
+@media(forced-colors:active){.map-display-options{background:Canvas!important;color:CanvasText!important}}

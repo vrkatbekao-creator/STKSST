@@ -1,3 +1,7 @@
+# 接續開發：v0.14 玩家介面與建置文件分離
+
+**v0.14 已完成本輪介面清理。** 開發／來源／精度／遷移／製作註記移到 GAME-BUILD-NOTES.md 與封存原文，不能回放到玩家操作說明。地圖顯示及鍵盤選格可展開，成本與遊戲狀態保留；無規則、AI、存檔或資料修改。check、141 tests、build 與本輪雙語／桌面／窄版／夜間局部 UI 已驗證，畫面在 design/qa/v14，詳 QA.md。本輪順帶修正已釋放 Pixi Application 的繪圖防護，相容地圖往返驗證沒有新增錯誤。測試 viewport 已復原，5188 測試服務完成後停止。完整相容性、所有 WCAG 準則與真實輔助科技仍 pending，真人平衡仍交公開測試；不重啟舊排程。以下沿革保留作為歷史證據。
+
 # 接續開發：v0.13 無障礙與待完成驗收
 
 **v0.13 無障礙修正已實作，完整相容驗收尚未完成。** check、141 tests、build 通過；五個場景的實際 DOM axe 4.14.0 違規 0，仍保留 incomplete。已加入獨立顯示偏好、原生鍵盤選格、skip links、modal 焦點／Escape、可辨識控制名稱、320px 換行與對比修正。Windows 原生 Chrome 視窗連線因無法可靠確認網址而令 Computer Use 停止，本輪未繞過，之後僅 CLI。完整縮放／真實輔助科技／其他瀏覽器、影音與辯論全流程仍待測，詳 ACCESSIBILITY-COMPAT-SPEC.md、COMPATIBILITY-TEST-MATRIX.md、artifacts/compatibility-v13.json。暫時 viewport 最後設為 1280×900，reset 未確認；下一個可用 UI turn 先 reset，使用已連線 tab，避免原生視窗識別。沒有本版新截圖，不要拿 v0.12 截圖冒充。真人平衡由使用者廣招公開測試，本輪不調整強弱，也不代發布或發邀請。以下為歷史交接。

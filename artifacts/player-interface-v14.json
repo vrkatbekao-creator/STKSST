@@ -1,0 +1,64 @@
+{
+  "version": "0.14.0",
+  "date": "2026-11-01",
+  "scope": "player copy, collapsed controls, build documentation and Pixi lifecycle guard",
+  "checks": {
+    "typecheck": "passed",
+    "tests": {
+      "passed": 141,
+      "failed": 0
+    },
+    "localeParityAfterFinalCopy": "passed",
+    "build": "passed"
+  },
+  "browser": {
+    "engine": "connected Chrome on Windows",
+    "origin": "http://127.0.0.1:5188",
+    "scenes": [
+      "zh-TW home and command office",
+      "resume",
+      "zh-TW street desktop",
+      "keyboard route preview without AP consumption",
+      "map display expand/collapse",
+      "building unknown height/floors",
+      "en player guide",
+      "en audio/visual settings",
+      "en narrow street and expanded display controls",
+      "en night",
+      "compatible map on/off after lifecycle guard"
+    ],
+    "narrow": {
+      "requestedViewport": [
+        320,
+        900
+      ],
+      "actualClientWidth": 277,
+      "actualScrollWidthCollapsed": 277,
+      "actualScrollWidthExpanded": 277
+    },
+    "viewportReset": true,
+    "postGuardPageConsoleErrors": [],
+    "limitations": [
+      "Not a full WCAG audit",
+      "No new screen-reader or other hardware/browser certification",
+      "Browser viewport request and actual CSS size differ under local display scaling"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "design/qa/v14/street-en-narrow.png",
+      "width": 65536,
+      "height": 4292542531
+    },
+    {
+      "path": "design/qa/v14/street-en-night.png",
+      "width": 65536,
+      "height": 4292542531
+    },
+    {
+      "path": "design/qa/v14/street-zh-desktop.png",
+      "width": 65536,
+      "height": 4292542531
+    }
+  ]
+}

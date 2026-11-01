@@ -16,21 +16,21 @@ export const RealRoadLayer=memo(function RealRoadLayer({roads,bounds,pixels,name
  </g>;
 });
 
-export function RoadConsole({data,error,retry,districtId,filter,onFilter,shown,onShown,names,onNames,onLocate,selected,cellId,radius,street}:{data:RoadData|null;error:boolean;retry:()=>void;districtId:string;filter:RoadFilter;onFilter:(v:RoadFilter)=>void;shown:boolean;onShown:()=>void;names:boolean;onNames:()=>void;onLocate:(key:string,roads:Road[])=>void;selected:string|null;cellId:string;radius:number;street:boolean}){
+export function RoadConsole({data,error,retry,districtId,filter,onFilter,shown,onShown,names,onNames,onLocate,selected,cellId,radius}:{data:RoadData|null;error:boolean;retry:()=>void;districtId:string;filter:RoadFilter;onFilter:(v:RoadFilter)=>void;shown:boolean;onShown:()=>void;names:boolean;onNames:()=>void;onLocate:(key:string,roads:Road[])=>void;selected:string|null;cellId:string;radius:number}){
  const {t,i18n}=useTranslation(),[query,setQuery]=useState('');
  useEffect(()=>setQuery(''),[districtId]);
  const local=useMemo(()=>data?.roads.filter(r=>r.districtIds.includes(districtId))??[],[data,districtId]);
  const groups=useMemo(()=>roadGroups(local.filter(r=>roadMatches(r,filter)),i18n.language,query),[local,filter,i18n.language,query]);
  const current=useMemo(()=>data?roadGroups(roadsInHex(data,allCells.get(cellId)!,radius),i18n.language):[],[data,cellId,radius,i18n.language]);
  return <section className="real-road-console" aria-label={t('c_realRoadControls')}>
- <div className="road-console-heading"><strong>{t('c_realRoads')}</strong>{data&&<span>{t('c_roadSnapshot',{date:data.source.dataTimestamp.slice(0,10),count:local.length.toLocaleString(i18n.language)})}</span>}</div>
+ <div className="road-console-heading"><strong>{t('c_realRoads')}</strong></div>
  {!data?<p role="status">{t(error?'c_roadsLoadFailed':'c_roadsLoading')}{error&&<button className="outline-button" onClick={retry}>{t('c_roadsRetry')}</button>}</p>:<>
  <div className="road-toggles"><button aria-pressed={shown} onClick={onShown}>{t('c_showRealRoads')}</button><button aria-pressed={names} disabled={!shown} onClick={onNames}>{t('c_showRoadNames')}</button><label>{t('c_roadFilter')}<select aria-label={t('c_roadFilter')} value={filter} onChange={e=>onFilter(e.target.value as RoadFilter)}>{(['all','arterial','local','path'] as const).map(f=><option value={f} key={f}>{t(`c_roadsFilter_${f}`)}</option>)}</select></label></div>
- <p className="road-contract">{t(street?'c_streetRoadHelp':'c_realRoadHelp')}</p>
- <details key={districtId} className="road-search"><summary>{t('c_searchDistrictRoads',{count:groups.length})}</summary><label>{t('c_roadQuery')}<input value={query} placeholder={t('c_roadQueryPlaceholder')} onChange={e=>setQuery(e.target.value)} aria-label={t('c_roadQuery')}/></label><small>{t('c_roadNameFallback')}</small>
+
+ <details key={districtId} className="road-search"><summary>{t('c_searchDistrictRoads',{count:groups.length})}</summary><label>{t('c_roadQuery')}<input value={query} placeholder={t('c_roadQueryPlaceholder')} onChange={e=>setQuery(e.target.value)} aria-label={t('c_roadQuery')}/></label>
  <ul>{groups.slice(0,12).map(group=><li key={group.key}><button aria-pressed={selected===group.key} onClick={()=>{onLocate(group.key,group.roads);if(!shown)onShown();}}><strong>{group.name}</strong><span>{t('c_roadSegments',{count:group.roads.length})} · {t(`c_roadClass_${group.roads[0].class}`)}</span></button></li>)}</ul>{!groups.length&&<p>{t('c_noRoadResults')}</p>}{groups.length>12&&<p>{t('c_roadResultsLimited')}</p>}
  </details>
- <details className="road-cell-inspector"><summary>{t('c_roadsInHex',{count:current.length})}</summary><p>{t('c_roadHexHelp')}</p><div>{current.slice(0,8).map(group=><button key={group.key} onClick={()=>{onLocate(group.key,group.roads);if(!shown)onShown();}}>{group.name}</button>)}</div>{!current.length&&<p>{t('c_noNamedRoadsInHex')}</p>}</details>
+ <details className="road-cell-inspector"><summary>{t('c_roadsInHex',{count:current.length})}</summary><div>{current.slice(0,8).map(group=><button key={group.key} onClick={()=>{onLocate(group.key,group.roads);if(!shown)onShown();}}>{group.name}</button>)}</div>{!current.length&&<p>{t('c_noNamedRoadsInHex')}</p>}</details>
  <div className="real-road-legend"><span className="road-legend-line">{t('c_roadClass_arterial')}</span><span className="road-legend-line road-legend-small">{t('c_roadClass_alley')}</span><span className="road-legend-line road-legend-path">{t('c_roadClass_path')}</span><span className="road-legend-line road-legend-express">{t('c_roadClass_express')}</span><span className="road-legend-line road-legend-selection">{t('c_locatedRoad')}</span></div>
  </>}
  </section>;

@@ -1,6 +1,6 @@
 # 第三階段交付：全市掃街競選
 
-目前版本 **v0.13.0**。無障礙與相容性修正依 ACCESSIBILITY-COMPAT-SPEC.md；完整驗收尚未完成，待測矩陣依 COMPATIBILITY-TEST-MATRIX.md。分區載入與無損路網表示依 MAP-LOADING-SPEC.md；成長依 GROWTH-SPEC.md，平衡依 BALANCE-SPEC.md。逐題辯論／舞台互動依 DIALOGUE-SPEC.md。角色、載具、原創音樂及演出依 MEDIA-SPEC.md，來源依 MEDIA-SOURCES.md；逐棟建物與衛星地表依 LANDSCAPE-SPEC.md。離線真實道路、原始路名與搜尋定位依 REAL-ROADS.md；12 區專屬街景第一版依 DISTRICT-STREETSCAPES.md；單鍵掃街規劃與今日步行路線依 STREET-WORKFLOW.md；格線對齊、足跡與活動清單依 MAP-READABILITY.md；三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
+目前版本 **v0.14.0**。玩家介面清理與建置文案邊界依 [GAME-BUILD-NOTES.md](GAME-BUILD-NOTES.md)：工程註記放建置文件，玩家說明只保留競選規則與操作；地圖顯示與鍵盤選格採收合控制。本輪不改規則、圖資或存檔。無障礙與相容性修正依 ACCESSIBILITY-COMPAT-SPEC.md；完整驗收尚未完成，待測矩陣依 COMPATIBILITY-TEST-MATRIX.md。分區載入與無損路網表示依 MAP-LOADING-SPEC.md；成長依 GROWTH-SPEC.md，平衡依 BALANCE-SPEC.md。逐題辯論／舞台互動依 DIALOGUE-SPEC.md。角色、載具、原創音樂及演出依 MEDIA-SPEC.md，來源依 MEDIA-SOURCES.md；逐棟建物與衛星地表依 LANDSCAPE-SPEC.md。離線真實道路、原始路名與搜尋定位依 REAL-ROADS.md；12 區專屬街景第一版依 DISTRICT-STREETSCAPES.md；單鍵掃街規劃與今日步行路線依 STREET-WORKFLOW.md；格線對齊、足跡與活動清單依 MAP-READABILITY.md；三方陣營與本機存檔／續玩依 PHASE-3-SESSION.md；色系、兵種、三主將、六種事件及接駁修訂以 PHASE-3-PUNK.md 為準；下文保留 v0.3.0 的基礎數值紀錄。
 
 依已確認的 PHASE-3-DESIGN.md、MAP-HEX-SPEC.md 及 INTELLIGENCE-SYSTEM.md 製作。本機單機，React + PixiJS + 單一 Zustand 競選狀態；沒有帳號、雲端、即時新聞或線上系統。第一、二階段方格原型保留為歷史程式及回歸測試，預設入口改為第三階段。
 
@@ -15,7 +15,7 @@
 - 原始官方 SHP 建立同一套 EPSG:3826 格網，原點 E300000 / N2800000；北向朝上，尖頂六角格半徑 190 公尺、對角直徑 380 公尺。共 2,859 格，12 區各 5 個活動節點，共 60 個。
 - 格子使用 `taipei-hex-v1:q,r` 穩定 ID，以原始區界判定行政區歸屬；沒有把行政區改畫成規則六角形。地圖顯示輪廓做保拓撲的局部簡化，通行與落格不使用這份顯示簡化輪廓。
 - 官方河流多邊形及 65 筆通過位置篩選的跨河橋梁線段加入建置。河道阻擋格子及穿越水面的格邊；橋梁周邊 90 公尺為遊戲尺度的通道容差，不代表實測橋面寬度。格網通行邊雙向，所有行政區主節點在同一可通行分量。
-- 各區加入相應地標、街景圖樣、街巷、綠地與坡地分布。一般節點、建物圖樣、坡地與 AP 成本屬遊戲配置，尚非逐街道路網或實測高程；介面與資料皆明示。真實位置只用於區界、河道、橋梁與 Wonder 代表點。
+- 各區加入相應地標、街景圖樣、街巷、綠地與坡地分布。這段保留 v0.3 背景：一般節點、建物圖樣、坡地與 AP 成本屬當時遊戲配置；後續道路／建物／DSM 依上列新規格，來源與限制改記於建置文件。真實位置只用於區界、河道、橋梁與 Wonder 代表點。
 - Wonder 原始座標保留，另存吸附格及位移，建置時限制在原行政區、最多位移 650 公尺。活動點是周邊虛構遊戲場地。
 - PixiJS 畫地形，SVG 提供相同格網的互動與文字；畫布失敗時可使用向量圖及節點操作。支援平移、縮放、隊伍置中、節點清單及鍵盤選取。
 

@@ -66,6 +66,6 @@ export function DistrictSceneCard({districtId}:{districtId:string}){
  const {t}=useTranslation(),s=districtScenes[districtId];
  return <section className="district-scene-card" aria-label={t('c_sceneCard')} style={{'--scene-accent':s.accent} as React.CSSProperties}>
  <div className="scene-illustration" aria-hidden="true"><svg viewBox="-67 -55 134 100"><g transform="translate(0,17)" color={s.accent}><path d="M-62 20H62M-49 27H49" fill="none" stroke="currentColor" opacity=".25"/><g transform="translate(-43,6) scale(.55)"><Trees color={s.plant}/></g><g transform="scale(1.55)"><DistrictLandmark districtId={districtId}/></g><g transform="translate(47,8) scale(.45)"><Trees color={s.plant}/></g></g></svg></div>
- <div><span className="scene-eyebrow">{t('c_sceneEdition',{number:String((Number(districtId)-6300000)/100).padStart(2,'0')})}</span><h3>{t(`c_sceneTitle_${districtId}`)}</h3><p>{t(`c_sceneBody_${districtId}`)}</p><small>{t('c_sceneSchematic')}</small></div>
+ <div><h3>{t(`c_sceneTitle_${districtId}`)}</h3></div>
  </section>;
 }

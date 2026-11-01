@@ -157,7 +157,7 @@
   "guardRemaining_other": "Shield active · {{count}} days including today",
   "skillCooldown_other": "Cooldown: {{count}} days",
   "c_chapter": "CAPITAL CHAPTER · CITYWIDE CANVASSING",
-  "c_edition": "Balance pass · compatibility checks · v0.11.0",
+  "c_edition": "Balance pass · compatibility checks · v0.12.0",
   "c_kicker": "TWELVE DISTRICTS. ONE CITY CAMPAIGN.",
   "c_hero": "Every street.\nEvery voice.",
   "c_heroBody": "Take your team into Taipei’s neighborhoods. Plan hex-grid routes, run community stages and contest landmark nodes. When the polls go dark, listen to the street.",
@@ -342,7 +342,7 @@
   "c_resultLose": "Your opponent wins the city",
   "c_resultDraw": "The city campaign is tied",
   "c_unlockedHistory": "View unlocked daily support history",
-  "c_footer": "Campaign Knights · Capital Chapter · v0.11.0",
+  "c_footer": "Campaign Knights · Capital Chapter · v0.12.0",
   "c_gameValues": "Support and crowds are synthetic game data",
   "c_guide1": "Play 28 days, each with day and night. AP carries between phases. Your opponent acts at night’s end before settlement.",
   "c_guide2": "Select a district on the atlas, then enter the shared hex map. Changing views spends no time and never resets units.",
@@ -801,5 +801,8 @@
   "g_assisted": "This member has already received support today.",
   "c_action_recruit": "Recruit support",
   "c_action_assist": "Support an ally",
-  "g_noNeed": "This member does not currently need this support."
+  "g_noNeed": "This member does not currently need this support.",
+  "p_bootLoading": "Preparing your campaign map. The first launch may take a moment.",
+  "p_bootFailed": "The map could not load. Check that the game server is still running, then retry. Your existing save is preserved.",
+  "p_retry": "Retry loading"
 }

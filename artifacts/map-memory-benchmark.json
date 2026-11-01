@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-01",
+  "baseline": "ef1b26b",
+  "scope": "Three fresh Node CLI processes per implementation, median retained memory after GC, same host. Includes loading/hash/decompression in new path. Not browser peak memory, FPS or cold-start certification.",
+  "runs": {
+    "before": [
+      {
+        "milliseconds": 2220.3473,
+        "heapUsed": 493551984,
+        "arrayBuffers": 10483,
+        "rss": 673452032,
+        "edges": 552788,
+        "nodes": 234577
+      },
+      {
+        "milliseconds": 2143.2857000000004,
+        "heapUsed": 493549224,
+        "arrayBuffers": 10483,
+        "rss": 671178752,
+        "edges": 552788,
+        "nodes": 234577
+      },
+      {
+        "milliseconds": 2264.4753,
+        "heapUsed": 493546464,
+        "arrayBuffers": 10483,
+        "rss": 673206272,
+        "edges": 552788,
+        "nodes": 234577
+      }
+    ],
+    "after": [
+      {
+        "milliseconds": 1602.3981,
+        "heapUsed": 288522072,
+        "arrayBuffers": 23432543,
+        "rss": 482586624,
+        "edges": 552788,
+        "nodes": 234577
+      },
+      {
+        "milliseconds": 1689.9547,
+        "heapUsed": 288524632,
+        "arrayBuffers": 23432543,
+        "rss": 482664448,
+        "edges": 552788,
+        "nodes": 234577
+      },
+      {
+        "milliseconds": 1643.5777,
+        "heapUsed": 288525256,
+        "arrayBuffers": 23432543,
+        "rss": 487641088,
+        "edges": 552788,
+        "nodes": 234577
+      }
+    ]
+  },
+  "summary": {
+    "before": {
+      "milliseconds": 2220,
+      "heapUsed": 493549224,
+      "arrayBuffers": 10483,
+      "rss": 673206272,
+      "edges": 552788,
+      "nodes": 234577
+    },
+    "after": {
+      "milliseconds": 1644,
+      "heapUsed": 288524632,
+      "arrayBuffers": 23432543,
+      "rss": 482664448,
+      "edges": 552788,
+      "nodes": 234577
+    }
+  }
+}

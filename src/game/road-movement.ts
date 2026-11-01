@@ -22,4 +22,4 @@ export function roadMovement(g:Campaign,u:CampaignUnit,budget:number):RoadMoveme
  }
  return {costs,previous:new Map(),road:{start,previous,effort}};
 }
-export function roadRoute(walk:RoadMovement,to:string){const target=allCells.get(to)?.roadNode;if(target===undefined||!walk.costs.has(to))return null;const edgeIds:number[]=[];let at=target;while(at!==walk.road.start){const id=walk.road.previous.get(at);if(id===undefined)return null;edgeIds.unshift(id);at=routingEdges[id].from;}const path=edgeIds.length?roadWalkCells(edgeIds):[to];return {cost:walk.costs.get(to)!,path,edgeIds,geometry:walkGeometry(path,edgeIds),...walkSummary(edgeIds)};}
+export function roadRoute(walk:RoadMovement,to:string){const target=allCells.get(to)?.roadNode;if(target===undefined||!walk.costs.has(to))return null;const edgeIds:number[]=[];let at=target;while(at!==walk.road.start){const id=walk.road.previous.get(at);if(id===undefined)return null;edgeIds.unshift(id);at=routingEdges[id].from;}const path=edgeIds.length?roadWalkCells(edgeIds):[to];return {cost:walk.costs.get(to)!,path,edgeIds,get geometry(){return walkGeometry(path,edgeIds);},...walkSummary(edgeIds)};}

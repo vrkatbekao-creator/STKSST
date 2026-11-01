@@ -1,6 +1,7 @@
-import data from '../data/taipei-map.json' with { type: 'json' };
 import catalog from '../data/taipei-wonders.json' with { type: 'json' };
-import streetRaw from '../data/taipei-street-map-v2.js';
+import {loadStreetRuntime} from './street-runtime.ts';
+const {base:data,meta:streetSource,graph:streetGraph}=await loadStreetRuntime();
+export {streetSource};
 export type Hex = { q:number; r:number };
 export type StreetEdge={from:string;to:string;metres:number;assumed:boolean;stairs:boolean;points:number[][];wayIds:number[]};
 export type Cell={id:string;q:number;r:number;x:number;y:number;districtId:string;terrain:string;neighbors:string[];walkable?:boolean;roadPoint?:number[];roadNode?:number;parentId?:string};
@@ -21,20 +22,26 @@ for(const c of data.cells){if(c.terrain==='water'||components.has(c.id))continue
 export function connected(a:string,b:string){return components.has(a)&&components.get(a)===components.get(b);}
 
 export type RoadWay={id:number;name:{'zh-TW':string;en:string};highway:string;foot:string;access:string;bridge:string;tunnel:string;layer:string;onewayFoot:string;assumed:boolean};
-type CompactStreet={version:string;radiusMetres:number;revision:string;cells:number[][];anchors:[number,number][];graphNodes:[number,number,number,string][];graphLinks:[number,number,number,number,number[],number][];cellLinks:number[][];nodeCells:Record<string,number>;nodeSnaps:Record<string,number>;districtAnchors:Record<string,number>;source:{sourceUrl:string;sourceSha256:string;dataTimestamp:string;licence:string};ways:[number,RoadWay['name'],string,string,string,string,string,string,string,boolean][];audit:Record<string,unknown>};
-export const streetSource=streetRaw as unknown as CompactStreet;
 export function axialAt(x:number,y:number,size:number){const q=x/(Math.sqrt(3)*size)-y/(3*size),r=y/(1.5*size);let a=Math.round(q),b=Math.round(r),c=Math.round(-q-r);const da=Math.abs(a-q),db=Math.abs(b-r),dc=Math.abs(c+q+r);if(da>db&&da>dc)a=-b-c;else if(db>dc)b=-a-c;return {q:a,r:b};}
 const anchorIndices=new Map(streetSource.anchors);
-const streetCells:Cell[]=streetSource.cells.map(([q,r,district,terrain],index)=>{const x=50*Math.sqrt(3)*(q+r/2),y=75*r,parent=axialAt(x,y,190),roadNode=anchorIndices.get(index),point=roadNode===undefined?undefined:streetSource.graphNodes[roadNode];return {id:`${streetSource.version}:${q},${r}`,q,r,x,y,districtId:districts[district].id,terrain:['urban','lane','park','slope','plaza','water'][terrain],neighbors:[],walkable:roadNode!==undefined,roadNode,roadPoint:point?[point[0],point[1]]:undefined,parentId:`taipei-hex-v1:${parent.q},${parent.r}`};});
+const streetCells:Cell[]=streetSource.cells.map(([q,r,district,terrain],index)=>{const x=50*Math.sqrt(3)*(q+r/2),y=75*r,parent=axialAt(x,y,190),roadNode=anchorIndices.get(index),point=roadNode===undefined?undefined:[streetGraph.xy[roadNode*2],streetGraph.xy[roadNode*2+1]];return {id:`${streetSource.version}:${q},${r}`,q,r,x,y,districtId:districts[district].id,terrain:['urban','lane','park','slope','plaza','water'][terrain],neighbors:[],walkable:roadNode!==undefined,roadNode,roadPoint:point?[point[0],point[1]]:undefined,parentId:`taipei-hex-v1:${parent.q},${parent.r}`};});
 export const streetCellMap=new Map(streetCells.map(c=>[c.id,c]));
 for(const [a,b] of streetSource.cellLinks)streetCells[a].neighbors.push(streetCells[b].id);
 export const streetWays=new Map<number,RoadWay>(streetSource.ways.map(([id,name,highway,foot,access,bridge,tunnel,layer,onewayFoot,assumed])=>[id,{id,name,highway,foot,access,bridge,tunnel,layer,onewayFoot,assumed}]));
 export type RoutingEdge={id:number;from:number;to:number;metres:number;wayId:number;points:number[][];cellIds:string[]};
-export const routingNodes=streetSource.graphNodes.map(([x,y,cell,sourceId])=>({x,y,cellId:streetCells[cell].id,sourceId}));
+export const routingNodes=Array.from({length:streetGraph.nodeCount},(_,i)=>({x:streetGraph.xy[i*2],y:streetGraph.xy[i*2+1],cellId:streetCells[streetGraph.cell[i]].id}));
 export const routingEdges:RoutingEdge[]=[];
 export const routingOutgoing:number[][]=routingNodes.map(()=>[]),routingIncoming:number[][]=routingNodes.map(()=>[]);
-function addRoutingEdge(from:number,to:number,metres:number,wayId:number,points:number[][]){const a=routingNodes[from].cellId,b=routingNodes[to].cellId,id=routingEdges.length;routingEdges.push({id,from,to,metres,wayId,points,cellIds:a===b?[a]:[a,b]});routingOutgoing[from].push(id);routingIncoming[to].push(id);}
-for(const [from,to,metres,wayId,flat,both] of streetSource.graphLinks){const points:number[][]=[];for(let i=0;i<flat.length;i+=2)points.push([flat[i],flat[i+1]]);addRoutingEdge(from,to,metres,wayId,points);if(both)addRoutingEdge(to,from,metres,wayId,[...points].reverse());}
+// Full routing topology stays synchronous. Geometry remains packed until a route is drawn.
+class PackedEdge implements RoutingEdge{
+ id:number;from:number;to:number;metres:number;wayId:number;cellIds:string[];private link:number;private reverse:boolean;
+ constructor(id:number,from:number,to:number,metres:number,wayId:number,cellIds:string[],link:number,reverse:boolean){this.id=id;this.from=from;this.to=to;this.metres=metres;this.wayId=wayId;this.cellIds=cellIds;this.link=link;this.reverse=reverse;}
+ get points(){const result:number[][]=[];for(let p=streetGraph.pointOffsets[this.link];p<streetGraph.pointOffsets[this.link+1];p+=2)result.push([streetGraph.points[p],streetGraph.points[p+1]]);return this.reverse?result.reverse():result;}
+}
+function addRoutingEdge(link:number,reverse:boolean){const at=link*3,from=streetGraph.links[at+(reverse?1:0)],to=streetGraph.links[at+(reverse?0:1)],a=routingNodes[from].cellId,b=routingNodes[to].cellId,id=routingEdges.length;
+ routingEdges.push(new PackedEdge(id,from,to,streetGraph.metres[link],streetGraph.links[at+2],a===b?[a]:[a,b],link,reverse));routingOutgoing[from].push(id);routingIncoming[to].push(id);
+}
+for(let i=0;i<streetGraph.linkCount;i++){addRoutingEdge(i,false);if(streetGraph.both[i])addRoutingEdge(i,true);}
 const streetNodes:CampaignNode[]=nodes.map(n=>({...n,cellId:streetCells[streetSource.nodeCells[n.id]].id,...(n.kind==='wonder'?{snapMetres:streetSource.nodeSnaps[n.id]}:{})}));
 const streetDistricts=districts.map(d=>({...d,anchor:streetCells[streetSource.districtAnchors[d.id]].id}));
 export const streetCampaignMap={...campaignMap,version:streetSource.version,radiusMetres:50,cells:streetCells,nodes:streetNodes,districts:streetDistricts};

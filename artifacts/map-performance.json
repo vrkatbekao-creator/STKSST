@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-01",
+  "version": "0.12.0",
+  "baseline": "ef1b26b",
+  "largestJavaScript": {
+    "beforeApproxBytes": 38552190,
+    "after": {
+      "file": "index-CUe9ulgS.js",
+      "bytes": 313101
+    },
+    "reductionPercent": 99.19
+  },
+  "allGeneratedJavaScriptBytes": 1078107,
+  "coreGzipBytes": 9512367,
+  "firstZhongzhengStreetView": {
+    "districts": [
+      "6300300",
+      "6300500",
+      "6300700"
+    ],
+    "scope": "Actual first-view files observed in local QA server log. District-switch stress test intentionally loads other districts later.",
+    "roads": {
+      "beforeBytes": 3789045,
+      "afterBytes": 758570
+    },
+    "buildings": {
+      "beforeBytes": 4557121,
+      "afterBytes": 1206154
+    },
+    "noFullCityPresentationFetch": true
+  },
+  "retainedRoutingMemory": {
+    "beforeBytes": 493559707,
+    "afterBytes": 311957175,
+    "reductionPercent": 36.79,
+    "scope": "Three fresh Node CLI processes per implementation, median retained memory after GC, same host. Includes loading/hash/decompression in new path. Not browser peak memory, FPS or cold-start certification."
+  },
+  "browser": {
+    "name": "Chrome",
+    "desktopClientWidth": 985,
+    "narrowRequested": {
+      "width": 375,
+      "height": 812
+    },
+    "narrowObserved": {
+      "innerWidth": 341,
+      "clientWidth": 328,
+      "scrollWidth": 328
+    },
+    "districtsTested": 12,
+    "normalConsoleWarnErrorCount": 0,
+    "saveResume": "Day 1 night, AP 7, materials 35, one actual road walk retained after full reload",
+    "fault": "Injected one routing HTTP 503; bilingual error and successful retry. Not a real traffic limit.",
+    "screenshots": [
+      "design/qa/v12/map-mobile-en-night.png",
+      "design/qa/v12/map-desktop-zh-night.png",
+      "design/qa/v12/load-error-en.png"
+    ]
+  },
+  "limits": [
+    "Complete routing topology still resident for cross-city AI and save validation",
+    "No physical low-memory device certification",
+    "Firefox/Safari and complete assistive-technology workflows not tested",
+    "No Service Worker offline installation",
+    "Canonical full-city source archives retained on disk"
+  ]
+}

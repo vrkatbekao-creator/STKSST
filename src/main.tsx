@@ -1,5 +1,5 @@
 import { createRoot } from 'react-dom/client';
 import './i18n.ts';
-import App from './App.tsx';
+import MapBoot from './MapBoot.tsx';
 import './style.css';
-createRoot(document.getElementById('root')!).render(<App/>);
+createRoot(document.getElementById('root')!).render(<MapBoot/>);

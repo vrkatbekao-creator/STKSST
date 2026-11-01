@@ -38,3 +38,10 @@ Source data licence and notices continue to apply to these derivatives.
 No warranty of completeness, current conditions or navigation accuracy.
 
 These data notices do not relicense the game software or artwork.
+
+v0.12 runtime repackaging (2026-11-01): public/data/runtime-v1/manifest.json
+lists content-hashed, lossless routing arrays and district road/building subsets.
+Source attribution and licence terms above continue to apply. No new source
+geometry or walking permission is inferred. Canonical full-city derived files
+remain available alongside these runtime partitions. Rebuild with
+node design/build-map-packages.mjs; runtime format: MAP-LOADING-SPEC.md.

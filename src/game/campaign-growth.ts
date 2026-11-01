@@ -20,6 +20,13 @@ export function exert(g:Campaign,u:CampaignUnit,action:string,ap:number){const c
 export function recover(u:CampaignUnit){const c=career(u);c.health=Math.min(100,c.health+18);c.morale=Math.min(100,c.morale+8);u.career=c;}
 export function morning(u:CampaignUnit){const c=career(u);c.health=Math.min(100,c.health+10);c.morale=Math.max(0,Math.min(100,c.morale+(c.morale<60?2:c.morale>60?-2:0)));c.dailyXp=0;u.career=c;u.maxAp=capacity(u);}
 export const recruitCost=(g:Campaign,team:Team)=>({ap:3,materials:10+Math.max(0,g.units.filter(u=>u.team===team).length-3)*3});
+export const dailySupplies=(g:Campaign,team:Team)=>8-Math.floor(Math.max(0,g.units.filter(u=>u.team===team).length-3)/2);
+export function aiRosterGoal(g:Campaign,team:Team){
+ const venues=g.stages.filter(s=>s.team===team).length;
+ const allies=g.units.filter(u=>u.team===team&&u.mobilization>0),enemies=g.units.filter(u=>u.team!==team&&u.mobilization>0);
+ const threatened=enemies.filter(enemy=>allies.some(ally=>hexDistance(cells.get(ally.cellId)!,cells.get(enemy.cellId)!)<=4)).length>=2;
+ return Math.min(7,Math.max(g.day>=5?4:g.day>=3?4:3,g.day>=12&&venues?5:3,g.day>=18&&venues>=2?6:3,g.day>=10&&threatened?6:3,g.day>=22&&g.resources[team].materials>40?7:3));
+}
 export function recruitLocation(g:Campaign,u:CampaignUnit){const {cells:mapCells,districts}=mapFor(g);const district=mapCells.get(u.cellId)!.districtId,home=districts.find(d=>d.id===district)!;const occupied=new Set(g.units.filter(v=>v.withdrawUntil<=g.day&&v.mobilization>0&&career(v).health>0).map(v=>v.cellId));const origin=mapCells.get(home.anchor)!;
  const candidates=[origin,...origin.neighbors.map(id=>mapCells.get(id)!),...origin.neighbors.flatMap(id=>mapCells.get(id)!.neighbors.map(x=>mapCells.get(x)!))];
  return candidates.find(c=>c.districtId===district&&c.walkable!==false&&c.terrain!=='water'&&!occupied.has(c.id)&&connected(u.cellId,c.id))?.id??null;

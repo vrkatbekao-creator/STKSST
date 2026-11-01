@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-01",
+  "synthetic": true,
+  "games": 378,
+  "dayEndInvariantChecks": 10584,
+  "saveRoundTrips": 1134,
+  "errors": 0,
+  "stages": {
+    "balance-before": 36,
+    "balance-pilot": 36,
+    "balance-forced-seven": 126,
+    "balance-forced-seven-night": 18,
+    "balance-forced-seven-compact": 9,
+    "balance-final": 126,
+    "balance-night": 18,
+    "balance-compact": 9
+  },
+  "finalByFaction": {
+    "blue": {
+      "games": 42,
+      "wins": 20,
+      "draws": 0,
+      "meanPlayerScore": 2585
+    },
+    "green": {
+      "games": 42,
+      "wins": 16,
+      "draws": 0,
+      "meanPlayerScore": 2550
+    },
+    "white": {
+      "games": 42,
+      "wins": 16,
+      "draws": 0,
+      "meanPlayerScore": 2587
+    }
+  },
+  "finalByCommander": {
+    "jiang": {
+      "games": 42,
+      "wins": 17,
+      "draws": 0,
+      "meanPlayerScore": 2590
+    },
+    "shen": {
+      "games": 42,
+      "wins": 22,
+      "draws": 0,
+      "meanPlayerScore": 2587
+    },
+    "huang": {
+      "games": 42,
+      "wins": 13,
+      "draws": 0,
+      "meanPlayerScore": 2545
+    }
+  },
+  "finalMeanRoster": 5.716931216931217,
+  "nightByFaction": {
+    "blue": {
+      "games": 6,
+      "wins": 2,
+      "draws": 0,
+      "meanPlayerScore": 2621
+    },
+    "green": {
+      "games": 6,
+      "wins": 1,
+      "draws": 0,
+      "meanPlayerScore": 2572
+    },
+    "white": {
+      "games": 6,
+      "wins": 2,
+      "draws": 0,
+      "meanPlayerScore": 2590
+    }
+  },
+  "compactByFaction": {
+    "blue": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2977
+    },
+    "green": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2990
+    },
+    "white": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2996
+    }
+  },
+  "limits": "Automated policies only; not human playtesting or universal balance. Timings may include host pauses. No Firefox pass is claimed."
+}

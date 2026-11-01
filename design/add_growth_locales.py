@@ -24,7 +24,7 @@ entries={
 'g_recruitHelp':('主將可招募輔助角色，含主將在內的原有三人一併計數，最多七人。新隊員在本區基地附近報到，次晨才取得 AP。','The commander may recruit support characters, up to seven total including the original team. New members arrive near the district base and receive AP next morning.'),
 'g_chooseHelper':('選擇支援職務','Choose support role'),
 'g_recruit':('招募輔助角色','Recruit support member'),
-'g_upkeep':('每增加一名隊員，每日晨間物資補給減少 1，最低仍補給 4。','Each extra member reduces morning supply income by 1, to a minimum income of 4.'),
+'g_upkeep':('每兩名額外隊員讓每日晨間物資補給減少 1；七人滿編仍補給 6。','Every two extra members reduce morning supply income by 1; a full seven-member roster still receives 6.'),
 'g_recruitLeader':('請選擇可行動的主將招募支援角色。','Select an available commander to recruit support.'),
 'g_rosterFull':('本陣營已達七名隊員上限。','This faction has reached its seven-member limit.'),
 'g_assistRange':('請選擇兩格內、同隊且可接受支援的其他隊員。','Choose another eligible ally within two hexes.'),
@@ -38,3 +38,4 @@ entries={
 for i,lang in enumerate(['zh-TW','en']):
  p=ROOT/'src/locales'/f'{lang}.json';d=json.loads(p.read_text('utf8'));d.update({k:v[i] for k,v in entries.items()});p.write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n','utf8')
 print(f'Updated {len(entries)} growth entries.')
+exec((ROOT/'design/add_balance_locales.py').read_text(encoding='utf8'))

@@ -1,0 +1,917 @@
+{
+  "date": "2026-11-01",
+  "synthetic": true,
+  "method": "All factions use the same automated policy. Player acts in daytime, rivals at night. Phase is a confound; compare night and compact reports.",
+  "phase": "balance-before",
+  "totalPlanned": 36,
+  "completed": 36,
+  "elapsedMs": 118890,
+  "errors": [],
+  "byFaction": {
+    "blue": {
+      "games": 12,
+      "wins": 12,
+      "draws": 0,
+      "meanPlayerScore": 2995
+    },
+    "green": {
+      "games": 12,
+      "wins": 4,
+      "draws": 0,
+      "meanPlayerScore": 2915
+    },
+    "white": {
+      "games": 12,
+      "wins": 7,
+      "draws": 0,
+      "meanPlayerScore": 2958
+    }
+  },
+  "byCommander": {
+    "jiang": {
+      "games": 12,
+      "wins": 10,
+      "draws": 0,
+      "meanPlayerScore": 2978
+    },
+    "shen": {
+      "games": 12,
+      "wins": 8,
+      "draws": 0,
+      "meanPlayerScore": 2959
+    },
+    "huang": {
+      "games": 12,
+      "wins": 5,
+      "draws": 0,
+      "meanPlayerScore": 2931
+    }
+  },
+  "meanRoster": 3,
+  "results": [
+    {
+      "seed": 7919,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2877,
+        "green": 2827,
+        "white": 2823
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.88888888888889,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5004,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2973,
+        "green": 2785,
+        "white": 2756
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.88888888888889,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5068,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "green",
+      "scores": {
+        "blue": 2789,
+        "green": 2911,
+        "white": 2849
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.55555555555556,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5212,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3002,
+        "green": 2785,
+        "white": 2765
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5453,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "green",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2831,
+        "green": 2842,
+        "white": 2843
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4900,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "green",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "green",
+      "scores": {
+        "blue": 2854,
+        "green": 2882,
+        "white": 2802
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.66666666666667,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5729,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "white",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2877,
+        "green": 2783,
+        "white": 2891
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.11111111111111,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4713,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2790,
+        "green": 2780,
+        "white": 2953
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.77777777777777,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5377,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3086,
+        "green": 2902,
+        "white": 3034
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.44444444444444,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5966,
+      "invariants": true
+    },
+    {
+      "seed": 7919,
+      "team": "white",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2851,
+        "green": 2794,
+        "white": 2850
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.33333333333333,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 7622,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3059,
+        "green": 2930,
+        "white": 3008
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.11111111111111,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6791,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3107,
+        "green": 2924,
+        "white": 2961
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.88888888888889,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 8031,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "green",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3115,
+        "green": 3011,
+        "white": 2965
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.77777777777777,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 7751,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3069,
+        "green": 3003,
+        "white": 3053
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 9419,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3108,
+        "green": 2920,
+        "white": 3053
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.44444444444444,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 7955,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "green",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3160,
+        "green": 2964,
+        "white": 3019
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.44444444444444,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 8924,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "white",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3143,
+        "green": 2919,
+        "white": 3029
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.66666666666667,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 8533,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3051,
+        "green": 2877,
+        "white": 2892
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 92,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6580,
+      "invariants": true
+    },
+    {
+      "seed": 15838,
+      "team": "white",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3133,
+        "green": 2864,
+        "white": 3034
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.88888888888889,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 8113,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "green",
+      "scores": {
+        "blue": 2909,
+        "green": 2990,
+        "white": 2965
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.11111111111111,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6112,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2974,
+        "green": 2912,
+        "white": 2972
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.77777777777777,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6697,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "green",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2940,
+        "green": 2915,
+        "white": 2942
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.33333333333333,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6019,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2988,
+        "green": 2930,
+        "white": 2894
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.22222222222223,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 6780,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "white",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2939,
+        "green": 2899,
+        "white": 2979
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.22222222222223,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5927,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "green",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2944,
+        "green": 2928,
+        "white": 2969
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 7019,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3000,
+        "green": 2763,
+        "white": 2813
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.55555555555556,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4682,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2927,
+        "green": 2884,
+        "white": 3074
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.11111111111111,
+      "meanLevel": 4.222222222222222,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5202,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2880,
+        "green": 2855,
+        "white": 2763
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 93,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4746,
+      "invariants": true
+    },
+    {
+      "seed": 23757,
+      "team": "white",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 3009,
+        "green": 2853,
+        "white": 2969
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.11111111111111,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5460,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "green",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2815,
+        "green": 2812,
+        "white": 2786
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.11111111111111,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4731,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2943,
+        "green": 2841,
+        "white": 2742
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.22222222222223,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5251,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2797,
+        "green": 2797,
+        "white": 2898
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 88.44444444444444,
+      "meanLevel": 4,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4538,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "white",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2817,
+        "green": 2730,
+        "white": 2873
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 88.77777777777777,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4552,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "legacy-hex",
+      "result": "green",
+      "scores": {
+        "blue": 2753,
+        "green": 2920,
+        "white": 2817
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 90.11111111111111,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 5247,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "green",
+      "commander": "huang",
+      "profile": "legacy-hex",
+      "result": "blue",
+      "scores": {
+        "blue": 2888,
+        "green": 2797,
+        "white": 2781
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 91.44444444444444,
+      "meanLevel": 4.222222222222222,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 4140,
+      "invariants": true
+    },
+    {
+      "seed": 31676,
+      "team": "white",
+      "commander": "shen",
+      "profile": "legacy-hex",
+      "result": "white",
+      "scores": {
+        "blue": 2756,
+        "green": 2806,
+        "white": 2896
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 3,
+        "white": 3
+      },
+      "meanHealth": 89.44444444444444,
+      "meanLevel": 4.111111111111111,
+      "maxRoster": 3,
+      "recruits": 0,
+      "reportsRetained": 12,
+      "elapsedMs": 7730,
+      "invariants": true
+    }
+  ]
+}

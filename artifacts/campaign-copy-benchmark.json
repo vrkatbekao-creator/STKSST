@@ -1,0 +1,11 @@
+{
+  "date": "2026-11-01",
+  "units": 18,
+  "historyDays": 28,
+  "samples": 200,
+  "fullCloneMs": 1285.83,
+  "appendOnlyCopyMs": 142.2,
+  "ratio": 9.04,
+  "equalValues": true,
+  "scope": "Single-host CPU microbenchmark, not browser FPS or end-to-end responsiveness."
+}

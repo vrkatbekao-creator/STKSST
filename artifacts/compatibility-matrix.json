@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-01",
+  "hardware": {
+    "os": "Windows",
+    "cpu": "Intel Core i5-1235U",
+    "logicalProcessors": 12,
+    "memoryGiB": 23.7,
+    "otherPhysicalDevicesTested": false
+  },
+  "browsers": [
+    {
+      "name": "IAB Chromium",
+      "status": "tested",
+      "scope": "zh-TW/en, day/night, 375x812 and desktop, dialogue save/resume, stage operation, careers and seven members"
+    },
+    {
+      "name": "Chrome",
+      "status": "smoke-tested",
+      "scope": "rendering, White faction with Shen, keyboard Enter to start; exact version not captured"
+    },
+    {
+      "name": "Firefox",
+      "status": "blocked-not-tested",
+      "reason": "Native Windows browser UI automation stopped because URL policy enforcement is unsupported. No workaround attempted."
+    }
+  ],
+  "accessibility": {
+    "keyboard": "Chrome Enter start tested; dialogue focus and native controls in IAB. Map Space handling patched and source-checked, not re-tested after UI automation stopped.",
+    "contrast": "9 declared opaque colour pairs; minimum 6.75:1. Not a computed cascade audit.",
+    "screenReaderHardwareTested": false,
+    "certification": false
+  },
+  "notTested": [
+    "Safari",
+    "other operating systems",
+    "physical phones/tablets",
+    "other GPUs",
+    "all audio outputs",
+    "full screen-reader workflow",
+    "all zoom and forced-colour modes"
+  ],
+  "trafficLimitObserved": false
+}

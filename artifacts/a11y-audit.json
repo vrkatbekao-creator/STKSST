@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-01",
+  "scope": "Heuristic source checks (not a JSX parser or computed accessible-name audit) and declared opaque colour pairs only. Not an end-to-end WCAG certification, real screen-reader audit, computed browser cascade audit or Firefox test.",
+  "checked": [
+    {
+      "path": "src/CampaignDialogue.tsx",
+      "htmlButtons": 2,
+      "customButtons": 0,
+      "keyboardHandlers": 0
+    },
+    {
+      "path": "src/CampaignGrowth.tsx",
+      "htmlButtons": 2,
+      "customButtons": 0,
+      "keyboardHandlers": 0
+    },
+    {
+      "path": "src/CampaignMedia.tsx",
+      "htmlButtons": 12,
+      "customButtons": 0,
+      "keyboardHandlers": 0
+    },
+    {
+      "path": "src/CampaignArt.tsx",
+      "htmlButtons": 0,
+      "customButtons": 0,
+      "keyboardHandlers": 0
+    },
+    {
+      "path": "src/HexMap.tsx",
+      "htmlButtons": 11,
+      "customButtons": 3,
+      "keyboardHandlers": 3
+    },
+    {
+      "path": "src/CampaignMaps.tsx",
+      "htmlButtons": 0,
+      "customButtons": 1,
+      "keyboardHandlers": 1
+    }
+  ],
+  "contrast": [
+    {
+      "label": "dialogue text",
+      "text": "#f7faff",
+      "background": "#101d32",
+      "ratio": 16.14,
+      "atLeast4_5": true
+    },
+    {
+      "label": "dialogue choice detail",
+      "text": "#cbd9ee",
+      "background": "#223957",
+      "ratio": 8.21,
+      "atLeast4_5": true
+    },
+    {
+      "label": "dialogue follow-up",
+      "text": "#bcd0eb",
+      "background": "#101d32",
+      "ratio": 10.74,
+      "atLeast4_5": true
+    },
+    {
+      "label": "broadcast ticker",
+      "text": "#101d32",
+      "background": "#ffd34e",
+      "ratio": 11.8,
+      "atLeast4_5": true
+    },
+    {
+      "label": "growth day note",
+      "text": "#425d80",
+      "background": "#ffffff",
+      "ratio": 6.75,
+      "atLeast4_5": true
+    },
+    {
+      "label": "growth night note",
+      "text": "#bfd1ea",
+      "background": "#172943",
+      "ratio": 9.43,
+      "atLeast4_5": true
+    },
+    {
+      "label": "growth stat day",
+      "text": "#193d70",
+      "background": "#e0eafb",
+      "ratio": 8.92,
+      "atLeast4_5": true
+    },
+    {
+      "label": "growth stat night",
+      "text": "#e8f1ff",
+      "background": "#203753",
+      "ratio": 10.65,
+      "atLeast4_5": true
+    },
+    {
+      "label": "growth level badge",
+      "text": "#ffd34e",
+      "background": "#101d32",
+      "ratio": 11.8,
+      "atLeast4_5": true
+    }
+  ],
+  "issues": []
+}

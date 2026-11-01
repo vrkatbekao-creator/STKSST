@@ -1,0 +1,287 @@
+{
+  "date": "2026-11-01",
+  "synthetic": true,
+  "method": "Compact automated player: no recruitment and perfect dialogue; the reference rivals for that stage. Two strategy differences, not a causal roster-only test.",
+  "phase": "balance-forced-seven-compact",
+  "totalPlanned": 9,
+  "completed": 9,
+  "elapsedMs": 28803,
+  "errors": [],
+  "byFaction": {
+    "blue": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2984
+    },
+    "green": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2995
+    },
+    "white": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2988
+    }
+  },
+  "byCommander": {
+    "jiang": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2988
+    },
+    "shen": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 3004
+    },
+    "huang": {
+      "games": 3,
+      "wins": 3,
+      "draws": 0,
+      "meanPlayerScore": 2975
+    }
+  },
+  "meanRoster": 5.666666666666667,
+  "results": [
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "blue",
+      "scores": {
+        "blue": 2973,
+        "green": 2343,
+        "white": 2277
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.58823529411765,
+      "meanLevel": 2.823529411764706,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5043,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "blue",
+      "scores": {
+        "blue": 3014,
+        "green": 2378,
+        "white": 2239
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.47058823529412,
+      "meanLevel": 2.823529411764706,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 6383,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "blue",
+      "scores": {
+        "blue": 2966,
+        "green": 2388,
+        "white": 2310
+      },
+      "rosters": {
+        "blue": 3,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.52941176470588,
+      "meanLevel": 2.764705882352941,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5965,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "green",
+      "scores": {
+        "blue": 2452,
+        "green": 3000,
+        "white": 2200
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 3,
+        "white": 7
+      },
+      "meanHealth": 97.88235294117646,
+      "meanLevel": 2.8823529411764706,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 6128,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "green",
+      "scores": {
+        "blue": 2378,
+        "green": 3015,
+        "white": 2224
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 3,
+        "white": 7
+      },
+      "meanHealth": 98.47058823529412,
+      "meanLevel": 3,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5300,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "green",
+      "scores": {
+        "blue": 2444,
+        "green": 2969,
+        "white": 2316
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 3,
+        "white": 7
+      },
+      "meanHealth": 99.6470588235294,
+      "meanLevel": 2.9411764705882355,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5633,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "white",
+      "scores": {
+        "blue": 2330,
+        "green": 2331,
+        "white": 2991
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 3
+      },
+      "meanHealth": 98.05882352941177,
+      "meanLevel": 2.7058823529411766,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5836,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "white",
+      "scores": {
+        "blue": 2357,
+        "green": 2299,
+        "white": 2983
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 3
+      },
+      "meanHealth": 98.88235294117646,
+      "meanLevel": 2.7058823529411766,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 5275,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "day",
+      "compact": true,
+      "result": "white",
+      "scores": {
+        "blue": 2317,
+        "green": 2296,
+        "white": 2990
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 3
+      },
+      "meanHealth": 99.17647058823529,
+      "meanLevel": 2.7058823529411766,
+      "maxRoster": 7,
+      "recruits": 8,
+      "reportsRetained": 12,
+      "elapsedMs": 4759,
+      "invariants": true
+    }
+  ]
+}

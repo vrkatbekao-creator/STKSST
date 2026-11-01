@@ -1,0 +1,503 @@
+{
+  "date": "2026-11-01",
+  "synthetic": true,
+  "method": "All factions use the same automated policy. The player acts first; rivals alternate. Player acts at night.",
+  "phase": "balance-forced-seven-night",
+  "totalPlanned": 18,
+  "completed": 18,
+  "elapsedMs": 26620982,
+  "errors": [],
+  "byFaction": {
+    "blue": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2341
+    },
+    "green": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2322
+    },
+    "white": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2299
+    }
+  },
+  "byCommander": {
+    "shen": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2353
+    },
+    "jiang": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2311
+    },
+    "huang": {
+      "games": 6,
+      "wins": 0,
+      "draws": 0,
+      "meanPlayerScore": 2299
+    }
+  },
+  "meanRoster": 6.981481481481482,
+  "results": [
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2353,
+        "green": 2388,
+        "white": 2304
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.23809523809524,
+      "meanLevel": 2.5714285714285716,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 17298,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2332,
+        "green": 2412,
+        "white": 2347
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.04761904761905,
+      "meanLevel": 2.4761904761904763,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 18020,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2451,
+        "green": 2339,
+        "white": 2329
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.23809523809524,
+      "meanLevel": 2.6666666666666665,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 15078,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2359,
+        "green": 2435,
+        "white": 2344
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.04761904761905,
+      "meanLevel": 2.4285714285714284,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 16731,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2496,
+        "green": 2311,
+        "white": 2346
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.71428571428571,
+      "meanLevel": 2.6666666666666665,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 13885,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "green",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2421,
+        "green": 2378,
+        "white": 2304
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 100,
+      "meanLevel": 2.5238095238095237,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 16037,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2452,
+        "green": 2314,
+        "white": 2336
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.47619047619048,
+      "meanLevel": 2.4761904761904763,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 15248,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2376,
+        "green": 2391,
+        "white": 2331
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.42857142857143,
+      "meanLevel": 2.4761904761904763,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 16937,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "blue",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2330,
+        "green": 2421,
+        "white": 2347
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.52380952380952,
+      "meanLevel": 2.4285714285714284,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 15096,
+      "invariants": true
+    },
+    {
+      "seed": 1543,
+      "team": "white",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2390,
+        "green": 2339,
+        "white": 2315
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.85714285714286,
+      "meanLevel": 2.5238095238095237,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 16966,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "blue",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2286,
+        "green": 2480,
+        "white": 2300
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.42857142857143,
+      "meanLevel": 2.3333333333333335,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 15127,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "blue",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "green",
+      "scores": {
+        "blue": 2383,
+        "green": 2404,
+        "white": 2347
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.33333333333333,
+      "meanLevel": 2.380952380952381,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 353026,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "green",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2425,
+        "green": 2313,
+        "white": 2303
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.14285714285714,
+      "meanLevel": 2.3333333333333335,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 7566243,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "white",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2397,
+        "green": 2315,
+        "white": 2230
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 98.04761904761905,
+      "meanLevel": 2.5714285714285716,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 18929145,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "green",
+      "commander": "jiang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2403,
+        "green": 2303,
+        "white": 2242
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 6
+      },
+      "meanHealth": 98.15,
+      "meanLevel": 2.75,
+      "maxRoster": 7,
+      "recruits": 11,
+      "reportsRetained": 12,
+      "elapsedMs": 26149615,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "white",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2405,
+        "green": 2359,
+        "white": 2231
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.19047619047619,
+      "meanLevel": 2.5238095238095237,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 15613,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "green",
+      "commander": "huang",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2374,
+        "green": 2290,
+        "white": 2270
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.47619047619048,
+      "meanLevel": 2.5238095238095237,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 16510,
+      "invariants": true
+    },
+    {
+      "seed": 3086,
+      "team": "white",
+      "commander": "shen",
+      "profile": "streets-v2",
+      "phase": "night",
+      "result": "blue",
+      "scores": {
+        "blue": 2362,
+        "green": 2314,
+        "white": 2352
+      },
+      "rosters": {
+        "blue": 7,
+        "green": 7,
+        "white": 7
+      },
+      "meanHealth": 99.42857142857143,
+      "meanLevel": 2.380952380952381,
+      "maxRoster": 7,
+      "recruits": 12,
+      "reportsRetained": 12,
+      "elapsedMs": 13871,
+      "invariants": true
+    }
+  ]
+}

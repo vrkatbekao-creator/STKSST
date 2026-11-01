@@ -1,3 +1,7 @@
+# 接續開發：v0.15 三槽與靜態發布準備
+
+三個本機槽已完成，原單槽原位作存檔 1，規格 SAVE-SLOTS-SPEC.md；check、148 tests、root build、build:pages 與子目錄 UI／圖片／音樂／道路建物均驗證。畫面 design/qa/v15，結果 artifacts/save-slots-v15.json。GitHub Pages 可用，但私人 Repo 需適用付費方案；免費可另建只放 dist 的公開發布 Repo，或私人來源搭配 Cloudflare Pages。參數與官方來源見 STATIC-HOSTING.md。本輪未實際部署，未改 Repo 可見性；正式平台尚未驗收。測試服務 5189 完成後停止，viewport 已復原。保持 28 天、三方規則與封關不變；完整相容性仍 pending，不重啟舊排程。
+
 # 接續開發：v0.14 玩家介面與建置文件分離
 
 **v0.14 已完成本輪介面清理。** 開發／來源／精度／遷移／製作註記移到 GAME-BUILD-NOTES.md 與封存原文，不能回放到玩家操作說明。地圖顯示及鍵盤選格可展開，成本與遊戲狀態保留；無規則、AI、存檔或資料修改。check、141 tests、build 與本輪雙語／桌面／窄版／夜間局部 UI 已驗證，畫面在 design/qa/v14，詳 QA.md。本輪順帶修正已釋放 Pixi Application 的繪圖防護，相容地圖往返驗證沒有新增錯誤。測試 viewport 已復原，5188 測試服務完成後停止。完整相容性、所有 WCAG 準則與真實輔助科技仍 pending，真人平衡仍交公開測試；不重啟舊排程。以下沿革保留作為歷史證據。

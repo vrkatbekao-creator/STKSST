@@ -1,3 +1,7 @@
+# v0.15：三個本機存檔
+
+目前已改為三槽；槽 1 原位沿用單槽 key，覆寫確認、目標鎖定、摘要與續玩依 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。三槽不是雲端同步；下列單槽限制屬歷史版本。
+
 # v0.5.0：三方競選、存檔與續玩
 
 v0.5.1／v0.5.2 沿用此規格；相容的足跡／活動進度欄位與舊檔處理見 MAP-READABILITY.md，今日有序路線見 STREET-WORKFLOW.md。

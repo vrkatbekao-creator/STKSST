@@ -1,3 +1,23 @@
+# v0.15 三槽存檔與靜態部署準備
+
+2026-11-01。新增三槽選擇、選槽續玩、目標槽自動／立即保存、顯示槽號與精簡摘要。槽 1 原位沿用舊 key，不在啟動改寫原存檔；另兩槽各自保存。UI 與 Store 均保護覆寫，既有資料（含損壞與空字串）需確認；遊玩中切槽拒絕，保存失敗不能直接回首頁。沒有增加雲端系統、改 AP／封關規則或變更 schema 3。詳 SAVE-SLOTS-SPEC.md。
+
+check、148/148 tests、普通 build 與 build:pages 通過。新增七項行為測試：原 key 無寫入載入、三槽各自保存與恢復、確認／鎖定、損壞隔離、配額失敗保留所有檔案、無效槽號、槽 3 封關還原。初稿兩項測試 fixture 誤將輸入 seed 當成初始化後 RNG，以及把首頁 view 強制當 street，已改為比較真正保存內容；不改規則掩蓋錯誤。
+
+正式產物以 /STKSST/ base 在本機 5189 預覽。原先角色與音樂根目錄網址已改為共用 publicAsset BASE_URL 解析，Node 音訊測試沿用 / fallback；新增 .nojekyll 與 build:pages。發布設定、私人 Repo 的方案限制、公開 dist Repo 選項與 Cloudflare Pages 替代方案記於 STATIC-HOSTING.md。本輪沒有建立公開 Repo、變更原 Repo 可見性、啟用 Pages 或上傳網站。
+
+Chrome 實際 UI：以按鈕建立藍／橙／白三份獨立存檔，存檔 1 休整後轉夜間，回首頁確認摘要；選槽 2 續玩顯示橙方，重新整理後三份仍在、再選槽 2 可續玩。槽 3 覆寫對話框明示槽號，取消保留白方；另一次確認後槽 3 變藍方，而槽 1／2 摘要保留。之後續玩槽 1，仍為夜間、12 AP，沒有回補或重結算。UI 中文／英文均檢查。英文窄版請求 320×900、本機縮放後 clientWidth=scrollWidth=277，三槽直排與續玩可操作；不能冒稱精確 320 CSS px。viewport 已 reset，音訊測試後已關閉聲音。
+
+子目錄檢查：角色 img 的 src 為 /STKSST/art/... 且 naturalWidth>0；音訊試聽顯示正在播放、背景壓低，沒有 /audio 根路徑 404。街區 SVG 實際呈現 696 段道路與 263 棟建物，頁面 console error 為空。靜態檔案檢查確認 dist 具有 .nojekyll、入口使用 /STKSST/assets/，不含 design/src/tests/.git/.env。正式平台的 HTTPS、流量與權限仍待上線後實測；本輪不等於完成所有裝置／瀏覽器／輔助科技驗收。
+
+畫面與機器可讀結果：
+
+- [繁中三槽](design/qa/v15/three-saves-zh.png)
+- [英文三槽](design/qa/v15/three-saves-en.png)
+- [英文窄版](design/qa/v15/three-saves-en-narrow.png)
+- [指定槽覆寫](design/qa/v15/overwrite-zh.png)
+- [結果與發布包大小](artifacts/save-slots-v15.json)
+
 # v0.14.0 玩家介面精簡與建置註記歸檔
 
 2026-11-01。使用者要求將遊玩時無需閱讀的開發註記移到「遊戲建置」文件，不能放到玩家操作說明。新增 GAME-BUILD-NOTES.md 與 design/build-copy-archive.json，收錄原雙語稿並連結原資料、影音、遷移與 QA 規格。AGENTS.md 加入後續文案界線；歷史 copy 產生器之後以 design/refine-player-copy.py 套用精簡稿。

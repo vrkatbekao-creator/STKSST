@@ -1,0 +1,77 @@
+{
+  "version": "0.15.0",
+  "date": "2026-11-01",
+  "checks": {
+    "typecheck": "passed",
+    "tests": {
+      "passed": 148,
+      "failed": 0
+    },
+    "rootBuild": "passed",
+    "githubPagesBuild": "passed",
+    "published": false,
+    "finalConstructorRefactorFocusedTests": 8
+  },
+  "build": {
+    "base": "/STKSST/",
+    "files": 80,
+    "totalBytes": 47323501,
+    "largestFile": "dist\\data\\taipei-walk-network-v2.json.gz",
+    "largestBytes": 10321721,
+    "nojekyll": true,
+    "privateSourceDirectoriesPresent": false
+  },
+  "browser": {
+    "origin": "http://127.0.0.1:5189/STKSST/",
+    "engine": "connected Chrome on Windows",
+    "verified": [
+      "three independent saves created through UI",
+      "cancel overwrite preserves third slot",
+      "confirm overwrite replaces only third slot",
+      "reload and resume chosen slot",
+      "slot one retains 12 AP and night",
+      "zh-TW/en",
+      "narrow reflow",
+      "subdirectory portraits loaded",
+      "audio audition reports playing",
+      "street map: 696 visible road segments, 263 buildings"
+    ],
+    "narrow": {
+      "requestedViewport": [
+        320,
+        900
+      ],
+      "actualClientWidth": 277,
+      "actualScrollWidth": 277
+    },
+    "consoleErrors": [],
+    "viewportReset": true,
+    "limitations": [
+      "No live GitHub Pages or Cloudflare deployment",
+      "No new certification of other browsers, devices or assistive technology",
+      "Browser origin saves do not transfer between local and hosted addresses"
+    ]
+  },
+  "screenshots": [
+    {
+      "path": "design/qa/v15/overwrite-zh.png",
+      "width": 65536,
+      "height": 4292542531
+    },
+    {
+      "path": "design/qa/v15/three-saves-en-narrow.png",
+      "width": 65536,
+      "height": 4292542531
+    },
+    {
+      "path": "design/qa/v15/three-saves-en.png",
+      "width": 65536,
+      "height": 4292542531
+    },
+    {
+      "path": "design/qa/v15/three-saves-zh.png",
+      "width": 65536,
+      "height": 4292542531
+    }
+  ]
+}

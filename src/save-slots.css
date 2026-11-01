@@ -1,0 +1,15 @@
+.save-slot-panel{margin:24px 0;min-width:0}
+.save-slot-picker{padding:0;border:0;margin:0;min-width:0}
+.save-slot-picker legend{font-weight:750;font-size:.875rem;margin-bottom:10px}
+.save-slot-picker>div{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.save-slot-choice{padding:12px 10px;background:#f1f5fc;color:#163969;border:2px solid #8a9fbf;text-align:left;min-width:0;border-radius:3px}
+.save-slot-choice[aria-pressed=true]{border-color:#245ce1;background:#e1ebff;box-shadow:inset 0 -4px #245ce1}
+.save-slot-choice strong,.save-slot-choice span,.save-slot-choice small{display:block;line-height:1.6;overflow-wrap:anywhere}
+.save-slot-choice strong{font-size:.875rem}.save-slot-choice span,.save-slot-choice small{font-size:.75rem;margin-top:5px}
+.save-slot-hint{font-size:.8125rem;margin:10px 0;line-height:1.7}
+.save-slot-panel .continue-panel{margin:12px 0 0;padding:12px;border:1px solid #8a9fbf;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.save-slot-panel .continue-panel>small{flex:1;min-width:0}
+.save-slot-panel .continue-panel>.campaign-primary{margin:0;font-size:.8125rem;padding:10px 14px;min-height:44px}
+.save-slot-panel .save-status{margin:10px 0}
+html[data-contrast=more] .save-slot-choice{color:#fff!important;background:#000!important;border-color:#fff!important}
+@media(max-width:450px){.save-slot-picker>div{grid-template-columns:1fr}.save-slot-choice{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:12px;align-items:center}.save-slot-choice span{margin-top:0}.save-slot-choice small{grid-column:2}.save-slot-panel .continue-panel>.campaign-primary{width:100%}}

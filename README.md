@@ -1,3 +1,7 @@
+# 三槽單機版 v0.15
+
+首頁可選三個獨立存檔，遊玩中只保存目前槽位；原單槽自動以存檔 1 顯示，不改寫舊進度。規格見 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。根目錄靜態站使用 npm run build；GitHub Pages 的 STKSST 子目錄使用 npm run build:pages。私人 Repo 的 Pages 資格、免費發布選項及設定見 [STATIC-HOSTING.md](STATIC-HOSTING.md)，目前尚未公開部署。
+
 # 玩家介面清理 v0.14
 
 建置與製作註記見 [GAME-BUILD-NOTES.md](GAME-BUILD-NOTES.md)，包含圖資、角色與音樂來源、遷移及驗收限制；這些內容不再放入玩家操作說明。地圖顯示與鍵盤選格可按需展開，AP、效果與條件仍保留。規則、AI、圖資與存檔格式未變。

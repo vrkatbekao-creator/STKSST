@@ -1,6 +1,7 @@
+import {publicAsset} from './public-asset.ts';
 import type { CommanderId } from './game/campaign-tactics.ts';
 import type { Role } from './game/level.ts';
-export const portraitPath=(id:CommanderId)=>`/art/portraits/${id}-v1.png`;
+export const portraitPath=(id:CommanderId)=>publicAsset(`art/portraits/${id}-v1.png`);
 export function CommanderPortrait({id,className=''}:{id:CommanderId;className?:string}){return <img className={`commander-portrait ${className}`} src={portraitPath(id)} alt="" draggable={false} width="256" height="256"/>;}
 // Small symbols stay vector-native so faces and props remain readable at map scale.
 export function RoleDrawing({role}:{role:Role}){return <g stroke="#14233d" strokeWidth="4" strokeLinejoin="round" strokeLinecap="round">

@@ -27,10 +27,11 @@ import { CommanderPortrait,RolePortrait } from './CampaignArt.tsx';
 import { CommanderChooser,TacticsPanel,RivalActions,SurprisePanel } from './CampaignTacticsPanels.tsx';
 import './accessibility.css';
 import './player-interface.css';
+import './save-slots.css';
 const HexMap=lazy(()=>import('./HexMap.tsx'));
 function Dialog({title,onClose,children}:{title:string;onClose:()=>void;children:React.ReactNode}){const {t}=useTranslation();const ref=useRef<HTMLDialogElement>(null);useModalDialog(ref);return <dialog className="campaign-dialog" ref={ref} onCancel={e=>{e.preventDefault();onClose();}} onClick={e=>{if(e.target===ref.current)onClose();}} aria-label={title}><div className="dialog-head"><h2 tabIndex={-1} data-dialog-title>{title}</h2><button onClick={onClose} aria-label={t('close')}>×</button></div>{children}</dialog>;}
 export default function CampaignApp(){
- const {t,i18n}=useTranslation();const lang=i18n.language==='en'?'en':'zh-TW';const {game,started,selected,districtId,view,error,start,reset,select,focus,viewCity,dispatch,end,priority,saveExists}=useCampaign();
+ const {t,i18n}=useTranslation();const lang=i18n.language==='en'?'en':'zh-TW';const {game,started,selected,districtId,view,error,start,reset,select,focus,viewCity,dispatch,end,priority,saveExists,saveSlot}=useCampaign();
  const {districts,nodes,nodeById}=mapFor(game);
  const [modal,setModal]=useState<'guide'|'restart'|'overwrite'|null>(null),[nodeId,setNodeId]=useState(districts.find(d=>d.id===districtId)!.wonderId),[planned,setPlanned]=useState<string|null>(null),[topic,setTopic]=useState('transport');
  useEffect(()=>{setNodeId(previous=>nodeById.get(previous)?.districtId===districtId?previous:districts.find(d=>d.id===districtId)!.wonderId);setPlanned(null);},[districtId]);
@@ -81,7 +82,7 @@ export default function CampaignApp(){
  </main>}
  <footer className="campaign-footer"><span>✦ {t('c_footer')}</span><span>{t('c_gameValues')} · <a href={`${import.meta.env.BASE_URL}data/GAME-DATA-CREDITS.txt`} target="_blank" rel="noreferrer">{t('p_credits')}</a></span></footer>
  {modal==='guide'&&<Dialog title={t('guide')} onClose={()=>setModal(null)}><ol className="campaign-guide">{Array.from({length:20},(_,i)=><li key={i}>{t(`c_guide${i+1}`)}</li>)}</ol><button className="campaign-primary" onClick={()=>setModal(null)}>{t('close')}</button></Dialog>}
- {modal==='overwrite'&&<Dialog title={t('c_overwriteTitle')} onClose={()=>setModal(null)}><p>{t('c_overwriteBody')}</p><div className="dialog-buttons"><button className="outline-button" onClick={()=>setModal(null)}>{t('cancel')}</button><button className="campaign-primary" onClick={()=>{start();setModal(null);}}>{t('c_confirmNew')}</button></div></Dialog>}
+ {modal==='overwrite'&&<Dialog title={t('c_overwriteTitle')} onClose={()=>setModal(null)}><p>{t('c_overwriteBody',{slot:saveSlot})}</p><div className="dialog-buttons"><button className="outline-button" onClick={()=>setModal(null)}>{t('cancel')}</button><button className="campaign-primary" onClick={()=>{start(true);setModal(null);}}>{t('c_confirmNew')}</button></div></Dialog>}
  {modal==='restart'&&<Dialog title={t('restartTitle')} onClose={()=>setModal(null)}><p>{t('restartBody')}</p><div className="dialog-buttons"><button className="outline-button" onClick={()=>setModal(null)}>{t('cancel')}</button><button className="campaign-primary" onClick={()=>{reset();setModal(null);}}>{t('confirmRestart')}</button></div></Dialog>}
  </div>;
 }

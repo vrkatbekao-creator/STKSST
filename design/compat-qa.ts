@@ -4,7 +4,7 @@ const mode=new URL(location.href).searchParams.get('mode')??'normal';
 if(mode!=='normal'&&location.port!=='5187')throw Error('Fault fixtures require the isolated QA origin on port 5187');
 if(mode==='no-webgl'){const original=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(this:HTMLCanvasElement,type:string,...args:unknown[]){return /webgl/i.test(type)?null:original.apply(this,[type,...args] as never); } as typeof original;}
 if(mode==='no-storage')Object.defineProperty(window,'localStorage',{get(){throw new DOMException('QA blocked storage','SecurityError');}});
-if(mode==='storage-full'){const original=Storage.prototype.setItem;Storage.prototype.setItem=function(key,value){if(key==='capital-tactics-campaign-save')throw new DOMException('QA storage full','QuotaExceededError');return original.call(this,key,value);};}
+if(mode==='storage-full'){const original=Storage.prototype.setItem;Storage.prototype.setItem=function(key,value){if(/^capital-tactics-campaign-save(?:-[23])?$/.test(key))throw new DOMException('QA storage full','QuotaExceededError');return original.call(this,key,value);};}
 if(mode==='corrupt-save')localStorage.setItem('capital-tactics-campaign-save','{corrupt QA fixture');
 if(mode==='no-gzip')Object.defineProperty(window,'DecompressionStream',{value:undefined});
 if(mode==='no-audio')Object.defineProperty(window,'AudioContext',{value:undefined});

@@ -20,7 +20,7 @@ removed += [f'c_sceneBody_{n}' for n in range(6300100,6301201,100)]
 copy = {
  'p_credits': ('圖資署名','Map credits'),
  'p_mapDisplay': ('地圖顯示','Map display'),
- 'c_footer': ('選戰騎士團 · 首都篇 · v0.14.0','Campaign Knights · Capital Edition · v0.14.0'),
+ 'c_footer': ('選戰騎士團 · 首都篇 · v0.15.0','Campaign Knights · Capital Edition · v0.15.0'),
  'c_gameValues': ('角色與事件皆為虛構','Fictional characters and events'),
  'c_threeSides': ('選擇你的陣營，與另外兩方競逐台北。','Choose your faction and compete with two rivals for Taipei.'),
  'c_streetProfile': ('街道地圖','Street map'),
@@ -77,7 +77,7 @@ guide = [
  ('每隊最多七人，可招募醫護、動員或後勤角色。新隊員當日沒有 AP，翌晨開始行動。','Each faction can have seven members, including medic, organizer and logistics helpers. Recruits receive their first AP the next morning.'),
  ('輔助角色可在兩格內支援健康、士氣或 AP；每位受援者每日接受一次。擴編也會增加補給負擔。','Helpers support health, morale or AP within two hexes; each recipient can receive support once daily. Larger teams also use more supplies.'),
  ('足跡代表走過，勾選代表已辦活動；隔天仍保留累計紀錄。青色箭線與編號顯示今日步行順序。','Footprints mark visited hexes; checks mark completed activities. Cumulative marks persist. Cyan arrows and numbers show today’s walking order.'),
- ('遊戲會自動存檔，也可按立即存檔。以相同瀏覽器及網址回到首頁續玩；清除網站資料會移除存檔。','Progress saves automatically; you can also save manually. Resume from the menu using the same browser and address. Clearing site data removes saves.'),
+ ('首頁可選三個存檔，各自保存進度；遊玩中自動保存至目前槽位，也可立即存檔。以相同瀏覽器與網址續玩；清除網站資料會移除存檔。','Choose one of three save slots on the home screen. Play saves to the active slot automatically, or save manually. Resume in the same browser and address; clearing site data removes saves.'),
  ('第 2–14 天逢偶數日公布民調；第 15–28 天封關，只提供小道消息。最後一夜後才揭露結果與歷史數字。','Polls appear on even days from day 2 to 14. Days 15–28 provide rumors only. Results and historical figures unlock after the final night.'),
  ('可展開鍵盤移動預覽，從選單選格；Tab 切換控制，Enter 或空白鍵啟動，Escape 關閉對話框。','Expand Keyboard movement preview to choose a hex. Tab moves between controls, Enter or Space activates them, and Escape closes dialogs.'),
  ('影音設定可開啟聲音、試聽曲目與調整演出；無障礙與顯示可放大文字、提高對比或減少動態。','Audio & visuals enables sound, track previews and presentation settings. Accessibility & display offers larger text, contrast and reduced motion.'),

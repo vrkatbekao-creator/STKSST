@@ -7,6 +7,11 @@ import { surpriseIds } from './campaign-events.ts';
 import { validTalk } from './campaign-dialogue.ts';
 import { career,capacity,levelFor,helperTypes,helperRole } from './campaign-growth.ts';
 export const SAVE_KEY='capital-tactics-campaign-save';
+export const SAVE_SLOTS=[1,2,3] as const;
+export type SaveSlot=typeof SAVE_SLOTS[number];
+export const isSaveSlot=(slot:unknown):slot is SaveSlot=>SAVE_SLOTS.includes(slot as SaveSlot);
+// Slot one retains the original key and bytes, including legacy saves.
+export function saveKey(slot:SaveSlot=1){if(!isSaveSlot(slot))throw new Error('save-slot');return slot===1?SAVE_KEY:`${SAVE_KEY}-${slot}`;}
 export const SAVE_VERSION=3;
 export type Session={game:Campaign;selected:string;districtId:string;view:'city'|'street'};
 export type SavedCampaign={version:1|2|3;rules:'0.5.0'|'0.6.0'|'0.10.0';map:'taipei-hex-v1'|'taipei-street-hex-v2';mapRevision?:string;savedAt:string;session:Session;checksum:number};
@@ -79,5 +84,5 @@ export function decodeSave(raw:string):{save:SavedCampaign|null;error:SaveError|
  const {checksum:hash,...data}=v;if(!integer(hash,0,0xffffffff)||checksum(JSON.stringify(data))!==hash||typeof v.savedAt!=='string'||!Number.isFinite(Date.parse(v.savedAt))||!validSession(v.session))return {save:null,error:'c_saveInvalid'};
  return {save:encodeSave(v.session,v.savedAt),error:null};}catch{return {save:null,error:'c_saveInvalid'};}
 }
-export function readSave(storage:StoragePort|null){try{if(!storage)return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};const raw=storage.getItem(SAVE_KEY);return raw?{...decodeSave(raw),exists:true}:{save:null,error:null,exists:false};}catch{return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};}}
-export function writeSave(storage:StoragePort|null,session:Session){try{if(!storage)throw new Error();const save=encodeSave(session);storage.setItem(SAVE_KEY,JSON.stringify(save));return {save,error:null};}catch{return {save:null,error:'c_saveUnavailable' as SaveError};}}
+export function readSave(storage:StoragePort|null,slot:SaveSlot=1){try{if(!storage)return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};const raw=storage.getItem(saveKey(slot));return raw!==null?{...decodeSave(raw),exists:true}:{save:null,error:null,exists:false};}catch{return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};}}
+export function writeSave(storage:StoragePort|null,session:Session,slot:SaveSlot=1){try{if(!storage)throw new Error();const save=encodeSave(session);storage.setItem(saveKey(slot),JSON.stringify(save));return {save,error:null};}catch{return {save:null,error:'c_saveUnavailable' as SaveError};}}

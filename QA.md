@@ -1,10 +1,16 @@
-# GitHub Pages／MIT 公開原型準備
+# GitHub Pages／MIT 公開原型發布
 
 2026-11-02。依使用者授權設定公開原型。新增標準 MIT LICENSE、package license、第三方授權索引，建置自動輸出 MIT 與安裝套件告示，網站頁尾有雙語作者／MIT 及問題回報，新增雙語 Bug Issue 表單。保留 ODbL、Copernicus 與政府開放資料署名，不將第三方圖資改為 MIT。package.json 的 private:true 是防止誤發 npm，與 GitHub Repo 可見性無關，故保留。
 
-本地 check、159/159 tests、build:pages 與發布包檢查通過。87 個網站檔案，54,634,418 bytes；必備角色、MIT／第三方／圖資告示齊全，base /STKSST/，沒有 design/src/tests/node_modules/.git/.env。既有 14 份提交歷史以常見私鑰、GitHub／OpenAI／AWS 憑證格式檢查，未有符合的檔案；此為限定格式掃描，不宣稱形式化安全認證。
+本地 check、159/159 tests、普通 build、build:pages 與發布包檢查通過。首次準備 87 個網站檔案，54,634,418 bytes；必備角色、MIT／第三方／圖資告示齊全，base /STKSST/，沒有 design/src/tests/node_modules/.git/.env。既有 14 份提交歷史以常見私鑰、GitHub／OpenAI／AWS 憑證格式檢查，未有符合的檔案；此為限定格式掃描，不宣稱形式化安全認證。
 
-Repo 已依授權改為公開。首次推送自訂 Actions 工作流被 GitHub 拒絕，原因為目前 OAuth 憑證沒有 workflow scope；不是流量限制。改採 gh-pages 成品分支，不擴充憑證權限，未發布的工作流提交已在本地修訂；npm run deploy:pages 會先 check/test/build/preflight 再推送，main 本身不自動建置。沒有外部追蹤。首次線上部署與瀏覽器驗收結果待上線後接續補記；未完成前不把本機建置當成公開站點通過。
+Repo 已依授權改為公開，GitHub 辨識授權為 MIT，About 已有網站連結，Issues 已啟用。首次推送自訂 Actions 工作流被 GitHub 拒絕，原因為目前 OAuth 憑證沒有 workflow scope；不是流量限制。改採 gh-pages 成品分支，不擴充憑證權限，未發布的工作流提交已在本地修訂；npm run deploy:pages 會先 check/test/build/preflight 再推送，main 本身不自動建置。暫存發布目錄曾等候 Git 認證，發布程式已改由原專案推送，保留原 Repo 的認證設定。沒有外部追蹤。
+
+正式站點 https://vrkatbekao-creator.github.io/STKSST/ 已上線，Pages API 回傳 built、public=true、https_enforced=true，來源 gh-pages 根目錄。GitHub 管理的 [pages build and deployment](https://github.com/vrkatbekao-creator/STKSST/actions/runs/41423163295) 成功，發布提交 3a9cce4，RELEASE.json 對應來源 1aa0cb9／v0.16.0。來源 2c4b3f5 首次發布後，1aa0cb9 修正發布路徑並已再次發布。此次最終本機成品 87 檔、54,634,391 bytes；另加 RELEASE.json。正式站點所有 87 個成品檔案 HEAD HTTP 200，RELEASE.json GET 200；詳 artifacts/pages-http-v16.json。沒有把首次尚未建站的 404 當成通過；正式建置成功後才重新載入並驗證。
+
+已連線 Windows Chrome 實測正式 HTTPS 站點：繁中首頁三槽最初皆空，建立橙方槽 1，在碧山巖掃街後主將 AP 15→13、物資 36→35；切夜間仍 13，存檔回首頁、重新整理、續玩仍為橙方夜間 13 AP，其他兩槽仍空。英文角色、夜間、日誌與頁尾來源均正確。實際 Neihu 視窗呈現 123 筆來源道路、48 棟建物，Pixi canvas 存在；主將 PNG naturalWidth>0，SVG 圖集與地表均從 /STKSST/ 子目錄載入。影音預設關閉，手動試播橙方原創曲後顯示 Playing selected audio; background music is ducked；驗證後 Mute 並關閉對話框。
+
+窄版請求 320×900，實際 clientWidth=scrollWidth=305（依本機 Chrome 縮放／捲軸），英文夜間頁尾 Author / MIT 與 Report an issue 換行可見，鍵盤焦點可見，沒有水平溢位。完成後 viewport reset，回繁中首頁，保留槽 1 測試進度，未接觸使用者 127.0.0.1 存檔；最後正式頁 console error 為空。畫面 [首頁](design/qa/pages/home-zh.png)、[英文夜間窄版頁尾](design/qa/pages/footer-en-narrow.png)。完整跨瀏覽器／實體硬體／輔助科技仍 pending，本輪不是完整 WCAG 驗收。
 
 # v0.16 角色立繪與中立接觸事件
 

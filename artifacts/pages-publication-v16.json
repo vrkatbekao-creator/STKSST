@@ -1,0 +1,67 @@
+{
+  "date": "2026-11-02",
+  "site": "https://vrkatbekao-creator.github.io/STKSST/",
+  "repository": "https://github.com/vrkatbekao-creator/STKSST",
+  "visibility": "public",
+  "projectLicense": "MIT",
+  "thirdPartyDataLicensesUnchanged": true,
+  "pages": {
+    "sourceBranch": "gh-pages",
+    "sourcePath": "/",
+    "buildType": "legacy",
+    "httpsEnforced": true,
+    "deploymentCommit": "3a9cce4e01ae753e906cc92a801ec395e7a9ec09",
+    "sourceCommit": "1aa0cb92315385b030bacf394a725dc5bf9fac2a",
+    "buildStatus": "built",
+    "managedWorkflow": "https://github.com/vrkatbekao-creator/STKSST/actions/runs/41423163295",
+    "customWorkflowInstalled": false,
+    "reason": "Existing OAuth credential lacks workflow scope; branch publishing uses existing permissions."
+  },
+  "validation": {
+    "check": "passed",
+    "testsPassed": 159,
+    "testsFailed": 0,
+    "rootBuild": "passed",
+    "pagesBuild": "passed",
+    "staticPreflight": "passed",
+    "httpFiles": 87,
+    "httpErrors": [],
+    "siteBytesWithoutReleaseJSON": 54634391
+  },
+  "browser": {
+    "browser": "Connected Windows Chrome",
+    "verified": [
+      "Chinese homepage with three empty slots",
+      "Orange faction created in slot 1",
+      "Canvass AP 15 to 13, materials 36 to 35",
+      "Night phase retains AP 13",
+      "Save, refresh and resume preserve orange/night/AP13",
+      "123 visible road features and 48 source buildings",
+      "Commander PNG loaded from /STKSST/; faction portraits and surface shown",
+      "English UI and footer attribution links",
+      "Orange original theme manually auditioned; UI confirms playback; muted afterwards",
+      "English night narrow layout and keyboard focus"
+    ],
+    "narrowRequested": [
+      320,
+      900
+    ],
+    "actualClientWidth": 305,
+    "actualScrollWidth": 305,
+    "viewportReset": true,
+    "consoleErrors": [],
+    "local5173StorageUntouched": true,
+    "screenshots": [
+      "design/qa/pages/home-zh.png",
+      "design/qa/pages/footer-en-narrow.png"
+    ]
+  },
+  "updateCommand": "npm run deploy:pages",
+  "mainPushAloneDeploys": false,
+  "limitations": [
+    "Full cross-browser/hardware/screen-reader certification remains pending",
+    "Saves are browser-local, not multiplayer or cloud saves",
+    "Raw repository history is public; third-party licences still apply"
+  ],
+  "rateLimitObserved": false
+}

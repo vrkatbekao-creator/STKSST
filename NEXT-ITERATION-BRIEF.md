@@ -1,3 +1,7 @@
+# 公開原型已上線：GitHub Pages／MIT
+
+2026-11-02。使用者授權公開 Repo、MIT 與外界測試，已發布 https://vrkatbekao-creator.github.io/STKSST/ 。main 與開發分支包含 MIT LICENSE、第三方授權告示、雙語來源／Bug 回報。網站採 gh-pages 成品分支根目錄，HTTPS，GitHub 管理的 Pages 部署成功；來源與驗證見 QA.md、artifacts/pages-http-v16.json。更新方式 npm run deploy:pages，先 check/test/build/preflight 再推送，僅推 main 不會重建網站。現有 OAuth 無 workflow scope，不要宣稱自訂 Actions 已啟用或要求使用者擴大權限；發布程式從原專案推送以沿用認證。三槽仍為各瀏覽器本機保存，沒有多人或雲端進度，舊排程不重啟。以下為歷史交接，完整相容性與原稿缺口仍待處理。
+
 # 接續開發：v0.16 角色與中立接觸事件
 
 2026-11-02 收尾。三方六職務共 18 個卡通隊員與三位中立來客立繪已接入隊伍、地圖、招募、戰術與支援演出。白方獨有瘋狂小草、橙方小水滴、藍方藍鷹斥候；命名隨 team，不隨自由選將改變。中立來客於第 6／10／15 天解鎖，每陣營各回覆一次，具成本、取捨、AI 與保存；不佔七人編制，不直接改支持度。規格 CHARACTERS-CONTACTS-SPEC.md，原稿證據 ORIGINAL-SPEC-AUDIT.md。schema 4 可讀舊 1–3，讀取不改寫舊槽或回補資源。驗證與畫面見 QA.md、artifacts/characters-contacts-v16.json、design/qa/v16/。

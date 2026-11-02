@@ -1,0 +1,29 @@
+name: 問題回報 / Bug report
+description: 回報原型操作或顯示問題 / Report a prototype issue
+title: "[Bug] "
+body:
+  - type: textarea
+    id: steps
+    attributes:
+      label: 重現步驟 / Steps to reproduce
+      description: 請描述點選順序、日期（日／夜）與陣營。 / Include actions, campaign day/phase and faction.
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: 實際與預期結果 / Actual and expected result
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: 裝置、系統與瀏覽器 / Device, OS and browser
+      placeholder: Windows / Chrome, Android / Firefox, iPhone / Safari…
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 版本、截圖與補充 / Version, screenshots and details
+      description: 請勿貼上私人資料；存檔僅存在自己的瀏覽器。 / Do not post private data. Saves remain in your browser.

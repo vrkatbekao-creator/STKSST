@@ -1,0 +1,20 @@
+選戰騎士團：首都篇 / Campaign Knights: Capital Edition
+Created by vrkatbekao-creator, 2026.
+Source: https://github.com/vrkatbekao-creator/STKSST
+Prototype: https://vrkatbekao-creator.github.io/STKSST/
+
+本作是在研究 A* 搜尋時，無聊之餘做出的 side project。
+看到自己的學弟，以及同學的同學，竟然在同場競爭台北市長，於是有感而作。
+歡迎取用、修改與改善，請保留版權與 MIT 授權文字，並標註作者及專案來源。
+
+This began as a side project made for fun while studying A* search.
+Seeing a junior from my school and a classmate's classmate competing in the
+same Taipei mayoral election inspired me to make this game.
+You are welcome to use, modify and improve it. Retain the copyright and MIT
+licence notice, and please credit the author and link to the source project.
+
+Project software: MIT, see LICENSE.txt.
+Third-party software: see THIRD-PARTY-LICENSES.txt.
+Map and satellite data retain their original terms, see
+data/GAME-DATA-CREDITS.txt, data/ROAD-DATA-LICENSE.txt and
+data/LANDSCAPE-DATA-LICENSE.txt.

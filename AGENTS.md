@@ -2,7 +2,7 @@
 
 - v0.16 角色／中立事件依 CHARACTERS-CONTACTS-SPEC.md，初稿核對見 ORIGINAL-SPEC-AUDIT.md。三方命名跟隨 team，不隨自由選將改變；小草只屬白方。新 schema 4 讀舊 1–3，contacts 不重抽事件／回補 AP；成本與 AI 集中純規則。角色 PNG／SVG 取格須檢查道具裁切，製作研究仍在建置文件。
 
-- v0.15 三槽本機保存依 SAVE-SLOTS-SPEC.md，原 key 原位作槽 1，不於啟動搬移／改寫；遊玩中鎖定目標、覆寫需明確確認。上線建置依 STATIC-HOSTING.md，GitHub Pages 子目錄使用 build:pages，公開素材皆依 BASE_URL；本輪沒有實際公開發布。
+- v0.15 三槽本機保存依 SAVE-SLOTS-SPEC.md，原 key 原位作槽 1，不於啟動搬移／改寫；遊玩中鎖定目標、覆寫需明確確認。上線建置依 STATIC-HOSTING.md，GitHub Pages 子目錄使用 build:pages，公開素材皆依 BASE_URL。2026-11-02 使用者授權公開 Repo、MIT 與 Pages 原型發布；npm run deploy:pages 檢查／測試／建置後推送 gh-pages，第三方圖資不改授權，網站只發布 dist。僅推 main 不會重建站點；現有憑證無 workflow scope，不能宣稱已設 Actions 自動建置。
 
 - v0.14 玩家介面與建置文案邊界依 GAME-BUILD-NOTES.md。資料來源／精度、製作研究、狀態架構、版本遷移及 QA 註記移至建置文件，不放玩家操作說明；介面保留必要署名、成本、效果、條件及可處理的錯誤。歷史文案產生器執行後須套用 design/refine-player-copy.py，避免註記回流。
 

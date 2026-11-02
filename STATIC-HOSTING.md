@@ -1,4 +1,23 @@
-# 單機版靜態託管建置
+# GitHub Pages 公開原型
+
+2026-11-02 發布契約。使用者授權將 STKSST 改為公開 Repo，程式碼與文件採 MIT，部署到 GitHub Pages 供外界測試。站點：https://vrkatbekao-creator.github.io/STKSST/ 。本輪設定與線上實測結果見 QA.md；下方 v0.15 記錄保留作歷史，不代表目前仍未配置。
+
+## 建置與發布
+
+- 目前使用 GitHub Pages 的 gh-pages 分支根目錄來源，配合 .nojekyll 發布預先建置的成品。現有 OAuth 憑證沒有 workflow scope，GitHub 拒絕新增自訂 Actions 工作流，因此未擴充憑證權限，改採官方支援的分支發布。
+- Node.js 24（最低依 package.json），首次準備 npm ci。後續執行 npm run deploy:pages：check、test、build:pages、發布包檢查全部成功後才推送成品。僅更新 main 不會重建網站。
+- design/publish-pages.mjs 只推送 gh-pages，保留既有發布歷史，不使用 force；若有競爭更新會拒絕而非覆寫。暫存發布工作目錄在已忽略的 .tools/。RELEASE.json 保存版本與來源提交。
+- 來源與 MIT／署名修改先提交、推送 main，再執行部署命令。只將 dist 成品放入 gh-pages，入口與圖片、圖資、音訊都使用 /STKSST/。不將 design、src、tests、node_modules 或 .env 放入網站。
+- MIT 原文在 LICENSE；建置自動輸出 LICENSE.txt、THIRD-PARTY-LICENSES.txt。PROJECT-CREDITS.txt 與第三方圖資告示隨站點發布，頁尾提供雙語作者／MIT 與問題回報連結。
+- Repo 公開會讓來源與 Git 歷史可見；dist-only 是網站部署範圍，不表示公開 Repo 隱藏 design 或原始碼。公開前針對現有歷史檢查常見憑證格式，檢查不等於所有敏感資料的形式化證明。
+
+## 外部測試
+
+無須遊戲帳號，直接開啟站點。三槽只在各玩家自己的瀏覽器保存，本機 127.0.0.1 與 github.io 是不同來源，舊本機進度不會自動遷入。沒有多人後端、分析追蹤或雲端保存。回報問題使用 Repo 的雙語 Issue 表單；提交 Issue 需要 GitHub 帳號，遊玩不需要。
+
+完整跨瀏覽器／硬體／真實輔助科技驗收仍未完成，真人平衡交由使用者公開測試。授權：THIRD-PARTY-NOTICES.md；GitHub Pages／MIT 官方依據見下方來源與 https://opensource.org/license/mit 。
+
+# v0.15 單機版靜態託管建置（歷史）
 
 查核日期：2026-11-01。這是遊戲建置文件；本輪只準備部署版，沒有建立公開網站或修改私人 Repo 權限。
 

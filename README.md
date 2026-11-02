@@ -1,5 +1,19 @@
 # 選戰騎士團：首都篇
 
+## 公開測試 / Public prototype
+
+[開始遊玩 / Play](https://vrkatbekao-creator.github.io/STKSST/) · [回報問題 / Report an issue](https://github.com/vrkatbekao-creator/STKSST/issues/new?template=bug_report.yml)
+
+目前為可玩的原型，歡迎回報操作、顯示與平衡意見。三個存檔保存在自己的瀏覽器；清除網站資料會移除，本機版進度不會自動移至線上版。
+
+This is a playable prototype. Feedback on gameplay, display issues and balance is welcome. Three save slots are stored in your browser; clearing site data removes them. Saves from the local version do not transfer automatically to the hosted site.
+
+## 授權 / Licence
+
+本專案程式碼與文件採 [MIT 授權](LICENSE)。歡迎取用、修改、散布及改善，請保留版權與授權文字，並標註作者 `vrkatbekao-creator` 及本專案來源。第三方圖資與素材依其原授權，詳見 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
+
+Project code and documentation are available under the [MIT License](LICENSE). Use, modify, distribute and improve them while retaining the copyright and licence notice; please credit `vrkatbekao-creator` and link to this repository. Third-party data and assets retain their original terms; see [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md).
+
 ## 創作緣起 / Why I made this
 
 這是在研究 A* 搜尋時，無聊之餘做出來的 side project。看到自己的學弟，以及同學的同學，竟然在同一場台北市長選戰中競爭，覺得既感慨又有趣，於是有感而作。歡迎取用、修改與改善，請記得標註原作者及本專案來源。
@@ -14,7 +28,7 @@ This started as a side project I put together for fun while studying A* search. 
 
 # 三槽單機版 v0.15
 
-首頁可選三個獨立存檔，遊玩中只保存目前槽位；原單槽自動以存檔 1 顯示，不改寫舊進度。規格見 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。根目錄靜態站使用 npm run build；GitHub Pages 的 STKSST 子目錄使用 npm run build:pages。私人 Repo 的 Pages 資格、免費發布選項及設定見 [STATIC-HOSTING.md](STATIC-HOSTING.md)，目前尚未公開部署。
+首頁可選三個獨立存檔，遊玩中只保存目前槽位；原單槽自動以存檔 1 顯示，不改寫舊進度。規格見 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。根目錄靜態站使用 npm run build；GitHub Pages 的 STKSST 子目錄使用 npm run build:pages，npm run deploy:pages 會先檢查／測試／建置，再將成品推至 gh-pages 發布分支。僅推送 main 不會重建網站。設定見 [STATIC-HOSTING.md](STATIC-HOSTING.md)。
 
 # 玩家介面清理 v0.14
 

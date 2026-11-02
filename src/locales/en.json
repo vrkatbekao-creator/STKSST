@@ -827,5 +827,7 @@
   "n_invalid": "This contact choice is unavailable.",
   "n_locked": "This invitation has not arrived yet.",
   "n_answered": "Your faction has already answered this invitation.",
-  "c_action_contact": "Respond to a campaign invitation"
+  "c_action_contact": "Respond to a campaign invitation",
+  "p_projectCredits": "Author / MIT",
+  "p_reportIssue": "Report an issue"
 }

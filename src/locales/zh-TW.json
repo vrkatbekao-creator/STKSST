@@ -827,5 +827,7 @@
   "n_invalid": "無法處理這項接觸選擇。",
   "n_locked": "目前還沒有這項邀請。",
   "n_answered": "本隊已回覆過這項邀請。",
-  "c_action_contact": "回覆街頭邀請"
+  "c_action_contact": "回覆街頭邀請",
+  "p_projectCredits": "作者／MIT",
+  "p_reportIssue": "回報問題"
 }

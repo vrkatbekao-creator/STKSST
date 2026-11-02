@@ -1,3 +1,11 @@
+# GitHub Pages／MIT 公開原型準備
+
+2026-11-02。依使用者授權設定公開原型。新增標準 MIT LICENSE、package license、第三方授權索引，建置自動輸出 MIT 與安裝套件告示，網站頁尾有雙語作者／MIT 及問題回報，新增雙語 Bug Issue 表單。保留 ODbL、Copernicus 與政府開放資料署名，不將第三方圖資改為 MIT。package.json 的 private:true 是防止誤發 npm，與 GitHub Repo 可見性無關，故保留。
+
+本地 check、159/159 tests、build:pages 與發布包檢查通過。87 個網站檔案，54,634,418 bytes；必備角色、MIT／第三方／圖資告示齊全，base /STKSST/，沒有 design/src/tests/node_modules/.git/.env。既有 14 份提交歷史以常見私鑰、GitHub／OpenAI／AWS 憑證格式檢查，未有符合的檔案；此為限定格式掃描，不宣稱形式化安全認證。
+
+Repo 已依授權改為公開。首次推送自訂 Actions 工作流被 GitHub 拒絕，原因為目前 OAuth 憑證沒有 workflow scope；不是流量限制。改採 gh-pages 成品分支，不擴充憑證權限，未發布的工作流提交已在本地修訂；npm run deploy:pages 會先 check/test/build/preflight 再推送，main 本身不自動建置。沒有外部追蹤。首次線上部署與瀏覽器驗收結果待上線後接續補記；未完成前不把本機建置當成公開站點通過。
+
 # v0.16 角色立繪與中立接觸事件
 
 2026-11-02 收尾（研究與 UI 驗證於 11-01）。三方六職務共 18 個隊員立繪，以及紅統促進會、海外商人、鷹眼（美國）監督員三位中立來客已接入。白方獨有瘋狂小草，橙方小水滴，藍方藍鷹斥候；主將自由選擇不改陣營身分。美術以 built-in image_gen 製作，PNG 尺寸／SHA／提示詞見 design/member-art-manifest.json、member-art-prompts.json。SVG 明確 clipPath，藍方醫護包與擴音器使用跨格 polygon，實際畫面檢查未見鄰格殘片或道具截斷。

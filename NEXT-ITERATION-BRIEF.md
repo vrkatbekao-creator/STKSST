@@ -1,3 +1,9 @@
+# 接續開發：v0.16 角色與中立接觸事件
+
+2026-11-02 收尾。三方六職務共 18 個卡通隊員與三位中立來客立繪已接入隊伍、地圖、招募、戰術與支援演出。白方獨有瘋狂小草、橙方小水滴、藍方藍鷹斥候；命名隨 team，不隨自由選將改變。中立來客於第 6／10／15 天解鎖，每陣營各回覆一次，具成本、取捨、AI 與保存；不佔七人編制，不直接改支持度。規格 CHARACTERS-CONTACTS-SPEC.md，原稿證據 ORIGINAL-SPEC-AUDIT.md。schema 4 可讀舊 1–3，讀取不改寫舊槽或回補資源。驗證與畫面見 QA.md、artifacts/characters-contacts-v16.json、design/qa/v16/。
+
+仍未完成原稿的電子黑熊使魔、獨立不受控側翼召喚、疲憊頭像差分、日曆式 AP；十月驚奇目前為字卡，尚非完整全螢幕演出。完整跨瀏覽器／硬體／螢幕閱讀器驗收仍 pending，真人平衡交使用者公開測試。裸地／路面實測未做，現有 DSM 是使用者確認的替代方案；雲端帳號、多人與真實新聞未啟用，不列為本輪缺陷。靜態網站尚未實際發布。保留歷史沿革，勿重啟舊排程。
+
 # 接續開發：v0.15 三槽與靜態發布準備
 
 三個本機槽已完成，原單槽原位作存檔 1，規格 SAVE-SLOTS-SPEC.md；check、148 tests、root build、build:pages 與子目錄 UI／圖片／音樂／道路建物均驗證。畫面 design/qa/v15，結果 artifacts/save-slots-v15.json。GitHub Pages 可用，但私人 Repo 需適用付費方案；免費可另建只放 dist 的公開發布 Repo，或私人來源搭配 Cloudflare Pages。參數與官方來源見 STATIC-HOSTING.md。本輪未實際部署，未改 Repo 可見性；正式平台尚未驗收。測試服務 5189 完成後停止，viewport 已復原。保持 28 天、三方規則與封關不變；完整相容性仍 pending，不重啟舊排程。

@@ -1,6 +1,6 @@
 # 遊戲建置說明：介面文案與製作註記
 
-v0.15.0 · 2026-11-01。三槽與託管建置分見 SAVE-SLOTS-SPEC.md、STATIC-HOSTING.md；下文介面清理契約沿用。這是開發、資料與素材維護文件，不是玩家操作手冊。
+v0.16.0 · 2026-11-01。角色原稿核對及三方來客見 ORIGINAL-SPEC-AUDIT.md、CHARACTERS-CONTACTS-SPEC.md；立繪提示詞與來源見 design/member-art-prompts.json。三槽與託管建置分見 SAVE-SLOTS-SPEC.md、STATIC-HOSTING.md；下文介面清理契約沿用。這是開發、資料與素材維護文件，不是玩家操作手冊。
 
 ## 舞台名稱對照
 

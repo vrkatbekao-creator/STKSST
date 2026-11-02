@@ -1,0 +1,112 @@
+{
+  "version": "0.16.0",
+  "completedDate": "2026-11-02",
+  "researchAndBrowserDate": "2026-11-01",
+  "tests": {
+    "command": "npm test",
+    "total": 159,
+    "passed": 159,
+    "failed": 0,
+    "skipped": 0
+  },
+  "commands": {
+    "npm run check": "passed",
+    "npm run build": "passed",
+    "npm run build:pages": "passed",
+    "git diff --check": "passed"
+  },
+  "staticPackage": {
+    "pagesBase": true,
+    "nojekyll": true,
+    "forbiddenPaths": [],
+    "memberAssets": [
+      {
+        "file": "public/art/members/blue-v1.png",
+        "present": true,
+        "bytes": 1724111
+      },
+      {
+        "file": "public/art/members/green-v1.png",
+        "present": true,
+        "bytes": 1437052
+      },
+      {
+        "file": "public/art/members/white-v1.png",
+        "present": true,
+        "bytes": 1369835
+      },
+      {
+        "file": "public/art/members/visitors-v1.png",
+        "present": true,
+        "bytes": 2394698
+      }
+    ],
+    "allFilesBelow25MiB": true
+  },
+  "art": {
+    "generator": "built-in image_gen",
+    "members": 18,
+    "visitors": 3,
+    "manifest": "design/member-art-manifest.json",
+    "prompts": "design/member-art-prompts.json",
+    "rendering": "SVG clipPath with blue medic and organizer prop masks; source PNG unchanged"
+  },
+  "browser": {
+    "browser": "connected Chrome on Windows",
+    "origin": "http://127.0.0.1:5190",
+    "userOrigin5173Untouched": true,
+    "actualDesktopWidth": 1150,
+    "actualNarrowWidth": 277,
+    "narrowScrollWidth": 277,
+    "requestedViewports": [
+      [
+        1280,
+        1000
+      ],
+      [
+        320,
+        1000
+      ]
+    ],
+    "viewportReset": true,
+    "consoleErrors": [],
+    "verified": [
+      "Three faction galleries and six roles per faction",
+      "Seven-member roster and disabled recruitment at cap",
+      "Distinct helper recruitment previews",
+      "Red contact AP 15 to 13, materials 526 to 524, morale 60 to 68, health 70 to 68, XP 0 to 2",
+      "Merchant decline free and final",
+      "Observer AP 13 to 11, materials 524 to 523, morale 68 to 73, health 68 to 67, XP 2 to 5",
+      "Save, refresh and resume preserve responses and AP 11 without rewards replay",
+      "Blue merchant AP 15 to 12, materials 526 to 532, health 70 to 67",
+      "Medic assist restores commander health 67 to 89 with blue-medic cut-in",
+      "Bilingual day/night contacts and qualitative blackout intelligence"
+    ],
+    "evidence": [
+      "design/qa/v16/blue-helpers.png",
+      "design/qa/v16/blue-members.png",
+      "design/qa/v16/contacts-en-narrow.png",
+      "design/qa/v16/contacts-en-night-narrow.png",
+      "design/qa/v16/contacts-zh.png",
+      "design/qa/v16/map-roster.png",
+      "design/qa/v16/medic-support.png",
+      "design/qa/v16/orange-members.png",
+      "design/qa/v16/white-members.png"
+    ]
+  },
+  "incomplete": [
+    "Electronic black bear familiar unit/art/animation",
+    "Independent uncontrolled flank summon",
+    "Fatigued portrait variants",
+    "Calendar-style AP blocks",
+    "Full-screen October surprise presentation",
+    "Full cross-browser, hardware and assistive-technology validation",
+    "Human balance via user-planned public test",
+    "Actual website deployment"
+  ],
+  "scopeNotes": [
+    "Cloud accounts, multiplayer and real-news ingestion remain outside authorized local single-player scope",
+    "GLO-30 DSM is the approved replacement, not measured bare-earth or street elevation",
+    "No rate or traffic limit was observed; conditional 03:15 continuation was not needed"
+  ]
+}

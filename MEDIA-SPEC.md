@@ -1,3 +1,5 @@
+v0.16 補充：陣營角色名稱／立繪、中立接觸事件與 schema 4（可讀舊 1–3）依 [CHARACTERS-CONTACTS-SPEC.md](CHARACTERS-CONTACTS-SPEC.md)。七人上限、既有成長與三槽 key 不變；下文保留原版本紀錄。
+
 # v0.8.0 角色、載具與影音
 
 交付日：2026-11-01 Europe/Brussels。使用者已選擇先做三首原創 20 秒動漫風陣營曲，以後再替換已授權 remix。角色、動畫及聲音是呈現層，不改 28 天、日夜共用 AP、三方競選、單一 Zustand、本機存檔及民調封關。

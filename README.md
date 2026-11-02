@@ -1,3 +1,7 @@
+# 角色與中立來客 v0.16
+
+三方各六種隊員立繪已接入，醫護／動員／後勤可在招募預覽、戰術面板與影音圖鑑查看；白方瘋狂小草、橙方小水滴、藍方藍鷹斥候。新增三種逐步解鎖的中立接觸事件與保存，規格見 [CHARACTERS-CONTACTS-SPEC.md](CHARACTERS-CONTACTS-SPEC.md)。初稿逐項核對與尚未完成的使魔／召喚兵／疲憊差分／日曆 AP 見 [ORIGINAL-SPEC-AUDIT.md](ORIGINAL-SPEC-AUDIT.md)。
+
 # 三槽單機版 v0.15
 
 首頁可選三個獨立存檔，遊玩中只保存目前槽位；原單槽自動以存檔 1 顯示，不改寫舊進度。規格見 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。根目錄靜態站使用 npm run build；GitHub Pages 的 STKSST 子目錄使用 npm run build:pages。私人 Repo 的 Pages 資格、免費發布選項及設定見 [STATIC-HOSTING.md](STATIC-HOSTING.md)，目前尚未公開部署。

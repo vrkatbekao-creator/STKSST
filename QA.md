@@ -1,3 +1,24 @@
+# v0.16 角色立繪與中立接觸事件
+
+2026-11-02 收尾（研究與 UI 驗證於 11-01）。三方六職務共 18 個隊員立繪，以及紅統促進會、海外商人、鷹眼（美國）監督員三位中立來客已接入。白方獨有瘋狂小草，橙方小水滴，藍方藍鷹斥候；主將自由選擇不改陣營身分。美術以 built-in image_gen 製作，PNG 尺寸／SHA／提示詞見 design/member-art-manifest.json、member-art-prompts.json。SVG 明確 clipPath，藍方醫護包與擴音器使用跨格 polygon，實際畫面檢查未見鄰格殘片或道具截斷。
+
+規則新增固定第 6／10／15 天邀請、每陣營整局一次接受／婉拒、AP／物資／健康取捨及士氣／XP／補給回報，AI 使用同一權威命令。schema 4 讀舊 1–3，只補空 contacts；三槽 key、種子、原資源與舊檔 bytes 不在讀取時改寫。新增 11 項測試涵蓋解鎖、成本、XP 上限、不可重領、陣營隔離、不可變性、無支持／RNG 改動、AI、存檔遷移／壞檔、18 種命名與美術 SHA。最終 check、159/159 tests、普通 build、build:pages 通過；發布包包含四張圖集及 .nojekyll，入口使用 /STKSST/assets/，不含 design/src/tests/.git/.env，單檔均小於 25 MiB。結果記於 artifacts/characters-contacts-v16.json。
+
+Chrome 已連線分頁使用獨立 127.0.0.1:5190 的開發驗證局；未操作使用者 5173 存檔。七人局透過真實規則推進至第 15 天，再以開發 fixture 給予測試物資、設定主將健康 70，以便重現成本與治療。繁中橙方接受紅統座談：AP 15→13、物資 526→524、士氣 60→68、健康 70→68、XP 0→2；婉拒商人免費且不能改選；接受監督員後 AP 11、物資 523、士氣 73、健康 67、XP 5。存檔、回首頁、重新整理與續玩保留三個回覆及 AP 11，不重新結算。第 15 天情報維持質性小道消息。
+
+英文藍方接受商人後 AP 12、物資 526→532、健康 70→67；醫護 #4 的支援使主將健康 67→89，實際演出使用 blue-medic 立繪與正確名稱。七人時不能再招募，動員角色預覽顯示藍鷹動員員完整立繪。三方圖鑑、隊伍／地圖頭像、招募預覽、中立角色與回覆狀態皆驗證；繁中／英文、白天／夜間均檢查。最後頁面 console error 為空，測試 viewport 已 reset。
+
+桌面請求 1280×1000，實際 CSS 寬度 1150；窄版請求 320×1000，本機縮放後 clientWidth=scrollWidth=277、可視高度約 909。英文夜間窄版來客立繪、成本與兩個選項完整換行。這是已記錄的限定場景，不等於精確 320px 或所有硬體／瀏覽器／WCAG／輔助科技通過；完整相容性仍 pending，真人平衡仍由公開測試處理。來源路網與圖資未修改，未執行地圖重新打包。
+
+畫面證據：
+
+- [藍方醫護／動員／後勤](design/qa/v16/blue-helpers.png)、[藍方核心兵種](design/qa/v16/blue-members.png)
+- [橙方](design/qa/v16/orange-members.png)、[白方](design/qa/v16/white-members.png)
+- [繁中中立接觸](design/qa/v16/contacts-zh.png)、[英文夜間窄版](design/qa/v16/contacts-en-night-narrow.png)
+- [醫護支援演出取樣](design/qa/v16/medic-support.png)、[七人地圖與隊伍](design/qa/v16/map-roster.png)
+
+原稿缺口見 ORIGINAL-SPEC-AUDIT.md：電子黑熊使魔、獨立不受控側翼召喚、疲憊表情差分、日曆式 AP 尚未完成；十月驚奇尚非完整全螢幕演出。雲端帳號、多人與真實新聞依後續單機決策未啟用；裸地／路面實測由已確認 DSM 替代。沒有本輪公開網站發布或新排程。
+
 # 治疏嶼英文品牌名
 
 2026-11-01。英文介面統一採 Governance Isle，更新品牌名、舞台架設說明與操作手冊三處資源；文案產生器及 GAME-BUILD-NOTES.md 名稱對照同步。繁中、內部 island ID、品牌色、遊戲規則及存檔皆不變。既有雙語鍵／插值測試、check、普通 build 與 build:pages 通過；本輪為純文案修正，未重跑完整規則或瀏覽器驗收。

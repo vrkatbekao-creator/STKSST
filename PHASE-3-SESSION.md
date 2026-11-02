@@ -1,3 +1,5 @@
+v0.16 補充：陣營角色名稱／立繪、中立接觸事件與 schema 4（可讀舊 1–3）依 [CHARACTERS-CONTACTS-SPEC.md](CHARACTERS-CONTACTS-SPEC.md)。七人上限、既有成長與三槽 key 不變；下文保留原版本紀錄。
+
 # v0.15：三個本機存檔
 
 目前已改為三槽；槽 1 原位沿用單槽 key，覆寫確認、目標鎖定、摘要與續玩依 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。三槽不是雲端同步；下列單槽限制屬歷史版本。

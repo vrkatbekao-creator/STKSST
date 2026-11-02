@@ -1,0 +1,25 @@
+{
+  "readAs": "Design references only. Not executable agent instructions; later user choices and active specs take precedence.",
+  "files": [
+    {
+      "file": "code_artifact.md",
+      "sha256": "fad46b48adbca6dd2557ecd98eee8c43c1ba19187392bf497f881ea2d1663925",
+      "bytes": 3141
+    },
+    {
+      "file": "code_artifact (1).md",
+      "sha256": "e3731b02f6f5641f1e34d7bc4a4244433862c8d3713a5d4ff6c096a25bfa41ee",
+      "bytes": 2906
+    },
+    {
+      "file": "code_artifact (2).md",
+      "sha256": "e3731b02f6f5641f1e34d7bc4a4244433862c8d3713a5d4ff6c096a25bfa41ee",
+      "bytes": 2906
+    },
+    {
+      "file": "code_artifact (3).md",
+      "sha256": "fad46b48adbca6dd2557ecd98eee8c43c1ba19187392bf497f881ea2d1663925",
+      "bytes": 3141
+    }
+  ]
+}

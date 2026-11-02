@@ -26,5 +26,8 @@ if(git(['ls-remote','--exit-code','--heads','origin','gh-pages'],staging,true).s
 }
 git(['add','-A'],staging);
 git(['-c','user.name=vrkatbekao-creator','-c','user.email=vrkatbekao-creator@users.noreply.github.com','commit','-m',`Deploy v${version} from ${revision.slice(0,7)}`],staging);
-git(['push','origin','HEAD:gh-pages'],staging);
+const deployment=git(['rev-parse','HEAD'],staging).output;
+// Push through the source repository so repository-scoped credential settings apply.
+git(['fetch',staging,'gh-pages']);
+git(['push','origin',`${deployment}:refs/heads/gh-pages`]);
 console.log(JSON.stringify({site:'https://vrkatbekao-creator.github.io/STKSST/',version,sourceCommit:revision,branch:'gh-pages'}));

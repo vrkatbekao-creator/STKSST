@@ -1,6 +1,7 @@
 import type { Campaign,CampaignUnit } from './campaign.ts';
 import { interactionCost,interactionCells,movement,routeFromMovement,unitAvailable,unitGuarded } from './campaign.ts';
-import { mapFor, allCells as cells,nodes,nodeById } from './campaign-map.ts';
+import { mapFor,playableNode } from './campaign-map.ts';
+import {outreachQuote} from './campaign-outreach.ts';
 export type VisitPlan={nodeId:string;state:'here'|'travel'|'ap'|'materials'|'capped'|'blocked'|'locked'|'unavailable'|'ended'|'invalid';error:string|null;destination:string|null;path:string[];moveAp:number|null;activityAp:number;totalAp:number|null;materials:number;canAct:boolean};
 function makePlan(g:Campaign,u:CampaignUnit,nodeId:string,walk:ReturnType<typeof movement>):VisitPlan{
  const {nodeById}=mapFor(g);const fee=interactionCost('canvass'),n=nodeById.get(nodeId);const base:VisitPlan={nodeId,state:'invalid',error:'c_errorNear',destination:null,path:[],moveAp:null,activityAp:fee.ap,totalAp:null,materials:fee.materials,canAct:false};
@@ -9,6 +10,7 @@ function makePlan(g:Campaign,u:CampaignUnit,nodeId:string,walk:ReturnType<typeof
  if(!g.units.some(v=>v.id===u.id&&v.team===u.team)||!unitAvailable(g,u))return fail('unavailable','c_errorUnit');
  if(!n)return base;
  if(g.nodeState[n.id].visits[u.team]>=2)return fail('capped','c_errorCrowd');
+ if(g.movementProfile==='streets-v2'&&outreachQuote(g,u.team,n.cellId).count>=2)return fail('capped','c_errorCrowd');
  const candidates=interactionCells(g,n);
  let destination:string,path:string[],moveAp:number;
  if(candidates.includes(u.cellId)){destination=u.cellId;path=[u.cellId];moveAp=0;}
@@ -24,4 +26,4 @@ function makePlan(g:Campaign,u:CampaignUnit,nodeId:string,walk:ReturnType<typeof
 export function planNodeVisit(g:Campaign,u:CampaignUnit,nodeId:string){return makePlan(g,u,nodeId,movement(g,u));}
 export function districtVisitPlans(g:Campaign,u:CampaignUnit,districtId:string){const walk=movement(g,u);return mapFor(g).nodes.filter(n=>n.districtId===districtId).map(n=>makePlan(g,u,n.id,walk));}
 
-export function visitPlans(g:Campaign,u:CampaignUnit){const walk=movement(g,u);return mapFor(g).nodes.map(n=>makePlan(g,u,n.id,walk));}
+export function visitPlans(g:Campaign,u:CampaignUnit,walk=movement(g,u)){return mapFor(g).nodes.filter(n=>playableNode(g,n)).map(n=>makePlan(g,u,n.id,walk));}

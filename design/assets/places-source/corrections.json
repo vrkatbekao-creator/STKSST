@@ -1,0 +1,14 @@
+[
+  {
+    "dataset": "market",
+    "sourceName": "臺北市公有南門市場",
+    "referenceDataset": "station",
+    "referenceName": "中正紀念堂站出口2",
+    "currentAddress": "臺北市中正區羅斯福路一段8號",
+    "evidence": "https://www.gov.taipei/News_Content.aspx?n=EEC70A4186D4C828&s=BEF065E68FF7E843&sms=87415A8B9CE81B16",
+    "source": "Taipei City Market Administration Office",
+    "sourceUpdated": "2026-04-24",
+    "checked": "2026-11-03",
+    "basis": "Official current-address FAQ explicitly directs visitors to CKS Memorial Hall station exit 2. The official entrance CSV supplies that entrance's coordinates. This is an access reference, not a surveyed market building centre. Original market CSV coordinates are retained separately."
+  }
+]

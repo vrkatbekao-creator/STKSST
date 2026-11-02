@@ -25,7 +25,7 @@ export function createCampaignStore(storage:StoragePort|null,movementProfile:'le
    select:id=>{const s=get(),u=s.game.units.find(u=>u.id===id&&u.team===s.game.playerTeam);if(u){set({selected:id,districtId:cells.get(u.cellId)!.districtId,error:null});if(s.started)persist();}},
    focus:id=>{if(districts.some(d=>d.id===id)){set({districtId:id,view:'street',error:null});if(get().started)persist();}},
    viewCity:()=>{set({view:'city',error:null});if(get().started)persist();},
-   dispatch:cmd=>{if(!get().started)return;const out=campaignCommand(get().game,cmd);set({game:out.game,error:out.error??null});if(!out.error){if(cmd.type==='transport'||cmd.type==='move'){const unit=out.game.units.find(u=>u.id===cmd.unitId)!;set({districtId:cells.get(unit.cellId)!.districtId,view:'street'});}if(cmd.type==='canvassRoute')set({districtId:nodeById.get(cmd.nodeId)!.districtId,view:'street'});persist();}},
+   dispatch:cmd=>{if(!get().started)return;const out=campaignCommand(get().game,cmd);set({game:out.game,error:out.error??null});if(!out.error){if(cmd.type==='transport'||cmd.type==='move'||cmd.type==='siteTransfer'){const unit=out.game.units.find(u=>u.id===cmd.unitId)!;set({districtId:cells.get(unit.cellId)!.districtId,view:'street'});}if(cmd.type==='canvassRoute')set({districtId:mapFor(out.game).nodeById.get(cmd.nodeId)!.districtId,view:'street'});persist();}},
    end:()=>{if(!get().started||get().game.result)return;if(get().game.talk){set({error:'d_finishFirst'});return;}set({game:endCampaignPhase(get().game),error:null});persist();},
    priority:id=>{if(!get().started)return;set({game:prioritizeWonder(get().game,id)});persist();},
    save:()=>{if(get().started)persist();},

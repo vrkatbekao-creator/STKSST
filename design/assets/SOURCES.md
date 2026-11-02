@@ -39,3 +39,7 @@ Wonder 來源及經緯度詳見 WONDER-CATALOG.md。行政區圖、河道、橋�
 使用者於 2026-10-31/11-01 跨日工作中明確改選公開 30m 衛星模型：官方 2026 20m DEM 下載回 403，未假稱下載成功。Copernicus GLO-30 Public / AWS 2021 release，主量測 2011–2015、可含較早補洞；它是 DSM，包含屋頂與樹冠。來源圖幅 N24E121、N25E121，URL/雜湊/基準見 taipei-surface-source-metadata.json；Git 保存原浮點裁切 taipei-copdem-30m.tif，EPSG:3826、30m 網格、EGM2008 垂直基準。改作之 JSON/陰影/等高線保留 Copernicus 告示，見 public/data/LANDSCAPE-DATA-LICENSE.txt。
 
 來源：[AWS registry](https://registry.opendata.aws/copernicus-dem/)、[AWS processing notes](https://copernicus-dem-30m.s3.amazonaws.com/readme.html)、[Copernicus product and licence](https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM)。實作及限制詳見 ../../LANDSCAPE-SPEC.md。
+
+## v0.17 official activity places
+
+Raw byte-preserved CSV snapshots in places-source/ and corrections.json. The 47 traditional market / 41 street-market-area / 230 metro-entrance groups are derived from Taipei official open data, city-clipped and snapped to existing same-district walkable anchors. Dataset URLs, retrieval dates, SHA-256, the Nanmen access-reference correction and limitations are in CITY-OUTREACH-SPEC.md and taipei-places.json. Original facility data retains the Open Government Data License 1.0; OSM-derived anchors retain ODbL. These are not surveyed crowds, campaign permits or a complete/current business directory.

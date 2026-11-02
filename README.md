@@ -1,8 +1,18 @@
 # 選戰騎士團：首都篇
 
-**目前版本 / Current version：v0.16.1 · 公開測試原型 / Public prototype**
+**目前版本 / Current version：v0.17.0 · 公開測試原型 / Public prototype**
 
-v0.16.1 降低道路移動 AP：每 200 公尺加權路程 1 AP，雨天增加 25% 負擔，階梯／未應變施工各增加 50%。玩家與 AI 共用，既有進度從下一次移動起適用、不回補已耗 AP；存檔及歷史保留。/ Road movement now costs 1 AP per 200 weighted metres, with lighter weather and obstacle penalties. The same rules apply to players and AI; existing saves keep spent AP and history. 詳見 [ROAD-MOVEMENT-SPEC.md](ROAD-MOVEMENT-SPEC.md)。
+前置修正 v0.16.1（歷史）：降低道路移動 AP，每 200 公尺加權路程 1 AP，雨天增加 25% 負擔，階梯／未應變施工各增加 50%。玩家與 AI 共用，既有進度從下一次移動起適用、不回補已耗 AP；存檔及歷史保留。/ Road movement now costs 1 AP per 200 weighted metres, with lighter weather and obstacle penalties. The same rules apply to players and AI; existing saves keep spent AP and history. 詳見 [ROAD-MOVEMENT-SPEC.md](ROAD-MOVEMENT-SPEC.md)。
+
+## 全市掃街 v0.17 / Citywide outreach
+
+可在任何可步行道路格原地掃街；318 個官方來源場地含 47 個市場、41 個攤販集中場群與 230 個捷運出入口群，各區數量不固定。清單可搜尋、依類型篩選並分批顯示，重要 Wonder 與舞台保留。新街區／行政區有首次接觸收益，同片街區短期重複接觸會飽和，鼓勵全市擴張。步行維持每 200 加權公尺 1 AP；道路局區域接駁 3 AP，指定場地接駁 4 AP，皆花 4 物資並共用每人每日一次。
+
+Canvass any walkable road cell and explore 318 public-source facility groups, with search and type filters. First contact in new neighborhoods or districts earns bonuses; repeated local contact becomes saturated. District and place transfers help the team reach the whole city. Saves upgrade without refunding spent AP or replaying rewards. Facility names without source-provided English retain their original proper names.
+
+地圖綠底是地景，淺色輪廓是建物，白色圓點是活動場地，藍色表示可達、金色表示選取／預覽路線；不是勢力範圍。陣營看角色外圈。/ Map fills show terrain, buildings, places and reachability, not faction territory.
+
+規則與資料界線：[CITY-OUTREACH-SPEC.md](CITY-OUTREACH-SPEC.md)。來源採固定快照，不是即時人流、完整市場清冊或競選許可。南門市場的舊位置已依官方現址／交通說明另列更正；原始資料仍保留。
 
 ## 公開測試 / Public prototype
 
@@ -26,21 +36,21 @@ This started as a side project I put together for fun while studying A* search. 
 
 專案來源 / Project source: [vrkatbekao-creator/STKSST](https://github.com/vrkatbekao-creator/STKSST)
 
-# 角色與中立來客 v0.16
+## 角色與中立來客 v0.16（歷史）
 
 三方各六種隊員立繪已接入，醫護／動員／後勤可在招募預覽、戰術面板與影音圖鑑查看；白方瘋狂小草、橙方小水滴、藍方藍鷹斥候。新增三種逐步解鎖的中立接觸事件與保存，規格見 [CHARACTERS-CONTACTS-SPEC.md](CHARACTERS-CONTACTS-SPEC.md)。初稿逐項核對與尚未完成的使魔／召喚兵／疲憊差分／日曆 AP 見 [ORIGINAL-SPEC-AUDIT.md](ORIGINAL-SPEC-AUDIT.md)。
 
-# 三槽單機版 v0.15
+## 三槽單機版 v0.15（歷史）
 
 首頁可選三個獨立存檔，遊玩中只保存目前槽位；原單槽自動以存檔 1 顯示，不改寫舊進度。規格見 [SAVE-SLOTS-SPEC.md](SAVE-SLOTS-SPEC.md)。根目錄靜態站使用 npm run build；GitHub Pages 的 STKSST 子目錄使用 npm run build:pages，npm run deploy:pages 會先檢查／測試／建置，再將成品推至 gh-pages 發布分支。僅推送 main 不會重建網站。設定見 [STATIC-HOSTING.md](STATIC-HOSTING.md)。
 
-# 玩家介面清理 v0.14
+## 玩家介面清理 v0.14（歷史）
 
 建置與製作註記見 [GAME-BUILD-NOTES.md](GAME-BUILD-NOTES.md)，包含圖資、角色與音樂來源、遷移及驗收限制；這些內容不再放入玩家操作說明。地圖顯示與鍵盤選格可按需展開，AP、效果與條件仍保留。規則、AI、圖資與存檔格式未變。
 
 ## 專案概覽
 
-React + PixiJS 雙語本機競選戰棋 **v0.16.1**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
+React + PixiJS 雙語本機競選戰棋 **v0.17.0**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
 
 v0.13 新增無障礙顯示偏好、鍵盤選格預覽、快速跳至區域、對話框焦點管理與可讀對比修正。141 項測試通過，五個已保存場景 axe 違規 0；仍有人工判讀與完整跨裝置流程待驗。Windows 電腦操作工具因無法可靠判定 Chrome 網址而中止，不能宣稱完整相容或 WCAG 認證。範圍見 ACCESSIBILITY-COMPAT-SPEC.md、COMPATIBILITY-TEST-MATRIX.md；真人平衡由使用者規劃公開測試。
 
@@ -98,7 +108,7 @@ npm run dev
 
 ## 地理與範圍
 
-官方行政區輪廓、河道、橋梁及 12 個 Wonder 代表點已接入。新局 41,336 個細格（28,835 個道路錨點）、60 個活動節點；舊局 2,859 個粗格。真實圖資與遊戲配置分層，資料來源及授權見 design/assets/SOURCES.md。
+官方行政區輪廓、河道、橋梁及 12 個 Wonder 代表點已接入。新局 41,336 個細格（28,835 個道路錨點）、318 個來源場地加 12 個 Wonder、12 個舞台場地；一般道路皆可掃街。原 60 個節點 ID 仍保留以相容舊進度，舊局 2,859 個粗格。真實圖資與遊戲配置分層，資料來源及授權見 design/assets/SOURCES.md。
 
 街廓插畫與一般活動點是遊戲配置，沒有路面實測高程。新局使用來源道路拓樸與長度，普通道路缺少步行權限標記時採明示的遊戲假設；沒有現實導航保證。支持點、人流皆為合成資料。已有本機存檔與本機音效，尚無帳號或線上功能；平衡與更細街景仍可持續調整。
 

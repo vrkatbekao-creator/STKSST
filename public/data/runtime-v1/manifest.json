@@ -19,6 +19,12 @@
     "bytes": 780815,
     "gzipBytes": 90987
   },
+  "places": {
+    "file": "places.cb6552b93cd505da.gz",
+    "sha256": "cb6552b93cd505da43ce506daabbfa7a5e4397f33ee98246139397ff849061c1",
+    "bytes": 117800,
+    "gzipBytes": 15598
+  },
   "districts": [
     {
       "id": "6300100",

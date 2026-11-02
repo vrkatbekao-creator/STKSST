@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-03",
+  "version": "0.17.0",
+  "placeRevision": "0c1f7f12cf74d46a1b2a0d225abd47b516e087d56a444aad0158eaaf13453f70",
+  "synthetic": true,
+  "method": "Three player factions, seed 17, all factions use the authoritative AI; checks resource, roster, day/night AP, save and blackout invariants. Not a human balance or win-rate study.",
+  "results": [
+    {
+      "team": "blue",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "coverage": {
+        "blue": {
+          "districts": 12,
+          "sectors": 116,
+          "contactedCells": 130,
+          "sourcePlaces": 24
+        },
+        "green": {
+          "districts": 12,
+          "sectors": 132,
+          "contactedCells": 159,
+          "sourcePlaces": 37
+        },
+        "white": {
+          "districts": 12,
+          "sectors": 96,
+          "contactedCells": 114,
+          "sourcePlaces": 29
+        }
+      },
+      "walks": {
+        "blue": 165,
+        "green": 174,
+        "white": 153
+      },
+      "elapsedMs": 50575
+    },
+    {
+      "team": "green",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "coverage": {
+        "blue": {
+          "districts": 12,
+          "sectors": 124,
+          "contactedCells": 138,
+          "sourcePlaces": 22
+        },
+        "green": {
+          "districts": 12,
+          "sectors": 116,
+          "contactedCells": 134,
+          "sourcePlaces": 26
+        },
+        "white": {
+          "districts": 12,
+          "sectors": 115,
+          "contactedCells": 128,
+          "sourcePlaces": 21
+        }
+      },
+      "walks": {
+        "blue": 173,
+        "green": 167,
+        "white": 167
+      },
+      "elapsedMs": 42864
+    },
+    {
+      "team": "white",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "coverage": {
+        "blue": {
+          "districts": 12,
+          "sectors": 99,
+          "contactedCells": 115,
+          "sourcePlaces": 25
+        },
+        "green": {
+          "districts": 12,
+          "sectors": 113,
+          "contactedCells": 135,
+          "sourcePlaces": 31
+        },
+        "white": {
+          "districts": 12,
+          "sectors": 92,
+          "contactedCells": 104,
+          "sourcePlaces": 19
+        }
+      },
+      "walks": {
+        "blue": 159,
+        "green": 163,
+        "white": 146
+      },
+      "elapsedMs": 42259
+    }
+  ]
+}

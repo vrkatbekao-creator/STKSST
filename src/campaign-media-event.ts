@@ -14,8 +14,8 @@ export function mediaEvent(previous:MediaSession,next:MediaSession):MediaEvent|n
  const unit=b.units.find(u=>u.id===log.values.unit);if(!unit)return null;
  const action=String(log.values.action),commander=b.commanders[unit.team];
  const base={commander,team:unit.team,action,...(unit.id!==`${unit.team}1`?{actorRole:unit.role,...(unit.helper?{actorHelper:unit.helper}:{})}:{})};
- if(['move','transport'].includes(action)&&unit.id===`${unit.team}1`)return {...base,kind:'departure',cue:'departure'};
- if(['canvass','visit','forum','livestream','culture','environment'].includes(action))return {...base,kind:'street',cue:'street'};
+ if(['move','transport','siteTransfer'].includes(action)&&unit.id===`${unit.team}1`)return {...base,kind:'departure',cue:'departure'};
+ if(['canvass','streetCanvass','visit','forum','livestream','culture','environment'].includes(action))return {...base,kind:'street',cue:'street'};
  if(['stageEvent','event','talkComplete'].includes(action))return {...base,kind:'stage',cue:`theme-${unit.team}`};
  if(['skill','rally','broadcast','backstab','brace','respond','assist'].includes(action))return {...base,kind:'skill',cue:action==='skill'?`skill-${commander}`:action==='backstab'?'slash':action==='broadcast'?'signal':'shield'};
  return null;

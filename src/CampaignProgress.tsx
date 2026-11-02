@@ -1,20 +1,27 @@
-import { useState } from 'react';
+import {outreachQuote} from './game/campaign-outreach.ts';
+import { useState,useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCampaign } from './game/campaign-store.ts';
-import { nodes,wonders } from './game/campaign-map.ts';
+import { mapFor,playableNode } from './game/campaign-map.ts';
+import {nodeLabel} from './campaign-node-label.ts';
+import {siteTransferError,actionCost} from './game/campaign.ts';
 import { districtProgress,nodeProgress,trailFor } from './game/campaign-progress.ts';
 import { progressKey } from './campaign-progress-labels.ts';
 import { districtVisitPlans } from './game/campaign-plans.ts';
 export function ProgressBadge({nodeId}:{nodeId:string}){const {t}=useTranslation();const {game}=useCampaign();const status=nodeProgress(game,nodeId);return <span className={`node-progress-badge ${status.completed?'complete':''}`}>{status.completed?'✓ ':''}{t(progressKey(status),{count:status.today})}</span>;}
 export function NodeChecklist({nodeId,onNode,onPlan}:{nodeId:string;onNode:(id:string)=>void;onPlan:(id:string|null)=>void}){
  const {t,i18n}=useTranslation();const {game,districtId,selected,dispatch}=useCampaign();const lang=i18n.language==='en'?'en':'zh-TW',progress=districtProgress(game,districtId),unit=game.units.find(u=>u.id===selected)!;
- const [filter,setFilter]=useState<'all'|'unfinished'|'available'>('all');const plans=districtVisitPlans(game,unit,districtId),available=plans.filter(p=>p.canAct).length;
- const shown=plans.filter(p=>filter==='all'||(filter==='available'?p.canAct:!nodeProgress(game,p.nodeId).completed));
+ const {nodeById}=mapFor(game),[filter,setFilter]=useState<'all'|'unfinished'|'available'>('all'),[query,setQuery]=useState(''),[kind,setKind]=useState('all'),[limit,setLimit]=useState(6);
+ useEffect(()=>setLimit(6),[districtId,query,kind,filter]);
+ const plans=districtVisitPlans(game,unit,districtId).filter(p=>playableNode(game,nodeById.get(p.nodeId)!)),available=plans.filter(p=>p.canAct).length;
+ const shown=plans.filter(p=>{const n=nodeById.get(p.nodeId)!;return (filter==='all'||(filter==='available'?p.canAct:!nodeProgress(game,p.nodeId).completed))&&(kind==='all'||(kind==='special'?!n.sourcePlace:n.placeType===kind))&&(!query||nodeLabel(n,lang,t).toLocaleLowerCase().includes(query.toLocaleLowerCase()));}).sort((a,b)=>Number(b.canAct)-Number(a.canAct)||(a.totalAp??Infinity)-(b.totalAp??Infinity)||a.nodeId.localeCompare(b.nodeId));
  return <section id="campaign-locations" tabIndex={-1} className="node-checklist" aria-label={t('c_sweepProgress')}><div className="node-checklist-heading"><strong>{t('c_sweepProgress')}</strong><span>{t('c_completedCount',progress)}</span></div><p className="node-plan-overview">{t('c_planOverview',{count:available,ap:unit.ap})}</p>{trailFor(game).partial&&<p className="progress-partial">{t('c_legacyTrail')}</p>}
+ <div className="place-search"><label>{t('o_search')}<input value={query} onChange={e=>setQuery(e.target.value)} aria-label={t('o_search')}/></label><label>{t('o_filterKind')}<select value={kind} onChange={e=>setKind(e.target.value)} aria-label={t('o_filterKind')}>{['all','market','nightmarket','station','special'].map(k=><option key={k} value={k}>{t(k==='all'?'o_allKinds':k==='special'?'o_special':`o_place_${k}`)}</option>)}</select></label></div>
  <div className="node-filters" role="group" aria-label={t('c_filterLocations')}>{(['all','unfinished','available'] as const).map(key=><button key={key} aria-pressed={filter===key} onClick={()=>setFilter(key)}>{t(`c_filter_${key}`)}</button>)}</div>
- {!shown.length&&<p className="node-plan-empty">{t('c_noMatchingLocations')}</p>}<div className="map-node-list" role="group" aria-label={t('c_nodes')}>{shown.map(plan=>{const n=nodes.find(n=>n.id===plan.nodeId)!,w=wonders.find(w=>w.id===n.wonderId),name=w?w.name[lang]:t(`c_node_${n.kind}`);return <article className="node-plan-card" key={n.id} data-node-id={n.id}>
+ {!shown.length&&<p className="node-plan-empty">{t('c_noMatchingLocations')}</p>}<div className="map-node-list" role="group" aria-label={t('c_nodes')}>{shown.slice(0,limit).map(plan=>{const n=nodeById.get(plan.nodeId)!,name=nodeLabel(n,lang,t),transfer=actionCost(game,{type:'siteTransfer'}),transferError=n.sourcePlace?siteTransferError(game,unit,n.id):null,q=outreachQuote(game,unit.team,n.cellId);return <article className="node-plan-card" key={n.id} data-node-id={n.id}>
  <button className="node-summary" aria-pressed={nodeId===n.id} onClick={()=>onNode(n.id)}><strong>{n.kind==='wonder'?'★ ':''}{name}</strong><ProgressBadge nodeId={n.id}/></button>
- <p className={`node-plan-state ${plan.canAct?'ready':''}`}>{t(`c_plan_${plan.state}`,{move:plan.moveAp,total:plan.totalAp,ap:plan.activityAp,materials:plan.materials})}</p>
+ {game.movementProfile==='streets-v2'&&<small className="source-site-badge">{t(`o_opportunity_${q.band}`)}{q.freshDistrict?` · ${t('o_newDistrict')}`:''}</small>}<p className={`node-plan-state ${plan.canAct?'ready':''}`}>{t(`c_plan_${plan.state}`,{move:plan.moveAp,total:plan.totalAp,ap:plan.activityAp,materials:plan.materials})}</p>
  <div className="node-plan-buttons"><button aria-label={`${t('c_previewNodeRoute')}：${name}`} className="outline-button" disabled={!plan.destination||!plan.moveAp||!!game.result} onClick={()=>{onNode(n.id);onPlan(plan.destination);}}>{t('c_previewNodeRoute')}</button><button aria-label={`${t(plan.moveAp?'c_moveAndCanvass':'c_canvassHere')}：${name}`} className="campaign-primary" disabled={!plan.canAct||!!game.talk} onClick={()=>{onNode(n.id);dispatch({type:'canvassRoute',unitId:unit.id,nodeId:n.id});onPlan(null);}}>{t(plan.moveAp?'c_moveAndCanvass':'c_canvassHere')}</button></div>
- </article>;})}</div></section>;
+ {n.sourcePlace&&plan.state!=='capped'&&(plan.moveAp===null||plan.moveAp>4)&&<button className="outline-button site-transfer" aria-label={`${t('c_action_siteTransfer')}：${name}`} disabled={!!transferError} title={transferError?t(transferError):undefined} onClick={()=>{onNode(n.id);dispatch({type:'siteTransfer',unitId:unit.id,nodeId:n.id});onPlan(null);}}>{t('c_action_siteTransfer')} · {t('c_cost',transfer)}</button>}
+ </article>;})}</div>{shown.length>limit&&<button className="outline-button place-more" onClick={()=>setLimit(v=>v+6)}>{t('o_showMore',{count:shown.length-limit})}</button>}</section>;
 }

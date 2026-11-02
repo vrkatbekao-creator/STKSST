@@ -48,3 +48,6 @@ v0.16.0 · 2026-11-01。角色原稿核對及三方來客見 ORIGINAL-SPEC-AUDIT
 同輪瀏覽器檢查發現熱更新／畫布重建時，繪圖 effect 可能拿到已 destroy 的 Pixi Application。繪製前檢查 stage 與 renderer 仍存在，避免讀取 null；這不是數值規則修訂。相容地圖往返切換已人工操作驗證。
 
 執行 `npm run check`、`npm test`、`npm run build`。瀏覽器檢查雙語、桌面與窄版：預設說明收合，展開仍可操作，地圖／行動資訊可讀、影音與操作說明不再顯示製作研究、必要署名可開啟。實際結果見 [QA.md](QA.md)。其他實體硬體、完整螢幕閱讀器流程與未測瀏覽器仍依 [COMPATIBILITY-TEST-MATRIX.md](COMPATIBILITY-TEST-MATRIX.md) 保留待測，不以本輪文字清理宣稱相容性已完成。
+## v0.17 場地與掃街建置補充
+
+依 CITY-OUTREACH-SPEC.md，官方設施來源、原始 CSV SHA／編碼、南門市場更正與非即時／非完整清冊限制保留在建置契約，不放進玩家操作說明。英文操作、分類與狀態均翻譯；來源沒有英文專名的設施保留原名，不能冒造官方英文。資料重建後執行 npm run data:package；原路網 core/meta/base/十二區圖層保持原 SHA，只新增 places 套件。街頭飽和只反映遊戲自己的接觸紀錄，不代表現實居民立場或群體政治偏好。

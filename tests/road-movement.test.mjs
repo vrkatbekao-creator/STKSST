@@ -14,7 +14,7 @@ const session=g=>({game:g,selected:`${g.playerTeam}1`,districtId:mapFor(g).cells
 const act=(g,cmd)=>{const out=campaignCommand(g,cmd);assert.equal(out.error,undefined,JSON.stringify(cmd));return out.game;};
 
 test('100 m shared tactical lattice uses source topology, preserves grade tags and excludes expressways',()=>{
- const g=fresh(),m=mapFor(g);assert.equal(m.campaignMap.radiusMetres,50);assert.equal(m.cells.size,41336);assert.equal(m.nodes.length,60);assert.ok(streetSource.audit.maxNodeSnap<=161);
+ const g=fresh(),m=mapFor(g);assert.equal(m.campaignMap.radiusMetres,50);assert.equal(m.cells.size,41336);assert.equal(m.nodes.length,378);assert.ok(streetSource.audit.maxNodeSnap<=161);
  for(const c of m.cells.values())for(const id of c.neighbors)assert.equal(hexDistance(c,m.cells.get(id)),1);
  for(const w of streetWays.values()){assert.ok(!['motorway','motorway_link','trunk','trunk_link'].includes(w.highway));assert.ok(['unknown','yes','designated','permissive','official'].includes(w.foot));if(w.highway==='cycleway')assert.notEqual(w.foot,'unknown');}
  assert.ok([...streetWays.values()].some(w=>w.bridge!=='no'));assert.ok([...streetWays.values()].some(w=>w.tunnel!=='no'));assert.ok([...streetWays.values()].some(w=>w.layer!=='0'));assert.ok([...streetWays.values()].some(w=>w.foot==='unknown'&&w.assumed));
@@ -29,7 +29,7 @@ test('all district anchors and 60 activity nodes are reachable both ways through
 
 test('Wanhua and Xinyi preview, AP deduction, road geometry and saved ordered walks agree',()=>{
  for(const district of ['6300700','6300200']){let g=fresh();const m=mapFor(g),anchor=m.districts.find(d=>d.id===district).anchor,u=g.units.find(u=>u.cellId===anchor)??g.units[0];u.cellId=anchor;const walk=movement(g,u),to=[...walk.costs].find(([id,c])=>c>=4&&c<=7&&id!==u.cellId)[0],p=routeFromMovement(u,to,walk);assert.ok(p.edgeIds.length);assert.equal(p.cost,roadAPCost(p.edgeIds.reduce((sum,id)=>sum+roadEffort(g,id,u.team),0)));assert.deepEqual(p.path,roadWalkCells(p.edgeIds));assert.deepEqual(p.geometry,walkGeometry(p.path,p.edgeIds));assert.ok(p.geometry.length>=p.path.length);
-  const before=u.ap;g=act(g,{type:'move',unitId:u.id,cellId:to});assert.equal(g.units.find(v=>v.id===u.id).ap,before-p.cost);assert.deepEqual(g.trail.blue.walks[0].edgeIds,p.edgeIds);assert.ok(validSession(session(g)));const encoded=encodeSave(session(g),'2026-10-31T22:00:00Z');assert.equal(encoded.version,4);assert.equal(encoded.mapRevision,streetSource.revision);assert.deepEqual(decodeSave(JSON.stringify(encoded)).save.session,session(g));
+  const before=u.ap;g=act(g,{type:'move',unitId:u.id,cellId:to});assert.equal(g.units.find(v=>v.id===u.id).ap,before-p.cost);assert.deepEqual(g.trail.blue.walks[0].edgeIds,p.edgeIds);assert.ok(validSession(session(g)));const encoded=encodeSave(session(g),'2026-10-31T22:00:00Z');assert.equal(encoded.version,5);assert.equal(encoded.mapRevision,streetSource.revision);assert.deepEqual(decodeSave(JSON.stringify(encoded)).save.session,session(g));
  }
 });
 
@@ -56,7 +56,7 @@ test('rain, stairs and construction use bounded additive effort and faction-spec
  assert.equal(roadEffort(g,stairs.id,'blue'),stairs.metres*2.25);g.surprise.responses.blue='adapt';assert.equal(roadEffort(g,stairs.id,'blue'),stairs.metres*1.75);assert.equal(roadEffort(g,stairs.id,'green'),stairs.metres*2.25);
 });
 
-test('existing v4 saves keep spent AP and history while the next road move uses the new rate',()=>{
+test('save round-trips keep spent AP and history while the next road move uses the new rate',()=>{
  const g=fresh(),u=g.units[0];u.ap=7;const oldSession=session(g),raw=JSON.stringify(encodeSave(oldSession,'2026-11-01T20:00:00Z')),restored=decodeSave(raw).save.session;
  assert.deepEqual(restored,oldSession);assert.equal(restored.game.units[0].ap,7);
  const target=[...movement(restored.game,restored.game.units[0]).costs].find(([,cost])=>cost===3)[0],next=act(restored.game,{type:'move',unitId:u.id,cellId:target});assert.equal(next.units[0].ap,4);assert.equal(g.units[0].ap,7);
@@ -69,7 +69,7 @@ test('move-and-canvass reserves outreach AP and matches the legal two-command se
 
 test('new saves reject forged road histories and map revisions; legacy saves retain positions and rules',()=>{
  let g=fresh();const u=g.units[0],to=[...movement(g,u).costs].find(([id,c])=>c>=4)[0];g=act(g,{type:'move',unitId:u.id,cellId:to});const s=session(g),forged=structuredClone(s);forged.game.trail.blue.walks[0].edgeIds.reverse();assert.equal(validSession(forged),false);const mixed=structuredClone(s);mixed.game.units[0].cellId=initialCampaign().units[0].cellId;assert.equal(validSession(mixed),false);const wrong=encodeSave(s);wrong.mapRevision='obsolete';assert.equal(decodeSave(JSON.stringify(wrong)).error,'c_saveIncompatible');
- const legacy=session(initialCampaign());const old=encodeSave(legacy);assert.equal(old.version,4);assert.equal(old.map,'taipei-hex-v1');const port={getItem:()=>JSON.stringify(old),setItem:()=>{}};const store=createCampaignStore(port,'streets-v2');store.getState().resume();assert.deepEqual(store.getState().game,legacy.game);store.getState().menu();assert.equal(store.getState().game.movementProfile,'streets-v2');
+ const legacy=session(initialCampaign());const old=encodeSave(legacy);assert.equal(old.version,5);assert.equal(old.map,'taipei-hex-v1');const port={getItem:()=>JSON.stringify(old),setItem:()=>{}};const store=createCampaignStore(port,'streets-v2');store.getState().resume();assert.deepEqual(store.getState().game,legacy.game);store.getState().menu();assert.equal(store.getState().game.movementProfile,'streets-v2');
 });
 
 test('new-mode opponents use road walks and a complete 28-day game preserves polling blackout and deterministic continuation',()=>{

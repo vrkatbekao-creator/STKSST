@@ -1,0 +1,160 @@
+{
+  "date": "2026-11-03",
+  "version": "0.17.0",
+  "catalogueRevision": "0c1f7f12cf74d46a1b2a0d225abd47b516e087d56a444aad0158eaaf13453f70",
+  "sources": [
+    {
+      "id": "market",
+      "file": "markets.csv",
+      "dataset": "https://data.gov.tw/dataset/121593",
+      "download": "https://data.taipei/api/dataset/89bebb3a-990d-4070-bd67-631a575f6d4a/resource/35acfce1-2c4d-4c70-aa75-601cdab2b3f7/download",
+      "metadataUpdated": "2026-10-13",
+      "sha256": "460f0ab33b3888c9e2fd67ab27b7be29c2653b909df912f8210f473d3565ced5",
+      "bytes": 21668,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "utf-8-sig",
+      "rows": 47
+    },
+    {
+      "id": "nightmarket",
+      "file": "night-markets.csv",
+      "dataset": "https://data.gov.tw/dataset/121594",
+      "download": "https://data.taipei/api/dataset/c013d9ec-a550-46bd-ac60-45f085930706/resource/4874f750-b972-4c42-ad76-986960670c70/download",
+      "metadataUpdated": "2026-10-13",
+      "sha256": "d45216082540afcbb5e059af51ea00aa85d028478dd3f81aaafb18d309545e45",
+      "bytes": 4289,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "cp950",
+      "rows": 47
+    },
+    {
+      "id": "station",
+      "file": "mrt-exits.csv",
+      "dataset": "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b",
+      "download": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=307a7f61-e302-4108-a817-877ccbfca7c1",
+      "metadataUpdated": "2026-08-04",
+      "sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "bytes": 17633,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "cp950",
+      "rows": 390
+    }
+  ],
+  "places": {
+    "count": 318,
+    "rejected": {
+      "outside-taipei": 110
+    },
+    "byType": {
+      "market": 47,
+      "nightmarket": 41,
+      "station": 230
+    },
+    "byDistrict": {
+      "6300100": 23,
+      "6300200": 22,
+      "6300300": 55,
+      "6300400": 37,
+      "6300500": 55,
+      "6300600": 20,
+      "6300700": 19,
+      "6300800": 18,
+      "6300900": 17,
+      "6301000": 17,
+      "6301100": 12,
+      "6301200": 23
+    }
+  },
+  "routingPackagesUnchanged": true,
+  "routingRevision": "324e9a8435d22e7d1876af469e16e7c23ae0d2e9eb06116f1810e34b7106477f",
+  "placesPackage": {
+    "file": "places.cb6552b93cd505da.gz",
+    "sha256": "cb6552b93cd505da43ce506daabbfa7a5e4397f33ee98246139397ff849061c1",
+    "bytes": 117800,
+    "gzipBytes": 15598
+  },
+  "checks": {
+    "typescript": "pass",
+    "tests": 171,
+    "rootBuild": "pass",
+    "pagesBuild": "pass",
+    "focusedCityTests": 9,
+    "fullCampaigns": 3,
+    "saveRoundTrips": 9
+  },
+  "browser": {
+    "browser": "Connected Windows Chrome",
+    "origin": "http://127.0.0.1:5191",
+    "oldSchema4Resume": {
+      "AP": 11,
+      "materials": 36,
+      "locationsInZhongzheng": 57
+    },
+    "sameDistrictPlaceTransfer": {
+      "AP": [
+        11,
+        7
+      ],
+      "materials": [
+        36,
+        32
+      ]
+    },
+    "twoStreetContacts": {
+      "AP": [
+        7,
+        5,
+        3
+      ],
+      "materials": [
+        32,
+        31,
+        30
+      ],
+      "dailyCount": 2,
+      "disabledAtCap": true
+    },
+    "reloadPreserved": true,
+    "nightAP": 3,
+    "secondMemberDistrictTransferAP": [
+      14,
+      11
+    ],
+    "newDistrictStreetContactAP": [
+      11,
+      9
+    ],
+    "coverage": {
+      "neighborhoods": 2,
+      "districts": 2
+    },
+    "languages": [
+      "zh-TW",
+      "en"
+    ],
+    "desktopRequested": [
+      1280,
+      1000
+    ],
+    "desktopActualCSSWidth": 1150,
+    "narrowRequested": [
+      320,
+      900
+    ],
+    "narrowClientWidth": 277,
+    "narrowScrollWidth": 277,
+    "consoleErrors": [],
+    "viewportReset": true,
+    "limitations": "Limited Chrome scenes, not full hardware/browser/assistive-technology certification; fixed-strategy replay is not human balance research."
+  },
+  "build": {
+    "files": 90,
+    "bytes": 54850375,
+    "base": "/STKSST/",
+    "notices": "present",
+    "developmentFiles": "excluded"
+  }
+}

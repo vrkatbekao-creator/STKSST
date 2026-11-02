@@ -1,8 +1,10 @@
 import {initialContacts,validContacts} from './campaign-contacts.ts';
+import {initialOutreach,validOutreach} from './campaign-outreach.ts';
+import {teamRecord} from './campaign-teams.ts';
 import type { Campaign } from './campaign.ts';
 import { campaignOutcome } from './campaign-teams.ts';
 import { teams } from './campaign-teams.ts';
-import { routingEdges,roadWalkCells,mapFor,streetSource,cells,districts,nodes,wonders } from './campaign-map.ts';
+import { routingEdges,roadWalkCells,mapFor,streetSource,placeRevision,cells,districts,nodes,wonders } from './campaign-map.ts';
 import { legacyTrail } from './campaign-progress.ts';
 import { surpriseIds } from './campaign-events.ts';
 import { validTalk } from './campaign-dialogue.ts';
@@ -13,9 +15,9 @@ export type SaveSlot=typeof SAVE_SLOTS[number];
 export const isSaveSlot=(slot:unknown):slot is SaveSlot=>SAVE_SLOTS.includes(slot as SaveSlot);
 // Slot one retains the original key and bytes, including legacy saves.
 export function saveKey(slot:SaveSlot=1){if(!isSaveSlot(slot))throw new Error('save-slot');return slot===1?SAVE_KEY:`${SAVE_KEY}-${slot}`;}
-export const SAVE_VERSION=4;
+export const SAVE_VERSION=5;
 export type Session={game:Campaign;selected:string;districtId:string;view:'city'|'street'};
-export type SavedCampaign={version:1|2|3|4;rules:'0.5.0'|'0.6.0'|'0.10.0'|'0.16.0';map:'taipei-hex-v1'|'taipei-street-hex-v2';mapRevision?:string;savedAt:string;session:Session;checksum:number};
+export type SavedCampaign={version:1|2|3|4|5;rules:'0.5.0'|'0.6.0'|'0.10.0'|'0.16.0'|'0.17.0';map:'taipei-hex-v1'|'taipei-street-hex-v2';mapRevision?:string;placeRevision?:string;savedAt:string;session:Session;checksum:number};
 export type SaveError='c_saveUnavailable'|'c_saveInvalid'|'c_saveIncompatible';
 export type StoragePort={getItem:(key:string)=>string|null;setItem:(key:string,value:string)=>void};
 type Obj=Record<string,any>;
@@ -32,11 +34,11 @@ const support=(v:unknown)=>exactKeys(v,areaIds)&&areaIds.every(id=>teamValues((v
 const snapshot=(v:any)=>obj(v)&&integer(v.releasedDay,2,28)&&integer(v.asOfDay,1,27)&&v.asOfDay===v.releasedDay-1&&support(v.support);
 const log=(v:any)=>obj(v)&&oneOf(v.key,['c_logStart','c_logAction','c_logSurge','c_logWonder','c_logSettlement','c_logNight','c_logFinal','c_logPoll','c_breaking','c_exclusive'])&&obj(v.values)&&Object.keys(v.values).length<=12&&Object.values(v.values).every(x=>typeof x==='string'&&x.length<=200||num(x,-1e9));
 const checksum=(s:string)=>{let hash=2166136261;for(let i=0;i<s.length;i++)hash=Math.imul(hash^s.charCodeAt(i),16777619);return hash>>>0;};
-export function validSession(value:unknown):value is Session{
+export function validSession(value:unknown,oldNodes=false):value is Session{
  if(!obj(value)||!obj(value.game))return false;
  const g=value.game;
  if(g.movementProfile!==undefined&&!oneOf(g.movementProfile,['legacy-hex','streets-v2']))return false;
- const {cells}=mapFor(g);
+ const {cells,nodes:activeNodes}=mapFor(g);const nodeIds=(oldNodes?nodes:activeNodes).map(n=>n.id);
  if(!oneOf(g.playerTeam,teams)||!integer(g.day,1,28)||!oneOf(g.phase,['day','night'])||!integer(g.seed,0,0xffffffff)||!oneOf(g.news,['rain','market','volunteers','clear'])||!integer(g.actions))return false;
  if(!teamValues(g.commanders,x=>oneOf(x,['jiang','shen','huang']))||!teamValues(g.resources,x=>obj(x)&&num(x.materials)&&integer(x.volunteers,0,6))||!support(g.support))return false;
  if(!Array.isArray(g.units)||g.units.length<9||g.units.length>21||new Set(g.units.map((u:any)=>u?.id)).size!==g.units.length)return false;
@@ -68,6 +70,7 @@ export function validSession(value:unknown):value is Session{
  if(g.talk!==undefined&&g.talk!==null&&!validTalk(g.talk,g as Campaign))return false;
  if(g.talkReports!==undefined&&!list(g.talkReports,r=>validTalk(r,g as Campaign,true),12))return false;
  if(g.contacts!==undefined&&!validContacts(g.contacts,g as Campaign))return false;
+ if(g.outreach!==undefined&&!validOutreach(g.outreach,g as Campaign))return false;
  if(!list(g.logs,log,100)||(g.flash!==null&&!log(g.flash)))return false;
  if(!g.units.some((u:any)=>u.id===value.selected&&u.team===g.playerTeam)||!areaIds.includes(value.districtId)||!oneOf(value.view,['city','street']))return false;
  return true;
@@ -76,18 +79,21 @@ export function encodeSave(session:Session,savedAt=new Date().toISOString()):Sav
  if(!validSession(session))throw new Error('c_saveInvalid');
  if(!session.game.trail)session={...session,game:{...session.game,trail:legacyTrail(session.game)}};
  if(!session.game.contacts)session={...session,game:{...session.game,contacts:initialContacts()}};
+ if(!session.game.outreach)session={...session,game:{...session.game,outreach:initialOutreach(session.game)}};
  const street=session.game.movementProfile==='streets-v2';
- const data:Omit<SavedCampaign,'checksum'>={version:4,rules:'0.16.0',map:street?'taipei-street-hex-v2':'taipei-hex-v1',...(street?{mapRevision:streetSource.revision}:{}),savedAt,session:structuredClone(session)};
+ const data:Omit<SavedCampaign,'checksum'>={version:5,rules:'0.17.0',map:street?'taipei-street-hex-v2':'taipei-hex-v1',...(street?{mapRevision:streetSource.revision,placeRevision}:{}),savedAt,session:structuredClone(session)};
  return {...data,checksum:checksum(JSON.stringify(data))};
 }
 export function decodeSave(raw:string):{save:SavedCampaign|null;error:SaveError|null}{
  try{if(raw.length>4_000_000)return {save:null,error:'c_saveInvalid'};const v=JSON.parse(raw);if(!obj(v))return {save:null,error:'c_saveInvalid'};
  const street=v.session?.game?.movementProfile==='streets-v2';
- const modern=v.version===4||v.version===3;
- if(modern?(v.rules!==(v.version===4?'0.16.0':'0.10.0')||v.map!==(street?'taipei-street-hex-v2':'taipei-hex-v1')||street&&v.mapRevision!==streetSource.revision):street?(v.version!==2||v.rules!=='0.6.0'||v.map!=='taipei-street-hex-v2'||v.mapRevision!==streetSource.revision):(v.version!==1||v.rules!=='0.5.0'||v.map!=='taipei-hex-v1'))return {save:null,error:'c_saveIncompatible'};
- if(v.version===4&&!v.session?.game?.contacts)return {save:null,error:'c_saveInvalid'};
- const {checksum:hash,...data}=v;if(!integer(hash,0,0xffffffff)||checksum(JSON.stringify(data))!==hash||typeof v.savedAt!=='string'||!Number.isFinite(Date.parse(v.savedAt))||!validSession(v.session))return {save:null,error:'c_saveInvalid'};
- return {save:encodeSave(v.session,v.savedAt),error:null};}catch{return {save:null,error:'c_saveInvalid'};}
+ const modern=v.version===5||v.version===4||v.version===3;
+ if(modern?(v.rules!==(v.version===5?'0.17.0':v.version===4?'0.16.0':'0.10.0')||v.map!==(street?'taipei-street-hex-v2':'taipei-hex-v1')||street&&v.mapRevision!==streetSource.revision):street?(v.version!==2||v.rules!=='0.6.0'||v.map!=='taipei-street-hex-v2'||v.mapRevision!==streetSource.revision):(v.version!==1||v.rules!=='0.5.0'||v.map!=='taipei-hex-v1'))return {save:null,error:'c_saveIncompatible'};
+ if(v.version>=4&&!v.session?.game?.contacts||v.version===5&&!v.session?.game?.outreach)return {save:null,error:'c_saveInvalid'};
+ if(v.version===5&&street&&v.placeRevision!==placeRevision)return {save:null,error:'c_saveIncompatible'};
+ const {checksum:hash,...data}=v;if(!integer(hash,0,0xffffffff)||checksum(JSON.stringify(data))!==hash||typeof v.savedAt!=='string'||!Number.isFinite(Date.parse(v.savedAt))||!validSession(v.session,v.version<5&&street&&Object.keys(v.session?.game?.nodeState??{}).length===nodes.length))return {save:null,error:'c_saveInvalid'};
+ const session:Session=v.session;if(v.version<5){const game={...session.game};if(street){game.nodeState={...game.nodeState};for(const n of mapFor(game).nodes)if(!game.nodeState[n.id])game.nodeState[n.id]={influence:teamRecord(()=>0),visits:teamRecord(()=>0),active:teamRecord(()=>false)};}if(!game.outreach)game.outreach=initialOutreach(game);session.game=game;}
+ return {save:encodeSave(session,v.savedAt),error:null};}catch{return {save:null,error:'c_saveInvalid'};}
 }
 export function readSave(storage:StoragePort|null,slot:SaveSlot=1){try{if(!storage)return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};const raw=storage.getItem(saveKey(slot));return raw!==null?{...decodeSave(raw),exists:true}:{save:null,error:null,exists:false};}catch{return {save:null,error:'c_saveUnavailable' as SaveError,exists:false};}}
 export function writeSave(storage:StoragePort|null,session:Session,slot:SaveSlot=1){try{if(!storage)throw new Error();const save=encodeSave(session);storage.setItem(saveKey(slot),JSON.stringify(save));return {save,error:null};}catch{return {save:null,error:'c_saveUnavailable' as SaveError};}}

@@ -1,3 +1,9 @@
+# 最新：v0.17 全市掃街與移動誘因
+
+2026-11-03。實作契約 CITY-OUTREACH-SPEC.md 優先於舊點數／schema 描述：318 官方來源場地、不均分各區、任意可走道路掃街、600m 街區探索與飽和、同格每日兩次、3/4 AP 接駁共用每日一次；步行 200 加權公尺／AP、日夜共用。schema 5 讀舊 1–4，不改啟動槽 bytes、不補資源。地圖色塊不是勢力，常駐圖例，清單搜尋／類型／分批六張，三方 AI 共用規則。已驗 check、171 tests、build、三個完整 28 日固定策略局與局部 Chrome 雙語／窄版／日夜；實際數據及限制見 QA.md、artifacts/city-outreach-v0170.json。路網及原分區 SHA 不變，只新增 places 套件；重建須 data:package。南門市場來源舊位置更正保留證據。
+
+接續仍以真人公開測試調整平衡；原稿缺口／完整相容性沿用下方 pending，不能以本次局部驗證宣稱全部完成。不要重啟舊排程。發布方式仍為 gh-pages 成品分支，main 不自動建置；完成發布後查 RELEASE.json 對照 sourceCommit。
+
 # 公開原型已上線：GitHub Pages／MIT
 
 2026-11-02。使用者授權公開 Repo、MIT 與外界測試，已發布 https://vrkatbekao-creator.github.io/STKSST/ 。main 與開發分支包含 MIT LICENSE、第三方授權告示、雙語來源／Bug 回報。網站採 gh-pages 成品分支根目錄，HTTPS，GitHub 管理的 Pages 部署成功；來源與驗證見 QA.md、artifacts/pages-http-v16.json。更新方式 npm run deploy:pages，先 check/test/build/preflight 再推送，僅推 main 不會重建網站。現有 OAuth 無 workflow scope，不要宣稱自訂 Actions 已啟用或要求使用者擴大權限；發布程式從原專案推送以沿用認證。三槽仍為各瀏覽器本機保存，沒有多人或雲端進度，舊排程不重啟。以下為歷史交接，完整相容性與原稿缺口仍待處理。

@@ -20,8 +20,9 @@ cpSync(resolve('dist'),staging,{recursive:true});
 writeFileSync(join(staging,'RELEASE.json'),JSON.stringify({version,sourceCommit:revision,builtAt:new Date().toISOString()},null,2)+'\n');
 git(['init','--initial-branch=gh-pages'],staging);
 git(['remote','add','origin',remote],staging);
-if(git(['ls-remote','--exit-code','--heads','origin','gh-pages'],staging,true).status===0){
-  git(['fetch','--depth=1','origin','gh-pages'],staging);
+if(git(['ls-remote','--exit-code','--heads','origin','gh-pages'],root,true).status===0){
+  git(['fetch','origin','gh-pages:refs/remotes/origin/gh-pages']);
+  git(['fetch','--depth=1',root,'refs/remotes/origin/gh-pages'],staging);
   git(['reset','--mixed','FETCH_HEAD'],staging);
 }
 git(['add','-A'],staging);

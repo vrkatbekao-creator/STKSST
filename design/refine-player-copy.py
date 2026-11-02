@@ -22,7 +22,7 @@ copy = {
  'c_buildHelp': ('治疏嶼需兩天準備，恰恰肥皂箱需一天；開放後須派員，再主動舉辦場次。','Governance Isle takes two days to prepare; Cha-Cha Soapbox takes one. Staff the stage once open, then actively run events.'),
  'p_credits': ('圖資署名','Map credits'),
  'p_mapDisplay': ('地圖顯示','Map display'),
- 'c_footer': ('選戰騎士團 · 首都篇 · v0.16.1','Campaign Knights · Capital Edition · v0.16.1'),
+ 'c_footer': ('選戰騎士團 · 首都篇 · v0.17.0','Campaign Knights · Capital Edition · v0.17.0'),
  'c_gameValues': ('角色與事件皆為虛構','Fictional characters and events'),
  'c_threeSides': ('選擇你的陣營，與另外兩方競逐台北。','Choose your faction and compete with two rivals for Taipei.'),
  'c_streetProfile': ('街道地圖','Street map'),
@@ -66,10 +66,10 @@ copy = {
 guide = [
  ('競選共 28 天，日夜共用 AP。最後一夜結算後，全市支持點最高的陣營獲勝；並列則平手。','Campaign for 28 days, sharing AP between day and night. After the final night, the highest citywide support wins; equal leaders draw.'),
  ('先選陣營與主將，再展開競選。其他兩方會在每晚行動。','Choose a faction and commander before starting. The other two factions act each night.'),
- ('選擇隊員與目的格，查看金色路線及 AP 成本，再確認移動。雨天、地形與事件可能增加成本。','Select a member and destination, review the gold route and AP cost, then confirm. Rain, terrain and events may increase the cost.'),
- ('掃街與拜訪通常花 2 AP、1 物資。同一活動點每天最多兩次，第二次效果較少。','Outreach and visits normally cost 2 AP and 1 material. Each location allows two visits per day, with a smaller second reward.'),
+ ('選擇隊員與目的格，確認金色路線及 AP 成本。可在任何可步行道路格原地掃街，也可搜尋市場與捷運周邊場地。','Choose a member and destination, then confirm the gold route and AP cost. Canvass any walkable road cell, or search markets and metro entrances.'),
+ ('掃街與拜訪通常花 2 AP、1 物資。同一路段每隊每日最多兩次；首次觸及新街區或行政區有額外回報，短期反覆接觸附近居民會逐漸飽和。','Outreach normally costs 2 AP and 1 material, with two contacts per team per road cell daily. New neighborhoods and districts earn bonuses; repeated local contact becomes saturated.'),
  ('疲勞會降低隔日 AP。休整可恢復動員力、士氣與健康；留意隊員狀態。','Fatigue reduces next-day AP. Rest restores mobilization, morale and health; watch your team’s condition.'),
- ('跨區接駁每人每日一次，花 6 AP、4 物資並增加疲勞。在地區選單選好目的區再出發。','Each member can transfer districts once daily for 6 AP and 4 materials, gaining fatigue. Choose the destination district before departing.'),
+ ('每人每日可接駁一次，區域接駁與指定場地接駁共用次數，並增加疲勞。查看按鈕上的 AP／物資成本再出發。','Each member can transfer once daily, shared between district and place transfers, gaining fatigue. Check the displayed AP and material cost before departing.'),
  ('設立治疏嶼或恰恰肥皂箱，完工後派駐志工並主動辦場。每座舞台每日一場。','Build Governance Isle or Cha-Cha Soapbox, assign a volunteer after completion, then host an event. Each stage allows one event per day.'),
  ('Wonder 加成需要穩定控制、隊員駐守及當日在該區活動。可調整優先順序，每天最多結算三個。','Wonder bonuses require uncontested control, a guarding member and activity in the district that day. Set priorities; at most three pay out daily.'),
  ('重裝剋遠程、遠程剋機動、機動剋重裝。動員力耗盡的隊員翌日返回基地。','Heavy beats ranged, ranged beats mobile, and mobile beats heavy. Exhausted members return to base the next day.'),
@@ -86,6 +86,7 @@ guide = [
  ('影音設定可開啟聲音、試聽曲目與調整演出；無障礙與顯示可放大文字、提高對比或減少動態。','Audio & visuals enables sound, track previews and presentation settings. Accessibility & display offers larger text, contrast and reduced motion.'),
 ]
 copy.update({f'c_guide{i}': pair for i,pair in enumerate(guide,1)})
+copy.update({'c_transportHelp': ('每日每隊員限一次，區域與指定場地接駁共用額度。區域接駁消耗 {{ap}} AP 與 {{materials}} 物資，前往區內主節點或可用相鄰空格。', 'One transfer per member daily, shared with place transfers. District transfer costs {{ap}} AP and {{materials}} materials, arriving at the district anchor or a free neighboring hex.'), 'o_coverage': ('已觸及 {{sectors}} 個街區・{{districts}}／12 個行政區', 'Neighborhoods reached: {{sectors}} · Districts: {{districts}} / 12')})
 archive_path = ROOT/'design/build-copy-archive.json'
 archive = json.loads(archive_path.read_text(encoding='utf-8')) if archive_path.exists() else {}
 for index,language in enumerate(['zh-TW','en']):

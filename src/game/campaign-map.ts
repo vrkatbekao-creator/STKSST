@@ -1,15 +1,15 @@
 import catalog from '../data/taipei-wonders.json' with { type: 'json' };
 import {loadStreetRuntime} from './street-runtime.ts';
-const {base:data,meta:streetSource,graph:streetGraph}=await loadStreetRuntime();
+const {base:data,meta:streetSource,graph:streetGraph,places}=await loadStreetRuntime();
 export {streetSource};
 export type Hex = { q:number; r:number };
 export type StreetEdge={from:string;to:string;metres:number;assumed:boolean;stairs:boolean;points:number[][];wayIds:number[]};
 export type Cell={id:string;q:number;r:number;x:number;y:number;districtId:string;terrain:string;neighbors:string[];walkable?:boolean;roadPoint?:number[];roadNode?:number;parentId?:string};
 export const campaignMap={...data,cells:data.cells as Cell[]};
 export const districts=data.districts;
-export const nodes=data.nodes;
+export const nodes:CampaignNode[]=data.nodes;
 export const wonders=catalog.wonders;
-export type CampaignNode={id:string;districtId:string;cellId:string;kind:string;wonderId:string|null;syntheticVenue:boolean;sourceCoordinates?:number[];snapMetres?:number};
+export type CampaignNode={id:string;districtId:string;cellId:string;kind:string;wonderId:string|null;syntheticVenue:boolean;sourceCoordinates?:number[];snapMetres?:number;sourcePlace?:boolean;placeType?:string;name?:{'zh-TW':string;en:string}};
 export const cells=new Map<string,Cell>(data.cells.map(c=>[c.id,c]));
 export const nodeById=new Map(nodes.map(n=>[n.id,n]));
 export function hexDistance(a:Hex,b:Hex){const dq=a.q-b.q,dr=a.r-b.r;return Math.max(Math.abs(dq),Math.abs(dr),Math.abs(dq+dr));}
@@ -42,7 +42,10 @@ function addRoutingEdge(link:number,reverse:boolean){const at=link*3,from=street
  routingEdges.push(new PackedEdge(id,from,to,streetGraph.metres[link],streetGraph.links[at+2],a===b?[a]:[a,b],link,reverse));routingOutgoing[from].push(id);routingIncoming[to].push(id);
 }
 for(let i=0;i<streetGraph.linkCount;i++){addRoutingEdge(i,false);if(streetGraph.both[i])addRoutingEdge(i,true);}
-const streetNodes:CampaignNode[]=nodes.map(n=>({...n,cellId:streetCells[streetSource.nodeCells[n.id]].id,...(n.kind==='wonder'?{snapMetres:streetSource.nodeSnaps[n.id]}:{})}));
+export const placeRevision=places.revision;
+export const sourcePlaces:CampaignNode[]=places.places;
+const originalStreetNodes:CampaignNode[]=nodes.map(n=>({...n,cellId:streetCells[streetSource.nodeCells[n.id]].id,...(n.kind==='wonder'?{snapMetres:streetSource.nodeSnaps[n.id]}:{})}));
+const streetNodes:CampaignNode[]=[...originalStreetNodes,...sourcePlaces];
 const streetDistricts=districts.map(d=>({...d,anchor:streetCells[streetSource.districtAnchors[d.id]].id}));
 export const streetCampaignMap={...campaignMap,version:streetSource.version,radiusMetres:50,cells:streetCells,nodes:streetNodes,districts:streetDistricts};
 export const allCells=new Map<string,Cell>([...cells,...streetCellMap]);
@@ -50,6 +53,7 @@ for(const c of streetCells)if(c.walkable)components.set(c.id,-1);
 export const streetNodeById=new Map(streetNodes.map(n=>[n.id,n]));
 export type MovementProfile='legacy-hex'|'streets-v2';
 export function mapFor(g:{movementProfile?:MovementProfile}){return g.movementProfile==='streets-v2'?{campaignMap:streetCampaignMap,cells:streetCellMap,nodes:streetNodes,nodeById:streetNodeById,districts:streetDistricts,revision:streetSource.revision}:{campaignMap,cells,nodes,nodeById,districts,revision:'taipei-hex-v1'};}
+export function playableNode(g:{movementProfile?:MovementProfile},n:CampaignNode){return g.movementProfile!=='streets-v2'||n.kind==='wonder'||n.kind==='venue'||!!n.sourcePlace;}
 export function cellPosition(c:Cell){return c.roadPoint??[c.x,c.y];}
 export function roadWalkCells(edgeIds:number[]){const result:string[]=[];for(const id of edgeIds)for(const cell of routingEdges[id]?.cellIds??[])if(result.at(-1)!==cell)result.push(cell);return result;}
 export function walkGeometry(ids:string[],edgeIds?:number[]){if(!ids.length)return [];if(ids[0].startsWith('taipei-hex-v1:'))return ids.map(id=>cellPosition(allCells.get(id)!));if(!edgeIds)return [];return edgeIds.flatMap((id,i)=>i?routingEdges[id].points.slice(1):routingEdges[id].points);}

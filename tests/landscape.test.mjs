@@ -46,7 +46,7 @@ test('viewing buildings and satellite profiles never changes AP, routes, seed, r
  const g=initialCampaign(1,'blue','streets-v2');g.news='clear';const u=g.units[0],to=[...movement(g,u).costs].find(([id,c])=>c>=3&&c<6)[0],before=JSON.stringify(g),p=route(g,u,to),cost=p.cost;
  buildingsInView(buildings,{x:0,y:29000,width:1500,height:1000});surfaceProfile(surface,p.geometry);assert.equal(JSON.stringify(g),before);assert.equal(route(g,u,to).cost,cost);
  const moved=campaignCommand(g,{type:'move',unitId:u.id,cellId:to});assert.equal(moved.error,undefined);assert.equal(moved.game.units[0].ap,u.ap-cost);
- const s={game:moved.game,selected:u.id,districtId:mapFor(g).cells.get(to).districtId,view:'street'},save=encodeSave(s);assert.equal(save.version,4);assert.equal(save.rules,'0.16.0');assert.deepEqual(decodeSave(JSON.stringify(save)).save.session,s);
+ const s={game:moved.game,selected:u.id,districtId:mapFor(g).cells.get(to).districtId,view:'street'},save=encodeSave(s);assert.equal(save.version,5);assert.equal(save.rules,'0.17.0');assert.deepEqual(decodeSave(JSON.stringify(save)).save.session,s);
 });
 
 test('corrupt footprints, duplicate IDs, invalid grids and nonsurface model declarations are rejected',()=>{

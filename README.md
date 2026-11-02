@@ -1,5 +1,7 @@
 # 選戰騎士團：首都篇
 
+**目前版本 / Current version：v0.16.0 · 公開測試原型 / Public prototype**
+
 ## 公開測試 / Public prototype
 
 [開始遊玩 / Play](https://vrkatbekao-creator.github.io/STKSST/) · [回報問題 / Report an issue](https://github.com/vrkatbekao-creator/STKSST/issues/new?template=bug_report.yml)

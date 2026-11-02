@@ -9,6 +9,7 @@
 - design/publish-pages.mjs 只推送 gh-pages，保留既有發布歷史，不使用 force；若有競爭更新會拒絕而非覆寫。暫存發布工作目錄在已忽略的 .tools/。RELEASE.json 保存版本與來源提交。
 - 來源與 MIT／署名修改先提交、推送 main，再執行部署命令。只將 dist 成品放入 gh-pages，入口與圖片、圖資、音訊都使用 /STKSST/。不將 design、src、tests、node_modules 或 .env 放入網站。
 - MIT 原文在 LICENSE；建置自動輸出 LICENSE.txt、THIRD-PARTY-LICENSES.txt。PROJECT-CREDITS.txt 與第三方圖資告示隨站點發布，頁尾提供雙語作者／MIT 與問題回報連結。
+- 版本更新時同步核對 package.json、README 頂端、線上 RELEASE.json 與 GitHub About description；About 是 Repo 設定，不會隨 git push 或 README 更新而改變。歷史版本段落保留，但不能把舊原型版本當成目前簡介。
 - Repo 公開會讓來源與 Git 歷史可見；dist-only 是網站部署範圍，不表示公開 Repo 隱藏 design 或原始碼。公開前針對現有歷史檢查常見憑證格式，檢查不等於所有敏感資料的形式化證明。
 
 ## 外部測試

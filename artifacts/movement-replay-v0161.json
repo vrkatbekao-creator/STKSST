@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-02",
+  "version": "0.16.1",
+  "synthetic": true,
+  "method": "Three player factions, seed 17, all factions use the authoritative AI; checks resource, roster, day/night AP, save and blackout invariants. Not a human balance or win-rate study.",
+  "results": [
+    {
+      "team": "blue",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "walks": {
+        "blue": 35,
+        "green": 36,
+        "white": 33
+      },
+      "elapsedMs": 24440
+    },
+    {
+      "team": "green",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "walks": {
+        "blue": 34,
+        "green": 34,
+        "white": 31
+      },
+      "elapsedMs": 21041
+    },
+    {
+      "team": "white",
+      "seed": 17,
+      "completedDays": 28,
+      "saveCheckpoints": 3,
+      "invariants": true,
+      "walks": {
+        "blue": 37,
+        "green": 39,
+        "white": 31
+      },
+      "elapsedMs": 15866
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { readFileSync } from 'node:fs';
 import { gunzipSync } from 'node:zlib';
 import { initialCampaign,movement,route,routeFromMovement,campaignCommand,endCampaignPhase,intelligence } from '../src/game/campaign.ts';
 import { mapFor,routingNodes,routingEdges,routingOutgoing,streetWays,streetSource,hexDistance,roadWalkCells,walkGeometry } from '../src/game/campaign-map.ts';
-import { roadEffort } from '../src/game/road-movement.ts';
+import { roadEffort,roadAPCost } from '../src/game/road-movement.ts';
 import { planNodeVisit } from '../src/game/campaign-plans.ts';
 import { encodeSave,decodeSave,validSession } from '../src/game/campaign-save.ts';
 import { createCampaignStore } from '../src/game/campaign-store.ts';
@@ -28,16 +28,39 @@ test('all district anchors and 60 activity nodes are reachable both ways through
 });
 
 test('Wanhua and Xinyi preview, AP deduction, road geometry and saved ordered walks agree',()=>{
- for(const district of ['6300700','6300200']){let g=fresh();const m=mapFor(g),anchor=m.districts.find(d=>d.id===district).anchor,u=g.units.find(u=>u.cellId===anchor)??g.units[0];u.cellId=anchor;const walk=movement(g,u),to=[...walk.costs].find(([id,c])=>c>=4&&c<=7&&id!==u.cellId)[0],p=routeFromMovement(u,to,walk);assert.ok(p.edgeIds.length);assert.equal(p.cost,Math.ceil((p.edgeIds.reduce((sum,id)=>sum+roadEffort(g,id,u.team),0)-1e-6)/100));assert.deepEqual(p.path,roadWalkCells(p.edgeIds));assert.deepEqual(p.geometry,walkGeometry(p.path,p.edgeIds));assert.ok(p.geometry.length>=p.path.length);
+ for(const district of ['6300700','6300200']){let g=fresh();const m=mapFor(g),anchor=m.districts.find(d=>d.id===district).anchor,u=g.units.find(u=>u.cellId===anchor)??g.units[0];u.cellId=anchor;const walk=movement(g,u),to=[...walk.costs].find(([id,c])=>c>=4&&c<=7&&id!==u.cellId)[0],p=routeFromMovement(u,to,walk);assert.ok(p.edgeIds.length);assert.equal(p.cost,roadAPCost(p.edgeIds.reduce((sum,id)=>sum+roadEffort(g,id,u.team),0)));assert.deepEqual(p.path,roadWalkCells(p.edgeIds));assert.deepEqual(p.geometry,walkGeometry(p.path,p.edgeIds));assert.ok(p.geometry.length>=p.path.length);
   const before=u.ap;g=act(g,{type:'move',unitId:u.id,cellId:to});assert.equal(g.units.find(v=>v.id===u.id).ap,before-p.cost);assert.deepEqual(g.trail.blue.walks[0].edgeIds,p.edgeIds);assert.ok(validSession(session(g)));const encoded=encodeSave(session(g),'2026-10-31T22:00:00Z');assert.equal(encoded.version,4);assert.equal(encoded.mapRevision,streetSource.revision);assert.deepEqual(decodeSave(JSON.stringify(encoded)).save.session,session(g));
  }
 });
 
 test('distance penalties share the command formula; occupancy and unaffordable moves are atomic',()=>{
- const g=fresh(),u=g.units[0],walk=movement(g,u),to=[...walk.costs].find(([id,c])=>c>=3&&c<=5)[0],p=routeFromMovement(u,to,walk);const rain=structuredClone(g);rain.news='rain';assert.equal(p.edgeIds.reduce((n,id)=>n+roadEffort(rain,id,u.team),0),2*p.edgeIds.reduce((n,id)=>n+roadEffort(g,id,u.team),0));
- const stairs=routingEdges.find(e=>streetWays.get(e.wayId).highway==='steps');assert.ok(stairs);assert.equal(roadEffort(g,stairs.id,u.team),stairs.metres*2);
+ const g=fresh(),u=g.units[0],walk=movement(g,u),to=[...walk.costs].find(([id,c])=>c>=3&&c<=5)[0],p=routeFromMovement(u,to,walk);const rain=structuredClone(g);rain.news='rain';assert.ok(Math.abs(p.edgeIds.reduce((n,id)=>n+roadEffort(rain,id,u.team),0)-1.25*p.edgeIds.reduce((n,id)=>n+roadEffort(g,id,u.team),0))<1e-6);
+ const stairs=routingEdges.find(e=>streetWays.get(e.wayId).highway==='steps');assert.ok(stairs);assert.equal(roadEffort(g,stairs.id,u.team),stairs.metres*1.5);
  const works=structuredClone(g),district=mapFor(g).cells.get(routingNodes[p.edgeIds[0]===undefined?0:routingEdges[p.edgeIds[0]].to].cellId).districtId;works.surprise={id:'streetworks',districtId:district,responses:{blue:null,green:null,white:null}};assert.ok(roadEffort(works,p.edgeIds[0],u.team)>roadEffort(g,p.edgeIds[0],u.team));works.surprise.responses.blue='adapt';assert.equal(roadEffort(works,p.edgeIds[0],u.team),roadEffort(g,p.edgeIds[0],u.team));
  const poor=structuredClone(g);poor.units[0].ap=0;const failed=campaignCommand(poor,{type:'move',unitId:u.id,cellId:to});assert.ok(failed.error);assert.equal(failed.game,poor);const occupied=structuredClone(g);occupied.units[3].cellId=to;assert.equal(route(occupied,occupied.units[0],to),null);
+});
+
+test('road travel uses 200-metre AP bands with one AP minimum and no per-edge rounding',()=>{
+ assert.equal(roadAPCost(.01),1);assert.equal(roadAPCost(200),1);assert.equal(roadAPCost(200.001),2);assert.equal(roadAPCost(1000),5);assert.equal(roadAPCost(1250),7);
+ const g=fresh(),u=g.units[0],walk=movement(g,u,5);assert.equal(walk.costs.get(u.cellId),0);
+ const candidate=[...walk.costs].map(([id])=>routeFromMovement(u,id,walk)).find(p=>p.edgeIds.length>2&&p.metres>800&&p.metres<=1000&&p.edgeIds.every(id=>streetWays.get(routingEdges[id].wayId).highway!=='steps'));
+ assert.ok(candidate);assert.equal(candidate.cost,5);assert.ok(candidate.cost<Math.ceil(candidate.metres/100));assert.ok(candidate.edgeIds.length>candidate.cost);
+ const limited=movement(g,u,4);assert.equal(limited.costs.has(candidate.path.at(-1)),false);
+ const exact=structuredClone(g);exact.units[0].ap=5;const moved=act(exact,{type:'move',unitId:u.id,cellId:candidate.path.at(-1)});assert.equal(moved.units[0].ap,0);assert.equal(exact.units[0].ap,5);
+});
+
+test('rain, stairs and construction use bounded additive effort and faction-specific mitigation',()=>{
+ const g=fresh(),stairs=routingEdges.find(e=>streetWays.get(e.wayId).highway==='steps'),flat=routingEdges.find(e=>streetWays.get(e.wayId).highway!=='steps');
+ assert.equal(roadEffort(g,flat.id,'blue'),flat.metres);g.news='rain';assert.equal(roadEffort(g,flat.id,'blue'),flat.metres*1.25);
+ g.surprise={id:'streetworks',districtId:mapFor(g).cells.get(routingNodes[stairs.to].cellId).districtId,responses:{blue:null,green:null,white:null}};
+ assert.equal(roadEffort(g,stairs.id,'blue'),stairs.metres*2.25);g.surprise.responses.blue='adapt';assert.equal(roadEffort(g,stairs.id,'blue'),stairs.metres*1.75);assert.equal(roadEffort(g,stairs.id,'green'),stairs.metres*2.25);
+});
+
+test('existing v4 saves keep spent AP and history while the next road move uses the new rate',()=>{
+ const g=fresh(),u=g.units[0];u.ap=7;const oldSession=session(g),raw=JSON.stringify(encodeSave(oldSession,'2026-11-01T20:00:00Z')),restored=decodeSave(raw).save.session;
+ assert.deepEqual(restored,oldSession);assert.equal(restored.game.units[0].ap,7);
+ const target=[...movement(restored.game,restored.game.units[0]).costs].find(([,cost])=>cost===3)[0],next=act(restored.game,{type:'move',unitId:u.id,cellId:target});assert.equal(next.units[0].ap,4);assert.equal(g.units[0].ap,7);
+ const legacy=initialCampaign(1);legacy.news='rain';legacy.surprise=null;const legacyWalk=movement(legacy,legacy.units[0]);const neighbour=mapFor(legacy).cells.get(legacy.units[0].cellId).neighbors.find(id=>legacyWalk.costs.get(id)===2);assert.ok(neighbour);assert.equal(legacyWalk.costs.get(neighbour),2);
 });
 
 test('move-and-canvass reserves outreach AP and matches the legal two-command sequence for all factions',()=>{

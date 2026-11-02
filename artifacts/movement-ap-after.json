@@ -1,0 +1,1014 @@
+{
+  "date": "2026-11-02",
+  "synthetic": true,
+  "method": "12 district Wonder anchors to four local activities, clear/rain, one unblocked 14-AP actor, 2 AP reserved for canvassing; 3,000 weighted-metre search bound. Not human win-rate testing.",
+  "policy": {
+    "metresPerAP": 200,
+    "stairs": 0.5,
+    "rain": 0.25,
+    "streetworks": 0.5
+  },
+  "summary": {
+    "samples": 96,
+    "canVisit": 96,
+    "medianMoveAP": 2,
+    "byWeather": {
+      "clear": {
+        "samples": 48,
+        "canVisit": 48,
+        "medianMoveAP": 2
+      },
+      "rain": {
+        "samples": 48,
+        "canVisit": 48,
+        "medianMoveAP": 2
+      }
+    },
+    "medianSearchMs": 21.14
+  },
+  "rows": [
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_market",
+      "weather": "clear",
+      "metres": 362,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_transit",
+      "weather": "clear",
+      "metres": 127,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_venue",
+      "weather": "clear",
+      "metres": 374,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_community",
+      "weather": "clear",
+      "metres": 135,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_market",
+      "weather": "rain",
+      "metres": 362,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_transit",
+      "weather": "rain",
+      "metres": 127,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_venue",
+      "weather": "rain",
+      "metres": 418,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300100",
+      "districtName": "松山區",
+      "node": "6300100_community",
+      "weather": "rain",
+      "metres": 135,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_market",
+      "weather": "clear",
+      "metres": 180,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_transit",
+      "weather": "clear",
+      "metres": 237,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_venue",
+      "weather": "clear",
+      "metres": 391,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_community",
+      "weather": "clear",
+      "metres": 377,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_market",
+      "weather": "rain",
+      "metres": 180,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_transit",
+      "weather": "rain",
+      "metres": 237,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_venue",
+      "weather": "rain",
+      "metres": 267,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300200",
+      "districtName": "信義區",
+      "node": "6300200_community",
+      "weather": "rain",
+      "metres": 293,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_market",
+      "weather": "clear",
+      "metres": 409,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_transit",
+      "weather": "clear",
+      "metres": 365,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_venue",
+      "weather": "clear",
+      "metres": 325,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_community",
+      "weather": "clear",
+      "metres": 196,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_market",
+      "weather": "rain",
+      "metres": 409,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_transit",
+      "weather": "rain",
+      "metres": 300,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_venue",
+      "weather": "rain",
+      "metres": 325,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300300",
+      "districtName": "大安區",
+      "node": "6300300_community",
+      "weather": "rain",
+      "metres": 196,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_market",
+      "weather": "clear",
+      "metres": 702,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_transit",
+      "weather": "clear",
+      "metres": 363,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_venue",
+      "weather": "clear",
+      "metres": 153,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_community",
+      "weather": "clear",
+      "metres": 71,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_market",
+      "weather": "rain",
+      "metres": 702,
+      "moveAP": 5,
+      "totalAP": 7,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_transit",
+      "weather": "rain",
+      "metres": 363,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_venue",
+      "weather": "rain",
+      "metres": 153,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300400",
+      "districtName": "中山區",
+      "node": "6300400_community",
+      "weather": "rain",
+      "metres": 71,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_market",
+      "weather": "clear",
+      "metres": 327,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_transit",
+      "weather": "clear",
+      "metres": 204,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_venue",
+      "weather": "clear",
+      "metres": 307,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_community",
+      "weather": "clear",
+      "metres": 361,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_market",
+      "weather": "rain",
+      "metres": 416,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_transit",
+      "weather": "rain",
+      "metres": 204,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_venue",
+      "weather": "rain",
+      "metres": 307,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300500",
+      "districtName": "中正區",
+      "node": "6300500_community",
+      "weather": "rain",
+      "metres": 361,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_market",
+      "weather": "clear",
+      "metres": 576,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_transit",
+      "weather": "clear",
+      "metres": 272,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_venue",
+      "weather": "clear",
+      "metres": 269,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_waterfront",
+      "weather": "clear",
+      "metres": 165,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_market",
+      "weather": "rain",
+      "metres": 576,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_transit",
+      "weather": "rain",
+      "metres": 272,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_venue",
+      "weather": "rain",
+      "metres": 269,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300600",
+      "districtName": "大同區",
+      "node": "6300600_waterfront",
+      "weather": "rain",
+      "metres": 165,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_market",
+      "weather": "clear",
+      "metres": 421,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_transit",
+      "weather": "clear",
+      "metres": 391,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_venue",
+      "weather": "clear",
+      "metres": 330,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_community",
+      "weather": "clear",
+      "metres": 304,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_market",
+      "weather": "rain",
+      "metres": 421,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_transit",
+      "weather": "rain",
+      "metres": 280,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_venue",
+      "weather": "rain",
+      "metres": 475,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300700",
+      "districtName": "萬華區",
+      "node": "6300700_community",
+      "weather": "rain",
+      "metres": 304,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_market",
+      "weather": "clear",
+      "metres": 257,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_transit",
+      "weather": "clear",
+      "metres": 329,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_venue",
+      "weather": "clear",
+      "metres": 939,
+      "moveAP": 5,
+      "totalAP": 7,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_community",
+      "weather": "clear",
+      "metres": 420,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_market",
+      "weather": "rain",
+      "metres": 257,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_transit",
+      "weather": "rain",
+      "metres": 420,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_venue",
+      "weather": "rain",
+      "metres": 939,
+      "moveAP": 6,
+      "totalAP": 8,
+      "canVisit": true
+    },
+    {
+      "district": "6300800",
+      "districtName": "文山區",
+      "node": "6300800_community",
+      "weather": "rain",
+      "metres": 420,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_market",
+      "weather": "clear",
+      "metres": 201,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_transit",
+      "weather": "clear",
+      "metres": 374,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_venue",
+      "weather": "clear",
+      "metres": 316,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_community",
+      "weather": "clear",
+      "metres": 755,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_market",
+      "weather": "rain",
+      "metres": 201,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_transit",
+      "weather": "rain",
+      "metres": 298,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_venue",
+      "weather": "rain",
+      "metres": 316,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6300900",
+      "districtName": "南港區",
+      "node": "6300900_community",
+      "weather": "rain",
+      "metres": 755,
+      "moveAP": 5,
+      "totalAP": 7,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_market",
+      "weather": "clear",
+      "metres": 191,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_transit",
+      "weather": "clear",
+      "metres": 225,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_venue",
+      "weather": "clear",
+      "metres": 246,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_community",
+      "weather": "clear",
+      "metres": 433,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_market",
+      "weather": "rain",
+      "metres": 191,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_transit",
+      "weather": "rain",
+      "metres": 225,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_venue",
+      "weather": "rain",
+      "metres": 246,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301000",
+      "districtName": "內湖區",
+      "node": "6301000_community",
+      "weather": "rain",
+      "metres": 433,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_market",
+      "weather": "clear",
+      "metres": 558,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_transit",
+      "weather": "clear",
+      "metres": 747,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_venue",
+      "weather": "clear",
+      "metres": 718,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_community",
+      "weather": "clear",
+      "metres": 516,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_market",
+      "weather": "rain",
+      "metres": 558,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_transit",
+      "weather": "rain",
+      "metres": 747,
+      "moveAP": 5,
+      "totalAP": 7,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_venue",
+      "weather": "rain",
+      "metres": 718,
+      "moveAP": 5,
+      "totalAP": 7,
+      "canVisit": true
+    },
+    {
+      "district": "6301100",
+      "districtName": "士林區",
+      "node": "6301100_community",
+      "weather": "rain",
+      "metres": 613,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_market",
+      "weather": "clear",
+      "metres": 89,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_transit",
+      "weather": "clear",
+      "metres": 369,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_venue",
+      "weather": "clear",
+      "metres": 562,
+      "moveAP": 3,
+      "totalAP": 5,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_community",
+      "weather": "clear",
+      "metres": 245,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_market",
+      "weather": "rain",
+      "metres": 89,
+      "moveAP": 1,
+      "totalAP": 3,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_transit",
+      "weather": "rain",
+      "metres": 306,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_venue",
+      "weather": "rain",
+      "metres": 562,
+      "moveAP": 4,
+      "totalAP": 6,
+      "canVisit": true
+    },
+    {
+      "district": "6301200",
+      "districtName": "北投區",
+      "node": "6301200_community",
+      "weather": "rain",
+      "metres": 245,
+      "moveAP": 2,
+      "totalAP": 4,
+      "canVisit": true
+    }
+  ],
+  "before": {
+    "samples": 96,
+    "canVisit": 91,
+    "medianMoveAP": 5,
+    "byWeather": {
+      "clear": {
+        "samples": 48,
+        "canVisit": 48,
+        "medianMoveAP": 3
+      },
+      "rain": {
+        "samples": 48,
+        "canVisit": 43,
+        "medianMoveAP": 6
+      }
+    },
+    "medianSearchMs": 12.07
+  },
+  "comparison": {
+    "commonRoutes": 96,
+    "increased": 0,
+    "reduced": 94
+  }
+}

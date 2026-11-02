@@ -1,6 +1,8 @@
 # 選戰騎士團：首都篇
 
-**目前版本 / Current version：v0.16.0 · 公開測試原型 / Public prototype**
+**目前版本 / Current version：v0.16.1 · 公開測試原型 / Public prototype**
+
+v0.16.1 降低道路移動 AP：每 200 公尺加權路程 1 AP，雨天增加 25% 負擔，階梯／未應變施工各增加 50%。玩家與 AI 共用，既有進度從下一次移動起適用、不回補已耗 AP；存檔及歷史保留。/ Road movement now costs 1 AP per 200 weighted metres, with lighter weather and obstacle penalties. The same rules apply to players and AI; existing saves keep spent AP and history. 詳見 [ROAD-MOVEMENT-SPEC.md](ROAD-MOVEMENT-SPEC.md)。
 
 ## 公開測試 / Public prototype
 
@@ -38,7 +40,7 @@ This started as a side project I put together for fun while studying A* search. 
 
 ## 專案概覽
 
-React + PixiJS 雙語本機競選戰棋 **v0.16.0**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
+React + PixiJS 雙語本機競選戰棋 **v0.16.1**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
 
 v0.13 新增無障礙顯示偏好、鍵盤選格預覽、快速跳至區域、對話框焦點管理與可讀對比修正。141 項測試通過，五個已保存場景 axe 違規 0；仍有人工判讀與完整跨裝置流程待驗。Windows 電腦操作工具因無法可靠判定 Chrome 網址而中止，不能宣稱完整相容或 WCAG 認證。範圍見 ACCESSIBILITY-COMPAT-SPEC.md、COMPATIBILITY-TEST-MATRIX.md；真人平衡由使用者規劃公開測試。
 

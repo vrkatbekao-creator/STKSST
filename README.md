@@ -1,3 +1,13 @@
+# 選戰騎士團：首都篇
+
+## 創作緣起 / Why I made this
+
+這是在研究 A* 搜尋時，無聊之餘做出來的 side project。看到自己的學弟，以及同學的同學，竟然在同一場台北市長選戰中競爭，覺得既感慨又有趣，於是有感而作。歡迎取用、修改與改善，請記得標註原作者及本專案來源。
+
+This started as a side project I put together for fun while studying A* search. Seeing a junior from my school and a classmate's classmate competing in the same Taipei mayoral election felt both surreal and thought-provoking, and inspired me to make this game. You're welcome to use, modify, and improve it; please credit the original author and link back to this project.
+
+專案來源 / Project source: [vrkatbekao-creator/STKSST](https://github.com/vrkatbekao-creator/STKSST)
+
 # 角色與中立來客 v0.16
 
 三方各六種隊員立繪已接入，醫護／動員／後勤可在招募預覽、戰術面板與影音圖鑑查看；白方瘋狂小草、橙方小水滴、藍方藍鷹斥候。新增三種逐步解鎖的中立接觸事件與保存，規格見 [CHARACTERS-CONTACTS-SPEC.md](CHARACTERS-CONTACTS-SPEC.md)。初稿逐項核對與尚未完成的使魔／召喚兵／疲憊差分／日曆 AP 見 [ORIGINAL-SPEC-AUDIT.md](ORIGINAL-SPEC-AUDIT.md)。
@@ -10,9 +20,9 @@
 
 建置與製作註記見 [GAME-BUILD-NOTES.md](GAME-BUILD-NOTES.md)，包含圖資、角色與音樂來源、遷移及驗收限制；這些內容不再放入玩家操作說明。地圖顯示與鍵盤選格可按需展開，AP、效果與條件仍保留。規則、AI、圖資與存檔格式未變。
 
-# 選戰騎士團：首都篇
+## 專案概覽
 
-React + PixiJS 雙語本機競選戰棋 **v0.14.0**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
+React + PixiJS 雙語本機競選戰棋 **v0.16.0**。台北 12 行政區、共用六角格、藍／橙／白三方、初始各三人、最多七人小隊與 28 天日夜競選。
 
 v0.13 新增無障礙顯示偏好、鍵盤選格預覽、快速跳至區域、對話框焦點管理與可讀對比修正。141 項測試通過，五個已保存場景 axe 違規 0；仍有人工判讀與完整跨裝置流程待驗。Windows 電腦操作工具因無法可靠判定 Chrome 網址而中止，不能宣稱完整相容或 WCAG 認證。範圍見 ACCESSIBILITY-COMPAT-SPEC.md、COMPATIBILITY-TEST-MATRIX.md；真人平衡由使用者規劃公開測試。
 
@@ -55,7 +65,7 @@ npm run dev
 
 已安裝套件的工作目錄可直接 `npm run dev`。每次成功行動後自動存檔；重新整理後可在首頁按「繼續競選」。語言偏好會保留。StartGame.cmd 固定使用 http://127.0.0.1:5173，請用同一瀏覽器與網址續玩。
 
-存檔限此瀏覽器的一個進度槽；清除網站資料會移除。開始新局前會確認覆寫；目前沒有檔案匯出、多槽或跨裝置同步。
+存檔保存在此瀏覽器的三個獨立進度槽；清除網站資料會移除。開始新局前可選槽，覆寫既有存檔需確認；目前沒有檔案匯出或跨裝置同步。
 
 ## 遊玩
 

@@ -29,3 +29,11 @@ https://data.taipei/dataset/detail?id=866a9982-0a63-421f-b120-9144fc6ce732
 
 政府資料開放授權條款第 1 版 / Open Government Data License, version 1.0
 https://data.gov.tw/license
+
+市場、攤販集中場與捷運出入口 / Markets, vendor areas and metro entrances
+臺北市市場處 / Taipei City Market Administration Office
+臺北捷運公司 / Taipei Rapid Transit Corporation
+https://data.gov.tw/dataset/121593
+https://data.gov.tw/dataset/121594
+https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b
+Source and derived-anchor terms: CITY-PLACES-LICENSE.txt

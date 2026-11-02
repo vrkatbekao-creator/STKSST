@@ -1,0 +1,7145 @@
+{
+  "version": "taipei-places-v1",
+  "date": "2026-11-02",
+  "routingRevision": "324e9a8435d22e7d1876af469e16e7c23ae0d2e9eb06116f1810e34b7106477f",
+  "sources": [
+    {
+      "id": "market",
+      "file": "markets.csv",
+      "dataset": "https://data.gov.tw/dataset/121593",
+      "download": "https://data.taipei/api/dataset/89bebb3a-990d-4070-bd67-631a575f6d4a/resource/35acfce1-2c4d-4c70-aa75-601cdab2b3f7/download",
+      "metadataUpdated": "2026-10-13",
+      "sha256": "460f0ab33b3888c9e2fd67ab27b7be29c2653b909df912f8210f473d3565ced5",
+      "bytes": 21668,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "utf-8-sig",
+      "rows": 47
+    },
+    {
+      "id": "nightmarket",
+      "file": "night-markets.csv",
+      "dataset": "https://data.gov.tw/dataset/121594",
+      "download": "https://data.taipei/api/dataset/c013d9ec-a550-46bd-ac60-45f085930706/resource/4874f750-b972-4c42-ad76-986960670c70/download",
+      "metadataUpdated": "2026-10-13",
+      "sha256": "d45216082540afcbb5e059af51ea00aa85d028478dd3f81aaafb18d309545e45",
+      "bytes": 4289,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "cp950",
+      "rows": 47
+    },
+    {
+      "id": "station",
+      "file": "mrt-exits.csv",
+      "dataset": "https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b",
+      "download": "https://data.taipei/api/frontstage/tpeod/dataset/resource.download?rid=307a7f61-e302-4108-a817-877ccbfca7c1",
+      "metadataUpdated": "2026-08-04",
+      "sha256": "134d8488c240fb23e04535db6a94da73006f890c83617eeedaa9b26c9f120015",
+      "bytes": 17633,
+      "retrieved": "2026-11-02",
+      "licence": "Open Government Data License 1.0",
+      "encoding": "cp950",
+      "rows": 390
+    }
+  ],
+  "policy": "official facilities, city-clipped, same-district walkable road anchors within 180m; merge same-kind facilities sharing an anchor; no inferred crowds or campaign permission",
+  "places": [
+    {
+      "id": "poi_market_dadf3567146b",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-122,259",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有北投市場",
+        "en": "臺北市公有北投市場"
+      },
+      "sourceIds": [
+        "2"
+      ],
+      "sourceCoordinates": [
+        121.502556,
+        25.132806
+      ],
+      "snapMetres": 30.3
+    },
+    {
+      "id": "poi_market_759116c5834f",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-105,289",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有士東市場",
+        "en": "臺北市公有士東市場"
+      },
+      "sourceIds": [
+        "41"
+      ],
+      "sourceCoordinates": [
+        121.529528,
+        25.111917
+      ],
+      "snapMetres": 52.7
+    },
+    {
+      "id": "poi_market_c9c761e9af19",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-129,325",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有士林市場",
+        "en": "臺北市公有士林市場"
+      },
+      "sourceIds": [
+        "40"
+      ],
+      "sourceCoordinates": [
+        121.524194,
+        25.088083
+      ],
+      "snapMetres": 19.0
+    },
+    {
+      "id": "poi_market_12cd7e2b9857",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-84,333",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有西湖市場",
+        "en": "臺北市公有西湖市場"
+      },
+      "sourceIds": [
+        "17"
+      ],
+      "sourceCoordinates": [
+        121.566694,
+        25.082389
+      ],
+      "snapMetres": 24.5
+    },
+    {
+      "id": "poi_market_34ecb6b9b3f0",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-112,339",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有大直市場",
+        "en": "臺北市公有大直市場"
+      },
+      "sourceIds": [
+        "37"
+      ],
+      "sourceCoordinates": [
+        121.545278,
+        25.078639
+      ],
+      "snapMetres": 33.1
+    },
+    {
+      "id": "poi_market_cd4caf73c03b",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-150,344",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有大龍市場",
+        "en": "臺北市公有大龍市場"
+      },
+      "sourceIds": [
+        "1"
+      ],
+      "sourceCoordinates": [
+        121.514306,
+        25.075139
+      ],
+      "snapMetres": 22.6
+    },
+    {
+      "id": "poi_market_748a142d28fa",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-155,357",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有蘭州市場",
+        "en": "臺北市公有蘭州市場"
+      },
+      "sourceIds": [
+        "31"
+      ],
+      "sourceCoordinates": [
+        121.515611,
+        25.066056
+      ],
+      "snapMetres": 44.8
+    },
+    {
+      "id": "poi_market_3655c7c2f18c",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-137,362",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "台北松江路命理街(行天宮旁地下街)",
+        "en": "台北松江路命理街(行天宮旁地下街)"
+      },
+      "sourceIds": [
+        "35"
+      ],
+      "sourceCoordinates": [
+        121.533278,
+        25.062639
+      ],
+      "snapMetres": 35.6
+    },
+    {
+      "id": "poi_market_6a3e5868b0bd",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-141,366",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有松江市場",
+        "en": "臺北市公有松江市場"
+      },
+      "sourceIds": [
+        "36"
+      ],
+      "sourceCoordinates": [
+        121.532028,
+        25.060139
+      ],
+      "snapMetres": 34.0
+    },
+    {
+      "id": "poi_market_d0dee8e2d920",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-161,371",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有雙連市場",
+        "en": "臺北市公有雙連市場"
+      },
+      "sourceIds": [
+        "32"
+      ],
+      "sourceCoordinates": [
+        121.516861,
+        25.056861
+      ],
+      "snapMetres": 35.2
+    },
+    {
+      "id": "poi_market_38faa607a102",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-169,374",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有永樂市場",
+        "en": "臺北市公有永樂市場"
+      },
+      "sourceIds": [
+        "33"
+      ],
+      "sourceCoordinates": [
+        121.510806,
+        25.054833
+      ],
+      "snapMetres": 16.5
+    },
+    {
+      "id": "poi_market_03d47baf9074",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-132,374",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有長春市場",
+        "en": "臺北市公有長春市場"
+      },
+      "sourceIds": [
+        "3"
+      ],
+      "sourceCoordinates": [
+        121.542611,
+        25.054722
+      ],
+      "snapMetres": 15.2
+    },
+    {
+      "id": "poi_market_094127669ec0",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-119,374",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有龍城市場",
+        "en": "臺北市公有龍城市場"
+      },
+      "sourceIds": [
+        "14"
+      ],
+      "sourceCoordinates": [
+        121.553806,
+        25.054611
+      ],
+      "snapMetres": 21.2
+    },
+    {
+      "id": "poi_market_05b6b2680a17",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-141,375",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有建國市場",
+        "en": "臺北市公有建國市場"
+      },
+      "sourceIds": [
+        "4"
+      ],
+      "sourceCoordinates": [
+        121.535306,
+        25.053667
+      ],
+      "snapMetres": 37.2
+    },
+    {
+      "id": "poi_market_697daa921877",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-102,379",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有南松市場",
+        "en": "臺北市公有南松市場"
+      },
+      "sourceIds": [
+        "15"
+      ],
+      "sourceCoordinates": [
+        121.570639,
+        25.050917
+      ],
+      "snapMetres": 36.4
+    },
+    {
+      "id": "poi_market_d36d6b405ff0",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-96,380",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有松山市場",
+        "en": "臺北市公有松山市場"
+      },
+      "sourceIds": [
+        "13"
+      ],
+      "sourceCoordinates": [
+        121.575917,
+        25.050361
+      ],
+      "snapMetres": 41.9
+    },
+    {
+      "id": "poi_market_3ba9e10af09f",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-161,381",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有中山市場",
+        "en": "臺北市公有中山市場"
+      },
+      "sourceIds": [
+        "5"
+      ],
+      "sourceCoordinates": [
+        121.521111,
+        25.050139
+      ],
+      "snapMetres": 32.4
+    },
+    {
+      "id": "poi_market_5931fc31b110",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-160,381",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "中山大樓",
+        "en": "中山大樓"
+      },
+      "sourceIds": [
+        "34"
+      ],
+      "sourceCoordinates": [
+        121.521472,
+        25.050167
+      ],
+      "snapMetres": 30.3
+    },
+    {
+      "id": "poi_market_fddb36635270",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-180,384",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有河濱一商場",
+        "en": "臺北市公有河濱一商場"
+      },
+      "sourceIds": [
+        "43"
+      ],
+      "sourceCoordinates": [
+        121.505583,
+        25.048333
+      ],
+      "snapMetres": 8.2
+    },
+    {
+      "id": "poi_market_c7221a771d45",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-179,384",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有西寧市場",
+        "en": "臺北市公有西寧市場"
+      },
+      "sourceIds": [
+        "44"
+      ],
+      "sourceCoordinates": [
+        121.506889,
+        25.048139
+      ],
+      "snapMetres": 47.4
+    },
+    {
+      "id": "poi_market_524d9cf336f6",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-125,384",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有中崙市場",
+        "en": "臺北市公有中崙市場"
+      },
+      "sourceIds": [
+        "16"
+      ],
+      "sourceCoordinates": [
+        121.552694,
+        25.048
+      ],
+      "snapMetres": 41.4
+    },
+    {
+      "id": "poi_market_a179374429c0",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-87,386",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有成德市場",
+        "en": "臺北市公有成德市場"
+      },
+      "sourceIds": [
+        "22"
+      ],
+      "sourceCoordinates": [
+        121.586806,
+        25.046167
+      ],
+      "snapMetres": 22.4
+    },
+    {
+      "id": "poi_market_945ec614afa6",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-55,387",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有中研市場",
+        "en": "臺北市公有中研市場"
+      },
+      "sourceIds": [
+        "23"
+      ],
+      "sourceCoordinates": [
+        121.614472,
+        25.045472
+      ],
+      "snapMetres": 14.0
+    },
+    {
+      "id": "poi_market_033f90236c4e",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-152,388",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "光華數位新天地",
+        "en": "光華數位新天地"
+      },
+      "sourceIds": [
+        "27"
+      ],
+      "sourceCoordinates": [
+        121.532,
+        25.045278
+      ],
+      "snapMetres": 37.1
+    },
+    {
+      "id": "poi_market_c3d607c3acc9",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-101,388",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有永吉市場",
+        "en": "臺北市公有永吉市場"
+      },
+      "sourceIds": [
+        "10"
+      ],
+      "sourceCoordinates": [
+        121.575306,
+        25.044861
+      ],
+      "snapMetres": 32.5
+    },
+    {
+      "id": "poi_market_292401fc7225",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-161,390",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有華山市場",
+        "en": "臺北市公有華山市場"
+      },
+      "sourceIds": [
+        "25"
+      ],
+      "sourceCoordinates": [
+        121.524806,
+        25.044194
+      ],
+      "snapMetres": 44.3
+    },
+    {
+      "id": "poi_market_b3daeac1449d",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-100,391",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有永春市場",
+        "en": "臺北市公有永春市場"
+      },
+      "sourceIds": [
+        "12"
+      ],
+      "sourceCoordinates": [
+        121.577556,
+        25.04325
+      ],
+      "snapMetres": 3.3
+    },
+    {
+      "id": "poi_market_0a1a6ce55c67",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-183,393",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有西門商場",
+        "en": "臺北市公有西門商場"
+      },
+      "sourceIds": [
+        "45"
+      ],
+      "sourceCoordinates": [
+        121.506972,
+        25.04175
+      ],
+      "snapMetres": 27.6
+    },
+    {
+      "id": "poi_market_2b67c09c1d3e",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-194,395",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有河濱二商場",
+        "en": "臺北市公有河濱二商場"
+      },
+      "sourceIds": [
+        "8"
+      ],
+      "sourceCoordinates": [
+        121.498722,
+        25.040861
+      ],
+      "snapMetres": 38.2
+    },
+    {
+      "id": "poi_market_925dc7646e44",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-156,395",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有幸安市場",
+        "en": "臺北市公有幸安市場"
+      },
+      "sourceIds": [
+        "30"
+      ],
+      "sourceCoordinates": [
+        121.530917,
+        25.040306
+      ],
+      "snapMetres": 21.7
+    },
+    {
+      "id": "poi_market_9a163680e4c0",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-191,397",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有直興市場",
+        "en": "臺北市公有直興市場"
+      },
+      "sourceIds": [
+        "46"
+      ],
+      "sourceCoordinates": [
+        121.50175,
+        25.039333
+      ],
+      "snapMetres": 17.0
+    },
+    {
+      "id": "poi_market_9a0a2cf63761",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-157,400",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有新生市場",
+        "en": "臺北市公有新生市場"
+      },
+      "sourceIds": [
+        "24"
+      ],
+      "sourceCoordinates": [
+        121.532417,
+        25.03675
+      ],
+      "snapMetres": 43.9
+    },
+    {
+      "id": "poi_market_18436f457d91",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-125,401",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有光復市場",
+        "en": "臺北市公有光復市場"
+      },
+      "sourceIds": [
+        "11"
+      ],
+      "sourceCoordinates": [
+        121.560472,
+        25.0365
+      ],
+      "snapMetres": 22.5
+    },
+    {
+      "id": "poi_market_c80861728972",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-193,402",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有新富市場",
+        "en": "臺北市公有新富市場"
+      },
+      "sourceIds": [
+        "47"
+      ],
+      "sourceCoordinates": [
+        121.501972,
+        25.036028
+      ],
+      "snapMetres": 38.6
+    },
+    {
+      "id": "poi_market_284743db8da2",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-197,404",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有龍山商場",
+        "en": "臺北市公有龍山商場"
+      },
+      "sourceIds": [
+        "42"
+      ],
+      "sourceCoordinates": [
+        121.499889,
+        25.035
+      ],
+      "snapMetres": 49.6
+    },
+    {
+      "id": "poi_market_e58e9f732032",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-166,404",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有東門市場",
+        "en": "臺北市公有東門市場"
+      },
+      "sourceIds": [
+        "29"
+      ],
+      "sourceCoordinates": [
+        121.526667,
+        25.034639
+      ],
+      "snapMetres": 34.1
+    },
+    {
+      "id": "poi_market_f418289c8331",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-151,404",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有信義市場",
+        "en": "臺北市公有信義市場"
+      },
+      "sourceIds": [
+        "20"
+      ],
+      "sourceCoordinates": [
+        121.539083,
+        25.034028
+      ],
+      "snapMetres": 48.0
+    },
+    {
+      "id": "poi_market_26dc1e8384be",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,407",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有南門市場",
+        "en": "臺北市公有南門市場"
+      },
+      "sourceIds": [
+        "26"
+      ],
+      "sourceCoordinates": [
+        121.518261,
+        25.032406
+      ],
+      "snapMetres": 8.2,
+      "locationCorrections": [
+        {
+          "dataset": "market",
+          "sourceName": "臺北市公有南門市場",
+          "referenceDataset": "station",
+          "referenceName": "中正紀念堂站出口2",
+          "currentAddress": "臺北市中正區羅斯福路一段8號",
+          "evidence": "https://www.gov.taipei/News_Content.aspx?n=EEC70A4186D4C828&s=BEF065E68FF7E843&sms=87415A8B9CE81B16",
+          "source": "Taipei City Market Administration Office",
+          "sourceUpdated": "2026-04-24",
+          "checked": "2026-11-03",
+          "basis": "Official current-address FAQ explicitly directs visitors to CKS Memorial Hall station exit 2. The official entrance CSV supplies that entrance's coordinates. This is an access reference, not a surveyed market building centre. Original market CSV coordinates are retained separately.",
+          "originalSourceCoordinates": [
+            121.522944,
+            25.032722
+          ]
+        }
+      ]
+    },
+    {
+      "id": "poi_market_f7ebdffd73c6",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-211,411",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有環南市場",
+        "en": "臺北市公有環南市場"
+      },
+      "sourceIds": [
+        "9"
+      ],
+      "sourceCoordinates": [
+        121.490528,
+        25.029361
+      ],
+      "snapMetres": 61.6
+    },
+    {
+      "id": "poi_market_86c1c8081178",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-167,413",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有錦安市場",
+        "en": "臺北市公有錦安市場"
+      },
+      "sourceIds": [
+        "19"
+      ],
+      "sourceCoordinates": [
+        121.529472,
+        25.028528
+      ],
+      "snapMetres": 21.3
+    },
+    {
+      "id": "poi_market_f2dad3361eba",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-153,413",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有安東市場",
+        "en": "臺北市公有安東市場"
+      },
+      "sourceIds": [
+        "21"
+      ],
+      "sourceCoordinates": [
+        121.541167,
+        25.028222
+      ],
+      "snapMetres": 18.0
+    },
+    {
+      "id": "poi_market_efcbf2de5cd5",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-147,415",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有成功市場（臨時攤棚）",
+        "en": "臺北市公有成功市場（臨時攤棚）"
+      },
+      "sourceIds": [
+        "18"
+      ],
+      "sourceCoordinates": [
+        121.547333,
+        25.026972
+      ],
+      "snapMetres": 15.3
+    },
+    {
+      "id": "poi_market_720f1c50c331",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-171,434",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有水源市場",
+        "en": "臺北市公有水源市場"
+      },
+      "sourceIds": [
+        "28"
+      ],
+      "sourceCoordinates": [
+        121.534972,
+        25.01375
+      ],
+      "snapMetres": 44.9
+    },
+    {
+      "id": "poi_market_3e5dfcee4a01",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-167,455",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有興隆市場",
+        "en": "臺北市公有興隆市場"
+      },
+      "sourceIds": [
+        "6"
+      ],
+      "sourceCoordinates": [
+        121.547278,
+        24.999944
+      ],
+      "snapMetres": 21.0
+    },
+    {
+      "id": "poi_market_8310bdbcaa65",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-182,470",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有景美市場",
+        "en": "臺北市公有景美市場"
+      },
+      "sourceIds": [
+        "38"
+      ],
+      "sourceCoordinates": [
+        121.541083,
+        24.989861
+      ],
+      "snapMetres": 31.0
+    },
+    {
+      "id": "poi_market_bf9453983ecc",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-150,472",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有木柵市場",
+        "en": "臺北市公有木柵市場"
+      },
+      "sourceIds": [
+        "7"
+      ],
+      "sourceCoordinates": [
+        121.569139,
+        24.988667
+      ],
+      "snapMetres": 31.4
+    },
+    {
+      "id": "poi_market_c5d0b4c7124d",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-169,482",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "market",
+      "name": {
+        "zh-TW": "臺北市公有木新市場",
+        "en": "臺北市公有木新市場"
+      },
+      "sourceIds": [
+        "39"
+      ],
+      "sourceCoordinates": [
+        121.557222,
+        24.981444
+      ],
+      "snapMetres": 23.2
+    },
+    {
+      "id": "poi_nightmarket_9eb773b43b40",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-118,246",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "北投 · 復興四路8巷及中和街320巷",
+        "en": "北投 · 復興四路8巷及中和街320巷"
+      },
+      "sourceIds": [
+        "15"
+      ],
+      "sourceCoordinates": [
+        121.49988888888889,
+        25.141638888888888
+      ],
+      "snapMetres": 35.6
+    },
+    {
+      "id": "poi_nightmarket_5934f54c8ff5",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-178,281",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "北投 · 關渡宮前停車場邊",
+        "en": "北投 · 關渡宮前停車場邊"
+      },
+      "sourceIds": [
+        "16"
+      ],
+      "sourceCoordinates": [
+        121.46394444444445,
+        25.11786111111111
+      ],
+      "snapMetres": 56.4
+    },
+    {
+      "id": "poi_nightmarket_bea27d70d881",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-117,284",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "北投 · 裕民一路、裕民一路40巷、裕民二路、裕民三路",
+        "en": "北投 · 裕民一路、裕民一路40巷、裕民二路、裕民三路"
+      },
+      "sourceIds": [
+        "17"
+      ],
+      "sourceCoordinates": [
+        121.51705555555556,
+        25.115916666666667
+      ],
+      "snapMetres": 16.8
+    },
+    {
+      "id": "poi_nightmarket_0994e22e2e8a",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-124,313",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "士林 · 中正路與美崙街間",
+        "en": "士林 · 中正路與美崙街間"
+      },
+      "sourceIds": [
+        "45"
+      ],
+      "sourceCoordinates": [
+        121.52338888888889,
+        25.096333333333334
+      ],
+      "snapMetres": 35.7
+    },
+    {
+      "id": "poi_nightmarket_874530a89ef3",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-146,319",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "士林 · 延平北路六段與社中街33巷間",
+        "en": "士林 · 延平北路六段與社中街33巷間"
+      },
+      "sourceIds": [
+        "46"
+      ],
+      "sourceCoordinates": [
+        121.5068888888889,
+        25.092055555555554
+      ],
+      "snapMetres": 45.2
+    },
+    {
+      "id": "poi_nightmarket_dd96cc015f23",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-140,334",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "士林 · 通河街323巷與325巷間",
+        "en": "士林 · 通河街323巷與325巷間"
+      },
+      "sourceIds": [
+        "47"
+      ],
+      "sourceCoordinates": [
+        121.51908333333333,
+        25.08222222222222
+      ],
+      "snapMetres": 36.6
+    },
+    {
+      "id": "poi_nightmarket_64d7476f6833",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-56,334",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "內湖 · 成功路四段20巷及康寧路1段33巷內",
+        "en": "內湖 · 成功路四段20巷及康寧路1段33巷內"
+      },
+      "sourceIds": [
+        "20"
+      ],
+      "sourceCoordinates": [
+        121.59102777777777,
+        25.08202777777778
+      ],
+      "snapMetres": 42.7
+    },
+    {
+      "id": "poi_nightmarket_5e0cdc5ffbb9",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-71,336",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "內湖 · 內湖路1段737巷50弄6號",
+        "en": "內湖 · 內湖路1段737巷50弄6號"
+      },
+      "sourceIds": [
+        "21"
+      ],
+      "sourceCoordinates": [
+        121.57858333333333,
+        25.080694444444443
+      ],
+      "snapMetres": 56.8
+    },
+    {
+      "id": "poi_nightmarket_c11566efd149",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-111,337",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 北安路476巷及518巷內",
+        "en": "中山 · 北安路476巷及518巷內"
+      },
+      "sourceIds": [
+        "32"
+      ],
+      "sourceCoordinates": [
+        121.54502777777778,
+        25.079555555555554
+      ],
+      "snapMetres": 29.7
+    },
+    {
+      "id": "poi_nightmarket_5e31657506d6",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-130,356",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 民族東路410巷2弄20號前",
+        "en": "中山 · 民族東路410巷2弄20號前"
+      },
+      "sourceIds": [
+        "30"
+      ],
+      "sourceCoordinates": [
+        121.53675,
+        25.066944444444445
+      ],
+      "snapMetres": 13.6
+    },
+    {
+      "id": "poi_nightmarket_0fd271805a0a",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-161,358",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大同 · 民權西路至民族西路口",
+        "en": "大同 · 民權西路至民族西路口"
+      },
+      "sourceIds": [
+        "43"
+      ],
+      "sourceCoordinates": [
+        121.51105555555556,
+        25.06577777777778
+      ],
+      "snapMetres": 5.8
+    },
+    {
+      "id": "poi_nightmarket_7afdba8909b8",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-128,358",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 龍江路328巷內",
+        "en": "中山 · 龍江路328巷內"
+      },
+      "sourceIds": [
+        "33"
+      ],
+      "sourceCoordinates": [
+        121.53963888888889,
+        25.065472222222223
+      ],
+      "snapMetres": 19.4
+    },
+    {
+      "id": "poi_nightmarket_fc28f1304065",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-148,359",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 農安街2巷及雙城街12巷",
+        "en": "中山 · 農安街2巷及雙城街12巷"
+      },
+      "sourceIds": [
+        "27"
+      ],
+      "sourceCoordinates": [
+        121.52255555555556,
+        25.064611111111113
+      ],
+      "snapMetres": 35.8
+    },
+    {
+      "id": "poi_nightmarket_e06480864512",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-147,360",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 雙城街10巷、13巷至農安街口",
+        "en": "中山 · 雙城街10巷、13巷至農安街口"
+      },
+      "sourceIds": [
+        "28",
+        "29"
+      ],
+      "sourceCoordinates": [
+        121.52433333333333,
+        25.064444444444444
+      ],
+      "snapMetres": 48.4
+    },
+    {
+      "id": "poi_nightmarket_76d8f506f211",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-123,361",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "松山 · 民權東路3段103巷內",
+        "en": "松山 · 民權東路3段103巷內"
+      },
+      "sourceIds": [
+        "12"
+      ],
+      "sourceCoordinates": [
+        121.54516666666666,
+        25.063555555555556
+      ],
+      "snapMetres": 16.8
+    },
+    {
+      "id": "poi_nightmarket_de03eb6e92d4",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-101,363",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "松山 · 新東街(富錦街至三民路180巷及新東街65巷)",
+        "en": "松山 · 新東街(富錦街至三民路180巷及新東街65巷)"
+      },
+      "sourceIds": [
+        "14"
+      ],
+      "sourceCoordinates": [
+        121.56486111111111,
+        25.062305555555557
+      ],
+      "snapMetres": 34.9
+    },
+    {
+      "id": "poi_nightmarket_6f08d356f631",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-163,372",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大同 · 民生西路至南京西路間",
+        "en": "大同 · 民生西路至南京西路間"
+      },
+      "sourceIds": [
+        "44"
+      ],
+      "sourceCoordinates": [
+        121.51527777777778,
+        25.055805555555555
+      ],
+      "snapMetres": 36.6
+    },
+    {
+      "id": "poi_nightmarket_3d7b12826b45",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-135,372",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 合江街與興安街路口",
+        "en": "中山 · 合江街與興安街路口"
+      },
+      "sourceIds": [
+        "31"
+      ],
+      "sourceCoordinates": [
+        121.53911111111111,
+        25.056416666666667
+      ],
+      "snapMetres": 46.0
+    },
+    {
+      "id": "poi_nightmarket_368cabb9d15e",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-144,375",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 南京東路2段115巷至伊通街口",
+        "en": "中山 · 南京東路2段115巷至伊通街口"
+      },
+      "sourceIds": [
+        "34"
+      ],
+      "sourceCoordinates": [
+        121.53316666666666,
+        25.053833333333333
+      ],
+      "snapMetres": 31.9
+    },
+    {
+      "id": "poi_nightmarket_7e8d9fc713e3",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-113,377",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "松山 · 南京東路5段59巷27弄內",
+        "en": "松山 · 南京東路5段59巷27弄內"
+      },
+      "sourceIds": [
+        "13"
+      ],
+      "sourceCoordinates": [
+        121.56005555555555,
+        25.052833333333336
+      ],
+      "snapMetres": 38.8
+    },
+    {
+      "id": "poi_nightmarket_6981fc82d1bc",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-97,380",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "松山 · 饒河街",
+        "en": "松山 · 饒河街"
+      },
+      "sourceIds": [
+        "11"
+      ],
+      "sourceCoordinates": [
+        121.57508333333332,
+        25.050666666666668
+      ],
+      "snapMetres": 38.0
+    },
+    {
+      "id": "poi_nightmarket_69c4ce246045",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-137,382",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中山 · 長安東路至朱崙街間",
+        "en": "中山 · 長安東路至朱崙街間"
+      },
+      "sourceIds": [
+        "26"
+      ],
+      "sourceCoordinates": [
+        121.54222222222222,
+        25.049361111111114
+      ],
+      "snapMetres": 46.5
+    },
+    {
+      "id": "poi_nightmarket_68c7ce437da4",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-87,387",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "南港 · 臺北市南港區東新街80巷9弄、10弄及14弄",
+        "en": "南港 · 臺北市南港區東新街80巷9弄、10弄及14弄"
+      },
+      "sourceIds": [
+        "9"
+      ],
+      "sourceCoordinates": [
+        121.58666666666666,
+        25.045833333333334
+      ],
+      "snapMetres": 36.0
+    },
+    {
+      "id": "poi_nightmarket_efdfa0a26749",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-176,391",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中正 · 武昌街1段22巷口至沅陵街間",
+        "en": "中正 · 武昌街1段22巷口至沅陵街間"
+      },
+      "sourceIds": [
+        "23"
+      ],
+      "sourceCoordinates": [
+        121.51230555555556,
+        25.0435
+      ],
+      "snapMetres": 24.6
+    },
+    {
+      "id": "poi_nightmarket_c93a12242922",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-192,396",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 廣州街至桂林路間",
+        "en": "萬華 · 廣州街至桂林路間"
+      },
+      "sourceIds": [
+        "6"
+      ],
+      "sourceCoordinates": [
+        121.50069444444445,
+        25.04041666666667
+      ],
+      "snapMetres": 42.7
+    },
+    {
+      "id": "poi_nightmarket_c6a762543958",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-95,397",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "信義 · 忠孝東路五段790巷、福德街232巷",
+        "en": "信義 · 忠孝東路五段790巷、福德街232巷"
+      },
+      "sourceIds": [
+        "10"
+      ],
+      "sourceCoordinates": [
+        121.58422222222222,
+        25.03927777777778
+      ],
+      "snapMetres": 27.9
+    },
+    {
+      "id": "poi_nightmarket_6bc6422f5062",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-196,398",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 廣州街至貴陽街",
+        "en": "萬華 · 廣州街至貴陽街"
+      },
+      "sourceIds": [
+        "8"
+      ],
+      "sourceCoordinates": [
+        121.49838888888888,
+        25.038305555555556
+      ],
+      "snapMetres": 42.2
+    },
+    {
+      "id": "poi_nightmarket_622189bfd91b",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-198,401",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 梧州街至環河南路間／萬華 · 廣州街至桂林路間",
+        "en": "萬華 · 梧州街至環河南路間／萬華 · 廣州街至桂林路間"
+      },
+      "sourceIds": [
+        "2",
+        "4"
+      ],
+      "sourceCoordinates": [
+        121.49761111111111,
+        25.037000000000003
+      ],
+      "snapMetres": 50.8
+    },
+    {
+      "id": "poi_nightmarket_75edff8c2029",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-193,402",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 昆明街與康定路之間的三水街一帶",
+        "en": "萬華 · 昆明街與康定路之間的三水街一帶"
+      },
+      "sourceIds": [
+        "7"
+      ],
+      "sourceCoordinates": [
+        121.50191666666667,
+        25.03613888888889
+      ],
+      "snapMetres": 48.9
+    },
+    {
+      "id": "poi_nightmarket_f4ec51fff519",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-165,402",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中正 · 金山南路1段110巷、142巷及臨沂街60、84巷及信義路2段79巷等巷內",
+        "en": "中正 · 金山南路1段110巷、142巷及臨沂街60、84巷及信義路2段79巷等巷內"
+      },
+      "sourceIds": [
+        "24"
+      ],
+      "sourceCoordinates": [
+        121.52647222222222,
+        25.03552777777778
+      ],
+      "snapMetres": 28.6
+    },
+    {
+      "id": "poi_nightmarket_d4db041afd96",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-151,402",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大安 · 建國南路高架橋下靠仁愛路、濟南路區段",
+        "en": "大安 · 建國南路高架橋下靠仁愛路、濟南路區段"
+      },
+      "sourceIds": [
+        "37",
+        "38",
+        "39",
+        "40"
+      ],
+      "sourceCoordinates": [
+        121.53844444444444,
+        25.036
+      ],
+      "snapMetres": 27.0
+    },
+    {
+      "id": "poi_nightmarket_f3ad0fd64665",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-153,405",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大安 · 建國南路高架橋下靠信義路",
+        "en": "大安 · 建國南路高架橋下靠信義路"
+      },
+      "sourceIds": [
+        "41",
+        "42"
+      ],
+      "sourceCoordinates": [
+        121.53786111111111,
+        25.03355555555556
+      ],
+      "snapMetres": 13.7
+    },
+    {
+      "id": "poi_nightmarket_48dcf0c944a5",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-204,409",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 西園路2段140巷33號至35號止",
+        "en": "萬華 · 西園路2段140巷33號至35號止"
+      },
+      "sourceIds": [
+        "3"
+      ],
+      "sourceCoordinates": [
+        121.4955,
+        25.031333333333333
+      ],
+      "snapMetres": 39.5
+    },
+    {
+      "id": "poi_nightmarket_3c89c4b4722f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-135,410",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大安 · 通化街至基隆路口",
+        "en": "大安 · 通化街至基隆路口"
+      },
+      "sourceIds": [
+        "35"
+      ],
+      "sourceCoordinates": [
+        121.55525,
+        25.030055555555556
+      ],
+      "snapMetres": 41.7
+    },
+    {
+      "id": "poi_nightmarket_8d4bd6e225af",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-194,412",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中正 · 中華路2段307巷至315巷間易牙巷",
+        "en": "中正 · 中華路2段307巷至315巷間易牙巷"
+      },
+      "sourceIds": [
+        "25"
+      ],
+      "sourceCoordinates": [
+        121.50591666666666,
+        25.02947222222222
+      ],
+      "snapMetres": 44.5
+    },
+    {
+      "id": "poi_nightmarket_620ec9e50211",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-180,413",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "中正 · 南昌路2段2巷、4巷口",
+        "en": "中正 · 南昌路2段2巷、4巷口"
+      },
+      "sourceIds": [
+        "22"
+      ],
+      "sourceCoordinates": [
+        121.51861111111111,
+        25.028555555555556
+      ],
+      "snapMetres": 40.0
+    },
+    {
+      "id": "poi_nightmarket_b59a9ac43dbb",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-212,415",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 西藏路至西園路320巷及同巷55弄",
+        "en": "萬華 · 西藏路至西園路320巷及同巷55弄"
+      },
+      "sourceIds": [
+        "1"
+      ],
+      "sourceCoordinates": [
+        121.49158333333334,
+        25.02713888888889
+      ],
+      "snapMetres": 22.0
+    },
+    {
+      "id": "poi_nightmarket_c6c659478d60",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-206,418",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "萬華 · 萬大路與寶興街之間的德昌街94巷附近",
+        "en": "萬華 · 萬大路與寶興街之間的德昌街94巷附近"
+      },
+      "sourceIds": [
+        "5"
+      ],
+      "sourceCoordinates": [
+        121.49769444444445,
+        25.02513888888889
+      ],
+      "snapMetres": 46.8
+    },
+    {
+      "id": "poi_nightmarket_471d7d9fa4d0",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-142,424",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "大安 · 安居街9巷內",
+        "en": "大安 · 安居街9巷內"
+      },
+      "sourceIds": [
+        "36"
+      ],
+      "sourceCoordinates": [
+        121.55566666666667,
+        25.02097222222222
+      ],
+      "snapMetres": 27.9
+    },
+    {
+      "id": "poi_nightmarket_4b4db5541784",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-157,454",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "文山 · 興隆路3段附近的興德路",
+        "en": "文山 · 興隆路3段附近的興德路"
+      },
+      "sourceIds": [
+        "19"
+      ],
+      "sourceCoordinates": [
+        121.55505555555555,
+        25.000805555555555
+      ],
+      "snapMetres": 48.3
+    },
+    {
+      "id": "poi_nightmarket_9070f68224ae",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-180,468",
+      "kind": "market",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "nightmarket",
+      "name": {
+        "zh-TW": "文山 · 景華街與景美街一帶",
+        "en": "文山 · 景華街與景美街一帶"
+      },
+      "sourceIds": [
+        "18"
+      ],
+      "sourceCoordinates": [
+        121.54175,
+        24.990833333333335
+      ],
+      "snapMetres": 23.7
+    },
+    {
+      "id": "poi_station_d681b2a3b3a5",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-139,252",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "復興崗站出口2",
+        "en": "復興崗站出口2"
+      },
+      "sourceIds": [
+        "165"
+      ],
+      "sourceCoordinates": [
+        121.485126,
+        25.137329
+      ],
+      "snapMetres": 48.3
+    },
+    {
+      "id": "poi_station_bb2b6461945f",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-138,252",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "復興崗站出口1",
+        "en": "復興崗站出口1"
+      },
+      "sourceIds": [
+        "164"
+      ],
+      "sourceCoordinates": [
+        121.4854068,
+        25.137665
+      ],
+      "snapMetres": 13.4
+    },
+    {
+      "id": "poi_station_8ad15ef7723e",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-119,253",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "新北投站出口2",
+        "en": "新北投站出口2"
+      },
+      "sourceIds": [
+        "163"
+      ],
+      "sourceCoordinates": [
+        121.502455,
+        25.136834
+      ],
+      "snapMetres": 18.7
+    },
+    {
+      "id": "poi_station_a7e9a17f7113",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-118,253",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "新北投站出口1",
+        "en": "新北投站出口1"
+      },
+      "sourceIds": [
+        "162"
+      ],
+      "sourceCoordinates": [
+        121.503524,
+        25.136968
+      ],
+      "snapMetres": 41.3
+    },
+    {
+      "id": "poi_station_8118afa236f6",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-127,260",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "北投站出口1",
+        "en": "北投站出口1"
+      },
+      "sourceIds": [
+        "160"
+      ],
+      "sourceCoordinates": [
+        121.4981189,
+        25.1323269
+      ],
+      "snapMetres": 28.2
+    },
+    {
+      "id": "poi_station_ed82d61e7924",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-157,261",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠義站出口1",
+        "en": "忠義站出口1"
+      },
+      "sourceIds": [
+        "166"
+      ],
+      "sourceCoordinates": [
+        121.473169,
+        25.131056
+      ],
+      "snapMetres": 29.9
+    },
+    {
+      "id": "poi_station_5f14700f901b",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-157,262",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠義站出口2",
+        "en": "忠義站出口2"
+      },
+      "sourceIds": [
+        "167"
+      ],
+      "sourceCoordinates": [
+        121.4736461,
+        25.1309851
+      ],
+      "snapMetres": 27.1
+    },
+    {
+      "id": "poi_station_7d2f6310d050",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-127,262",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "北投站出口2",
+        "en": "北投站出口2"
+      },
+      "sourceIds": [
+        "161"
+      ],
+      "sourceCoordinates": [
+        121.499194,
+        25.131025
+      ],
+      "snapMetres": 41.5
+    },
+    {
+      "id": "poi_station_89b95bb2b7c5",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-128,269",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "奇岩站出口1",
+        "en": "奇岩站出口1"
+      },
+      "sourceIds": [
+        "157"
+      ],
+      "sourceCoordinates": [
+        121.5009856,
+        25.12611852
+      ],
+      "snapMetres": 45.2
+    },
+    {
+      "id": "poi_station_d426b9a1a403",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-169,270",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "關渡站出口2",
+        "en": "關渡站出口2"
+      },
+      "sourceIds": [
+        "169"
+      ],
+      "sourceCoordinates": [
+        121.466861,
+        25.12547
+      ],
+      "snapMetres": 21.1
+    },
+    {
+      "id": "poi_station_cc2ff1fabba9",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-168,270",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "關渡站出口1",
+        "en": "關渡站出口1"
+      },
+      "sourceIds": [
+        "168"
+      ],
+      "sourceCoordinates": [
+        121.467215,
+        25.125431
+      ],
+      "snapMetres": 33.9
+    },
+    {
+      "id": "poi_station_5481d4bbb808",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-129,270",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "奇岩站出口2／奇岩站出口3",
+        "en": "奇岩站出口2／奇岩站出口3"
+      },
+      "sourceIds": [
+        "158",
+        "159"
+      ],
+      "sourceCoordinates": [
+        121.5010854,
+        25.1250223
+      ],
+      "snapMetres": 33.7
+    },
+    {
+      "id": "poi_station_2786785d4064",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-126,276",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "唭哩岸站出口2",
+        "en": "唭哩岸站出口2"
+      },
+      "sourceIds": [
+        "156"
+      ],
+      "sourceCoordinates": [
+        121.50589,
+        25.120854
+      ],
+      "snapMetres": 42.0
+    },
+    {
+      "id": "poi_station_2a5a77d6c04d",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-126,277",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "唭哩岸站出口1",
+        "en": "唭哩岸站出口1"
+      },
+      "sourceIds": [
+        "155"
+      ],
+      "sourceCoordinates": [
+        121.5069183,
+        25.12070935
+      ],
+      "snapMetres": 40.4
+    },
+    {
+      "id": "poi_station_bb630ab44b4a",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-120,285",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "石牌站出口1",
+        "en": "石牌站出口1"
+      },
+      "sourceIds": [
+        "153"
+      ],
+      "sourceCoordinates": [
+        121.5152545,
+        25.1149633
+      ],
+      "snapMetres": 20.9
+    },
+    {
+      "id": "poi_station_92aeca7506d2",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-120,287",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "石牌站出口2",
+        "en": "石牌站出口2"
+      },
+      "sourceIds": [
+        "154"
+      ],
+      "sourceCoordinates": [
+        121.51625,
+        25.11352
+      ],
+      "snapMetres": 37.1
+    },
+    {
+      "id": "poi_station_0a36bd88b1ba",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-119,292",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "明德站出口2",
+        "en": "明德站出口2"
+      },
+      "sourceIds": [
+        "151"
+      ],
+      "sourceCoordinates": [
+        121.518728,
+        25.110008
+      ],
+      "snapMetres": 38.2
+    },
+    {
+      "id": "poi_station_6b754271d113",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-120,293",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "明德站出口3",
+        "en": "明德站出口3"
+      },
+      "sourceIds": [
+        "152"
+      ],
+      "sourceCoordinates": [
+        121.518538,
+        25.109964
+      ],
+      "snapMetres": 34.7
+    },
+    {
+      "id": "poi_station_d73cf5f401f7",
+      "districtId": "6301200",
+      "cellId": "taipei-street-hex-v2:-119,293",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "明德站出口1",
+        "en": "明德站出口1"
+      },
+      "sourceIds": [
+        "150"
+      ],
+      "sourceCoordinates": [
+        121.519153,
+        25.109298
+      ],
+      "snapMetres": 28.9
+    },
+    {
+      "id": "poi_station_c7f1918355ff",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-120,302",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "芝山站出口2",
+        "en": "芝山站出口2"
+      },
+      "sourceIds": [
+        "149"
+      ],
+      "sourceCoordinates": [
+        121.522335,
+        25.10384024
+      ],
+      "snapMetres": 28.4
+    },
+    {
+      "id": "poi_station_ea55e2cc9f33",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-121,304",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "芝山站出口1",
+        "en": "芝山站出口1"
+      },
+      "sourceIds": [
+        "148"
+      ],
+      "sourceCoordinates": [
+        121.522636,
+        25.102046
+      ],
+      "snapMetres": 30.7
+    },
+    {
+      "id": "poi_station_b4e1a286619c",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-123,316",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "士林站出口1",
+        "en": "士林站出口1"
+      },
+      "sourceIds": [
+        "146"
+      ],
+      "sourceCoordinates": [
+        121.525966,
+        25.094106
+      ],
+      "snapMetres": 23.9
+    },
+    {
+      "id": "poi_station_6d0ea224452e",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-123,318",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "士林站出口2",
+        "en": "士林站出口2"
+      },
+      "sourceIds": [
+        "147"
+      ],
+      "sourceCoordinates": [
+        121.52644,
+        25.09286
+      ],
+      "snapMetres": 25.8
+    },
+    {
+      "id": "poi_station_eb9f13bca7a3",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-130,329",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍潭站出口1",
+        "en": "劍潭站出口1"
+      },
+      "sourceIds": [
+        "143"
+      ],
+      "sourceCoordinates": [
+        121.525175,
+        25.08503
+      ],
+      "snapMetres": 24.4
+    },
+    {
+      "id": "poi_station_2160426e67b1",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-95,329",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍南路站出口1",
+        "en": "劍南路站出口1"
+      },
+      "sourceIds": [
+        "33"
+      ],
+      "sourceCoordinates": [
+        121.5553542,
+        25.08548437
+      ],
+      "snapMetres": 41.9
+    },
+    {
+      "id": "poi_station_6b686e661bb8",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-131,330",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍潭站出口3",
+        "en": "劍潭站出口3"
+      },
+      "sourceIds": [
+        "145"
+      ],
+      "sourceCoordinates": [
+        121.52496,
+        25.084284
+      ],
+      "snapMetres": 33.2
+    },
+    {
+      "id": "poi_station_a2f4b31594cd",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-96,330",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍南路站出口2",
+        "en": "劍南路站出口2"
+      },
+      "sourceIds": [
+        "34"
+      ],
+      "sourceCoordinates": [
+        121.5552019,
+        25.08459783
+      ],
+      "snapMetres": 19.1
+    },
+    {
+      "id": "poi_station_5585f5ca496a",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-95,330",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍南路站出口3",
+        "en": "劍南路站出口3"
+      },
+      "sourceIds": [
+        "35"
+      ],
+      "sourceCoordinates": [
+        121.5560658,
+        25.08432308
+      ],
+      "snapMetres": 32.7
+    },
+    {
+      "id": "poi_station_2b9c620a45aa",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-51,331",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "內湖站出口1",
+        "en": "內湖站出口1"
+      },
+      "sourceIds": [
+        "42"
+      ],
+      "sourceCoordinates": [
+        121.594266,
+        25.083745
+      ],
+      "snapMetres": 18.4
+    },
+    {
+      "id": "poi_station_f0a942a47cef",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-50,331",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "內湖站出口2",
+        "en": "內湖站出口2"
+      },
+      "sourceIds": [
+        "43"
+      ],
+      "sourceCoordinates": [
+        121.594612,
+        25.083636
+      ],
+      "snapMetres": 25.4
+    },
+    {
+      "id": "poi_station_29f064cc9423",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-42,331",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大湖公園站出口2",
+        "en": "大湖公園站出口2"
+      },
+      "sourceIds": [
+        "45"
+      ],
+      "sourceCoordinates": [
+        121.60221,
+        25.083675
+      ],
+      "snapMetres": 21.5
+    },
+    {
+      "id": "poi_station_be355982529e",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-41,331",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大湖公園站出口1",
+        "en": "大湖公園站出口1"
+      },
+      "sourceIds": [
+        "44"
+      ],
+      "sourceCoordinates": [
+        121.602377,
+        25.083894
+      ],
+      "snapMetres": 38.6
+    },
+    {
+      "id": "poi_station_770075f8e6f2",
+      "districtId": "6301100",
+      "cellId": "taipei-street-hex-v2:-132,332",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "劍潭站出口2",
+        "en": "劍潭站出口2"
+      },
+      "sourceIds": [
+        "144"
+      ],
+      "sourceCoordinates": [
+        121.524751,
+        25.083273
+      ],
+      "snapMetres": 13.7
+    },
+    {
+      "id": "poi_station_f10d2f000128",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-84,333",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西湖站出口1",
+        "en": "西湖站出口1"
+      },
+      "sourceIds": [
+        "36"
+      ],
+      "sourceCoordinates": [
+        121.566647,
+        25.082339
+      ],
+      "snapMetres": 18.9
+    },
+    {
+      "id": "poi_station_1d3addf20f48",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-83,333",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西湖站出口2",
+        "en": "西湖站出口2"
+      },
+      "sourceIds": [
+        "37"
+      ],
+      "sourceCoordinates": [
+        121.567141,
+        25.082023
+      ],
+      "snapMetres": 31.0
+    },
+    {
+      "id": "poi_station_ba27db6344cd",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-108,336",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大直站出口1",
+        "en": "大直站出口1"
+      },
+      "sourceIds": [
+        "30"
+      ],
+      "sourceCoordinates": [
+        121.5469257,
+        25.08036069
+      ],
+      "snapMetres": 32.6
+    },
+    {
+      "id": "poi_station_68b44285c0c0",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-76,336",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "港墘站出口2",
+        "en": "港墘站出口2"
+      },
+      "sourceIds": [
+        "39"
+      ],
+      "sourceCoordinates": [
+        121.574704,
+        25.080065
+      ],
+      "snapMetres": 36.6
+    },
+    {
+      "id": "poi_station_3d2806201b3d",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-75,336",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "港墘站出口1",
+        "en": "港墘站出口1"
+      },
+      "sourceIds": [
+        "38"
+      ],
+      "sourceCoordinates": [
+        121.5758005,
+        25.08013028
+      ],
+      "snapMetres": 44.4
+    },
+    {
+      "id": "poi_station_3a7e5eb2cb29",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-109,337",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大直站出口2／大直站出口3",
+        "en": "大直站出口2／大直站出口3"
+      },
+      "sourceIds": [
+        "31",
+        "32"
+      ],
+      "sourceCoordinates": [
+        121.546823,
+        25.079584
+      ],
+      "snapMetres": 42.0
+    },
+    {
+      "id": "poi_station_06761f669977",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-64,338",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "文德站出口1",
+        "en": "文德站出口1"
+      },
+      "sourceIds": [
+        "40"
+      ],
+      "sourceCoordinates": [
+        121.58564,
+        25.078671
+      ],
+      "snapMetres": 20.7
+    },
+    {
+      "id": "poi_station_7bbcde24b39d",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-66,339",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "文德站出口2",
+        "en": "文德站出口2"
+      },
+      "sourceIds": [
+        "41"
+      ],
+      "sourceCoordinates": [
+        121.5845981,
+        25.07835342
+      ],
+      "snapMetres": 19.2
+    },
+    {
+      "id": "poi_station_c701ee9c62d9",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-44,348",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "葫洲站出口2",
+        "en": "葫洲站出口2"
+      },
+      "sourceIds": [
+        "47"
+      ],
+      "sourceCoordinates": [
+        121.607197,
+        25.072534
+      ],
+      "snapMetres": 38.6
+    },
+    {
+      "id": "poi_station_f7434cb1a816",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-43,348",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "葫洲站出口1",
+        "en": "葫洲站出口1"
+      },
+      "sourceIds": [
+        "46"
+      ],
+      "sourceCoordinates": [
+        121.6080683,
+        25.0725096
+      ],
+      "snapMetres": 46.7
+    },
+    {
+      "id": "poi_station_7f5a9f589d0d",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-146,349",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "圓山站出口2",
+        "en": "圓山站出口2"
+      },
+      "sourceIds": [
+        "142"
+      ],
+      "sourceCoordinates": [
+        121.520108,
+        25.071776
+      ],
+      "snapMetres": 2.1
+    },
+    {
+      "id": "poi_station_c9b2b13c10bb",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-147,351",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "圓山站出口1",
+        "en": "圓山站出口1"
+      },
+      "sourceIds": [
+        "141"
+      ],
+      "sourceCoordinates": [
+        121.520033,
+        25.070785
+      ],
+      "snapMetres": 41.1
+    },
+    {
+      "id": "poi_station_959eff9232d5",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-43,355",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東湖站出口1／東湖站出口2",
+        "en": "東湖站出口1／東湖站出口2"
+      },
+      "sourceIds": [
+        "48",
+        "49"
+      ],
+      "sourceCoordinates": [
+        121.6108991,
+        25.067189
+      ],
+      "snapMetres": 37.7
+    },
+    {
+      "id": "poi_station_0c1b9ed3c5f7",
+      "districtId": "6301000",
+      "cellId": "taipei-street-hex-v2:-42,355",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東湖站出口3",
+        "en": "東湖站出口3"
+      },
+      "sourceIds": [
+        "50"
+      ],
+      "sourceCoordinates": [
+        121.6119635,
+        25.06706398
+      ],
+      "snapMetres": 49.5
+    },
+    {
+      "id": "poi_station_455fca181a1e",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-160,361",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大橋頭站出口3",
+        "en": "大橋頭站出口3"
+      },
+      "sourceIds": [
+        "300"
+      ],
+      "sourceCoordinates": [
+        121.51344,
+        25.063739
+      ],
+      "snapMetres": 7.2
+    },
+    {
+      "id": "poi_station_6bd08b7b231e",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-116,361",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山機場站出口2",
+        "en": "松山機場站出口2"
+      },
+      "sourceIds": [
+        "6"
+      ],
+      "sourceCoordinates": [
+        121.5509869,
+        25.0635351
+      ],
+      "snapMetres": 9.5
+    },
+    {
+      "id": "poi_station_568710bd5643",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-115,361",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山機場站出口1／松山機場站出口3",
+        "en": "松山機場站出口1／松山機場站出口3"
+      },
+      "sourceIds": [
+        "5",
+        "7"
+      ],
+      "sourceCoordinates": [
+        121.5520427,
+        25.0636308
+      ],
+      "snapMetres": 38.7
+    },
+    {
+      "id": "poi_station_f4441a152a20",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-162,362",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大橋頭站出口1／大橋頭站出口1A",
+        "en": "大橋頭站出口1／大橋頭站出口1A"
+      },
+      "sourceIds": [
+        "297",
+        "298"
+      ],
+      "sourceCoordinates": [
+        121.512319,
+        25.06318
+      ],
+      "snapMetres": 42.4
+    },
+    {
+      "id": "poi_station_58898e753e99",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-160,362",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大橋頭站出口2",
+        "en": "大橋頭站出口2"
+      },
+      "sourceIds": [
+        "299"
+      ],
+      "sourceCoordinates": [
+        121.513258,
+        25.063195
+      ],
+      "snapMetres": 42.4
+    },
+    {
+      "id": "poi_station_03ac556147e2",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-154,362",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "民權西路站出口5／民權西路站出口6",
+        "en": "民權西路站出口5／民權西路站出口6"
+      },
+      "sourceIds": [
+        "135",
+        "136"
+      ],
+      "sourceCoordinates": [
+        121.5187721,
+        25.06324045
+      ],
+      "snapMetres": 31.3
+    },
+    {
+      "id": "poi_station_4658c50d1629",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-152,362",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "民權西路站出口7／民權西路站出口8／民權西路站出口9／民權西路站出口10",
+        "en": "民權西路站出口7／民權西路站出口8／民權西路站出口9／民權西路站出口10"
+      },
+      "sourceIds": [
+        "137",
+        "138",
+        "139",
+        "140"
+      ],
+      "sourceCoordinates": [
+        121.520172,
+        25.062699
+      ],
+      "snapMetres": 49.9
+    },
+    {
+      "id": "poi_station_00975e161725",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-145,362",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山國小站出口1",
+        "en": "中山國小站出口1"
+      },
+      "sourceIds": [
+        "301"
+      ],
+      "sourceCoordinates": [
+        121.526095,
+        25.06284
+      ],
+      "snapMetres": 32.8
+    },
+    {
+      "id": "poi_station_ae58a42ed902",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-154,363",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "民權西路站出口1",
+        "en": "民權西路站出口1"
+      },
+      "sourceIds": [
+        "131"
+      ],
+      "sourceCoordinates": [
+        121.519454,
+        25.062641
+      ],
+      "snapMetres": 48.5
+    },
+    {
+      "id": "poi_station_984a3f99a761",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-146,363",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山國小站出口2",
+        "en": "中山國小站出口2"
+      },
+      "sourceIds": [
+        "302"
+      ],
+      "sourceCoordinates": [
+        121.526148,
+        25.062461
+      ],
+      "snapMetres": 14.3
+    },
+    {
+      "id": "poi_station_cdf22b7d71f0",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-145,363",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山國小站出口3／中山國小站出口4",
+        "en": "中山國小站出口3／中山國小站出口4"
+      },
+      "sourceIds": [
+        "303",
+        "304"
+      ],
+      "sourceCoordinates": [
+        121.527114,
+        25.062476
+      ],
+      "snapMetres": 40.3
+    },
+    {
+      "id": "poi_station_9eb6b2d6b42b",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-154,364",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "民權西路站出口4／民權西路站出口3／民權西路站出口2",
+        "en": "民權西路站出口4／民權西路站出口3／民權西路站出口2"
+      },
+      "sourceIds": [
+        "132",
+        "133",
+        "134"
+      ],
+      "sourceCoordinates": [
+        121.519867,
+        25.061936
+      ],
+      "snapMetres": 43.9
+    },
+    {
+      "id": "poi_station_aab8681ceb73",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-126,365",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山國中站出口",
+        "en": "中山國中站出口"
+      },
+      "sourceIds": [
+        "8"
+      ],
+      "sourceCoordinates": [
+        121.5439794,
+        25.06082643
+      ],
+      "snapMetres": 9.9
+    },
+    {
+      "id": "poi_station_de9f9ce417da",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-42,365",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港軟體園區站出口1／南港軟體園區站出口2",
+        "en": "南港軟體園區站出口1／南港軟體園區站出口2"
+      },
+      "sourceIds": [
+        "51",
+        "52"
+      ],
+      "sourceCoordinates": [
+        121.6158607,
+        25.06038509
+      ],
+      "snapMetres": 50.7
+    },
+    {
+      "id": "poi_station_35503d947b40",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-139,366",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "行天宮站出口3／行天宮站出口4",
+        "en": "行天宮站出口3／行天宮站出口4"
+      },
+      "sourceIds": [
+        "307",
+        "308"
+      ],
+      "sourceCoordinates": [
+        121.533393,
+        25.059868
+      ],
+      "snapMetres": 46.7
+    },
+    {
+      "id": "poi_station_940273b35852",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-140,368",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "行天宮站出口2",
+        "en": "行天宮站出口2"
+      },
+      "sourceIds": [
+        "306"
+      ],
+      "sourceCoordinates": [
+        121.533342,
+        25.058792
+      ],
+      "snapMetres": 7.1
+    },
+    {
+      "id": "poi_station_66312f4297a5",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-141,369",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "行天宮站出口1",
+        "en": "行天宮站出口1"
+      },
+      "sourceIds": [
+        "305"
+      ],
+      "sourceCoordinates": [
+        121.533047,
+        25.05810168
+      ],
+      "snapMetres": 14.1
+    },
+    {
+      "id": "poi_station_fc3928e29428",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-156,370",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "雙連站出口1／雙連站出口2",
+        "en": "雙連站出口1／雙連站出口2"
+      },
+      "sourceIds": [
+        "129",
+        "130"
+      ],
+      "sourceCoordinates": [
+        121.520588,
+        25.057499
+      ],
+      "snapMetres": 35.3
+    },
+    {
+      "id": "poi_station_cc74a2755f76",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-44,372",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港展覽館站出口1",
+        "en": "南港展覽館站出口1"
+      },
+      "sourceIds": [
+        "53"
+      ],
+      "sourceCoordinates": [
+        121.6170736,
+        25.0557844
+      ],
+      "snapMetres": 43.0
+    },
+    {
+      "id": "poi_station_b33153681ad5",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-43,372",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港展覽館站出口4",
+        "en": "南港展覽館站出口4"
+      },
+      "sourceIds": [
+        "56"
+      ],
+      "sourceCoordinates": [
+        121.6182634,
+        25.055356
+      ],
+      "snapMetres": 27.6
+    },
+    {
+      "id": "poi_station_adf4d2534949",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-45,373",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港展覽館站出口2／南港展覽館站出口2A／南港展覽館站出口5",
+        "en": "南港展覽館站出口2／南港展覽館站出口2A／南港展覽館站出口5"
+      },
+      "sourceIds": [
+        "54",
+        "57",
+        "58"
+      ],
+      "sourceCoordinates": [
+        121.6171863,
+        25.05540682
+      ],
+      "snapMetres": 35.6
+    },
+    {
+      "id": "poi_station_b2568b48ee94",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-44,373",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港展覽館站出口3／南港展覽館站出口6",
+        "en": "南港展覽館站出口3／南港展覽館站出口6"
+      },
+      "sourceIds": [
+        "55",
+        "59"
+      ],
+      "sourceCoordinates": [
+        121.618239,
+        25.055123
+      ],
+      "snapMetres": 42.9
+    },
+    {
+      "id": "poi_station_3813b31d3ff7",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-44,374",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港展覽館站出口7",
+        "en": "南港展覽館站出口7"
+      },
+      "sourceIds": [
+        "60"
+      ],
+      "sourceCoordinates": [
+        121.618148,
+        25.054035
+      ],
+      "snapMetres": 41.0
+    },
+    {
+      "id": "poi_station_7ee96ab0202e",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-161,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山站出口5／中山站出口6",
+        "en": "中山站出口5／中山站出口6"
+      },
+      "sourceIds": [
+        "344",
+        "345"
+      ],
+      "sourceCoordinates": [
+        121.519329,
+        25.053037
+      ],
+      "snapMetres": 34.1
+    },
+    {
+      "id": "poi_station_4c7991cdeec0",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-160,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山站出口1／中山站出口4",
+        "en": "中山站出口1／中山站出口4"
+      },
+      "sourceIds": [
+        "340",
+        "341"
+      ],
+      "sourceCoordinates": [
+        121.520303,
+        25.052414
+      ],
+      "snapMetres": 46.9
+    },
+    {
+      "id": "poi_station_2c90a365c292",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-159,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中山站出口2／中山站出口3",
+        "en": "中山站出口2／中山站出口3"
+      },
+      "sourceIds": [
+        "342",
+        "343"
+      ],
+      "sourceCoordinates": [
+        121.521063,
+        25.052382
+      ],
+      "snapMetres": 39.1
+    },
+    {
+      "id": "poi_station_d98b123ccf72",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-145,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松江南京站出口7／松江南京站出口8",
+        "en": "松江南京站出口7／松江南京站出口8"
+      },
+      "sourceIds": [
+        "358",
+        "359"
+      ],
+      "sourceCoordinates": [
+        121.533195,
+        25.05247
+      ],
+      "snapMetres": 42.0
+    },
+    {
+      "id": "poi_station_71672ebda4c4",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-134,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口1",
+        "en": "南京復興站出口1"
+      },
+      "sourceIds": [
+        "332"
+      ],
+      "sourceCoordinates": [
+        121.542121,
+        25.052625
+      ],
+      "snapMetres": 32.9
+    },
+    {
+      "id": "poi_station_40de3c340f43",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-131,377",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口7",
+        "en": "南京復興站出口7"
+      },
+      "sourceIds": [
+        "339"
+      ],
+      "sourceCoordinates": [
+        121.5445925,
+        25.0524873
+      ],
+      "snapMetres": 44.8
+    },
+    {
+      "id": "poi_station_2c5b05289d9b",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-146,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松江南京站出口1",
+        "en": "松江南京站出口1"
+      },
+      "sourceIds": [
+        "352"
+      ],
+      "sourceCoordinates": [
+        121.532388,
+        25.051842
+      ],
+      "snapMetres": 31.5
+    },
+    {
+      "id": "poi_station_97efab1dacfb",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-144,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松江南京站出口5／松江南京站出口6",
+        "en": "松江南京站出口5／松江南京站出口6"
+      },
+      "sourceIds": [
+        "356",
+        "357"
+      ],
+      "sourceCoordinates": [
+        121.534081,
+        25.051882
+      ],
+      "snapMetres": 37.4
+    },
+    {
+      "id": "poi_station_6c91ea8547e8",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-135,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口2",
+        "en": "南京復興站出口2"
+      },
+      "sourceIds": [
+        "333"
+      ],
+      "sourceCoordinates": [
+        121.541863,
+        25.051748
+      ],
+      "snapMetres": 34.6
+    },
+    {
+      "id": "poi_station_07ebbd86c398",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-133,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口8",
+        "en": "南京復興站出口8"
+      },
+      "sourceIds": [
+        "338"
+      ],
+      "sourceCoordinates": [
+        121.543819,
+        25.052018
+      ],
+      "snapMetres": 19.8
+    },
+    {
+      "id": "poi_station_98713828b3da",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-132,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口5／南京復興站出口6",
+        "en": "南京復興站出口5／南京復興站出口6"
+      },
+      "sourceIds": [
+        "336",
+        "337"
+      ],
+      "sourceCoordinates": [
+        121.544338,
+        25.051727
+      ],
+      "snapMetres": 43.6
+    },
+    {
+      "id": "poi_station_9a989f24f0f0",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-124,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北小巨蛋站出口1",
+        "en": "台北小巨蛋站出口1"
+      },
+      "sourceIds": [
+        "363"
+      ],
+      "sourceCoordinates": [
+        121.55153,
+        25.051836
+      ],
+      "snapMetres": 19.7
+    },
+    {
+      "id": "poi_station_69ed14f51c3d",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-123,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北小巨蛋站出口5",
+        "en": "台北小巨蛋站出口5"
+      },
+      "sourceIds": [
+        "367"
+      ],
+      "sourceCoordinates": [
+        121.552069,
+        25.051838
+      ],
+      "snapMetres": 3.3
+    },
+    {
+      "id": "poi_station_265e31eda581",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-60,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港站出口1",
+        "en": "南港站出口1"
+      },
+      "sourceIds": [
+        "253"
+      ],
+      "sourceCoordinates": [
+        121.606357,
+        25.051911
+      ],
+      "snapMetres": 19.2
+    },
+    {
+      "id": "poi_station_7b7b4cde76a1",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-59,378",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南港站出口2",
+        "en": "南港站出口2"
+      },
+      "sourceIds": [
+        "254"
+      ],
+      "sourceCoordinates": [
+        121.60743,
+        25.052025
+      ],
+      "snapMetres": 33.0
+    },
+    {
+      "id": "poi_station_a1a629ef75e8",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-146,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松江南京站出口2／松江南京站出口3／松江南京站出口4",
+        "en": "松江南京站出口2／松江南京站出口3／松江南京站出口4"
+      },
+      "sourceIds": [
+        "353",
+        "354",
+        "355"
+      ],
+      "sourceCoordinates": [
+        121.532875,
+        25.051342
+      ],
+      "snapMetres": 48.7
+    },
+    {
+      "id": "poi_station_06d5a80339b8",
+      "districtId": "6300400",
+      "cellId": "taipei-street-hex-v2:-134,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京復興站出口3／南京復興站出口4",
+        "en": "南京復興站出口3／南京復興站出口4"
+      },
+      "sourceIds": [
+        "334",
+        "335"
+      ],
+      "sourceCoordinates": [
+        121.543087,
+        25.05178085
+      ],
+      "snapMetres": 38.5
+    },
+    {
+      "id": "poi_station_5c48d1f0065a",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-125,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北小巨蛋站出口2",
+        "en": "台北小巨蛋站出口2"
+      },
+      "sourceIds": [
+        "364"
+      ],
+      "sourceCoordinates": [
+        121.550715,
+        25.051571
+      ],
+      "snapMetres": 32.7
+    },
+    {
+      "id": "poi_station_811941927a45",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-123,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北小巨蛋站出口3／台北小巨蛋站出口4",
+        "en": "台北小巨蛋站出口3／台北小巨蛋站出口4"
+      },
+      "sourceIds": [
+        "365",
+        "366"
+      ],
+      "sourceCoordinates": [
+        121.552549,
+        25.05152
+      ],
+      "snapMetres": 35.3
+    },
+    {
+      "id": "poi_station_ca3a623f621f",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-111,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京三民站出口1／南京三民站出口2",
+        "en": "南京三民站出口1／南京三民站出口2"
+      },
+      "sourceIds": [
+        "368",
+        "369"
+      ],
+      "sourceCoordinates": [
+        121.563203,
+        25.051633
+      ],
+      "snapMetres": 45.6
+    },
+    {
+      "id": "poi_station_8fe57f790cf9",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-109,379",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "南京三民站出口3／南京三民站出口4",
+        "en": "南京三民站出口3／南京三民站出口4"
+      },
+      "sourceIds": [
+        "370",
+        "371"
+      ],
+      "sourceCoordinates": [
+        121.564595,
+        25.051328
+      ],
+      "snapMetres": 38.6
+    },
+    {
+      "id": "poi_station_7935b3b395b5",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-95,380",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山站出口1",
+        "en": "松山站出口1"
+      },
+      "sourceIds": [
+        "372"
+      ],
+      "sourceCoordinates": [
+        121.577022,
+        25.050171
+      ],
+      "snapMetres": 36.8
+    },
+    {
+      "id": "poi_station_dcecbc5cd425",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-94,380",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山站出口5",
+        "en": "松山站出口5"
+      },
+      "sourceIds": [
+        "376"
+      ],
+      "sourceCoordinates": [
+        121.577782,
+        25.050559
+      ],
+      "snapMetres": 18.1
+    },
+    {
+      "id": "poi_station_f7920d0dd738",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-77,380",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "昆陽站出口1／昆陽站出口2",
+        "en": "昆陽站出口1／昆陽站出口2"
+      },
+      "sourceIds": [
+        "249",
+        "250"
+      ],
+      "sourceCoordinates": [
+        121.592726,
+        25.050319
+      ],
+      "snapMetres": 27.6
+    },
+    {
+      "id": "poi_station_c3ac9a8617d0",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-76,380",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "昆陽站出口3",
+        "en": "昆陽站出口3"
+      },
+      "sourceIds": [
+        "251"
+      ],
+      "sourceCoordinates": [
+        121.59363,
+        25.050599
+      ],
+      "snapMetres": 33.8
+    },
+    {
+      "id": "poi_station_b117e59456f2",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-75,380",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "昆陽站出口4",
+        "en": "昆陽站出口4"
+      },
+      "sourceIds": [
+        "252"
+      ],
+      "sourceCoordinates": [
+        121.593799,
+        25.050572
+      ],
+      "snapMetres": 44.3
+    },
+    {
+      "id": "poi_station_43138041f964",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-173,381",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "北門站出口3",
+        "en": "北門站出口3"
+      },
+      "sourceIds": [
+        "362"
+      ],
+      "sourceCoordinates": [
+        121.510227,
+        25.049943
+      ],
+      "snapMetres": 36.0
+    },
+    {
+      "id": "poi_station_e0548bedd037",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-96,381",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山站出口2",
+        "en": "松山站出口2"
+      },
+      "sourceIds": [
+        "373"
+      ],
+      "sourceCoordinates": [
+        121.576244,
+        25.050171
+      ],
+      "snapMetres": 39.1
+    },
+    {
+      "id": "poi_station_0758d62775ed",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-95,381",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山站出口3",
+        "en": "松山站出口3"
+      },
+      "sourceIds": [
+        "374"
+      ],
+      "sourceCoordinates": [
+        121.577533,
+        25.049939
+      ],
+      "snapMetres": 4.6
+    },
+    {
+      "id": "poi_station_7ffdf9f73079",
+      "districtId": "6300100",
+      "cellId": "taipei-street-hex-v2:-94,381",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "松山站出口4",
+        "en": "松山站出口4"
+      },
+      "sourceIds": [
+        "375"
+      ],
+      "sourceCoordinates": [
+        121.577971,
+        25.049799
+      ],
+      "snapMetres": 45.0
+    },
+    {
+      "id": "poi_station_fd05c3b0c329",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-174,382",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "北門站出口2",
+        "en": "北門站出口2"
+      },
+      "sourceIds": [
+        "361"
+      ],
+      "sourceCoordinates": [
+        121.510506,
+        25.049583
+      ],
+      "snapMetres": 42.2
+    },
+    {
+      "id": "poi_station_6154587dedd3",
+      "districtId": "6300600",
+      "cellId": "taipei-street-hex-v2:-175,383",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "北門站出口1",
+        "en": "北門站出口1"
+      },
+      "sourceIds": [
+        "360"
+      ],
+      "sourceCoordinates": [
+        121.509986,
+        25.048861
+      ],
+      "snapMetres": 30.5
+    },
+    {
+      "id": "poi_station_74b1fd4d4920",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-166,384",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M1",
+        "en": "台北車站M1"
+      },
+      "sourceIds": [
+        "125"
+      ],
+      "sourceCoordinates": [
+        121.518193,
+        25.048232
+      ],
+      "snapMetres": 35.6
+    },
+    {
+      "id": "poi_station_3701d776e21d",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-165,384",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M2",
+        "en": "台北車站M2"
+      },
+      "sourceIds": [
+        "126"
+      ],
+      "sourceCoordinates": [
+        121.51908,
+        25.048159
+      ],
+      "snapMetres": 31.0
+    },
+    {
+      "id": "poi_station_1691c13accba",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-169,386",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M5",
+        "en": "台北車站M5"
+      },
+      "sourceIds": [
+        "121"
+      ],
+      "sourceCoordinates": [
+        121.516246,
+        25.046755
+      ],
+      "snapMetres": 20.1
+    },
+    {
+      "id": "poi_station_4f7776924f7a",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-168,386",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M4",
+        "en": "台北車站M4"
+      },
+      "sourceIds": [
+        "128"
+      ],
+      "sourceCoordinates": [
+        121.517345,
+        25.046485
+      ],
+      "snapMetres": 42.1
+    },
+    {
+      "id": "poi_station_03a1f8b3616d",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-167,386",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M3",
+        "en": "台北車站M3"
+      },
+      "sourceIds": [
+        "127"
+      ],
+      "sourceCoordinates": [
+        121.517882,
+        25.046337
+      ],
+      "snapMetres": 44.6
+    },
+    {
+      "id": "poi_station_624bb175cf1f",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-169,387",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M6",
+        "en": "台北車站M6"
+      },
+      "sourceIds": [
+        "122"
+      ],
+      "sourceCoordinates": [
+        121.516787,
+        25.046234
+      ],
+      "snapMetres": 19.5
+    },
+    {
+      "id": "poi_station_ab68074d0a15",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-168,387",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M8",
+        "en": "台北車站M8"
+      },
+      "sourceIds": [
+        "124"
+      ],
+      "sourceCoordinates": [
+        121.517479,
+        25.045948
+      ],
+      "snapMetres": 9.5
+    },
+    {
+      "id": "poi_station_52ff85b6a182",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-167,387",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北車站M7",
+        "en": "台北車站M7"
+      },
+      "sourceIds": [
+        "123"
+      ],
+      "sourceCoordinates": [
+        121.518643,
+        25.046077
+      ],
+      "snapMetres": 34.5
+    },
+    {
+      "id": "poi_station_013113476f1a",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-92,387",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "後山埤站出口4",
+        "en": "後山埤站出口4"
+      },
+      "sourceIds": [
+        "248"
+      ],
+      "sourceCoordinates": [
+        121.582441,
+        25.045653
+      ],
+      "snapMetres": 28.3
+    },
+    {
+      "id": "poi_station_f30f54d40b25",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-162,388",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "善導寺站出口1",
+        "en": "善導寺站出口1"
+      },
+      "sourceIds": [
+        "210"
+      ],
+      "sourceCoordinates": [
+        121.523009,
+        25.045097
+      ],
+      "snapMetres": 12.1
+    },
+    {
+      "id": "poi_station_6a900ecb5b36",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-92,388",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "後山埤站出口3",
+        "en": "後山埤站出口3"
+      },
+      "sourceIds": [
+        "247"
+      ],
+      "sourceCoordinates": [
+        121.583277,
+        25.045232
+      ],
+      "snapMetres": 20.2
+    },
+    {
+      "id": "poi_station_431553376d41",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-162,389",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "善導寺站出口2／善導寺站出口3",
+        "en": "善導寺站出口2／善導寺站出口3"
+      },
+      "sourceIds": [
+        "211",
+        "212"
+      ],
+      "sourceCoordinates": [
+        121.523053,
+        25.044796
+      ],
+      "snapMetres": 43.0
+    },
+    {
+      "id": "poi_station_423597e71c59",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-160,389",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "善導寺站出口5／善導寺站出口6",
+        "en": "善導寺站出口5／善導寺站出口6"
+      },
+      "sourceIds": [
+        "214",
+        "215"
+      ],
+      "sourceCoordinates": [
+        121.52482,
+        25.044256
+      ],
+      "snapMetres": 49.1
+    },
+    {
+      "id": "poi_station_54681859829b",
+      "districtId": "6300900",
+      "cellId": "taipei-street-hex-v2:-94,389",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "後山埤站出口1",
+        "en": "後山埤站出口1"
+      },
+      "sourceIds": [
+        "245"
+      ],
+      "sourceCoordinates": [
+        121.58141,
+        25.044422
+      ],
+      "snapMetres": 31.6
+    },
+    {
+      "id": "poi_station_045dedfc9f94",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-162,390",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "善導寺站出口4",
+        "en": "善導寺站出口4"
+      },
+      "sourceIds": [
+        "213"
+      ],
+      "sourceCoordinates": [
+        121.524217,
+        25.044111
+      ],
+      "snapMetres": 25.8
+    },
+    {
+      "id": "poi_station_6bdc4d29373b",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-95,390",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "後山埤站出口2",
+        "en": "後山埤站出口2"
+      },
+      "sourceIds": [
+        "246"
+      ],
+      "sourceCoordinates": [
+        121.581854,
+        25.043703
+      ],
+      "snapMetres": 49.5
+    },
+    {
+      "id": "poi_station_cf0dda5e72e7",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-180,391",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西門站出口5",
+        "en": "西門站出口5"
+      },
+      "sourceIds": [
+        "350"
+      ],
+      "sourceCoordinates": [
+        121.508789,
+        25.042935
+      ],
+      "snapMetres": 44.1
+    },
+    {
+      "id": "poi_station_10c8d440a52e",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-182,392",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西門站出口6",
+        "en": "西門站出口6"
+      },
+      "sourceIds": [
+        "351"
+      ],
+      "sourceCoordinates": [
+        121.507602,
+        25.042573
+      ],
+      "snapMetres": 12.4
+    },
+    {
+      "id": "poi_station_ee5fe0e5563d",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-172,392",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台大醫院站出口4",
+        "en": "台大醫院站出口4"
+      },
+      "sourceIds": [
+        "120"
+      ],
+      "sourceCoordinates": [
+        121.516299,
+        25.042876
+      ],
+      "snapMetres": 27.3
+    },
+    {
+      "id": "poi_station_7f5998cd7234",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-171,392",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台大醫院站出口3",
+        "en": "台大醫院站出口3"
+      },
+      "sourceIds": [
+        "119"
+      ],
+      "sourceCoordinates": [
+        121.516632,
+        25.042808
+      ],
+      "snapMetres": 4.6
+    },
+    {
+      "id": "poi_station_e0fbfdc2658c",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-154,392",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口1",
+        "en": "忠孝新生站出口1"
+      },
+      "sourceIds": [
+        "219"
+      ],
+      "sourceCoordinates": [
+        121.531829,
+        25.042784
+      ],
+      "snapMetres": 35.3
+    },
+    {
+      "id": "poi_station_20d135b133c9",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-152,392",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口4",
+        "en": "忠孝新生站出口4"
+      },
+      "sourceIds": [
+        "218"
+      ],
+      "sourceCoordinates": [
+        121.533213,
+        25.042458
+      ],
+      "snapMetres": 6.0
+    },
+    {
+      "id": "poi_station_bda1a94cb849",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-182,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西門站出口1",
+        "en": "西門站出口1"
+      },
+      "sourceIds": [
+        "346"
+      ],
+      "sourceCoordinates": [
+        121.507566,
+        25.042137
+      ],
+      "snapMetres": 43.9
+    },
+    {
+      "id": "poi_station_db20c54e65d6",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-181,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西門站出口3／西門站出口4",
+        "en": "西門站出口3／西門站出口4"
+      },
+      "sourceIds": [
+        "348",
+        "349"
+      ],
+      "sourceCoordinates": [
+        121.508888,
+        25.041789
+      ],
+      "snapMetres": 32.0
+    },
+    {
+      "id": "poi_station_487b67422b9c",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-154,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口2",
+        "en": "忠孝新生站出口2"
+      },
+      "sourceIds": [
+        "216"
+      ],
+      "sourceCoordinates": [
+        121.532065,
+        25.042103
+      ],
+      "snapMetres": 29.8
+    },
+    {
+      "id": "poi_station_5f47a8791f4f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-153,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口7",
+        "en": "忠孝新生站出口7"
+      },
+      "sourceIds": [
+        "222"
+      ],
+      "sourceCoordinates": [
+        121.533068,
+        25.041729
+      ],
+      "snapMetres": 37.4
+    },
+    {
+      "id": "poi_station_f7f4b584b559",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-152,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口3",
+        "en": "忠孝新生站出口3"
+      },
+      "sourceIds": [
+        "217"
+      ],
+      "sourceCoordinates": [
+        121.53368,
+        25.041783
+      ],
+      "snapMetres": 15.7
+    },
+    {
+      "id": "poi_station_7260e641ef6c",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-141,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝復興站出口1",
+        "en": "忠孝復興站出口1"
+      },
+      "sourceIds": [
+        "9"
+      ],
+      "sourceCoordinates": [
+        121.543143,
+        25.041797
+      ],
+      "snapMetres": 2.8
+    },
+    {
+      "id": "poi_station_0bae674609ad",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-140,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝復興站出口5",
+        "en": "忠孝復興站出口5"
+      },
+      "sourceIds": [
+        "13"
+      ],
+      "sourceCoordinates": [
+        121.543985,
+        25.04202
+      ],
+      "snapMetres": 19.7
+    },
+    {
+      "id": "poi_station_d1fe5308df5f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-139,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝復興站出口3／忠孝復興站出口4",
+        "en": "忠孝復興站出口3／忠孝復興站出口4"
+      },
+      "sourceIds": [
+        "11",
+        "12"
+      ],
+      "sourceCoordinates": [
+        121.544806,
+        25.041467
+      ],
+      "snapMetres": 36.2
+    },
+    {
+      "id": "poi_station_2aa8fe0d23ca",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-134,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口8",
+        "en": "忠孝敦化站出口8"
+      },
+      "sourceIds": [
+        "230"
+      ],
+      "sourceCoordinates": [
+        121.549194,
+        25.041928
+      ],
+      "snapMetres": 13.3
+    },
+    {
+      "id": "poi_station_6003abb655db",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-133,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口7",
+        "en": "忠孝敦化站出口7"
+      },
+      "sourceIds": [
+        "229"
+      ],
+      "sourceCoordinates": [
+        121.549913,
+        25.041661
+      ],
+      "snapMetres": 13.4
+    },
+    {
+      "id": "poi_station_ff4c30cb4cc5",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-132,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口1",
+        "en": "忠孝敦化站出口1"
+      },
+      "sourceIds": [
+        "223"
+      ],
+      "sourceCoordinates": [
+        121.550578,
+        25.041642
+      ],
+      "snapMetres": 26.6
+    },
+    {
+      "id": "poi_station_90a1f4dd4594",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-131,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口2",
+        "en": "忠孝敦化站出口2"
+      },
+      "sourceIds": [
+        "224"
+      ],
+      "sourceCoordinates": [
+        121.551694,
+        25.041632
+      ],
+      "snapMetres": 27.3
+    },
+    {
+      "id": "poi_station_2122a1fcfd7d",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-125,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "國父紀念館站出口1",
+        "en": "國父紀念館站出口1"
+      },
+      "sourceIds": [
+        "231"
+      ],
+      "sourceCoordinates": [
+        121.556663,
+        25.041838
+      ],
+      "snapMetres": 15.0
+    },
+    {
+      "id": "poi_station_a9373bb81b59",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-115,393",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "市政府站出口1",
+        "en": "市政府站出口1"
+      },
+      "sourceIds": [
+        "236"
+      ],
+      "sourceCoordinates": [
+        121.565459,
+        25.041408
+      ],
+      "snapMetres": 44.5
+    },
+    {
+      "id": "poi_station_44851a7736c1",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-182,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "西門站出口2",
+        "en": "西門站出口2"
+      },
+      "sourceIds": [
+        "347"
+      ],
+      "sourceCoordinates": [
+        121.508435,
+        25.041545
+      ],
+      "snapMetres": 21.3
+    },
+    {
+      "id": "poi_station_a2d1a9f00b3c",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-172,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台大醫院站出口2",
+        "en": "台大醫院站出口2"
+      },
+      "sourceIds": [
+        "118"
+      ],
+      "sourceCoordinates": [
+        121.516589,
+        25.041224
+      ],
+      "snapMetres": 38.8
+    },
+    {
+      "id": "poi_station_8c42435da97d",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-154,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口5",
+        "en": "忠孝新生站出口5"
+      },
+      "sourceIds": [
+        "220"
+      ],
+      "sourceCoordinates": [
+        121.5323987,
+        25.0410441
+      ],
+      "snapMetres": 28.6
+    },
+    {
+      "id": "poi_station_631cbfb74188",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-141,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝復興站出口2",
+        "en": "忠孝復興站出口2"
+      },
+      "sourceIds": [
+        "10"
+      ],
+      "sourceCoordinates": [
+        121.543517,
+        25.041206
+      ],
+      "snapMetres": 8.5
+    },
+    {
+      "id": "poi_station_84abf140e875",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-134,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口5／忠孝敦化站出口6",
+        "en": "忠孝敦化站出口5／忠孝敦化站出口6"
+      },
+      "sourceIds": [
+        "227",
+        "228"
+      ],
+      "sourceCoordinates": [
+        121.549824,
+        25.041238
+      ],
+      "snapMetres": 50.2
+    },
+    {
+      "id": "poi_station_ade315946619",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-133,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口4",
+        "en": "忠孝敦化站出口4"
+      },
+      "sourceIds": [
+        "226"
+      ],
+      "sourceCoordinates": [
+        121.550567,
+        25.04135
+      ],
+      "snapMetres": 7.0
+    },
+    {
+      "id": "poi_station_aee6625f53b9",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-132,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝敦化站出口3",
+        "en": "忠孝敦化站出口3"
+      },
+      "sourceIds": [
+        "225"
+      ],
+      "sourceCoordinates": [
+        121.551586,
+        25.04134
+      ],
+      "snapMetres": 43.1
+    },
+    {
+      "id": "poi_station_e2aab068bcec",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-126,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "國父紀念館站出口2",
+        "en": "國父紀念館站出口2"
+      },
+      "sourceIds": [
+        "232"
+      ],
+      "sourceCoordinates": [
+        121.556704,
+        25.041029
+      ],
+      "snapMetres": 37.0
+    },
+    {
+      "id": "poi_station_333012497747",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-124,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "國父紀念館站出口3／國父紀念館站出口4／國父紀念館站出口5",
+        "en": "國父紀念館站出口3／國父紀念館站出口4／國父紀念館站出口5"
+      },
+      "sourceIds": [
+        "233",
+        "234",
+        "235"
+      ],
+      "sourceCoordinates": [
+        121.557981,
+        25.041195
+      ],
+      "snapMetres": 40.9
+    },
+    {
+      "id": "poi_station_c528da7351b4",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-116,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "市政府站出口2",
+        "en": "市政府站出口2"
+      },
+      "sourceIds": [
+        "237"
+      ],
+      "sourceCoordinates": [
+        121.565062,
+        25.040971
+      ],
+      "snapMetres": 13.4
+    },
+    {
+      "id": "poi_station_3adfe9e64b28",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-114,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "市政府站出口3／市政府站出口4",
+        "en": "市政府站出口3／市政府站出口4"
+      },
+      "sourceIds": [
+        "238",
+        "239"
+      ],
+      "sourceCoordinates": [
+        121.567149,
+        25.040903
+      ],
+      "snapMetres": 46.4
+    },
+    {
+      "id": "poi_station_165609e85456",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-104,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "永春站出口1／永春站出口2",
+        "en": "永春站出口1／永春站出口2"
+      },
+      "sourceIds": [
+        "240",
+        "241"
+      ],
+      "sourceCoordinates": [
+        121.57512,
+        25.040995
+      ],
+      "snapMetres": 46.7
+    },
+    {
+      "id": "poi_station_8b2fd7d7b353",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-103,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "永春站出口3",
+        "en": "永春站出口3"
+      },
+      "sourceIds": [
+        "242"
+      ],
+      "sourceCoordinates": [
+        121.576155,
+        25.040704
+      ],
+      "snapMetres": 28.8
+    },
+    {
+      "id": "poi_station_b9aee85b7df8",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-102,394",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "永春站出口5",
+        "en": "永春站出口5"
+      },
+      "sourceIds": [
+        "244"
+      ],
+      "sourceCoordinates": [
+        121.576622,
+        25.040961
+      ],
+      "snapMetres": 37.8
+    },
+    {
+      "id": "poi_station_3fe48f834ccd",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-174,395",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台大醫院站出口1",
+        "en": "台大醫院站出口1"
+      },
+      "sourceIds": [
+        "117"
+      ],
+      "sourceCoordinates": [
+        121.515731,
+        25.040913
+      ],
+      "snapMetres": 43.9
+    },
+    {
+      "id": "poi_station_88984a01a9f3",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-154,395",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "忠孝新生站出口6",
+        "en": "忠孝新生站出口6"
+      },
+      "sourceIds": [
+        "221"
+      ],
+      "sourceCoordinates": [
+        121.533068,
+        25.040791
+      ],
+      "snapMetres": 30.5
+    },
+    {
+      "id": "poi_station_b57d760758aa",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-103,395",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "永春站出口4",
+        "en": "永春站出口4"
+      },
+      "sourceIds": [
+        "243"
+      ],
+      "sourceCoordinates": [
+        121.576574,
+        25.040699
+      ],
+      "snapMetres": 44.3
+    },
+    {
+      "id": "poi_station_75f1a4f0a164",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-96,398",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "廣慈/奉天宮站出口2",
+        "en": "廣慈/奉天宮站出口2"
+      },
+      "sourceIds": [
+        "256"
+      ],
+      "sourceCoordinates": [
+        121.583362,
+        25.038349
+      ],
+      "snapMetres": 66.8
+    },
+    {
+      "id": "poi_station_63e93156398a",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-99,399",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "廣慈/奉天宮站出口1",
+        "en": "廣慈/奉天宮站出口1"
+      },
+      "sourceIds": [
+        "255"
+      ],
+      "sourceCoordinates": [
+        121.581772,
+        25.037434
+      ],
+      "snapMetres": 12.0
+    },
+    {
+      "id": "poi_station_82a44f344604",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-184,401",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "小南門站出口1",
+        "en": "小南門站出口1"
+      },
+      "sourceIds": [
+        "105"
+      ],
+      "sourceCoordinates": [
+        121.509752,
+        25.036434
+      ],
+      "snapMetres": 22.6
+    },
+    {
+      "id": "poi_station_ccd8379a0ded",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-184,402",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "小南門站出口2",
+        "en": "小南門站出口2"
+      },
+      "sourceIds": [
+        "106"
+      ],
+      "sourceCoordinates": [
+        121.509865,
+        25.035736
+      ],
+      "snapMetres": 13.8
+    },
+    {
+      "id": "poi_station_64fb4ab59317",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,402",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口6",
+        "en": "中正紀念堂站出口6"
+      },
+      "sourceIds": [
+        "103"
+      ],
+      "sourceCoordinates": [
+        121.516543,
+        25.03588
+      ],
+      "snapMetres": 18.3
+    },
+    {
+      "id": "poi_station_8699166b2101",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-197,403",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "龍山寺站出口1／龍山寺站出口2",
+        "en": "龍山寺站出口1／龍山寺站出口2"
+      },
+      "sourceIds": [
+        "207",
+        "208"
+      ],
+      "sourceCoordinates": [
+        121.49953,
+        25.035484
+      ],
+      "snapMetres": 48.9
+    },
+    {
+      "id": "poi_station_b04b863f28c0",
+      "districtId": "6300700",
+      "cellId": "taipei-street-hex-v2:-194,403",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "龍山寺站出口3",
+        "en": "龍山寺站出口3"
+      },
+      "sourceIds": [
+        "209"
+      ],
+      "sourceCoordinates": [
+        121.501622,
+        25.035421
+      ],
+      "snapMetres": 31.4
+    },
+    {
+      "id": "poi_station_e9f7bd42ee6a",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-183,403",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "小南門站出口3／小南門站出口4",
+        "en": "小南門站出口3／小南門站出口4"
+      },
+      "sourceIds": [
+        "107",
+        "108"
+      ],
+      "sourceCoordinates": [
+        121.510988,
+        25.035309
+      ],
+      "snapMetres": 35.7
+    },
+    {
+      "id": "poi_station_e8baa4485bef",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-176,403",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口5",
+        "en": "中正紀念堂站出口5"
+      },
+      "sourceIds": [
+        "102"
+      ],
+      "sourceCoordinates": [
+        121.5170711,
+        25.0352207
+      ],
+      "snapMetres": 23.5
+    },
+    {
+      "id": "poi_station_f08056365c44",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-178,404",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口7",
+        "en": "中正紀念堂站出口7"
+      },
+      "sourceIds": [
+        "104"
+      ],
+      "sourceCoordinates": [
+        121.515983,
+        25.034565
+      ],
+      "snapMetres": 4.9
+    },
+    {
+      "id": "poi_station_374a4cb684ec",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-165,404",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口2",
+        "en": "東門站出口2"
+      },
+      "sourceIds": [
+        "310"
+      ],
+      "sourceCoordinates": [
+        121.527565,
+        25.03422
+      ],
+      "snapMetres": 38.3
+    },
+    {
+      "id": "poi_station_9aa97baba3be",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-164,404",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口1",
+        "en": "東門站出口1"
+      },
+      "sourceIds": [
+        "309"
+      ],
+      "sourceCoordinates": [
+        121.527994,
+        25.034157
+      ],
+      "snapMetres": 32.4
+    },
+    {
+      "id": "poi_station_984545f971f3",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-163,404",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口8",
+        "en": "東門站出口8"
+      },
+      "sourceIds": [
+        "316"
+      ],
+      "sourceCoordinates": [
+        121.528965,
+        25.034074
+      ],
+      "snapMetres": 49.6
+    },
+    {
+      "id": "poi_station_96db7c37cdd3",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-165,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口3",
+        "en": "東門站出口3"
+      },
+      "sourceIds": [
+        "311"
+      ],
+      "sourceCoordinates": [
+        121.527854,
+        25.033676
+      ],
+      "snapMetres": 29.2
+    },
+    {
+      "id": "poi_station_9dac312d1aa5",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-164,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口4",
+        "en": "東門站出口4"
+      },
+      "sourceIds": [
+        "312"
+      ],
+      "sourceCoordinates": [
+        121.528879,
+        25.033646
+      ],
+      "snapMetres": 39.7
+    },
+    {
+      "id": "poi_station_795f5847c4ff",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-163,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口7",
+        "en": "東門站出口7"
+      },
+      "sourceIds": [
+        "315"
+      ],
+      "sourceCoordinates": [
+        121.529678,
+        25.033962
+      ],
+      "snapMetres": 39.6
+    },
+    {
+      "id": "poi_station_382493b8e144",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-162,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口6",
+        "en": "東門站出口6"
+      },
+      "sourceIds": [
+        "314"
+      ],
+      "sourceCoordinates": [
+        121.529957,
+        25.033924
+      ],
+      "snapMetres": 39.6
+    },
+    {
+      "id": "poi_station_e07e38ddcf32",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-157,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安森林公園站出口1／大安森林公園站出口2",
+        "en": "大安森林公園站出口1／大安森林公園站出口2"
+      },
+      "sourceIds": [
+        "271",
+        "272"
+      ],
+      "sourceCoordinates": [
+        121.534442,
+        25.033693
+      ],
+      "snapMetres": 38.1
+    },
+    {
+      "id": "poi_station_dfa933d4dcc8",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-156,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安森林公園站出口4",
+        "en": "大安森林公園站出口4"
+      },
+      "sourceIds": [
+        "274"
+      ],
+      "sourceCoordinates": [
+        121.535292,
+        25.033391
+      ],
+      "snapMetres": 35.8
+    },
+    {
+      "id": "poi_station_65d842d1bacf",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-155,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安森林公園站出口6",
+        "en": "大安森林公園站出口6"
+      },
+      "sourceIds": [
+        "276"
+      ],
+      "sourceCoordinates": [
+        121.535952,
+        25.033654
+      ],
+      "snapMetres": 25.0
+    },
+    {
+      "id": "poi_station_98da35f715a8",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-149,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口2",
+        "en": "大安站出口2"
+      },
+      "sourceIds": [
+        "15"
+      ],
+      "sourceCoordinates": [
+        121.5415899,
+        25.03364917
+      ],
+      "snapMetres": 23.4
+    },
+    {
+      "id": "poi_station_56998bf9e62f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-148,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口1",
+        "en": "大安站出口1"
+      },
+      "sourceIds": [
+        "14"
+      ],
+      "sourceCoordinates": [
+        121.5420001,
+        25.03360186
+      ],
+      "snapMetres": 45.0
+    },
+    {
+      "id": "poi_station_4d8e21c3dd17",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-146,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口6",
+        "en": "大安站出口6"
+      },
+      "sourceIds": [
+        "19"
+      ],
+      "sourceCoordinates": [
+        121.543749,
+        25.034006
+      ],
+      "snapMetres": 30.4
+    },
+    {
+      "id": "poi_station_a4ec4888fc18",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-136,405",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "信義安和站出口1",
+        "en": "信義安和站出口1"
+      },
+      "sourceIds": [
+        "265"
+      ],
+      "sourceCoordinates": [
+        121.552602,
+        25.033377
+      ],
+      "snapMetres": 38.6
+    },
+    {
+      "id": "poi_station_2a5545b8f3a4",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口1／中正紀念堂站出口4",
+        "en": "中正紀念堂站出口1／中正紀念堂站出口4"
+      },
+      "sourceIds": [
+        "101",
+        "98"
+      ],
+      "sourceCoordinates": [
+        121.517599,
+        25.033345
+      ],
+      "snapMetres": 46.5
+    },
+    {
+      "id": "poi_station_e9709852d0ee",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-163,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "東門站出口5",
+        "en": "東門站出口5"
+      },
+      "sourceIds": [
+        "313"
+      ],
+      "sourceCoordinates": [
+        121.529506,
+        25.033564
+      ],
+      "snapMetres": 57.1
+    },
+    {
+      "id": "poi_station_97ed92b42f7a",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-157,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安森林公園站出口3",
+        "en": "大安森林公園站出口3"
+      },
+      "sourceIds": [
+        "273"
+      ],
+      "sourceCoordinates": [
+        121.534882,
+        25.033396
+      ],
+      "snapMetres": 33.4
+    },
+    {
+      "id": "poi_station_a99ffc8276bb",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-156,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安森林公園站出口5",
+        "en": "大安森林公園站出口5"
+      },
+      "sourceIds": [
+        "275"
+      ],
+      "sourceCoordinates": [
+        121.535989,
+        25.033369
+      ],
+      "snapMetres": 41.7
+    },
+    {
+      "id": "poi_station_2e1a046982ce",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-148,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口3",
+        "en": "大安站出口3"
+      },
+      "sourceIds": [
+        "16"
+      ],
+      "sourceCoordinates": [
+        121.54233,
+        25.033241
+      ],
+      "snapMetres": 43.9
+    },
+    {
+      "id": "poi_station_6abb9540fe13",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-147,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口5",
+        "en": "大安站出口5"
+      },
+      "sourceIds": [
+        "18"
+      ],
+      "sourceCoordinates": [
+        121.543719,
+        25.032862
+      ],
+      "snapMetres": 25.1
+    },
+    {
+      "id": "poi_station_be50ee7861f9",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-146,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "大安站出口4",
+        "en": "大安站出口4"
+      },
+      "sourceIds": [
+        "17"
+      ],
+      "sourceCoordinates": [
+        121.5439764,
+        25.0331244
+      ],
+      "snapMetres": 45.0
+    },
+    {
+      "id": "poi_station_f6a681297869",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-137,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "信義安和站出口2",
+        "en": "信義安和站出口2"
+      },
+      "sourceIds": [
+        "266"
+      ],
+      "sourceCoordinates": [
+        121.552332,
+        25.033032
+      ],
+      "snapMetres": 18.0
+    },
+    {
+      "id": "poi_station_de09e895807d",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-136,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "信義安和站出口2A／信義安和站出口3",
+        "en": "信義安和站出口2A／信義安和站出口3"
+      },
+      "sourceIds": [
+        "267",
+        "268"
+      ],
+      "sourceCoordinates": [
+        121.552582,
+        25.032848
+      ],
+      "snapMetres": 43.5
+    },
+    {
+      "id": "poi_station_9165da8b3915",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-135,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "信義安和站出口4／信義安和站出口5",
+        "en": "信義安和站出口4／信義安和站出口5"
+      },
+      "sourceIds": [
+        "269",
+        "270"
+      ],
+      "sourceCoordinates": [
+        121.5534,
+        25.033022
+      ],
+      "snapMetres": 41.9
+    },
+    {
+      "id": "poi_station_51f7a707b51e",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-126,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北101/世貿站出口1",
+        "en": "台北101/世貿站出口1"
+      },
+      "sourceIds": [
+        "260"
+      ],
+      "sourceCoordinates": [
+        121.561671,
+        25.033107
+      ],
+      "snapMetres": 13.7
+    },
+    {
+      "id": "poi_station_17efd65250ab",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-125,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北101/世貿站出口2",
+        "en": "台北101/世貿站出口2"
+      },
+      "sourceIds": [
+        "261"
+      ],
+      "sourceCoordinates": [
+        121.5619435,
+        25.03284073
+      ],
+      "snapMetres": 44.2
+    },
+    {
+      "id": "poi_station_588a067d06b5",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-124,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北101/世貿站出口5",
+        "en": "台北101/世貿站出口5"
+      },
+      "sourceIds": [
+        "264"
+      ],
+      "sourceCoordinates": [
+        121.563292,
+        25.033102
+      ],
+      "snapMetres": 12.4
+    },
+    {
+      "id": "poi_station_6d2c89b28a1d",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-123,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台北101/世貿站出口3／台北101/世貿站出口4",
+        "en": "台北101/世貿站出口3／台北101/世貿站出口4"
+      },
+      "sourceIds": [
+        "262",
+        "263"
+      ],
+      "sourceCoordinates": [
+        121.563646,
+        25.032742
+      ],
+      "snapMetres": 51.8
+    },
+    {
+      "id": "poi_station_6fd3508b426f",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-117,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "象山站出口1",
+        "en": "象山站出口1"
+      },
+      "sourceIds": [
+        "257"
+      ],
+      "sourceCoordinates": [
+        121.569334,
+        25.0330078
+      ],
+      "snapMetres": 5.4
+    },
+    {
+      "id": "poi_station_9e872694ad18",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-115,406",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "象山站出口3",
+        "en": "象山站出口3"
+      },
+      "sourceIds": [
+        "259"
+      ],
+      "sourceCoordinates": [
+        121.57062,
+        25.032974
+      ],
+      "snapMetres": 27.8
+    },
+    {
+      "id": "poi_station_9199d799b982",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,407",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口2",
+        "en": "中正紀念堂站出口2"
+      },
+      "sourceIds": [
+        "99"
+      ],
+      "sourceCoordinates": [
+        121.518261,
+        25.032406
+      ],
+      "snapMetres": 8.2
+    },
+    {
+      "id": "poi_station_d1c91454f5b8",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-176,407",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "中正紀念堂站出口3",
+        "en": "中正紀念堂站出口3"
+      },
+      "sourceIds": [
+        "100"
+      ],
+      "sourceCoordinates": [
+        121.519,
+        25.032281
+      ],
+      "snapMetres": 14.5
+    },
+    {
+      "id": "poi_station_17007c3fa787",
+      "districtId": "6300200",
+      "cellId": "taipei-street-hex-v2:-117,407",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "象山站出口2",
+        "en": "象山站出口2"
+      },
+      "sourceIds": [
+        "258"
+      ],
+      "sourceCoordinates": [
+        121.569921,
+        25.032375
+      ],
+      "snapMetres": 26.2
+    },
+    {
+      "id": "poi_station_31d54a3b37d3",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,414",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口7",
+        "en": "古亭站出口7"
+      },
+      "sourceIds": [
+        "95"
+      ],
+      "sourceCoordinates": [
+        121.5217067,
+        25.02772736
+      ],
+      "snapMetres": 56.6
+    },
+    {
+      "id": "poi_station_c6a9c6fa1382",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-176,414",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口6",
+        "en": "古亭站出口6"
+      },
+      "sourceIds": [
+        "94"
+      ],
+      "sourceCoordinates": [
+        121.522297,
+        25.027537
+      ],
+      "snapMetres": 37.7
+    },
+    {
+      "id": "poi_station_f82b695ecbe5",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-177,415",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口8",
+        "en": "古亭站出口8"
+      },
+      "sourceIds": [
+        "96"
+      ],
+      "sourceCoordinates": [
+        121.521894,
+        25.027056
+      ],
+      "snapMetres": 31.5
+    },
+    {
+      "id": "poi_station_e6d4441ba698",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-176,415",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口5",
+        "en": "古亭站出口5"
+      },
+      "sourceIds": [
+        "93"
+      ],
+      "sourceCoordinates": [
+        121.522873,
+        25.027184
+      ],
+      "snapMetres": 43.6
+    },
+    {
+      "id": "poi_station_2705274ac7d3",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-175,415",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口4",
+        "en": "古亭站出口4"
+      },
+      "sourceIds": [
+        "92"
+      ],
+      "sourceCoordinates": [
+        121.5229835,
+        25.02655858
+      ],
+      "snapMetres": 68.3
+    },
+    {
+      "id": "poi_station_86dfeb1458b1",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-176,416",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口9",
+        "en": "古亭站出口9"
+      },
+      "sourceIds": [
+        "97"
+      ],
+      "sourceCoordinates": [
+        121.522404,
+        25.026798
+      ],
+      "snapMetres": 66.2
+    },
+    {
+      "id": "poi_station_dd14a3f6df3f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-175,416",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口3",
+        "en": "古亭站出口3"
+      },
+      "sourceIds": [
+        "91"
+      ],
+      "sourceCoordinates": [
+        121.523477,
+        25.0259191
+      ],
+      "snapMetres": 61.8
+    },
+    {
+      "id": "poi_station_fbb8b5ce9db3",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-152,416",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "科技大樓站出口1",
+        "en": "科技大樓站出口1"
+      },
+      "sourceIds": [
+        "20"
+      ],
+      "sourceCoordinates": [
+        121.543636,
+        25.026154
+      ],
+      "snapMetres": 23.7
+    },
+    {
+      "id": "poi_station_2d3aaff5d489",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-176,417",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "古亭站出口1／古亭站出口2",
+        "en": "古亭站出口1／古亭站出口2"
+      },
+      "sourceIds": [
+        "89",
+        "90"
+      ],
+      "sourceCoordinates": [
+        121.522973,
+        25.025976
+      ],
+      "snapMetres": 45.1
+    },
+    {
+      "id": "poi_station_a2d9e28c0856",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-153,417",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "科技大樓站出口2",
+        "en": "科技大樓站出口2"
+      },
+      "sourceIds": [
+        "21"
+      ],
+      "sourceCoordinates": [
+        121.543295,
+        25.02586
+      ],
+      "snapMetres": 41.0
+    },
+    {
+      "id": "poi_station_20aa27002ae5",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-143,420",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "六張犁站出口",
+        "en": "六張犁站出口"
+      },
+      "sourceIds": [
+        "22"
+      ],
+      "sourceCoordinates": [
+        121.552737,
+        25.023852
+      ],
+      "snapMetres": 41.6
+    },
+    {
+      "id": "poi_station_969fb04ef0be",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-175,424",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台電大樓站出口4／台電大樓站出口5",
+        "en": "台電大樓站出口4／台電大樓站出口5"
+      },
+      "sourceIds": [
+        "87",
+        "88"
+      ],
+      "sourceCoordinates": [
+        121.527297,
+        25.021018
+      ],
+      "snapMetres": 56.9
+    },
+    {
+      "id": "poi_station_bf4a00ec2b7a",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-174,424",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台電大樓站出口3",
+        "en": "台電大樓站出口3"
+      },
+      "sourceIds": [
+        "86"
+      ],
+      "sourceCoordinates": [
+        121.527849,
+        25.021179
+      ],
+      "snapMetres": 32.8
+    },
+    {
+      "id": "poi_station_4e5f4436b67f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-173,425",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台電大樓站出口2",
+        "en": "台電大樓站出口2"
+      },
+      "sourceIds": [
+        "85"
+      ],
+      "sourceCoordinates": [
+        121.529093,
+        25.020192
+      ],
+      "snapMetres": 25.3
+    },
+    {
+      "id": "poi_station_9d6ff14b701b",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-174,426",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "台電大樓站出口1",
+        "en": "台電大樓站出口1"
+      },
+      "sourceIds": [
+        "84"
+      ],
+      "sourceCoordinates": [
+        121.528577,
+        25.01962
+      ],
+      "snapMetres": 36.3
+    },
+    {
+      "id": "poi_station_f64776710ebf",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-140,428",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "麟光站出口",
+        "en": "麟光站出口"
+      },
+      "sourceIds": [
+        "23"
+      ],
+      "sourceCoordinates": [
+        121.558606,
+        25.018554
+      ],
+      "snapMetres": 53.3
+    },
+    {
+      "id": "poi_station_955ddbed864f",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-171,432",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "公館站出口3",
+        "en": "公館站出口3"
+      },
+      "sourceIds": [
+        "82"
+      ],
+      "sourceCoordinates": [
+        121.534025,
+        25.015421
+      ],
+      "snapMetres": 9.2
+    },
+    {
+      "id": "poi_station_befda8a60ea4",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-172,433",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "公館站出口4",
+        "en": "公館站出口4"
+      },
+      "sourceIds": [
+        "83"
+      ],
+      "sourceCoordinates": [
+        121.533623,
+        25.015148
+      ],
+      "snapMetres": 43.0
+    },
+    {
+      "id": "poi_station_e218ecf13b30",
+      "districtId": "6300300",
+      "cellId": "taipei-street-hex-v2:-171,433",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "公館站出口2",
+        "en": "公館站出口2"
+      },
+      "sourceIds": [
+        "81"
+      ],
+      "sourceCoordinates": [
+        121.534721,
+        25.014718
+      ],
+      "snapMetres": 31.0
+    },
+    {
+      "id": "poi_station_90ac3d66dcb3",
+      "districtId": "6300500",
+      "cellId": "taipei-street-hex-v2:-172,434",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "公館站出口1",
+        "en": "公館站出口1"
+      },
+      "sourceIds": [
+        "80"
+      ],
+      "sourceCoordinates": [
+        121.534377,
+        25.014509
+      ],
+      "snapMetres": 48.0
+    },
+    {
+      "id": "poi_station_3b57fe62a6df",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-151,447",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "辛亥站出口",
+        "en": "辛亥站出口"
+      },
+      "sourceIds": [
+        "24"
+      ],
+      "sourceCoordinates": [
+        121.557021,
+        25.005119
+      ],
+      "snapMetres": 50.3
+    },
+    {
+      "id": "poi_station_61a70349be10",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-175,451",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬隆站出口4",
+        "en": "萬隆站出口4"
+      },
+      "sourceIds": [
+        "79"
+      ],
+      "sourceCoordinates": [
+        121.538572,
+        25.002676
+      ],
+      "snapMetres": 10.1
+    },
+    {
+      "id": "poi_station_dee57815cff4",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-175,452",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬隆站出口3",
+        "en": "萬隆站出口3"
+      },
+      "sourceIds": [
+        "78"
+      ],
+      "sourceCoordinates": [
+        121.539195,
+        25.002215
+      ],
+      "snapMetres": 36.3
+    },
+    {
+      "id": "poi_station_6179bd59325a",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-176,453",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬隆站出口1",
+        "en": "萬隆站出口1"
+      },
+      "sourceIds": [
+        "76"
+      ],
+      "sourceCoordinates": [
+        121.538896,
+        25.001367
+      ],
+      "snapMetres": 44.7
+    },
+    {
+      "id": "poi_station_121a192036fe",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-175,453",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬隆站出口2",
+        "en": "萬隆站出口2"
+      },
+      "sourceIds": [
+        "77"
+      ],
+      "sourceCoordinates": [
+        121.5395617,
+        25.0015087
+      ],
+      "snapMetres": 29.1
+    },
+    {
+      "id": "poi_station_cc6f4f4a87d4",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-155,456",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬芳醫院站出口",
+        "en": "萬芳醫院站出口"
+      },
+      "sourceIds": [
+        "25"
+      ],
+      "sourceCoordinates": [
+        121.557737,
+        24.999383
+      ],
+      "snapMetres": 42.7
+    },
+    {
+      "id": "poi_station_8f2bd2ccf644",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-143,457",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "萬芳社區站出口",
+        "en": "萬芳社區站出口"
+      },
+      "sourceIds": [
+        "26"
+      ],
+      "sourceCoordinates": [
+        121.5684087,
+        24.99858101
+      ],
+      "snapMetres": 36.3
+    },
+    {
+      "id": "poi_station_cd054f69b526",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-137,457",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "木柵站出口",
+        "en": "木柵站出口"
+      },
+      "sourceIds": [
+        "27"
+      ],
+      "sourceCoordinates": [
+        121.573417,
+        24.998174
+      ],
+      "snapMetres": 39.0
+    },
+    {
+      "id": "poi_station_080c54dedc73",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-130,457",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "動物園站出口1",
+        "en": "動物園站出口1"
+      },
+      "sourceIds": [
+        "28"
+      ],
+      "sourceCoordinates": [
+        121.579942,
+        24.9982988
+      ],
+      "snapMetres": 16.7
+    },
+    {
+      "id": "poi_station_b24ea272d894",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-131,458",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "動物園站出口2",
+        "en": "動物園站出口2"
+      },
+      "sourceIds": [
+        "29"
+      ],
+      "sourceCoordinates": [
+        121.579321,
+        24.997971
+      ],
+      "snapMetres": 9.8
+    },
+    {
+      "id": "poi_station_cd15148f3adb",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-179,465",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "景美站出口2",
+        "en": "景美站出口2"
+      },
+      "sourceIds": [
+        "74"
+      ],
+      "sourceCoordinates": [
+        121.541517,
+        24.993069
+      ],
+      "snapMetres": 31.8
+    },
+    {
+      "id": "poi_station_e9d087ca25f7",
+      "districtId": "6300800",
+      "cellId": "taipei-street-hex-v2:-180,466",
+      "kind": "transit",
+      "wonderId": null,
+      "syntheticVenue": false,
+      "sourcePlace": true,
+      "placeType": "station",
+      "name": {
+        "zh-TW": "景美站出口1／景美站出口3",
+        "en": "景美站出口1／景美站出口3"
+      },
+      "sourceIds": [
+        "73",
+        "75"
+      ],
+      "sourceCoordinates": [
+        121.5406932,
+        24.99213264
+      ],
+      "snapMetres": 43.1
+    }
+  ],
+  "audit": {
+    "count": 318,
+    "rejected": {
+      "outside-taipei": 110
+    },
+    "byType": {
+      "market": 47,
+      "nightmarket": 41,
+      "station": 230
+    },
+    "byDistrict": {
+      "6300100": 23,
+      "6300200": 22,
+      "6300300": 55,
+      "6300400": 37,
+      "6300500": 55,
+      "6300600": 20,
+      "6300700": 19,
+      "6300800": 18,
+      "6300900": 17,
+      "6301000": 17,
+      "6301100": 12,
+      "6301200": 23
+    }
+  },
+  "revision": "0c1f7f12cf74d46a1b2a0d225abd47b516e087d56a444aad0158eaaf13453f70"
+}

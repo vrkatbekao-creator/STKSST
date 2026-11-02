@@ -1,0 +1,31 @@
+選戰騎士團：首都篇 / Campaign Knights: Capital Edition
+圖資署名 / Map credits
+
+道路與建物 / Roads and buildings
+© OpenStreetMap contributors. Derived databases licensed under ODbL 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+Full source and derivative notices: ROAD-DATA-LICENSE.txt,
+LANDSCAPE-DATA-LICENSE.txt (in this same directory).
+
+衛星地表 / Satellite surface
+produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus
+Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European
+Union and ESA; all rights reserved
+https://registry.opendata.aws/copernicus-dem/
+Full notice: LANDSCAPE-DATA-LICENSE.txt
+
+臺北市區界圖 / Taipei district boundaries
+臺北市政府民政局 / Taipei City Government Department of Civil Affairs
+https://data.gov.tw/dataset/121199
+
+臺北市河流 / Taipei rivers
+臺北市政府工務局水利工程處 / Taipei Hydraulic Engineering Office
+https://data.gov.tw/dataset/143899
+
+臺北市橋梁資訊 / Taipei bridges
+臺北市政府工務局新建工程處 / Taipei New Construction Office
+https://data.taipei/dataset/detail?id=866a9982-0a63-421f-b120-9144fc6ce732
+
+政府資料開放授權條款第 1 版 / Open Government Data License, version 1.0
+https://data.gov.tw/license

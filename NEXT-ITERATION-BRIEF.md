@@ -2,6 +2,8 @@
 
 2026-11-03。實作契約 CITY-OUTREACH-SPEC.md 優先於舊點數／schema 描述：318 官方來源場地、不均分各區、任意可走道路掃街、600m 街區探索與飽和、同格每日兩次、3/4 AP 接駁共用每日一次；步行 200 加權公尺／AP、日夜共用。schema 5 讀舊 1–4，不改啟動槽 bytes、不補資源。地圖色塊不是勢力，常駐圖例，清單搜尋／類型／分批六張，三方 AI 共用規則。已驗 check、171 tests、build、三個完整 28 日固定策略局與局部 Chrome 雙語／窄版／日夜；實際數據及限制見 QA.md、artifacts/city-outreach-v0170.json。路網及原分區 SHA 不變，只新增 places 套件；重建須 data:package。南門市場來源舊位置更正保留證據。
 
+已發布 v0.17.0：來源 1035936、gh-pages 7d9954f，RELEASE 與全部 90 個成品 URL 已驗證。About／README 已同步，正式站唯讀續玩保留舊 AP／活動，詳 QA.md、artifacts/pages-http-v0170.json。後續 QA 文件提交不代表 runtime 重新建置。
+
 接續仍以真人公開測試調整平衡；原稿缺口／完整相容性沿用下方 pending，不能以本次局部驗證宣稱全部完成。不要重啟舊排程。發布方式仍為 gh-pages 成品分支，main 不自動建置；完成發布後查 RELEASE.json 對照 sourceCommit。
 
 # 公開原型已上線：GitHub Pages／MIT

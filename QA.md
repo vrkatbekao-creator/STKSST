@@ -12,6 +12,10 @@ check、171/171 tests、普通 build 通過；新增 9 項場地／遞減／接�
 
 畫面：design/qa/city-outreach/desktop-zh-night.jpg、outreach-zh-night.jpg、map-zh-night.jpg、narrow-en-night.jpg。機器摘要 artifacts/city-outreach-v0170.json。全硬體／其他瀏覽器／完整螢幕閱讀器與 WCAG 仍 pending，真人平衡由公開測試處理。Pages 發布結果在本節後續追加，不能用本機畫面冒充正式站驗收。
 
+正式發布：main／開發分支來源提交 1035936，gh-pages 成品 7d9954f，[Pages 建置 41547872440](https://github.com/vrkatbekao-creator/STKSST/actions/runs/41547872440) 成功。正式站 RELEASE.json 為 v0.17.0／sourceCommit 103593639e6b7a3d1dec66d97a771216396e6b5d，全部 90 個成品檔案 HEAD 200（54,850,375 bytes，另加 RELEASE.json）；紀錄 artifacts/pages-http-v0170.json。Repo About／README 同為 v0.17.0，沒有變更存檔來源或擴大 OAuth scope。
+
+正式 HTTPS Chrome 唯讀續玩槽 1：原橙方第 1 夜 AP 13、XP 2、物資及舊活動保留，內湖區 19 個新清單點（17 來源＋Wonder／舞台），原 Wonder 今日 1/2，同路段每日次數遷移為 1/2，已觸及一街區／一區。該瀏覽器原有相容地圖偏好保持，SVG 圖層可見、canvas=0 是相容模式，不冒稱 WebGL 已通過；來源圖片無載入失敗、console error 為空。沒有下達正式遊戲行動、覆寫／新建或刪除任何槽；另有槽 2 白方第 5 天與槽 3 空白，均未操作。最後重新載入回繁中首頁、viewport reset，保留網站供玩家測試。正式畫面 design/qa/city-outreach/live-v0170.jpg。後續 QA 文件提交不修改已發布 runtime；RELEASE 的 sourceCommit 保留對應可玩的成品來源。
+
 # v0.16.1 道路移動 AP 修正
 
 2026-11-02。依玩家回報降低過高步行成本：200 加權公尺／AP，階梯 +50%、雨天 +25%、未應變施工 +50%，加算路段負擔再對整段取整。三方共用、預覽／正式命令／活動組合／AI 同一公式；不重發 AP 或改路網、380 公尺舊格規則及 schema 4 資料契約。晴雨說明與文案產生器同步。使用者後續已選擇保留共用 AP，接續擴充新街區收益／同點遞減與真實活動場地；本段是前置成本修正檢查點。

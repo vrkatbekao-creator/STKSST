@@ -156,5 +156,29 @@
     "base": "/STKSST/",
     "notices": "present",
     "developmentFiles": "excluded"
+  },
+  "publication": {
+    "site": "https://vrkatbekao-creator.github.io/STKSST/",
+    "sourceCommit": "103593639e6b7a3d1dec66d97a771216396e6b5d",
+    "deploymentCommit": "7d9954f267481a2a28c2f4633bdd230d80a90806",
+    "workflow": "https://github.com/vrkatbekao-creator/STKSST/actions/runs/41547872440",
+    "status": "success",
+    "HTTP": {
+      "files": 90,
+      "errors": []
+    },
+    "aboutVersion": "0.17.0",
+    "liveBrowser": {
+      "previousOrangeSaveAP": 13,
+      "neihuLocations": 19,
+      "outreachToday": 1,
+      "outreachDistricts": 1,
+      "existingVectorPreferencePreserved": true,
+      "failedImages": [],
+      "consoleErrors": [],
+      "commandsIssued": 0,
+      "slotsModified": false,
+      "viewportReset": true
+    }
   }
 }

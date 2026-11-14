@@ -1,0 +1,1 @@
+import{a as e,i as t,n,t as r}from"./jsx-runtime-CWwY09a0.js";var i=r();function a(){let{t:r,i18n:a}=e();return(0,i.jsx)(`select`,{"aria-label":r(`language`),value:t(a.language)??`zh-TW`,onChange:e=>void a.changeLanguage(e.target.value),children:Object.entries(n).map(([e,t])=>(0,i.jsx)(`option`,{value:e,lang:e,children:t},e))})}export{a as t};

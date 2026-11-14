@@ -1,1 +1,0 @@
-import{n as e}from"./rust-routing-d17hJUEW.js";const t=e((e,t=[])=>self.postMessage(e,{transfer:t}));self.addEventListener(`message`,e=>void t(e.data));

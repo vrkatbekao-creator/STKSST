@@ -1,0 +1,30 @@
+TAIPEI FACILITY SNAPSHOT AND GAME ROAD ANCHORS / 臺北場地資料與遊戲道路錨點
+
+Original facility names and coordinates:
+Taipei City Market Administration Office / 臺北市市場處
+https://data.gov.tw/dataset/121593  Traditional markets
+https://data.gov.tw/dataset/121594  Street-vendor concentration areas
+Taipei Rapid Transit Corporation / 臺北大眾捷運股份有限公司
+https://data.taipei/dataset/detail?id=cfa4778c-62c1-497b-b704-756231de348b
+Metro station entrances (not station counts or measured pedestrian traffic).
+
+Original datasets: Open Government Data License, version 1.0
+https://data.gov.tw/license
+Snapshot retrieved 2026-11-02. Resource publication dates are not inferred
+from metadata update dates. Source URLs, byte hashes and encoding are recorded
+in taipei-places-v1.json and the source repository's design/assets/places-source.
+
+Changes: coordinate parsing (including DMS), projection to EPSG:3826,
+Taipei-city filtering, same-district snapping to a walkable road anchor within
+180 metres, grouping same-kind facilities sharing an anchor, stable game IDs.
+Source graph: OpenStreetMap contributors, ODbL 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+Derived road-anchor associations retain ODbL obligations. Full road-source
+and derivative database information: ROAD-DATA-LICENSE.txt.
+
+This is a frozen, incomplete catalogue of public-source facilities. A point
+does not prove current opening hours, measured crowds, access permission or
+approval for campaigning. Unprovided English proper names retain source names.
+Game outreach effects are fictional and do not model real voter preferences.
+The project's software MIT licence does not replace these data terms.

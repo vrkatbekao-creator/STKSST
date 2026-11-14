@@ -1,0 +1,20 @@
+Taipei vehicle routing data / 台北車行路網
+Copyright OpenStreetMap contributors. Derived vehicle and connector databases
+are available under the Open Data Commons Open Database License (ODbL) 1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+
+Source: Geofabrik Taiwan OSM extract, 2026-10-29T21:21:26Z.
+https://download.geofabrik.de/asia/taiwan-261029.osm.pbf
+Changes: selected the Taipei-area motor vehicle network, classified game
+access and directions, packaged turn metadata, and matched walking nodes to
+vehicle boarding and alighting nodes. The game data is not live navigation.
+
+Download the derived databases in ../alpha-data/ alongside this notice:
+vehicle-graph-prototype-v3.bin.gz
+vehicle-graph-prototype-v1.meta.json.gz
+vehicle-connectors-prototype-v1.json.gz
+
+Source hashes and scripts:
+https://github.com/vrkatbekao-creator/STKSST/blob/main/VEHICLE-CANVASSING-HANDOFF.md
+The game's code and artwork are governed by their own license terms.

@@ -1,0 +1,1 @@
+function e(e){return e.today>=2?`c_progressCapped`:e.today?`c_progressToday`:e.completed?`c_progressPast`:e.arrived?`c_progressArrived`:`c_progressNone`}export{e as t};

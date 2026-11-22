@@ -2,7 +2,7 @@
 import type {Campaign,Team} from './campaign.ts';
 import type {VehiclePlanContext} from './campaign-vehicle-plans.ts';
 import type {CampaignVehicleState} from './campaign-vehicle-state.ts';
-import {automatedFactionTurn,campaignCommand,interactionCost} from './campaign.ts';
+import {automatedFactionTurn,campaignCommand,actionCost} from './campaign.ts';
 import {vehicleActive} from './campaign-vehicle-state.ts';
 import {chooseAiVehicleStop} from './campaign-vehicle-ai.ts';
 import {previewCampaignVehicleLeg} from './campaign-vehicle-plans.ts';
@@ -33,7 +33,7 @@ export function automatedVehicleFactionTurn(original:Campaign,vehicle:CampaignVe
  },1);
  if(choice){
   const committedContext={...context,planLeg:()=>plans.get(choice.cellId)??null};
-  const fee=interactionCost('canvass'),reserve={ap:fee.ap,materials:fee.materials+recruitmentReserve};
+  const fee=actionCost(original,{type:'canvass',unitId:actor.id},team),reserve={ap:fee.ap,materials:fee.materials+recruitmentReserve};
   const trip=mode==='motorcade'?executeCampaignMotorcade(original,team,actor.id,choice.cellId,faction.journal.ledger,faction.exposure,committedContext,options.fragmentsForRoute!,reserve):
    executeCampaignDrive(original,team,actor.id,choice.cellId,faction.journal.ledger,committedContext,reserve);
   if('journey' in trip&&trip.journey){const exposure='exposure' in trip?trip.exposure:faction.exposure;

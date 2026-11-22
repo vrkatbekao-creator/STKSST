@@ -8,7 +8,7 @@ import {vehicleTurnPolicy} from './vehicle-turn-policy.ts';
 import {projectVehiclePoint,vehiclePointDistrict,vehicleRouteFragments} from './vehicle-geometry.ts';
 import {adapted} from './campaign-events.ts';
 import type {VehicleSaveContext} from './campaign-vehicle-save.ts';
-import {streetCellMap,routingEdges} from './campaign-map.ts';
+import {allCells,routingEdges} from './campaign-map.ts';
 import {replayVehicleExposure} from './campaign-vehicle-replay.ts';
 
 const obj=(value:unknown):value is Record<string,any>=>!!value&&typeof value==='object'&&!Array.isArray(value);
@@ -47,7 +47,7 @@ export function createVehicleRuntime(revision:string,graph:VehicleGraphColumns,c
 /** The same authenticated graph and turn policy must be used for execution and save replay. */
 export function createVehicleSaveContext(runtime:VehicleRuntime,graph:VehicleGraphColumns,
  connectors:ReadonlyMap<number,readonly number[]>,districts:readonly CoverageDistrict[]):VehicleSaveContext{
- const cellRoadNode=new Map([...streetCellMap.values()].filter(c=>c.roadNode!==undefined).map(c=>[c.id,c.roadNode!]));
+ const cellRoadNode=new Map([...allCells.values()].filter(c=>c.roadNode!==undefined).map(c=>[c.id,c.roadNode!]));
  return {revision:runtime.revision,journalContext:(game,team)=>({revision:runtime.revision,day:game.day,phase:game.phase,team,
   unitIds:game.units.filter(u=>u.team===team).map(u=>u.id),graph,walkingEdges:routingEdges,cellRoadNode,connectors,
   allowTurn:runtime.contextFor(game,team).allowTurn}),verifyExposure:(game,team,state)=>replayVehicleExposure(game,team,state,graph,districts)};

@@ -25,7 +25,7 @@ export function previewCampaignVehicleLeg(g:Campaign,u:CampaignUnit,destinationC
  const destinations=campaignBoardingRoutes(g,actor,destinationCell,context.connectors,'fromVehicle');
  if(!origins.length||!destinations.length)return null;
  const unit=ledger.units[actor.id]??{drive:0,motorcade:0};
- const options:VehicleLegOptions={mode,origins,destinations,ap:actor.ap,
+ const options:VehicleLegOptions={sharedWalk:g.apRules==='golden-week',previousWalkedEffort:actor.walkedEffort??0,previousWalkCredit:actor.walkCredit??0,mode,origins,destinations,ap:actor.ap,
   materials:g.resources[actor.team].materials-reserve.materials,reservedAp:reserve.ap,
   previousWeightedQuarterMetres:unit[mode],previousTeamQuarterMetres:ledger.actualQuarterMetres,
   allowTurn:context.allowTurn,edgeWeightQuarters:context.edgeWeightQuarters,roadConditions:context.roadConditions};

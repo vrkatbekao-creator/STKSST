@@ -7,7 +7,7 @@ import {mapFor,streetCellMap,sourcePlaces,placeRevision,approachCells} from '../
 import {outreachQuote,touchOutreach,sectorKey,initialOutreach} from '../src/game/campaign-outreach.ts';
 import {encodeSave,decodeSave,validSession,SAVE_KEY} from '../src/game/campaign-save.ts';
 import {createCampaignStore} from '../src/game/campaign-store.ts';
-const fresh=()=>{const g=initialCampaign(0,'blue','streets-v2');g.news='clear';g.surprise=null;return g;};
+const fresh=(rules='golden-week')=>{const g=initialCampaign(0,'blue','streets-v2',rules);g.news='clear';g.surprise=null;return g;};
 const actor=g=>g.units.find(u=>u.id==='blue1');
 const session=g=>({game:g,selected:'blue1',districtId:mapFor(g).cells.get(actor(g).cellId).districtId,view:'street'});
 const act=(g,cmd)=>{const out=campaignCommand(g,{unitId:'blue1',...cmd});assert.equal(out.error,undefined);return out.game;};
@@ -16,13 +16,13 @@ const rehash=save=>{const {checksum:_,...data}=save,raw=JSON.stringify(data);let
 test('official places have multiple uneven district counts, byte-traceable sources and walkable same-district anchors',()=>{
  const data=JSON.parse(readFileSync(new URL('../src/data/taipei-places.json',import.meta.url),'utf8'));assert.equal(data.revision,placeRevision);assert.equal(sourcePlaces.length,318);assert.deepEqual(data.audit.byType,{market:47,nightmarket:41,station:230});assert.ok(new Set(Object.values(data.audit.byDistrict)).size>1);assert.ok(Object.values(data.audit.byDistrict).every(n=>n>1));
  for(const source of data.sources){const bytes=readFileSync(new URL(`../design/assets/places-source/${source.file}`,import.meta.url));assert.equal(createHash('sha256').update(bytes).digest('hex'),source.sha256);assert.equal(source.licence,'Open Government Data License 1.0');}
- for(const n of sourcePlaces){const c=streetCellMap.get(n.cellId);assert.ok(c.walkable);assert.equal(c.districtId,n.districtId);assert.ok(n.snapMetres<=180);assert.ok(n.name['zh-TW']&&n.name.en);assert.equal(n.syntheticVenue,false);}
+ for(const n of sourcePlaces){const c=streetCellMap.get(n.cellId);assert.ok(c.walkable);assert.equal(c.districtId,n.districtId);assert.ok(n.snapMetres<=225);assert.ok(n.name['zh-TW']&&n.name.en);assert.equal(n.syntheticVenue,false);}
  const nanmen=sourcePlaces.find(n=>n.name['zh-TW'].includes('南門市場'));assert.equal(nanmen.districtId,'6300500');assert.ok(nanmen.locationCorrections.length);assert.ok(JSON.stringify(nanmen.locationCorrections).includes('BEF065E68FF7E843'));
 });
 
 test('street canvassing works away from fixed sites and shares AP, material, XP and sector rules',()=>{
  let g=fresh(),u=actor(g);const occupied=new Set(g.units.map(v=>v.cellId));const c=[...streetCellMap.values()].find(c=>c.walkable&&!occupied.has(c.id)&&!nearbyNodes(g,{...u,cellId:c.id}).length);assert.ok(c);u.cellId=c.id;
- const before=structuredClone(g),quote=outreachQuote(g,'blue',c.id);g=act(g,{type:'streetCanvass'});assert.equal(actor(g).ap,12);assert.equal(g.resources.blue.materials,35);assert.equal(actor(g).career.xp,2);assert.equal(g.support[c.districtId].blue-before.support[c.districtId].blue,quote.points);assert.equal(g.seed,before.seed);assert.equal(g.trail.blue.walks.length,0);assert.ok(validSession(session(g)));assert.deepEqual(before.outreach,initialOutreach());
+ const before=structuredClone(g),quote=outreachQuote(g,'blue',c.id);g=act(g,{type:'streetCanvass'});assert.equal(actor(g).ap,14);assert.equal(g.resources.blue.materials,35);assert.equal(actor(g).career.xp,2);assert.equal(g.support[c.districtId].blue-before.support[c.districtId].blue,quote.points);assert.equal(g.seed,before.seed);assert.equal(g.trail.blue.walks.length,0);assert.ok(validSession(session(g)));assert.deepEqual(before.outreach,initialOutreach());
 });
 
 test('a road contact and nearby fixed-site contact share the same two-contact daily ceiling',()=>{
@@ -39,12 +39,12 @@ test('sector saturation crosses adjacent cells, rewards new districts once and r
 
 test('place transfers work within a district, cost four AP and never fabricate walking histories',()=>{
  const g=fresh(),u=actor(g),district=streetCellMap.get(u.cellId).districtId,n=sourcePlaces.find(n=>n.districtId===district&&siteTransferDestination(g,u,n.id));assert.ok(n);const destination=siteTransferDestination(g,u,n.id).id;
- const moved=act(g,{type:'siteTransfer',nodeId:n.id});assert.equal(actor(moved).cellId,destination);assert.equal(actor(moved).ap,10);assert.equal(moved.resources.blue.materials,32);assert.equal(actor(moved).transportDay,1);assert.deepEqual(moved.trail.blue.walks,g.trail.blue.walks);assert.ok(moved.trail.blue.arrivedCells.includes(destination));assert.equal(campaignCommand(moved,{type:'siteTransfer',unitId:'blue1',nodeId:n.id}).error,'c_errorTransport');assert.ok(validSession(session(moved)));
+ const moved=act(g,{type:'siteTransfer',nodeId:n.id});assert.equal(actor(moved).cellId,destination);assert.equal(actor(moved).ap,11);assert.equal(moved.resources.blue.materials,32);assert.equal(actor(moved).transportDay,1);assert.deepEqual(moved.trail.blue.walks,g.trail.blue.walks);assert.ok(moved.trail.blue.arrivedCells.includes(destination));assert.equal(campaignCommand(moved,{type:'siteTransfer',unitId:'blue1',nodeId:n.id}).error,'c_errorTransport');assert.ok(validSession(session(moved)));
  assert.deepEqual(actionCost(g,{type:'transport'}),{ap:3,materials:4});assert.deepEqual(actionCost(initialCampaign(),{type:'transport'}),{ap:6,materials:4});const locked=structuredClone(g);actor(locked).guardedUntil=3;assert.equal(campaignCommand(locked,{type:'siteTransfer',unitId:'blue1',nodeId:n.id}).game,locked);
 });
 
 test('schema 4 loads without rewriting bytes, adding only neutral sites and known outreach coverage',()=>{
- let g=fresh();const original=mapFor(g).nodes.find(n=>n.kind==='wonder'&&n.cellId===actor(g).cellId);g=act(g,{type:'canvass',nodeId:original.id});const save=encodeSave(session(g));save.version=4;save.rules='0.16.0';delete save.placeRevision;delete save.session.game.outreach;for(const n of sourcePlaces)delete save.session.game.nodeState[n.id];const oldGame=structuredClone(save.session.game),raw=rehash(save),writes=[],port={getItem:k=>k===SAVE_KEY?raw:null,setItem:(k,v)=>writes.push([k,v])};
+ let g=fresh('legacy');const original=mapFor(g).nodes.find(n=>n.kind==='wonder'&&n.cellId===actor(g).cellId);g=act(g,{type:'canvass',nodeId:original.id});const save=encodeSave(session(g));save.version=4;save.rules='0.16.0';delete save.placeRevision;delete save.session.game.outreach;for(const n of sourcePlaces)delete save.session.game.nodeState[n.id];const oldGame=structuredClone(save.session.game),raw=rehash(save),writes=[],port={getItem:k=>k===SAVE_KEY?raw:null,setItem:(k,v)=>writes.push([k,v])};
  const store=createCampaignStore(port,'streets-v2');store.getState().resume();const restored=store.getState().game;assert.equal(writes.length,0);assert.deepEqual(restored.units,oldGame.units);assert.deepEqual(restored.resources,oldGame.resources);assert.deepEqual(restored.support,oldGame.support);assert.equal(restored.seed,oldGame.seed);assert.deepEqual(restored.trail,oldGame.trail);for(const [id,state] of Object.entries(oldGame.nodeState))assert.deepEqual(restored.nodeState[id],state);assert.equal(Object.keys(restored.nodeState).length,378);assert.equal(restored.outreach.blue.partial,true);assert.equal(restored.outreach.blue.seenSectors.length,1);assert.equal(outreachQuote(restored,'blue',actor(restored).cellId).freshDistrict,false);assert.equal(outreachQuote(restored,'blue',original.cellId).count,1);assert.ok(validSession(session(restored)));
 });
 
@@ -54,11 +54,11 @@ test('invalid outreach counters and catalogue revisions cannot enter a current s
 });
 
 test('failed road outreach cannot spend resources, reveal rewards or mutate prior snapshots',()=>{
- for(const setup of [g=>actor(g).ap=1,g=>g.resources.blue.materials=0]){const g=fresh();setup(g);const before=structuredClone(g),out=campaignCommand(g,{type:'streetCanvass',unitId:'blue1'});assert.ok(out.error);assert.equal(out.game,g);assert.deepEqual(g,before);}
+ for(const setup of [g=>actor(g).ap=0,g=>g.resources.blue.materials=0]){const g=fresh();setup(g);const before=structuredClone(g),out=campaignCommand(g,{type:'streetCanvass',unitId:'blue1'});assert.ok(out.error);assert.equal(out.game,g);assert.deepEqual(g,before);}
  const g=fresh();assert.equal(campaignCommand(g,{type:'streetCanvass',unitId:'green1'}).error,'c_errorUnit');const old=structuredClone(g),out=act(g,{type:'streetCanvass'});assert.deepEqual(g,old);assert.notEqual(out.outreach,g.outreach);assert.ok(!Object.values(out.logs[0].values).some(v=>typeof v==='number'&&v===14));
 });
 
 test('three factions use the same road-contact rule and AI can canvass ordinary roads',()=>{
- const g=fresh();for(const team of ['blue','green','white']){const u=g.units.find(u=>u.id===`${team}1`),out=campaignCommand(g,{type:'streetCanvass',unitId:u.id},team);assert.equal(out.error,undefined);assert.equal(out.game.units.find(v=>v.id===u.id).ap,u.ap-2);assert.equal(out.game.outreach[team].districts.length,1);}
+ const g=fresh();for(const team of ['blue','green','white']){const u=g.units.find(u=>u.id===`${team}1`),out=campaignCommand(g,{type:'streetCanvass',unitId:u.id},team);assert.equal(out.error,undefined);assert.equal(out.game.units.find(v=>v.id===u.id).ap,u.ap-1);assert.equal(out.game.outreach[team].districts.length,1);}
  const u=actor(g),occupied=new Set(g.units.map(v=>v.cellId));u.cellId=[...streetCellMap.values()].find(c=>c.walkable&&!occupied.has(c.id)&&!nearbyNodes(g,{...u,cellId:c.id}).length).id;const ai=automatedFactionTurn(g,'blue');assert.ok(ai.logs.some(l=>l.values.action==='streetCanvass'));assert.ok(ai.outreach.blue.seenSectors.length>0);assert.ok(validSession(session(ai)));
 });

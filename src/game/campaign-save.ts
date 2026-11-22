@@ -18,7 +18,7 @@ export const isSaveSlot=(slot:unknown):slot is SaveSlot=>SAVE_SLOTS.includes(slo
 export function saveKey(slot:SaveSlot=1){if(!isSaveSlot(slot))throw new Error('save-slot');return slot===1?SAVE_KEY:`${SAVE_KEY}-${slot}`;}
 export const SAVE_VERSION=5;
 export type Session={game:Campaign;selected:string;districtId:string;view:'city'|'street'};
-export type SavedCampaign={version:1|2|3|4|5;rules:'0.5.0'|'0.6.0'|'0.10.0'|'0.16.0'|'0.17.0';map:'taipei-hex-v1'|'taipei-street-hex-v2';mapRevision?:string;placeRevision?:string;savedAt:string;session:Session;checksum:number};
+export type SavedCampaign={version:1|2|3|4|5;rules:'0.5.0'|'0.6.0'|'0.10.0'|'0.16.0'|'0.17.0';map:'taipei-hex-v1'|'taipei-street-hex-v2'|'taipei-street-hex-v3';mapRevision?:string;placeRevision?:string;savedAt:string;session:Session;checksum:number};
 export type SaveError='c_saveUnavailable'|'c_saveInvalid'|'c_saveIncompatible';
 export type StoragePort={getItem:(key:string)=>string|null;setItem:(key:string,value:string)=>void};
 type Obj=Record<string,any>;
@@ -33,7 +33,7 @@ const list=(v:unknown,valid:(value:any)=>boolean,max=100)=>Array.isArray(v)&&v.l
 const uniqueList=(v:unknown,keys:string[])=>list(v,x=>typeof x==='string'&&keys.includes(x),keys.length)&&new Set(v as string[]).size===(v as string[]).length;
 const support=(v:unknown)=>exactKeys(v,areaIds)&&areaIds.every(id=>teamValues((v as Obj)[id],n=>num(n)));
 const snapshot=(v:any)=>obj(v)&&integer(v.releasedDay,2,28)&&integer(v.asOfDay,1,27)&&v.asOfDay===v.releasedDay-1&&support(v.support);
-const log=(v:any)=>obj(v)&&oneOf(v.key,['c_logStart','c_logAction','c_logSurge','c_logWonder','c_logSettlement','c_logNight','c_logFinal','c_logPoll','c_breaking','c_exclusive'])&&obj(v.values)&&Object.keys(v.values).length<=12&&Object.values(v.values).every(x=>typeof x==='string'&&x.length<=200||num(x,-1e9));
+const log=(v:any)=>obj(v)&&oneOf(v.key,['gw_logNight','c_logStart','c_logAction','c_logSurge','c_logWonder','c_logSettlement','c_logNight','c_logFinal','c_logPoll','c_breaking','c_exclusive'])&&obj(v.values)&&Object.keys(v.values).length<=12&&Object.values(v.values).every(x=>typeof x==='string'&&x.length<=200||num(x,-1e9));
 const checksum=(s:string)=>{let hash=2166136261;for(let i=0;i<s.length;i++)hash=Math.imul(hash^s.charCodeAt(i),16777619);return hash>>>0;};
 export function validSession(value:unknown,oldNodes=false):value is Session{
  if(!obj(value)||!obj(value.game))return false;
@@ -41,14 +41,20 @@ export function validSession(value:unknown,oldNodes=false):value is Session{
  // Vehicle state requires the independently verified schema-6 codec.
  if(g.vehicle!==undefined)return false;
  if(g.movementProfile!==undefined&&!oneOf(g.movementProfile,['legacy-hex','streets-v2']))return false;
+ if(g.apRules!==undefined&&g.apRules!=='golden-week'||g.streetGrid!==undefined&&g.streetGrid!==300||Boolean(g.streetGrid===300)!==Boolean(g.apRules==='golden-week')||g.streetGrid===300&&g.movementProfile!=='streets-v2')return false;
+ if(g.apRules==='golden-week'?!obj(g.hqTokens)||Object.keys(g.hqTokens).length!==3||!teamValues(g.hqTokens,n=>integer(n,0,2)):g.hqTokens!==undefined)return false;
  const {cells,nodes:activeNodes}=mapFor(g);const nodeIds=(oldNodes?nodes:activeNodes).map(n=>n.id);
  if(!oneOf(g.playerTeam,teams)||!integer(g.day,1,28)||!oneOf(g.phase,['day','night'])||!integer(g.seed,0,0xffffffff)||!oneOf(g.news,['rain','market','volunteers','clear'])||!integer(g.actions))return false;
  if(!teamValues(g.commanders,x=>oneOf(x,['jiang','shen','huang']))||!teamValues(g.resources,x=>obj(x)&&num(x.materials)&&integer(x.volunteers,0,6))||!support(g.support))return false;
  if(!Array.isArray(g.units)||g.units.length<9||g.units.length>21||new Set(g.units.map((u:any)=>u?.id)).size!==g.units.length)return false;
  for(const team of teams){const roster=g.units.filter((u:any)=>obj(u)&&u.team===team);if(roster.length<3||roster.length>7||!['heavy','ranged','scout'].every(role=>roster.some((u:any)=>u.role===role&&typeof u.id==='string'&&Number(u.id.slice(-1))<=3)))return false;for(let i=1;i<=roster.length;i++)if(!roster.some((u:any)=>u.id===`${team}${i}`))return false;}
  for(const u of g.units){if(!obj(u)||typeof u.id!=='string'||!oneOf(u.team,teams)||!new RegExp(`^${u.team}[1-7]$`).test(u.id)||!oneOf(u.role,['heavy','ranged','scout']))return false;const index=Number(u.id.slice(-1));if(index>3? !oneOf(u.helper,helperTypes)||helperRole[u.helper as keyof typeof helperRole]!==u.role : u.helper!==undefined)return false;
+ if(u.apRules!==g.apRules)return false;
+ if(u.joinedDay!==undefined&&(!u.helper||g.apRules!=='golden-week'||!integer(u.joinedDay,1,g.day))||g.apRules==='golden-week'&&u.helper&&u.joinedDay===undefined)return false;
+ if(u.joinedDay===g.day&&u.ap!==0)return false;
+ if(u.walkedEffort!==undefined||u.walkCredit!==undefined){if(g.apRules!=='golden-week'||!num(u.walkedEffort,0,1e8)||!num(u.walkCredit,0,1e8)||u.walkedEffort>u.walkCredit+1e-6)return false;}
  if(u.career!==undefined){const c=u.career;if(!obj(c)||!integer(c.xp,0,999)||!integer(c.level,1,5)||c.level!==levelFor(c.xp)||!integer(c.health,0,100)||!integer(c.morale,0,100)||!integer(c.xpDay,0,g.day)||!integer(c.dailyXp,0,8)||!integer(c.assistedDay,0,g.day))return false;}
- if(!cells.has(u.cellId)||g.movementProfile!=='streets-v2'&&cells.get(u.cellId)!.terrain==='water'||cells.get(u.cellId)!.walkable===false||!integer(u.maxAp,14,20)||u.maxAp!==capacity(u as Campaign['units'][number])||!integer(u.ap,0,u.maxAp+2)||!integer(u.mobilization,0,10)||!integer(u.fatigue,0,10)||!integer(u.facing,0,5)||!['withdrawUntil','guardedUntil','skillReadyDay','transportDay','bracedUntil','confusedUntil'].every(k=>integer(u[k],0,34)))return false;}
+ if(!cells.has(u.cellId)||g.movementProfile!=='streets-v2'&&cells.get(u.cellId)!.terrain==='water'||cells.get(u.cellId)!.walkable===false||!integer(u.maxAp,14,21)||u.maxAp!==capacity(u as Campaign['units'][number])||!integer(u.ap,0,u.maxAp+(g.apRules==='golden-week'&&g.phase==='night'?6:2))||!integer(u.mobilization,0,10)||!integer(u.fatigue,0,10)||!integer(u.facing,0,5)||!['withdrawUntil','guardedUntil','skillReadyDay','transportDay','bracedUntil','confusedUntil'].every(k=>integer(u[k],0,34)))return false;}
  const occupied=g.units.filter((u:any)=>u.mobilization>0&&u.withdrawUntil<=g.day&&career(u).health>0).map((u:any)=>u.cellId);if(new Set(occupied).size!==occupied.length)return false;
  if(!exactKeys(g.nodeState,nodeIds)||!nodeIds.every(id=>{const n=g.nodeState[id];return obj(n)&&teamValues(n.influence,x=>num(x))&&teamValues(n.visits,x=>integer(x,0,2))&&teamValues(n.active,x=>typeof x==='boolean');}))return false;
  if(!exactKeys(g.activity,areaIds)||!areaIds.every(id=>teamValues(g.activity[id],a=>obj(a)&&uniqueList(a.nodes,nodeIds)&&list(a.kinds,x=>typeof x==='string'&&x.length<80,100)&&typeof a.rested==='boolean'&&typeof a.afterRest==='boolean')))return false;
@@ -69,7 +75,7 @@ export function validSession(value:unknown,oldNodes=false):value is Session{
   if(g.movementProfile!=='streets-v2')return w.edgeIds===undefined&&w.cells.length<=60&&new Set(w.cells).size===w.cells.length&&w.cells.every((id:string,i:number)=>i===0||cells.get(w.cells[i-1])!.neighbors.includes(id));
   if(!list(w.edgeIds,id=>integer(id,0,routingEdges.length-1),10000)||!w.edgeIds.length)return false;
   const edges=w.edgeIds.map((id:number)=>routingEdges[id]);
-  return edges.every((e:any,i:number)=>i===0||edges[i-1].to===e.from)&&cells.get(w.cells[0])!.roadNode===edges[0].from&&cells.get(w.cells.at(-1))!.roadNode===edges.at(-1).to&&JSON.stringify(roadWalkCells(w.edgeIds))===JSON.stringify(w.cells);
+  return edges.every((e:any,i:number)=>i===0||edges[i-1].to===e.from)&&cells.get(w.cells[0])!.roadNode===edges[0].from&&cells.get(w.cells.at(-1))!.roadNode===edges.at(-1).to&&JSON.stringify(roadWalkCells(w.edgeIds,g))===JSON.stringify(w.cells);
  },4200))return false;}
  if(g.talk!==undefined&&g.talk!==null&&!validTalk(g.talk,g as Campaign))return false;
  if(g.talkReports!==undefined&&!list(g.talkReports,r=>validTalk(r,g as Campaign,true),12))return false;
@@ -85,14 +91,16 @@ export function encodeSave(session:Session,savedAt=new Date().toISOString()):Sav
  if(!session.game.contacts)session={...session,game:{...session.game,contacts:initialContacts()}};
  if(!session.game.outreach)session={...session,game:{...session.game,outreach:initialOutreach(session.game)}};
  const street=session.game.movementProfile==='streets-v2';
- const data:Omit<SavedCampaign,'checksum'>={version:5,rules:'0.17.0',map:street?'taipei-street-hex-v2':'taipei-hex-v1',...(street?{mapRevision:streetSource.revision,placeRevision}:{}),savedAt,session:structuredClone(session)};
+ const data:Omit<SavedCampaign,'checksum'>={version:5,rules:session.game.apRules==='golden-week'?'0.6.0':'0.17.0',map:street?session.game.streetGrid===300?'taipei-street-hex-v3':'taipei-street-hex-v2':'taipei-hex-v1',...(street?{mapRevision:mapFor(session.game).revision,placeRevision}:{}),savedAt,session:structuredClone(session)};
  return {...data,checksum:checksum(JSON.stringify(data))};
 }
 export function decodeSave(raw:string):{save:SavedCampaign|null;error:SaveError|null}{
  try{if(raw.length>4_000_000)return {save:null,error:'c_saveInvalid'};const v=JSON.parse(raw);if(!obj(v))return {save:null,error:'c_saveInvalid'};
  const street=v.session?.game?.movementProfile==='streets-v2';
  const modern=v.version===5||v.version===4||v.version===3;
- if(modern?(v.rules!==(v.version===5?'0.17.0':v.version===4?'0.16.0':'0.10.0')||v.map!==(street?'taipei-street-hex-v2':'taipei-hex-v1')||street&&v.mapRevision!==streetSource.revision):street?(v.version!==2||v.rules!=='0.6.0'||v.map!=='taipei-street-hex-v2'||v.mapRevision!==streetSource.revision):(v.version!==1||v.rules!=='0.5.0'||v.map!=='taipei-hex-v1'))return {save:null,error:'c_saveIncompatible'};
+ const golden=v.session?.game?.apRules==='golden-week';
+ if(golden&&v.version!==5)return {save:null,error:'c_saveIncompatible'};
+ if(modern?(v.rules!==(v.version===5?(golden?'0.6.0':'0.17.0'):v.version===4?'0.16.0':'0.10.0')||v.map!==(street?golden?'taipei-street-hex-v3':'taipei-street-hex-v2':'taipei-hex-v1')||street&&v.mapRevision!==mapFor(v.session.game).revision):street?(v.version!==2||v.rules!=='0.6.0'||v.map!=='taipei-street-hex-v2'||v.mapRevision!==streetSource.revision):(v.version!==1||v.rules!=='0.5.0'||v.map!=='taipei-hex-v1'))return {save:null,error:'c_saveIncompatible'};
  if(v.version>=4&&!v.session?.game?.contacts||v.version===5&&!v.session?.game?.outreach)return {save:null,error:'c_saveInvalid'};
  if(v.version===5&&street&&v.placeRevision!==placeRevision)return {save:null,error:'c_saveIncompatible'};
  const {checksum:hash,...data}=v;if(!integer(hash,0,0xffffffff)||checksum(JSON.stringify(data))!==hash||typeof v.savedAt!=='string'||!Number.isFinite(Date.parse(v.savedAt))||!validSession(v.session,v.version<5&&street&&Object.keys(v.session?.game?.nodeState??{}).length===nodes.length))return {save:null,error:'c_saveInvalid'};

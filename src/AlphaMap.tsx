@@ -90,10 +90,11 @@ export function AlphaMap(props:Props){
   if(!host.current)return;
   let instance:maplibre.Map;
   try{
-   instance=new maplibre.Map({container:host.current,style:style(),center:defaultCenter,zoom:13.9,pitch:44,maxPitch:58,minZoom:10,maxZoom:17.8,
+   instance=new maplibre.Map({container:host.current,style:style(),center:defaultCenter,zoom:mapData.campaignMap.radiusMetres===150?13.2:13.9,pitch:44,maxPitch:58,minZoom:9.5,maxZoom:17.8,
     maxBounds:[[121.38,24.88],[121.79,25.26]],dragRotate:false,pitchWithRotate:false,attributionControl:false});
   }catch{setFailed(true);return;}
   map.current=instance;
+  instance.addControl(new maplibre.ScaleControl({maxWidth:90,unit:'metric'}),'bottom-right');
   const container=host.current;
   const size=new ResizeObserver(()=>instance.resize());size.observe(container);
   const gesture=createMapTapGesture();
@@ -177,7 +178,7 @@ export function AlphaMap(props:Props){
   const m=map.current;if(!ready||!m)return;
   const reduce=reduceMotion||matchMedia('(prefers-reduced-motion: reduce)').matches;
   if(districtPicker)m.fitBounds([[121.43,24.95],[121.67,25.22]],{padding:65,pitch:0,duration:reduce?0:320});
-  else if(!live.current.motion&&!live.current.fieldPopup)m.easeTo({center:defaultCenter,zoom:Math.max(13.8,m.getZoom()),pitch:44,duration:reduce?0:400});
+  else if(!live.current.motion&&!live.current.fieldPopup)m.easeTo({center:defaultCenter,zoom:Math.max(mapData.campaignMap.radiusMetres===150?13.1:13.8,m.getZoom()),pitch:44,duration:reduce?0:400});
  },[ready,districtId,districtPicker]);
  useEffect(()=>{
   if(!props.motion)return;

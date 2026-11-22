@@ -35,10 +35,11 @@ export function touchOutreach(g:Campaign,team:Team,cellId:string,base:number,mot
   g.vehicle={...g.vehicle,teams:{...g.vehicle.teams,[team]:{...faction,history:{...faction.history,events:[...faction.history.events,{kind:'foot',day:g.day,phase:g.phase,cellId}]}}}};}
  return quote.points;
 }
-const validSectors=new Set([...streetCellMap.values()].filter(c=>c.walkable).map(sectorKey));
+
 const object=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const unique=(v:unknown,set:Set<string>)=>Array.isArray(v)&&v.length<=set.size&&new Set(v).size===v.length&&v.every(id=>typeof id==='string'&&set.has(id));
 export function validOutreach(value:unknown,g:Campaign){
+ const streetCellMap=mapFor(g).cells,validSectors=new Set([...streetCellMap.values()].filter(c=>c.walkable).map(sectorKey));
  if(!object(value)||Object.keys(value).length!==3)return false;
  return teams.every(team=>{const l=value[team];if(!object(l)||Object.keys(l).length!==5||!object(l.cells)||!object(l.sectors)||typeof l.partial!=='boolean'||!unique(l.seenSectors,validSectors)||!unique(l.districts,new Set(districts.map(d=>d.id))))return false;
   if(Object.keys(l.cells).length>streetCellMap.size||Object.keys(l.sectors).length>validSectors.size||!l.seenSectors.every((id:string)=>l.districts.includes(id.split(':')[0])))return false;

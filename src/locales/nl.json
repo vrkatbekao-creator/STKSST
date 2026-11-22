@@ -30,7 +30,7 @@
   "a3_motorcadeDone": "Campagnetocht voltooid",
   "a3_arriving": "Onderweg naar de bestemming…",
   "a3_stale": "De omstandigheden zijn veranderd. Controleer de nieuwe kosten voordat je bevestigt.",
-  "a3_update": "Update ‘Stromen komen samen: toegiftfeest’",
+  "a3_update": "Golden Week: beslissingsupdate",
   "a3_grid": "Zeshoekig raster",
   "a3_terrain": "Hoogte",
   "a3_legend": "Gouden rand: bestemming · Witte arcering: betwist",
@@ -926,5 +926,15 @@
   "o_opportunity_familiar": "Vorige keer bereikt",
   "o_opportunity_saturated": "verzadigd overig",
   "a3_zoomIn": "Inzoomen",
-  "a3_zoomOut": "Uitzoomen"
+  "a3_zoomOut": "Uitzoomen",
+  "gw_hq": "HQ-orders {{count}}",
+  "gw_walkCredit": "Vooraf betaalde loopafstand over: {{metres}} m",
+  "gw_rules": "Basis 15 AP, mobiele eenheden 19 AP; ’s nachts +4 AP. Elke AP koopt 1.800 gewogen loopmeters, gedeeld met lopen naar en van voertuigen tot de ochtend.",
+  "gw_hqHelp": "Dagelijks twee HQ-orders: voorbereiding of reactie zonder AP, of werving voor 1 AP. Alleen geslaagde acties verbruiken een order.",
+  "gw_logNight": "De nacht begint: beschikbare eenheden krijgen 4 AP. Nieuwe rekruten zijn morgenochtend klaar.",
+  "gw_outreach": "Campagne en bezoeken: 1 AP en 1 voorraad. Twee bezoeken per locatie per dag; ontdek nieuwe buurten voor bonussen.",
+  "gw_assist": "Ondersteuning: 1 AP / 2 voorraad, binnen twee vakken, eenmaal per ontvanger per dag.",
+  "gw_scout": "Sluipaanvaller: basis 19 AP per dag. Val aan vanuit de drie aangrenzende achterrichtingen; sterk tegen zware eenheden.",
+  "gw_factHex": "Wegvakken van 300 m",
+  "gw_nightBonus": "’s nachts +4 AP"
 }

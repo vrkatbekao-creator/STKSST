@@ -225,6 +225,8 @@ struct Search<'a> {
     center: [f64; 3],
     radius: f64,
     per_ap: u64,
+    walk_costs: Option<&'a [u32]>,
+    destination_count: usize,
 }
 
 impl Search<'_> {
@@ -251,6 +253,8 @@ impl Search<'_> {
         let dominates = |a: Label, b: Label| {
             let (a_stop, b_stop) = (self.origins[a.origin], self.origins[b.origin]);
             a_stop.ap <= b_stop.ap
+                && self.walk_costs.is_none_or(|costs| (0..self.destination_count).all(|i|
+                    costs[a.origin*self.destination_count+i] <= costs[b.origin*self.destination_count+i]))
                 && a_stop.metres <= b_stop.metres
                 && a.actual <= b.actual
                 && a.weighted <= b.weighted
@@ -283,6 +287,7 @@ fn plan(
     weight: impl Fn(u32) -> u32,
     turn: impl Fn(u32, u32, u32) -> bool,
     expanded: &mut u32,
+    walk_costs: Option<&[u32]>,
 ) -> Option<Vec<u32>> {
     if origins.is_empty() || destinations.is_empty() {
         return None;
@@ -308,7 +313,7 @@ fn plan(
         .iter()
         .map(|stop| stop.metres)
         .fold(f64::INFINITY, f64::min);
-    let min_alight_ap = u64::from(destinations.iter().map(|stop| stop.ap).min()?);
+    let min_alight_ap = if walk_costs.is_some() {0} else {u64::from(destinations.iter().map(|stop| stop.ap).min()?)};
     let remaining_distance = graph.distance_to_stops(destinations);
     let mut search = Search {
         graph,
@@ -320,6 +325,8 @@ fn plan(
         center,
         radius,
         per_ap: budget.per_ap,
+        walk_costs,
+        destination_count: destinations.len(),
     };
     for (origin, stop) in origins.iter().enumerate() {
         if u64::from(stop.ap) <= budget.ap {
@@ -383,8 +390,9 @@ fn plan(
         if label.previous.is_some() {
             for &i in targets.get(&label.node).into_iter().flatten() {
                 let dest = destinations[i];
-                let ap = u64::from(origin.ap)
-                    + u64::from(dest.ap)
+                let walking = walk_costs.map_or(u64::from(origin.ap)+u64::from(dest.ap),
+                    |costs| u64::from(costs[label.origin*destinations.len()+i]));
+                let ap = walking
                     + allowance(budget.previous_weighted, label.weighted, budget.per_ap);
                 let distance = origin.metres + dest.metres + label.actual as f64 / 4.0;
                 if ap < best_ap || (ap == best_ap && distance < best_distance) {
@@ -528,6 +536,10 @@ pub extern "C" fn vehicle_search_labels() -> u32 {
 
 #[cfg(target_arch = "wasm32")]
 #[no_mangle]
+pub extern "C" fn vehicle_walk_matrix_version() -> u32 { 1 }
+
+#[cfg(target_arch = "wasm32")]
+#[no_mangle]
 pub extern "C" fn vehicle_query(
     origins: u32,
     destinations: u32,
@@ -548,9 +560,11 @@ pub extern "C" fn vehicle_query(
                 return 0;
             };
             let input = &runtime.input;
-            let count = origins as usize + destinations as usize;
-            if count > 100_000
-                || input.len() != count * 16
+            let Some(count) = (origins as usize).checked_add(destinations as usize) else {return 0;};
+            let Some(pairs) = (origins as usize).checked_mul(destinations as usize) else {return 0;};
+            if count > 100_000 || pairs > 1_000_000 {return 0;}
+            let has_matrix = input.len() == count * 16 + pairs * 4;
+            if (!has_matrix && input.len() != count * 16)
                 || per_ap == 0
                 || per_supply == 0
                 || previous_weighted > (1 << 53)
@@ -570,6 +584,10 @@ pub extern "C" fn vehicle_query(
                 stops.push(Stop { node, ap, metres });
             }
             let (origins, destinations) = stops.split_at(origins as usize);
+            let costs: Option<Vec<u32>> = has_matrix.then(|| input[count*16..].chunks_exact(4)
+                .map(|bytes| u32::from_le_bytes(bytes.try_into().unwrap())).collect());
+            if costs.as_ref().is_some_and(|costs| costs.iter().enumerate().any(|(i,cost)|
+                *cost < origins[i/destinations.len()].ap || *cost > 100_000)) {return 0;}
             let budget = Budget {
                 ap: u64::from(ap),
                 supplies: u64::from(supplies),
@@ -597,6 +615,7 @@ pub extern "C" fn vehicle_query(
                         },
                         |node, incoming, outgoing| policy.allows(graph, node, incoming, outgoing),
                         &mut expanded,
+                        costs.as_deref(),
                     ),
                     None => plan(
                         graph,
@@ -608,6 +627,7 @@ pub extern "C" fn vehicle_query(
                             vehicle_turn(node, incoming, outgoing) != 0
                         },
                         &mut expanded,
+                        costs.as_deref(),
                     ),
                 }
             });
@@ -625,6 +645,17 @@ pub extern "C" fn vehicle_query(
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    #[test]
+    fn shared_walking_costs_preserve_the_better_connector_origin() {
+        let offsets=vec![0,1,1];let targets=vec![1];let distances=vec![40];
+        let graph=Graph{reverse:Graph::incoming(&offsets,&targets,&distances),offsets,targets,distances,
+            ways:vec![7],points:vec![[0.0;3];2]};
+        let origins=[Stop{node:0,ap:0,metres:0.0},Stop{node:0,ap:1,metres:100.0}];
+        let destinations=[Stop{node:1,ap:1,metres:100.0}];
+        let budget=Budget{ap:3,supplies:1,previous_weighted:0,previous_actual:0,per_ap:100,per_supply:100};
+        assert_eq!(plan(&graph,&origins,&destinations,budget,|_|4,|_,_,_|true,&mut 0,Some(&[2,1])),Some(vec![1,0,0]));
+    }
 
     #[test]
     fn reverse_distance_respects_one_way_edges_and_uses_best_stop() {
@@ -687,7 +718,7 @@ mod tests {
         };
         let turn = |_: u32, incoming, outgoing| !(incoming == 0 && outgoing == 2);
         assert_eq!(
-            plan(&graph, &[start], &[end], budget(), |_| 7, turn, &mut 0),
+            plan(&graph, &[start], &[end], budget(), |_| 7, turn, &mut 0, None),
             Some(vec![0, 0, 1, 3, 2])
         );
         assert!(plan(
@@ -701,6 +732,7 @@ mod tests {
             |_| 4,
             turn,
             &mut 0,
+            None,
         )
         .is_none());
     }

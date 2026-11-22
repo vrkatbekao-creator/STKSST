@@ -4,7 +4,7 @@ import type {VehicleFactionState,FootHeat} from './campaign-vehicle-state.ts';
 import type {VehicleGraphColumns} from './vehicle-graph-format.ts';
 import type {CoverageDistrict} from './vehicle-geometry.ts';
 import type {VehicleLegPlan} from './vehicle-leg-planner.ts';
-import {streetCellMap} from './campaign-map.ts';
+import {allCells as streetCellMap,mapFor} from './campaign-map.ts';
 import {sectorKey} from './campaign-outreach.ts';
 import {vehicleRouteFragments} from './vehicle-geometry.ts';
 import {newMotorcadeLedger,motorcadeLedgerForDay,applyMotorcadeExposure,creditMotorcadeContacts} from './campaign-motorcade.ts';
@@ -12,11 +12,12 @@ import {newMotorcadeLedger,motorcadeLedgerForDay,applyMotorcadeExposure,creditMo
 const object=(v:unknown):v is Record<string,any>=>!!v&&typeof v==='object'&&!Array.isArray(v);
 const stable=(v:any):string=>JSON.stringify(v,(_k,x)=>object(x)?Object.fromEntries(Object.entries(x).sort(([a],[b])=>a.localeCompare(b))):x);
 const keys=(v:Record<string,unknown>,expected:string[])=>stable(Object.keys(v).sort())===stable(expected.sort());
-const validSectors=new Set([...streetCellMap.values()].filter(c=>c.walkable).map(sectorKey));
+
 
 /** Proves internal consistency, not the authenticity of old pre-migration actions or weather. */
 export function replayVehicleExposure(game:Campaign,team:Team,state:VehicleFactionState,graph:VehicleGraphColumns,districts:readonly CoverageDistrict[]){
  try{
+  const cells=mapFor(game).cells,validSectors=new Set([...cells.values()].filter(c=>c.walkable).map(sectorKey));
   const activation=game.vehicle?.activationDay,history=state.history;
   if(!activation||!object(history)||!keys(history,['baseline','events'])||!object(history.baseline)||!Array.isArray(history.events)||history.events.length>100000)return false;
   const foot:FootHeat=structuredClone(history.baseline);
@@ -29,7 +30,7 @@ export function replayVehicleExposure(game:Campaign,team:Team,state:VehicleFacti
    exposure=motorcadeLedgerForDay(exposure,event.day);
    if(event.kind==='foot'){
     if(!keys(event,['kind','day','phase','cellId'])||typeof event.cellId!=='string')return false;
-    const cell=streetCellMap.get(event.cellId);if(!cell?.walkable)return false;
+    const cell=cells.get(event.cellId);if(!cell?.walkable)return false;
     const sector=sectorKey(cell),old=foot[sector],heat=old?Math.max(0,old.heat-Math.floor((event.day-old.day)/2)):0;
     foot[sector]={day:event.day,heat:Math.min(6,heat+1)};
    }else if(event.kind==='motorcade'){

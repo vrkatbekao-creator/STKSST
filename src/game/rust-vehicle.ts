@@ -1,6 +1,6 @@
 import type { VehicleGraphColumns } from './vehicle-graph-format.ts';
 import type { VehicleLegOptions, VehicleLegPlan } from './vehicle-leg-planner.ts';
-import { quoteVehicleCost, vehicleBoardingAP, vehicleCostPolicy } from './vehicle-cost.ts';
+import { quoteVehicleCost, boardingWalkCharge, vehicleCostPolicy } from './vehicle-cost.ts';
 import { vehicleEdgeQuarterMetres } from './vehicle-routing.ts';
 import type { encodeVehiclePolicy } from './rust-vehicle-policy.ts';
 
@@ -12,6 +12,7 @@ type VehicleExports = {
   vehicle_init(): number;
   vehicle_prepare?(): number;
   vehicle_search_labels?(): number;
+  vehicle_walk_matrix_version?(): number;
   vehicle_query(origins: number, destinations: number, ap: number, supplies: number,
     priorWeighted: bigint, priorActual: bigint, perAp: number, perSupply: number, rain: number, works: number): number;
 };
@@ -44,13 +45,20 @@ export async function instantiateRustVehicle(module: WebAssembly.Module, graph: 
       previousWeightedQuarterMetres, previousTeamQuarterMetres } = options;
     if (!origins.length || !destinations.length || ap < reservedAp) return null;
     const stops = [...origins, ...destinations];
-    const bytes = input(stops.length * 16);
-    const footAp = (stop: typeof stops[number]) => vehicleBoardingAP(stop.effort, stop.edgeIds.length > 0);
+    const matrixSupported=api.vehicle_walk_matrix_version?.()===1;
+    if(options.sharedWalk&&!matrixSupported)throw new Error('Vehicle WASM walking policy is outdated');
+    const matrixLength=origins.length*destinations.length;
+    if(!Number.isSafeInteger(matrixLength)||matrixLength>1_000_000)throw new RangeError('Too many walking connectors');
+    const bytes = input(stops.length * 16+(matrixSupported?matrixLength*4:0));
+    const boardCharge=(stop:typeof stops[number])=>boardingWalkCharge(stop.effort,stop.edgeIds.length>0,options.previousWalkedEffort??0,options.previousWalkCredit??0,options.sharedWalk===true);
+    const pairAP=(a:typeof stops[number],b:typeof stops[number])=>{const board=boardCharge(a);return board.ap+boardingWalkCharge(b.effort,b.edgeIds.length>0,board.walked,board.credit,options.sharedWalk===true).ap;};
+    const footAp=(stop:typeof stops[number])=>boardCharge(stop).ap;
     stops.forEach((stop, index) => {
       bytes.setUint32(index * 16, stop.vehicleNode, true);
       bytes.setUint32(index * 16 + 4, footAp(stop), true);
       bytes.setFloat64(index * 16 + 8, stop.metres, true);
     });
+    if(matrixSupported)origins.forEach((a,i)=>destinations.forEach((b,j)=>bytes.setUint32(stops.length*16+(i*destinations.length+j)*4,pairAP(a,b),true)));
     const perAp = mode === 'drive' ? vehicleCostPolicy.quarterMetresPerDriveAP : vehicleCostPolicy.quarterMetresPerMotorcadeAP;
     policy = options;
     let found: number;
@@ -83,7 +91,7 @@ export async function instantiateRustVehicle(module: WebAssembly.Module, graph: 
     if (node !== alighting.vehicleNode) throw new Error('Invalid WASM vehicle destination');
     const fee = quoteVehicleCost({ mode, previousWeightedQuarterMetres, previousTeamQuarterMetres,
       addedWeightedQuarterMetres: weightedQuarterMetres, addedTeamQuarterMetres: actualQuarterMetres });
-    const walkingAp = footAp(boarding) + footAp(alighting), totalAp = walkingAp + fee.ap;
+    const walkingAp = pairAP(boarding,alighting), totalAp = walkingAp + fee.ap;
     if (totalAp + reservedAp > ap || fee.supplies > materials) throw new Error('Unaffordable WASM vehicle route');
     return { boarding, alighting, nodeIndices, edgeIndices, walkingAp, vehicleAp: fee.ap,
       totalAp, materials: fee.supplies, actualQuarterMetres, weightedQuarterMetres };

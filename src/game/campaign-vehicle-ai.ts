@@ -1,6 +1,6 @@
 /** AI candidate ranking prototype; not yet connected to automatedFactionTurn. */
 import type {Campaign,CampaignUnit} from './campaign.ts';
-import {interactionCost} from './campaign.ts';
+import {actionCost} from './campaign.ts';
 import {mapFor} from './campaign-map.ts';
 import {outreachQuote,outreachPolicy} from './campaign-outreach.ts';
 import {unitAvailable,unitGuarded} from './campaign-tactics.ts';
@@ -14,7 +14,7 @@ export function chooseAiVehicleStop(g:Campaign,u:CampaignUnit,
  const actor=g.units.find(v=>v.id===u.id&&v.team===u.team);
  if(!actor||g.result||g.talk||g.movementProfile!=='streets-v2'||!unitAvailable(g,actor)||unitGuarded(g,actor)||actor.bracedUntil>=g.day||
   !Number.isInteger(maxCandidates)||maxCandidates<1||maxCandidates>10)return null;
- const fee=interactionCost('canvass');if(actor.ap<fee.ap||g.resources[actor.team].materials<fee.materials)return null;
+ const fee=actionCost(g,{type:'canvass',unitId:u.id},u.team);if(actor.ap<fee.ap||g.resources[actor.team].materials<fee.materials)return null;
  const candidates=mapFor(g).nodes.filter(n=>n.sourcePlace&&n.cellId!==actor.cellId&&g.nodeState[n.id]?.visits[actor.team]<2)
   .map(node=>({node,quote:outreachQuote(g,actor.team,node.cellId)}))
   .filter(x=>x.quote.count<outreachPolicy.perCellPerDay)

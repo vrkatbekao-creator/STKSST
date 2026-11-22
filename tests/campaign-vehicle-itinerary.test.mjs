@@ -10,7 +10,7 @@ const arrive=game=>({game});
 test('success applies real activities to a clone and leaves the original untouched',()=>{
  const {g,u}=setup(),before=structuredClone(g);
  const out=simulateVehicleItinerary(g,'blue',u.id,[{travel:leg(u),action:{type:'streetCanvass',unitId:u.id}}],arrive);
- assert.equal(out.error,undefined);assert.equal(out.game.units.find(x=>x.id===u.id).ap,u.ap-2);
+ assert.equal(out.error,undefined);assert.equal(out.game.units.find(x=>x.id===u.id).ap,u.ap-1);
  assert.equal(out.game.resources.blue.materials,g.resources.blue.materials-1);assert.deepEqual(g,before);
 });
 test('failure at a later stop rolls the entire itinerary back, even if executor mutates its clone',()=>{

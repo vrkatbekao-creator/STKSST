@@ -1,4 +1,4 @@
-選戰騎士團：首都篇 / Campaign Knights: Capital Edition
+選舉騎士團 台北篇 全市掃街 / Election Knights: Taipei — Citywide Canvassing
 圖資署名 / Map credits
 
 道路與建物 / Roads and buildings
@@ -8,6 +8,9 @@ https://opendatacommons.org/licenses/odbl/1-0/
 Full source and derivative notices: ROAD-DATA-LICENSE.txt,
 LANDSCAPE-DATA-LICENSE.txt (in this same directory).
 3D vehicle route notices: VEHICLE-DATA-LICENSE.txt.
+300 公尺格網／道路與場地錨點：沿用已署名的來源與衍生資料授權。
+The 300 m grid's derived road/venue associations retain the source ODbL
+and government-data notices; the project's MIT licence does not replace them.
 
 衛星地表 / Satellite surface
 produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus

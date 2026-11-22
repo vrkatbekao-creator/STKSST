@@ -25,6 +25,12 @@
     "bytes": 117800,
     "gzipBytes": 15598
   },
+  "grid300": {
+    "file": "grid-300.8488e2c5291838d1.gz",
+    "sha256": "8488e2c5291838d1c2a91cf4de8ed44612988633e74f978f8535052140e1b9c5",
+    "bytes": 543931,
+    "gzipBytes": 105671
+  },
   "districts": [
     {
       "id": "6300100",

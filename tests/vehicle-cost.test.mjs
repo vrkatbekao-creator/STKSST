@@ -25,7 +25,7 @@ test('prepaid travel can add zero AP and respects exact quarter-metre boundaries
 });
 
 test('boarding pays by weighted distance with no charge for an empty connection',()=>{
- assert.equal(vehicleBoardingAP(0,false),0);assert.equal(vehicleBoardingAP(1500,true),1);assert.equal(vehicleBoardingAP(1500.01,true),2);
+ assert.equal(vehicleBoardingAP(0,false),0);assert.equal(vehicleBoardingAP(1800,true),1);assert.equal(vehicleBoardingAP(1800.01,true),2);
  assert.throws(()=>vehicleBoardingAP(1,false),RangeError);
 });
 test('campaign vehicles can cross districts without consuming the day on travel',()=>{

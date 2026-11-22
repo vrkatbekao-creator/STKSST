@@ -2,23 +2,35 @@
 
 **選舉騎士團 台北篇 全市掃街**
 
-A single-player 3D tactics game set across Taipei’s 12 districts. Lead one of three fictional factions through 28 days of neighborhood visits, campaign motorcades, community stages, policy presentations, and debates. Beta 05 is available in English, Traditional Chinese, Japanese, French, Dutch, and Simplified Chinese.
+**v0.6.0 · Golden Week Showdown Update / 黃金周決戰更新**
 
-這是一款以台北 12 行政區為舞台的單機 3D 戰棋。帶領三個虛構陣營之一，在 28 天內步行拜訪、跨區車掃、經營社群舞台，並透過政見發表會及辯論爭取支持。Beta 05 支援繁體中文、英文、日語、法語、荷蘭語與簡體中文。
+A single-player 3D tactics game set across Taipei’s 12 districts. Lead one of three fictional factions through 28 days of neighborhood visits, campaign motorcades, community stages, policy presentations, and debates. Available in English, Traditional Chinese, Japanese, French, Dutch, and Simplified Chinese.
+
+這是一款以台北 12 行政區為舞台的單機 3D 戰棋。帶領三個虛構陣營之一，在 28 天內步行拜訪、跨區車掃、經營社群舞台，並透過政見發表會及辯論爭取支持。支援繁體中文、英文、日語、法語、荷蘭語與簡體中文。
 
 | Version / 版本 | How to play / 取得方式 |
 | --- | --- |
-| **v0.18.0 Beta 05 · main 3D preview / 3D 主要試玩** | [Play 3D Beta 05 / 試玩 3D Beta 05](https://vrkatbekao-creator.github.io/STKSST/) |
-| **v0.18.0 Beta 05 · 3D source / 原始碼** | [Local build and mobile testing / 本機建置與手機版驗收](BETA-REVIEW.md) |
+| **v0.6.0 · Golden Week Showdown / 黃金周決戰更新** | [Play 3D / 試玩 3D](https://vrkatbekao-creator.github.io/STKSST/) |
+| **v0.6.0 · current source / 目前原始碼** | [Rules and compatibility / 規則與相容性](GOLDEN-WEEK-0.6-SPEC.md) · [QA / 驗收](GOLDEN-WEEK-0.6-QA.md) |
 | **v0.17.0 · 2D Legacy / 舊版** | [Play 2D Legacy / 試玩 2D 舊版](https://vrkatbekao-creator.github.io/STKSST/legacy/) |
 
-Use the edition link on either preview to switch between 3D Beta 05 and 2D Legacy. Each edition uses its own browser saves.
+Use the edition link on either preview to switch between 3D and 2D Legacy. Each edition uses its own browser saves. Start a new 3D campaign to use the 300 m grid and updated AP rules.
 
-兩版都可從頁面上的版本連結切換。3D Beta 05 與 2D Legacy 各自使用原有的瀏覽器存檔。
+兩版都可從頁面上的版本連結切換，各自使用原有的瀏覽器存檔。在 3D 版開新局即可使用 300 公尺格網和新版 AP 規則。
 
 [回報問題 / Report an issue](https://github.com/vrkatbekao-creator/STKSST/issues/new?template=bug_report.yml)
 
-## 3D Beta 05
+## v0.6 · Golden Week Showdown / 黃金周決戰
+
+New campaigns use 300 m road hexes, 15 AP (19 for scouts), and +4 AP at night. Walking purchases a shared 1,800 m weighted-distance allowance per AP, including boarding and alighting. Outreach and visits cost 1 AP. Each faction gets two daily HQ orders for preparation, event responses or discounted recruitment. A metric scale bar shows map distance.
+
+新局採用 300 公尺道路六角格，基礎 15 AP、機動隊員 19 AP，入夜補充 4 AP。步行每 AP 購買 1,800 公尺加權路程額度，剩餘距離可供接續步行與上下車共用。掃街與拜訪降為 1 AP；每陣營每日有兩枚總部應援令，用於議題準備、事件應變或招募折抵。地圖新增公制比例尺。
+
+Existing saves retain their original grid, AP rules and history. Start a new campaign for the v0.6 rules. The requested product version **0.6.0** follows historical **0.18.0-beta.5**; save schemas are not renumbered. [Implementation and reference](GOLDEN-WEEK-0.6-SPEC.md)
+
+舊存檔保留原格網、AP 規則與歷史；要使用完整 v0.6 規則，請開新局。產品版號依使用者指定從歷史 **0.18.0-beta.5** 改為 **0.6.0**，存檔格式不因此重編。
+
+## Mobile 3D / 手機 3D
 
 On narrow screens, tap a road to choose a route in a bottom sheet. The sheet shows the cost before you confirm. Tap a landmark for location details or tap a team member for field actions.
 
@@ -34,9 +46,9 @@ Walking and vehicle data load in parallel. While you wait, try the optional Taip
 - **尋路與兩方 AI / Routing and opposing AI** — Rust／WebAssembly 在背景處理道路尋路與夜間對手行動。Beta 改善車行尋路。七組對照快照的路線、費用及結算狀態一致。 Beta accelerates vehicle routing while preserving routes, costs, and outcomes in seven matched scenarios. [效能與驗收紀錄 / Benchmark and QA](BETA-REVIEW.md)
 - **競選與存檔 / Campaign and saves** — 每隊最多七人，保有隊員技能、染色拜訪紀錄、治疏嶼（Governance Isle）及恰恰肥皂箱（Cha-Cha Soapbox）。第 2–14 天偶數日公布民調，第 15–28 天封關，最後一晚結算後開票。 Three browser-local save slots, teams of up to seven, and a polling blackout from day 15 until the final night concludes.
 
-Beta 步行以每 1.5 公里加權路程 1 AP 計算，實際費用以移動確認卡為準。Beta 與同一瀏覽器、同一網址的 3D Alpha 共用存檔，公開 2D 原型的瀏覽器存檔另存。
+移動確認卡顯示實際費用，已購步行額度於次晨重置。新版與同一瀏覽器、同一網址的 3D Alpha／Beta 共用存檔，公開 2D 原型的瀏覽器存檔另存。
 
-In Beta, walking costs 1 AP per 1.5 km of weighted distance. The confirmation card shows the actual cost. The 3D Alpha and Beta share saves on the same browser and URL. The public 2D prototype stores its saves separately.
+The confirmation card shows the actual cost; prepaid walking credit resets each morning. The 3D editions share saves on the same browser and URL. The public 2D prototype stores its saves separately.
 
 ## 本機建置 / Local build
 

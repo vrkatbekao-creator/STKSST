@@ -3,15 +3,29 @@ export type VehicleMode = 'drive' | 'motorcade';
 export const vehicleCostPolicy = Object.freeze({
   quarterMetresPerDriveAP: 8_000 * 4,
   quarterMetresPerMotorcadeAP: 4_000 * 4,
-  boardingEffortMetresPerAP: 1500,
+  boardingEffortMetresPerAP: 1800,
+  curbsideMetres: 300,
   quarterMetresPerSupply: 20_000 * 4,
   motorcadeAPPerStrain: 4,
 });
 
-/** Local connections are still routed and paid, with a campaign-logistics allowance. */
-export function vehicleBoardingAP(effort:number,hasMovement:boolean){
+/** Local connections share the daily walking pool; curbside hops under 300m cost 0 AP once daily allowance is active. */
+export function vehicleBoardingAP(effort:number,hasMovement:boolean,previousWalked=0,walkCredit=0){
  if(!Number.isFinite(effort)||effort<0||(!hasMovement&&effort!==0))throw new RangeError('Invalid boarding effort');
- return hasMovement?Math.max(1,Math.ceil((effort-1e-6)/vehicleCostPolicy.boardingEffortMetresPerAP)):0;
+ if(!hasMovement)return 0;
+ if(effort<vehicleCostPolicy.curbsideMetres&&(previousWalked>0||walkCredit>0))return 0;
+ const covered=Math.max(previousWalked,walkCredit);
+ if(previousWalked+effort<=covered+1e-6)return 0;
+ return Math.max(1,Math.ceil((previousWalked+effort-covered-1e-6)/vehicleCostPolicy.boardingEffortMetresPerAP));
+}
+
+export function boardingWalkCharge(effort:number,hasMovement:boolean,walked=0,credit=0,shared=true){
+ if(!shared)return {ap:vehicleBoardingAP(effort,hasMovement),walked:0,credit:0,curbside:false};
+ const ap=vehicleBoardingAP(effort,hasMovement,walked,credit);
+ if(!hasMovement||(effort<vehicleCostPolicy.curbsideMetres&&(walked>0||credit>0))){
+  return {ap:0,walked,credit,curbside:hasMovement};
+ }
+ return {ap,walked:walked+effort,credit:Math.max(walked,credit)+ap*vehicleCostPolicy.boardingEffortMetresPerAP,curbside:false};
 }
 
 /** Calculate the incremental cost of a prepaid allowance, without floats. */

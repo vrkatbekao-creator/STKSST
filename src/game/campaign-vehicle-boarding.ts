@@ -1,6 +1,6 @@
 /** Adapter for real walking graph and campaign occupancy; not yet a playable command. */
 import type {Campaign,CampaignUnit} from './campaign.ts';
-import {streetCellMap,routingNodes,routingEdges,routingOutgoing,routingIncoming} from './campaign-map.ts';
+import {routingEdgeCells,mapFor,routingNodes,routingEdges,routingOutgoing,routingIncoming} from './campaign-map.ts';
 import {unitAvailable,unitGuarded} from './campaign-tactics.ts';
 import {roadEffort} from './road-movement.ts';
 import {boardingRoutes} from './vehicle-boarding.ts';
@@ -11,10 +11,10 @@ export function campaignBoardingRoutes(g:Campaign,u:CampaignUnit,cellId:string,
  const actor=g.units.find(v=>v.id===u.id&&v.team===u.team);
  if(g.result||g.talk||g.movementProfile!=='streets-v2'||!actor||!unitAvailable(g,actor)||unitGuarded(g,actor)||actor.bracedUntil>=g.day)return [];
  if(direction==='toVehicle'&&cellId!==actor.cellId)return [];
- const start=streetCellMap.get(cellId)?.roadNode;if(start===undefined)return [];
+ const start=mapFor(g).cells.get(cellId)?.roadNode;if(start===undefined)return [];
  const occupied=new Set(g.units.filter(v=>v.id!==actor.id&&unitAvailable(g,v)).map(v=>v.cellId));
  if(occupied.has(cellId))return [];
  return boardingRoutes({start,nodeCount:routingNodes.length,edges:routingEdges,outgoing:routingOutgoing,incoming:routingIncoming,
-  connectors,direction,maxMetres:600,blocked:e=>routingEdges[e.id].cellIds.some(id=>occupied.has(id)),
+  connectors,direction,maxMetres:600,blocked:e=>routingEdgeCells(g,routingEdges[e.id]).some(id=>occupied.has(id)),
   edgeEffort:e=>roadEffort(g,e.id,actor.team)});
 }

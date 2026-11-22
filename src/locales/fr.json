@@ -30,7 +30,7 @@
   "a3_motorcadeDone": "Tournée en cortège terminée",
   "a3_arriving": "Déplacement vers la destination…",
   "a3_stale": "Les conditions du trajet ont changé. Vérifiez le nouveau coût avant de confirmer.",
-  "a3_update": "Mise à jour « Convergence des courants : soirée de rappel »",
+  "a3_update": "Mise à jour : bataille de la Golden Week",
   "a3_grid": "Grille hexagonale",
   "a3_terrain": "Relief",
   "a3_legend": "Contour doré : destination · Hachures blanches : zone disputée",
@@ -926,5 +926,15 @@
   "o_opportunity_familiar": "Atteint précédemment",
   "o_opportunity_saturated": "Sensibilisation saturée",
   "a3_zoomIn": "Agrandir",
-  "a3_zoomOut": "Réduire"
+  "a3_zoomOut": "Réduire",
+  "gw_hq": "Ordres du QG : {{count}}",
+  "gw_walkCredit": "Marche prépayée restante : {{metres}} m",
+  "gw_rules": "Base : 15 AP, unités mobiles : 19 AP ; +4 AP la nuit. Chaque AP achète 1 800 m de marche pondérée, partagés avec les trajets à pied vers les véhicules jusqu’au matin.",
+  "gw_hqHelp": "Deux ordres du QG par jour : préparation ou réaction sans AP, ou recrutement à 1 AP. Seules les actions réussies consomment un ordre.",
+  "gw_logNight": "La nuit commence : les unités disponibles reçoivent 4 AP. Les nouvelles recrues seront prêtes demain matin.",
+  "gw_outreach": "Porte-à-porte et visites : 1 AP et 1 ressource. Deux visites par lieu et par jour ; bonus dans les nouveaux quartiers.",
+  "gw_assist": "Soutien : 1 AP / 2 ressources, à deux hexagones, une fois par bénéficiaire et par jour.",
+  "gw_scout": "Assassin : base de 19 AP par jour. Attaque depuis les trois directions arrière adjacentes ; efficace contre les unités lourdes.",
+  "gw_factHex": "Hexagones routiers de 300 m",
+  "gw_nightBonus": "+4 AP la nuit"
 }

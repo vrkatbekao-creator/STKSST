@@ -1,5 +1,7 @@
 # 專案工作規則
 
+- 2026-11-21 使用者指定新版號 **v0.6.0「黃金周決戰更新」**，實作契約見 GOLDEN-WEEK-0.6-SPEC.md。新道路局使用 300 公尺六角格、15／19 基礎 AP、夜間 +4、1,800 加權公尺預付步行額度與上下車共用、一般掃街 1 AP、每日兩枚總部應援令。舊局保留原格網／位置／AP／歷史，不強制遷移。`apRules` 與 `streetGrid` 區分新舊規則；schema 5／6 以 rules／map／revision 辨識，不因產品版號回到 0.6 而重編存檔。粗格網不得改動來源路網 edge ID、車網 connectors 或官方區界；修改格網後執行 npm run data:grid。WASM 車行須支援共用步行成本矩陣；正式命令仍核對成本。舊章節皆保留為歷史，當輪 QA 見 GOLDEN-WEEK-0.6-QA.md。
+
 - 2026-11-11 v0.18 車掃僅完成規劃，見 VEHICLE-CANVASSING-SPEC.md／VEHICLE-CANVASSING-HANDOFF.md。使用者要求先由 Astra 規劃，再切回 TERRA 實作；未開工前不把規劃數值當現行規則。現行已發布版仍為 v0.17.0。下一輪優先處理獨立車行路網、跨區 AP、淺度車掃與深度拜訪；旋轉鏡頭延後。
 
 - v0.17 全域掃街依 CITY-OUTREACH-SPEC.md：官方來源場地與任意道路掃街、600 公尺街區飽和／探索、區域 3 AP／場地 4 AP 接駁共用每日一次；成本、收益、上限與 AI 都由純規則決定。schema 5 讀 1–4，只在記憶體加入中立場地與可證實的觸及／今日次數，不回補 AP、不改舊位置或歷史。場地 revision 獨立於 routing revision；圖例不畫支持度勢力區。

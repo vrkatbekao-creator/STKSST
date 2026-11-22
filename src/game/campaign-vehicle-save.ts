@@ -42,7 +42,7 @@ export function encodeVehicleSave(session:VehicleSession,ctx:VehicleSaveContext,
  const base=baseSession(session);
  if(!validSession(base)||!validState(base.game,session.game.vehicle,ctx)||!Number.isFinite(Date.parse(savedAt)))throw Error('c_saveInvalid');
  const old=encodeSave(base,savedAt);
- const data={version:6,rules:'0.18.0',map:old.map,...(old.mapRevision?{mapRevision:old.mapRevision}:{}),
+ const data={version:6,rules:session.game.apRules==='golden-week'?'0.6.0':'0.18.0',map:old.map,...(old.mapRevision?{mapRevision:old.mapRevision}:{}),
   ...(old.placeRevision?{placeRevision:old.placeRevision}:{}),vehicleRevision:ctx.revision,savedAt,session:structuredClone(session)};
  return {...data,checksum:checksum(JSON.stringify(data))};
 }
@@ -55,7 +55,7 @@ export function decodeVehicleSave(raw:string,ctx:VehicleSaveContext):{session:Ve
   if(data.version!==6){const old=decodeSave(raw);if(!old.save)return {session:null,error:old.error,migrated:false};
    const base=old.save.session,{vehicle:_,...game}=base.game as Campaign&{vehicle?:unknown};
    return {session:{...base,game:{...game,vehicle:initialVehicleState(game,ctx.revision,'migrated')}},error:null,migrated:true};}
-  if(data.rules!=='0.18.0'||data.vehicleRevision!==ctx.revision)return {session:null,error:'c_saveIncompatible',migrated:false};
+  if(data.rules!==(data.session?.game?.apRules==='golden-week'?'0.6.0':'0.18.0')||data.vehicleRevision!==ctx.revision)return {session:null,error:'c_saveIncompatible',migrated:false};
   const {checksum:stored,...body}=data;
   if(!Number.isInteger(stored)||stored<0||stored>0xffffffff||checksum(JSON.stringify(body))!==stored||
    typeof data.savedAt!=='string'||!Number.isFinite(Date.parse(data.savedAt))||!object(data.session)||!object(data.session.game))return {session:null,error:'c_saveInvalid',migrated:false};

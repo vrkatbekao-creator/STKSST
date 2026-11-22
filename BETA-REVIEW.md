@@ -1,5 +1,9 @@
 # 《選舉騎士團 台北篇 全市掃街》3D Beta
 
+## v0.6.0 · 黃金周決戰更新
+
+新局採 300 公尺六角格與完整 AP 擴充。實作契約及與 STKSSK 的差異見 [GOLDEN-WEEK-0.6-SPEC.md](GOLDEN-WEEK-0.6-SPEC.md)，本輪驗收見 [GOLDEN-WEEK-0.6-QA.md](GOLDEN-WEEK-0.6-QA.md)。下方 Beta 05 等段落為歷史紀錄，不能作為本輪的裝置或瀏覽器通過證據。
+
 ## Beta 05 · 手機 3D 地圖
 
 `AlphaCampaign.tsx` 與 `MobileMapSheet.tsx` 處理窄版選點與底部面板。`AlphaMap.tsx` 保留桌面地圖浮窗，並在窄版區分點按、拖曳及多指操作。實際選點先由角色與現有地標或舞台標記攔截，其餘交由六角格判定。一般建物輪廓沿用地圖圖層。場地清單也可開啟地點資訊，已可互動的地點直接開啟現場行動。

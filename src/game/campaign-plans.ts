@@ -1,10 +1,10 @@
 import type { Campaign,CampaignUnit } from './campaign.ts';
-import { interactionCost,interactionCells,movement,routeFromMovement,unitAvailable,unitGuarded } from './campaign.ts';
+import { actionCost,interactionCells,movement,routeFromMovement,unitAvailable,unitGuarded } from './campaign.ts';
 import { mapFor,playableNode } from './campaign-map.ts';
 import {outreachQuote} from './campaign-outreach.ts';
 export type VisitPlan={nodeId:string;state:'here'|'travel'|'ap'|'materials'|'capped'|'blocked'|'locked'|'unavailable'|'ended'|'invalid';error:string|null;destination:string|null;path:string[];moveAp:number|null;activityAp:number;totalAp:number|null;materials:number;canAct:boolean};
 function makePlan(g:Campaign,u:CampaignUnit,nodeId:string,walk:ReturnType<typeof movement>):VisitPlan{
- const {nodeById}=mapFor(g);const fee=interactionCost('canvass'),n=nodeById.get(nodeId);const base:VisitPlan={nodeId,state:'invalid',error:'c_errorNear',destination:null,path:[],moveAp:null,activityAp:fee.ap,totalAp:null,materials:fee.materials,canAct:false};
+ const {nodeById}=mapFor(g);const fee=actionCost(g,{type:'canvass',unitId:u.id},u.team),n=nodeById.get(nodeId);const base:VisitPlan={nodeId,state:'invalid',error:'c_errorNear',destination:null,path:[],moveAp:null,activityAp:fee.ap,totalAp:null,materials:fee.materials,canAct:false};
  const fail=(state:VisitPlan['state'],error:string):VisitPlan=>({...base,state,error});
  if(g.result)return fail('ended','c_errorEnded');
  if(!g.units.some(v=>v.id===u.id&&v.team===u.team)||!unitAvailable(g,u))return fail('unavailable','c_errorUnit');
@@ -19,11 +19,11 @@ function makePlan(g:Campaign,u:CampaignUnit,nodeId:string,walk:ReturnType<typeof
   const best=candidates.filter(id=>walk.costs.has(id)).sort((a,b)=>walk.costs.get(a)!-walk.costs.get(b)!||a.localeCompare(b))[0];
   if(!best)return fail('blocked','c_errorRoute');destination=best;moveAp=walk.costs.get(best)!;
  }
- const totalAp=moveAp+fee.ap;let state:VisitPlan['state']=moveAp?'travel':'here',error:string|null=null;
+ const totalAp=moveAp+fee.ap;let state:VisitPlan['state']=destination!==u.cellId?'travel':'here',error:string|null=null;
  if(u.ap<totalAp){state='ap';error='c_errorAP';}else if(g.resources[u.team].materials<fee.materials){state='materials';error='c_errorMaterials';}
  // Most callers only rank costs; reconstruct a potentially cross-city path only on demand.
  let path:string[]|undefined;
- return {...base,state,error,destination,get path(){return path??=(moveAp?routeFromMovement(u,destination,walk)?.path??[]:[u.cellId]);},moveAp,totalAp,canAct:error===null};
+ return {...base,state,error,destination,get path(){return path??=(destination!==u.cellId?routeFromMovement(u,destination,walk)?.path??[]:[u.cellId]);},moveAp,totalAp,canAct:error===null};
 }
 export function planNodeVisit(g:Campaign,u:CampaignUnit,nodeId:string,walk=movement(g,u)){return makePlan(g,u,nodeId,walk);}
 export function districtVisitPlans(g:Campaign,u:CampaignUnit,districtId:string){const walk=movement(g,u);return mapFor(g).nodes.filter(n=>n.districtId===districtId).map(n=>makePlan(g,u,n.id,walk));}

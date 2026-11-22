@@ -41,6 +41,8 @@ const mobileLayout='(max-width: 760px), (pointer: coarse) and (max-height: 500px
 
 export function AlphaCampaign(){
  const {t,i18n}=useTranslation(),lang=i18n.language,state=useCampaign();
+ // The mobile landing page can be scrolled far below the in-game HUD.
+ useEffect(()=>{window.scrollTo(0,0);},[]);
  const {reduceMotion}=useAccessibility();
  const {game,selected,dispatch,select,end}=state,team=game.playerTeam;
  const map=mapFor(game),actor=game.units.find(u=>u.id===selected)!,leader=game.units.find(u=>u.id===`${team}1`)!;
@@ -219,6 +221,7 @@ export function AlphaCampaign(){
  const fieldMenu=fieldOpen&&arrival?<section className="a3-field-menu" aria-labelledby="a3-field-title">
   <header className="a3-drawer-head"><h2 id="a3-field-title" ref={fieldHeading} tabIndex={-1}>{t('c_actions')} · {unitLabel(game,actor,t)}</h2>
    <button onClick={closeField}>{t('close')}</button></header>
+  {game.apRules==='golden-week'&&<small>{actor.ap} AP · {t('gw_walkCredit',{metres:Math.max(0,Math.floor((actor.walkCredit??0)-(actor.walkedEffort??0)))})}</small>}
   {nearby&&local.length===1&&<p>{name(nearby.id)}</p>}
   {local.length>1&&<label className="a3-nearby">{t('c_nodes')} <select value={nearby?.id??''} onChange={e=>setArrival({...arrival,nodeId:e.target.value})}>
    {local.map(n=><option key={n.id} value={n.id}>{name(n.id)}</option>)}</select></label>}
@@ -245,8 +248,8 @@ export function AlphaCampaign(){
   <header className="a3-desk">
    <div className="a3-title"><h1>{t('brand')} <small>{t('c_chapter')}</small></h1><b>{t('a3_update')}</b>{import.meta.env.MODE!=='alpha'&&<small>{releaseVersion}</small>}</div>
    <div className="a3-status"><span>{t('c_dayLabel')} {game.day}/28 · {t(game.phase)}</span>
-    <span>{unitLabel(game,actor,t)} <strong>{actor.ap} AP</strong> · {resources.materials} {t('c_materials')}</span>
-    <button disabled={busy||!!game.talk||!!game.result} onClick={()=>void end()}>{t(game.phase==='day'?'c_endDay':'c_endNight')}</button>
+    <span>{unitLabel(game,actor,t)} <strong>{actor.ap} AP</strong> · {resources.materials} {t('c_materials')}{game.apRules==='golden-week'&&<> · {t('gw_hq',{count:game.hqTokens?.[team]??0})}</>}</span>
+    <button disabled={busy||!!game.talk||!!game.result} onClick={()=>void end()}>{t(game.phase==='day'?'c_endDay':'c_endNight')}{game.apRules==='golden-week'&&game.phase==='day'?' +4 AP':''}</button>
    </div>
    {mobile&&<details className="a3-mobile-about">
     <summary>{t('a3_mobileAbout')}</summary>
@@ -306,7 +309,7 @@ export function AlphaCampaign(){
      {game.vehicle?.teams[team].journal.journeys.map((trip,i)=><button key={`vehicle-${i}`} onClick={()=>{
       setArrival(null);setHistoryRoute(state.vehicleHistoryRoute(i));setDistrict(map.cells.get(trip.toCell)!.districtId);closePanel();
      }}>{t('c_dayLabel')} {trip.day} · {t(trip.phase)} · {t(modeLabel[trip.mode])}</button>)}</div></>}
-    {panel==='team'&&<><div className="a3-roster">{game.units.filter(u=>u.team===team).map(u=><button key={u.id} aria-pressed={selected===u.id} onClick={()=>chooseUnit(u.id)}>
+    {panel==='team'&&<>{game.apRules==='golden-week'&&<><p>{t('gw_rules')}</p><p>{t('gw_outreach')}</p><p>{t('gw_hqHelp')}</p></>}<div className="a3-roster">{game.units.filter(u=>u.team===team).map(u=><button key={u.id} aria-pressed={selected===u.id} onClick={()=>chooseUnit(u.id)}>
      {portrait(u)}<span>{unitLabel(game,u,t)}<small>{t(isCommander(u)?`c_skill_${commander}`:u.helper?'c_action_assist':u.role==='heavy'?'c_action_brace':u.role==='ranged'?'c_action_broadcast':'c_action_backstab')}</small></span><b>{u.ap} AP</b>
     </button>)}</div><CampaignGrowth/><TacticsPanel/><RivalActions/></>}
     {panel==='tactics'&&<><TacticsPanel/><RivalActions/>{action({type:'rest',unitId:selected})}</>}

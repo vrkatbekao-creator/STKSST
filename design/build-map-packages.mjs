@@ -1,18 +1,19 @@
 // Repackage frozen, licensed snapshots. No network or geometry/rule changes.
-import {readFileSync,writeFileSync,mkdirSync,readdirSync,unlinkSync} from 'node:fs';
+import {readFileSync,writeFileSync,mkdirSync,readdirSync,unlinkSync,existsSync} from 'node:fs';
 import {gzipSync,gunzipSync} from 'node:zlib';
 import {createHash} from 'node:crypto';
 const root=new URL('../',import.meta.url),out=new URL('public/data/runtime-v1/',root);
 mkdirSync(out,{recursive:true});
 const hash=b=>createHash('sha256').update(b).digest('hex');
-const manifest={version:1,revision:'',core:null,meta:null,base:null,places:null,districts:[]};
+const manifest={version:1,revision:'',core:null,meta:null,base:null,places:null,grid300:null,districts:[]};
 const written=new Set();
-function emit(name,bytes){const sha256=hash(bytes),file=`${name}.${sha256.slice(0,16)}.gz`,packed=gzipSync(bytes,{level:9,mtime:0});writeFileSync(new URL(file,out),packed);written.add(file);return {file,sha256,bytes:bytes.length,gzipBytes:packed.length};}
+function emit(name,bytes){const sha256=hash(bytes),file=`${name}.${sha256.slice(0,16)}.gz`,packed=gzipSync(bytes,{level:9,mtime:0}),target=new URL(file,out);if(existsSync(target)){if(hash(gunzipSync(readFileSync(target)))!==sha256)throw Error(`Damaged package: ${file}`);}else writeFileSync(target,packed);written.add(file);return {file,sha256,bytes:bytes.length,gzipBytes:packed.length};}
 const json=(name,data)=>emit(name,Buffer.from(JSON.stringify(data,(_key,value)=>Object.is(value,-0)?JSON.rawJSON('-0'):value)));
 const raw=JSON.parse(readFileSync(new URL('src/data/taipei-street-map-v2.json',root),'utf8'));
 const base=JSON.parse(readFileSync(new URL('src/data/taipei-map.json',root),'utf8'));
 manifest.base=json('base-map',base);
 manifest.places=json('places',JSON.parse(readFileSync(new URL('src/data/taipei-places.json',root),'utf8')));
+manifest.grid300=json('grid-300',JSON.parse(readFileSync(new URL('src/data/taipei-grid-300.json',root),'utf8')));
 manifest.revision=raw.revision;
 // Aligned, lossless binary arrays. Original link order determines stable directed edge IDs.
 let offset=16;const arrays=[];
@@ -40,7 +41,7 @@ for(const d of base.districts){
  manifest.districts.push({id:d.id,bounds,roads:json(`roads-${d.id}`,roadData),buildings:json(`buildings-${d.id}`,buildingData)});
 }
 // Only remove this generator's obsolete hashed files within its exact output directory.
-for(const file of readdirSync(out))if(/^(routing|street-meta|base-map|places|roads-630\d{4}|buildings-630\d{4})\.[a-f0-9]{16}\.gz$/.test(file)&&!written.has(file))unlinkSync(new URL(file,out));
+for(const file of readdirSync(out))if(/^(routing|street-meta|base-map|places|grid-300|roads-630\d{4}|buildings-630\d{4})\.[a-f0-9]{16}\.gz$/.test(file)&&!written.has(file))unlinkSync(new URL(file,out));
 writeFileSync(new URL('manifest.json',out),JSON.stringify(manifest,null,2)+'\n');
 writeFileSync(new URL('src/data/map-packages.json',root),JSON.stringify(manifest,null,2)+'\n');
 console.log(JSON.stringify({revision:manifest.revision,core:manifest.core,meta:manifest.meta,districts:manifest.districts.map(d=>({id:d.id,roads:d.roads.gzipBytes,buildings:d.buildings.gzipBytes}))},null,2));

@@ -30,7 +30,7 @@
   "a3_motorcadeDone": "Motorcade complete",
   "a3_arriving": "Moving to the destination…",
   "a3_stale": "Route conditions changed. Review the new quote before confirming.",
-  "a3_update": "Currents Converge: Encore Party Update",
+  "a3_update": "Golden Week Showdown Update",
   "a3_grid": "Hex grid",
   "a3_terrain": "Elevation",
   "a3_legend": "Gold outline · Destination   White hatching · Contested",
@@ -926,5 +926,15 @@
   "o_opportunity_familiar": "Previously reached",
   "o_opportunity_saturated": "Outreach saturated",
   "a3_zoomIn": "Zoom in",
-  "a3_zoomOut": "Zoom out"
+  "a3_zoomOut": "Zoom out",
+  "gw_hq": "HQ orders {{count}}",
+  "gw_walkCredit": "Prepaid walking remaining: {{metres}} m",
+  "gw_rules": "Base 15 AP, mobile units 19 AP; +4 AP at night. Each AP buys 1,800 weighted walking metres, shared across walking and vehicle connections until morning.",
+  "gw_hqHelp": "Two HQ orders daily: waive AP for issue preparation or event response, or recruit for 1 AP. Only successful actions use an order.",
+  "gw_logNight": "Night begins: available units receive 4 AP. New recruits are ready next morning.",
+  "gw_outreach": "Outreach and visits: 1 AP and 1 supply. Two visits per location daily; explore new neighborhoods for bonuses.",
+  "gw_assist": "Support: 1 AP / 2 supplies; within two hexes, once per recipient daily.",
+  "gw_scout": "Assassin: base 19 AP daily. Strike from the three adjacent rear directions; strong against heavy units.",
+  "gw_factHex": "300 m road hexes",
+  "gw_nightBonus": "+4 AP at night"
 }

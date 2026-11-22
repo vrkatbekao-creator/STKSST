@@ -32,7 +32,7 @@ test('reviewed route stays read-only and can be committed only once on the same 
 test('resident Q&A charges once, resumes at the current question and colors only a completed visit',()=>{
  const game=initialCampaign(17,'blue','streets-v2'),unit=game.units[0],node=nearbyNodes(game,unit)[0];
  const started=campaignCommand(game,{type:'talkStart',mode:'resident',unitId:unit.id,nodeId:node.id}).game;
- assert.equal(started.units[0].ap,unit.ap-2);
+ assert.equal(started.units[0].ap,unit.ap-1);
  assert.equal(started.talk.rounds.length,1);
  assert.equal(started.visitColors,undefined);
  const save={game:started,selected:unit.id,districtId:node.districtId,view:'street'};
@@ -42,7 +42,7 @@ test('resident Q&A charges once, resumes at the current question and colors only
   resumed=campaignCommand(resumed,{type:'talkAnswer',unitId:unit.id,talkId:talk.id,step:talkStep(talk),reply:autoReply(talk)}).game;
  }
  assert.deepEqual(resumed.visitColors[node.cellId],{team:'blue',depth:1});
- assert.equal(resumed.units[0].ap,unit.ap-2);
+ assert.equal(resumed.units[0].ap,unit.ap-1);
  assert.equal(resumed.talkReports[0].mode,'resident');
  const abandoned=campaignCommand(started,{type:'talkLeave',unitId:unit.id,talkId:started.talk.id}).game;
  assert.equal(abandoned.visitColors,undefined);

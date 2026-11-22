@@ -30,7 +30,7 @@
   "a3_motorcadeDone": "車掃完成",
   "a3_arriving": "正在前往目的地…",
   "a3_stale": "路線條件已變更。請重新確認。",
-  "a3_update": "洋流匯聚安可派對 大更新",
+  "a3_update": "黃金周決戰更新",
   "a3_grid": "六角格",
   "a3_terrain": "高程",
   "a3_legend": "金框・目的地　白斜紋・爭奪中",
@@ -926,5 +926,15 @@
   "o_opportunity_familiar": "已觸及街區",
   "o_opportunity_saturated": "接觸已飽和",
   "a3_zoomIn": "放大",
-  "a3_zoomOut": "縮小"
+  "a3_zoomOut": "縮小",
+  "gw_hq": "總部應援令 {{count}}",
+  "gw_walkCredit": "已購步行額度剩餘 {{metres}} 公尺",
+  "gw_rules": "基礎 15 AP，機動隊員 19 AP；入夜補充 4 AP。每 1 AP 購買 1,800 公尺加權步行額度，日夜及上下車共用，隔晨重置。",
+  "gw_hqHelp": "每日 2 枚應援令：準備議題或事件應變免 AP；招募降為 1 AP。成功行動才消耗。",
+  "gw_logNight": "進入夜間，可行動隊員補充 4 AP；新招募隊員翌晨就緒。",
+  "gw_outreach": "掃街與拜訪：1 AP、1 物資。同點每日最多兩次；新街區有探索回報。",
+  "gw_assist": "支援：1 AP／2 物資；距離兩格內，每位受援者每日一次。",
+  "gw_scout": "刺客：基礎每日 19 AP。從目標背面三個相鄰方向發動背襲，剋制重裝。",
+  "gw_factHex": "300 公尺道路六角格",
+  "gw_nightBonus": "夜間 +4 AP"
 }
